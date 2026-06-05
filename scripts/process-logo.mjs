@@ -22,25 +22,26 @@ for (let i = 0; i < data.length; i += 4) {
   const r = data[i];
   const g = data[i + 1];
   const b = data[i + 2];
-  const max = Math.max(r, g, b);
+  const lum = 0.299 * r + 0.587 * g + 0.114 * b;
 
-  if (max <= 20) {
+  if (lum <= 25) {
     data[i + 3] = 0;
-  } else if (max <= 70) {
-    data[i + 3] = Math.round(((max - 20) / 50) * 255);
+  } else if (lum <= 90) {
+    data[i + 3] = Math.round(((lum - 25) / 65) * 255);
   }
 }
 
 await sharp(data, {
   raw: { width: info.width, height: info.height, channels: 4 },
 })
-  .trim({ threshold: 2 })
-  .resize(1024, 1024, {
+  .trim({ threshold: 5 })
+  .resize(512, 512, {
     fit: "contain",
     background: { r: 0, g: 0, b: 0, alpha: 0 },
     kernel: sharp.kernel.lanczos3,
   })
-  .png({ compressionLevel: 6, adaptiveFiltering: true })
+  .png({ compressionLevel: 6 })
   .toFile(output);
 
-console.log("Rebuilt transparent icon:", output);
+const trimmed = await sharp(output).metadata();
+console.log("Icon rebuilt:", trimmed.width, "x", trimmed.height, "alpha:", trimmed.hasAlpha);

@@ -20,8 +20,6 @@ const sizeClasses = {
   "icon-xl": "h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44",
 } as const;
 
-const headerSize = "h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] md:h-[5rem] md:w-[5rem]";
-
 export function Logo({
   variant = "icon",
   showWordmark = false,
@@ -30,15 +28,20 @@ export function Logo({
 }: LogoProps) {
   if (variant === "header") {
     return (
-      <Image
-        src="/bellona-icon.png"
-        alt={BRAND.name}
-        width={256}
-        height={256}
-        className={cn("object-contain object-center block shrink-0", headerSize, className)}
-        unoptimized
-        priority
-      />
+      <span className={cn("inline-flex items-center gap-2.5", className)}>
+        <Image
+          src="/bellona-icon.png"
+          alt=""
+          width={512}
+          height={512}
+          className="h-9 w-9 md:h-10 md:w-10 object-contain shrink-0"
+          unoptimized
+          priority
+        />
+        <span className="font-display text-[17px] md:text-lg font-bold tracking-tight text-bellona-white">
+          {BRAND.name}
+        </span>
+      </span>
     );
   }
 
@@ -46,8 +49,8 @@ export function Logo({
     <Image
       src="/bellona-icon.png"
       alt="Bellona"
-      width={400}
-      height={400}
+      width={512}
+      height={512}
       className={cn("object-contain", sizeClasses[variant])}
       unoptimized
       priority

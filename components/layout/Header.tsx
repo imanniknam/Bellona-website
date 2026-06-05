@@ -35,11 +35,11 @@ export function Header() {
       )}
     >
       <div className="container-bellona px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[4.5rem] md:h-[5rem]">
+        <div className="flex items-center justify-between h-16 md:h-[4.25rem]">
           <Link
             href={ROUTES.home}
             aria-label="Bellona home"
-            className="shrink-0 flex items-center transition-opacity duration-300 hover:opacity-85 -translate-y-2 md:-translate-y-2.5"
+            className="shrink-0 flex items-center transition-opacity duration-300 hover:opacity-85"
           >
             <Logo variant="header" />
           </Link>
