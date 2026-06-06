@@ -7,6 +7,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageBackground } from "@/components/ui/PageBackground";
 import { routing, type Locale } from "@/i18n/routing";
+import { BRAND } from "@/lib/constants";
+import { absoluteUrl, localePath } from "@/lib/locale-path";
 import { cn } from "@/lib/utils";
 import "../globals.css";
 
@@ -45,15 +47,24 @@ export async function generateMetadata({
   const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return {
+    metadataBase: new URL(BRAND.url),
     title: { default: messages.meta.title, template: `%s | Bellona` },
     description: messages.meta.description,
     keywords: ["AI automation", "AI agents", "workflow automation", "AI agency"],
     icons: { icon: "/bellona-icon.png", apple: "/bellona-icon.png" },
+    alternates: {
+      canonical: localePath(locale),
+      languages: {
+        fa: localePath("fa"),
+        en: localePath("en"),
+      },
+    },
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.ogDescription,
       type: "website",
       siteName: "Bellona",
+      url: absoluteUrl(locale),
     },
     robots: { index: true, follow: true },
   };

@@ -1,6 +1,8 @@
 export const BRAND = {
   name: "Bellona",
-  email: "hello@bellona.ai",
+  domain: "bellonaagency.com",
+  url: "https://bellonaagency.com",
+  email: "hello@bellonaagency.com",
   phone: "+1 (555) 012-3456",
 } as const;
 
