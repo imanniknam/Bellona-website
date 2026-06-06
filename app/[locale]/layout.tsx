@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Plus_Jakarta_Sans, Vazirmatn } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { PageBackground } from "@/components/ui/PageBackground";
 import { routing, type Locale } from "@/i18n/routing";
 import { BRAND } from "@/lib/constants";
@@ -67,6 +68,13 @@ export async function generateMetadata({
       url: absoluteUrl(locale),
     },
     robots: { index: true, follow: true },
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? {
+          verification: {
+            google: process.env.GOOGLE_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   };
 }
 
@@ -94,6 +102,7 @@ export default async function LocaleLayout({
       className={cn(jakarta.variable, vazirmatn.variable)}
     >
       <body className={cn("antialiased", isRtl ? "font-fa" : "font-body")}>
+        <OrganizationJsonLd />
         <NextIntlClientProvider messages={messages}>
           <PageBackground />
           <Header />
