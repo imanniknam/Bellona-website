@@ -1,10 +1,10 @@
-import { BRAND } from "@/lib/constants";
+import { sendLeadEmails } from "@/lib/email";
 import { NextResponse } from "next/server";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
-  let body: { email?: string; _honey?: string };
+  let body: { email?: string; locale?: string; _honey?: string };
 
   try {
     body = await request.json();
@@ -21,24 +21,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const response = await fetch(
-    `https://formsubmit.co/ajax/${encodeURIComponent(BRAND.leadEmail)}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        _subject: "New Get Started lead — bellonaagency.com",
-        _template: "table",
-        _captcha: "false",
-      }),
-    }
-  );
+  const locale = body.locale === "fa" ? "fa" : "en";
 
-  if (!response.ok) {
+  try {
+    await sendLeadEmails({ customerEmail: email, locale });
+  } catch (error) {
+    console.error("Lead email failed:", error);
     return NextResponse.json({ error: "Delivery failed" }, { status: 502 });
   }
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { BellonaButton } from "@/components/bellona";
 import { BellonaGlowBackground } from "@/components/bellona/BellonaGlowBackground";
 import { Logo } from "@/components/ui/Logo";
@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 export function FinalCTA() {
+  const locale = useLocale();
   const t = useTranslations("finalCta");
   const tBrand = useTranslations("brand");
   const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ export function FinalCTA() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({ email: email.trim(), locale }),
       });
 
       if (!response.ok) throw new Error("submit failed");
