@@ -13,7 +13,7 @@
   "nav": {
     "howItWorks": "How It Works",
     "services": "Services",
-    "results": "Results",
+    "industries": "Industries",
     "about": "About"
   },
   "footer": {
@@ -34,11 +34,6 @@
     "benefit2": "Your <accent>leads</accent> get qualified. Your <blue>ops</blue> scale.",
     "benefit3": "You just... <gradient>move on</gradient> with your day.",
     "watchDemo": "Watch 2-Min Demo",
-    "testimonialQuote": "Bellona replaced three full-time roles with AI systems in under a month. We finally operate like a real tech company — not a team drowning in manual work.",
-    "testimonialAuthor": "Sarah Chen",
-    "testimonialRole": "Founder",
-    "testimonialLocation": "US",
-    "verifiedClient": "Verified client",
     "trust1": "100+ automations built",
     "trust2": "24/7 AI operations",
     "trust3": "Free strategy audit",
@@ -139,6 +134,7 @@
     "eyebrow": "Industries",
     "title": "Built for <highlight>Your Sector</highlight>",
     "description": "Tailored AI systems for the workflows, <accent>compliance</accent>, and growth patterns of your industry.",
+    "viewPortfolio": "View portfolio",
     "items": {
       "realEstate": { "name": "Real Estate", "description": "Lead nurturing, property matching, and client follow-ups on autopilot." },
       "finance": { "name": "Finance", "description": "Compliance workflows, reporting, and client onboarding at scale." },
@@ -148,18 +144,13 @@
       "education": { "name": "Education", "description": "Enrollment, student support, and content delivery systems." }
     }
   },
-  "caseStudies": {
-    "eyebrow": "Results",
-    "title": "Proven <highlight>Outcomes</highlight>",
-    "description": "Real metrics from companies that replaced <accent>manual operations</accent> with Bellona AI systems.",
-    "hoursSaved": "Hours Saved",
-    "revenueUp": "Revenue Up",
-    "costDown": "Cost Down",
-    "items": {
-      "meridian": { "company": "Meridian Capital", "industry": "Finance", "description": "Automated loan processing and compliance checks, freeing analysts for high-value client work." },
-      "nova": { "company": "NovaCommerce", "industry": "E-Commerce", "description": "Deployed AI agents for cart recovery, outreach, and multi-channel customer support." },
-      "apex": { "company": "Apex Realty Group", "industry": "Real Estate", "description": "End-to-end lead qualification and CRM automation accelerating deal velocity by 2.5x." }
-    }
+  "portfolio": {
+    "back": "Back to industries",
+    "title": "Portfolio",
+    "emptyTitle": "Projects coming soon",
+    "emptyDescription": "We're preparing case studies for this industry. Check back soon or reach out to discuss your project.",
+    "cta": "Start a project",
+    "items": {}
   },
   "whyBellona": {
     "eyebrow": "Why Bellona",

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BellonaSectionTitle } from "@/components/bellona";
+import { Link } from "@/i18n/navigation";
 import { INDUSTRY_KEYS, INDUSTRY_ICONS } from "@/lib/constants";
 import { richTags } from "@/lib/rich-tags";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
@@ -52,25 +53,32 @@ export function Industries() {
                 variants={fadeUp}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.4 }}
-                className="group"
               >
-                <div className="card-elevated card-hover-glow p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-bellona-cyan/[0.08] flex items-center justify-center">
-                      <Icon size={20} className="text-bellona-cyan" />
+                <Link
+                  href={`/industries/${key}`}
+                  className="group block h-full"
+                >
+                  <div className="card-elevated card-hover-glow p-6 h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-bellona-cyan/[0.08] flex items-center justify-center">
+                        <Icon size={20} className="text-bellona-cyan" />
+                      </div>
+                      <ArrowUpRight
+                        size={16}
+                        className="text-bellona-muted group-hover:text-bellona-cyan transition-colors opacity-60 group-hover:opacity-100"
+                      />
                     </div>
-                    <ArrowUpRight
-                      size={16}
-                      className="text-bellona-muted group-hover:text-bellona-cyan transition-colors opacity-0 group-hover:opacity-100"
-                    />
+                    <h3 className="font-semibold text-bellona-white mb-1.5 group-hover:text-bellona-cyan transition-colors">
+                      {t(`items.${key}.name`)}
+                    </h3>
+                    <p className="text-sm text-bellona-muted leading-relaxed mb-3">
+                      {t(`items.${key}.description`)}
+                    </p>
+                    <span className="text-xs text-bellona-cyan/80 font-medium">
+                      {t("viewPortfolio")}
+                    </span>
                   </div>
-                  <h3 className="font-semibold text-bellona-white mb-1.5">
-                    {t(`items.${key}.name`)}
-                  </h3>
-                  <p className="text-sm text-bellona-muted leading-relaxed">
-                    {t(`items.${key}.description`)}
-                  </p>
-                </div>
+                </Link>
               </motion.div>
             );
           })}

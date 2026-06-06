@@ -51,14 +51,6 @@ export const INDUSTRY_ICONS = {
   education: "graduation-cap",
 } as const;
 
-export const CASE_STUDY_KEYS = ["meridian", "nova", "apex"] as const;
-
-export const CASE_STUDY_STATS = {
-  meridian: { hoursSaved: 120, revenueIncrease: 34, costReduction: 40 },
-  nova: { hoursSaved: 85, revenueIncrease: 52, costReduction: 35 },
-  apex: { hoursSaved: 95, revenueIncrease: 48, costReduction: 42 },
-} as const;
-
 export const COMPARISON_KEYS = ["availability", "scalability", "cost", "speed", "consistency", "intelligence"] as const;
 
 export const WEEKLY_KEYS = ["agents", "workflows", "leads", "revenue", "crm"] as const;
@@ -74,7 +66,7 @@ export const WEEKLY_ICONS = {
 export const NAV_ITEMS = [
   { key: "howItWorks", href: "#process" },
   { key: "services", href: "#services" },
-  { key: "results", href: "#results" },
+  { key: "industries", href: "#industries" },
   { key: "about", href: "#team" },
 ] as const;
 

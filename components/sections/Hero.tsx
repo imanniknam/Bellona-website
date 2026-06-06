@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, Star } from "lucide-react";
+import { Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BellonaButton } from "@/components/bellona";
 import { OrbitalBackground } from "@/components/ui/OrbitalBackground";
@@ -66,42 +66,6 @@ export function Hero() {
                 <Play size={15} className="fill-current opacity-80" />
                 {t("watchDemo")}
               </BellonaButton>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="card-elevated shimmer-border p-5 mb-8 max-w-lg"
-              style={{
-                background:
-                  "linear-gradient(145deg, rgba(18,26,48,0.9) 0%, rgba(10,16,32,0.8) 100%)",
-              }}
-            >
-              <p className="text-prose text-sm italic mb-3">
-                &ldquo;{t("testimonialQuote")}&rdquo;
-              </p>
-              <p className="font-body text-sm text-bellona-white font-medium">
-                {t("testimonialAuthor")}
-                <span className="text-bellona-muted font-normal">
-                  {" "}
-                  · {t("testimonialRole")} ({t("testimonialLocation")})
-                </span>
-              </p>
-              <div className="flex items-center gap-1 mt-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={12}
-                    className={
-                      i < 4
-                        ? "text-amber-400 fill-amber-400"
-                        : "text-amber-400/40 fill-amber-400/40"
-                    }
-                  />
-                ))}
-                <span className="text-xs text-bellona-muted ms-1">
-                  {t("verifiedClient")}
-                </span>
-              </div>
             </motion.div>
 
             <motion.div
