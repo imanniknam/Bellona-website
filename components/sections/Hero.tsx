@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BellonaButton } from "@/components/bellona";
 import { OrbitalBackground } from "@/components/ui/OrbitalBackground";
@@ -55,16 +54,9 @@ export function Hero() {
               </p>
             </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mb-8 sm:mb-10"
-            >
+            <motion.div variants={fadeUp} className="mb-8 sm:mb-10">
               <BellonaButton size="lg" className="w-full sm:w-auto justify-center" href="#cta">
                 {tBrand("ctaPrimary")}
-              </BellonaButton>
-              <BellonaButton variant="secondary" size="lg" className="w-full sm:w-auto justify-center">
-                <Play size={15} className="fill-current opacity-80" />
-                {t("watchDemo")}
               </BellonaButton>
             </motion.div>
 

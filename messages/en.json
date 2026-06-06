@@ -7,8 +7,7 @@
   "brand": {
     "name": "Bellona",
     "tagline": "AI Systems That Work While You Sleep",
-    "ctaPrimary": "Get Started",
-    "ctaSecondary": "Watch Demo"
+    "ctaPrimary": "Get Started"
   },
   "nav": {
     "howItWorks": "How It Works",
@@ -33,7 +32,6 @@
     "benefit1": "Your <accent>agents</accent> get deployed. Your <blue>workflows</blue> run.",
     "benefit2": "Your <accent>leads</accent> get qualified. Your <blue>ops</blue> scale.",
     "benefit3": "You just... <gradient>move on</gradient> with your day.",
-    "watchDemo": "Watch 2-Min Demo",
     "trust1": "100+ automations built",
     "trust2": "24/7 AI operations",
     "trust3": "Free strategy audit",
