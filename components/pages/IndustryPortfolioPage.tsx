@@ -95,7 +95,7 @@ export function IndustryPortfolioPage({ industryKey }: IndustryPortfolioPageProp
         </div>
 
         <div className="text-center pt-4">
-          <BellonaButton size="lg" href={`mailto:${BRAND.email}`}>
+          <BellonaButton size="lg" href={`mailto:${BRAND.leadEmail}`}>
             {tPortfolio("cta")}
           </BellonaButton>
         </div>
