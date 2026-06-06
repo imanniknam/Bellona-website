@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
           type="button"
           onClick={() => router.replace(pathname, { locale: loc })}
           className={cn(
-            "px-2.5 py-1 rounded-md text-xs font-medium transition-colors duration-300",
+            "px-2.5 py-1 rounded-md text-xs font-medium font-latin transition-colors duration-300",
             locale === loc
               ? "text-bellona-cyan bg-bellona-cyan/10"
               : "text-bellona-muted hover:text-bellona-white"
