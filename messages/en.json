@@ -182,11 +182,13 @@
     "description": "The engineers behind Bellona — building the <accent>AI systems</accent> that run your business while you sleep.",
     "founders": {
       "iman": {
+        "name": "Iman Niknam",
         "role": "Co-Founder",
         "title": "Automation Engineer",
         "bio": "Architects end-to-end automation systems — from workflow design to production deployment across complex business stacks."
       },
       "sina": {
+        "name": "Sina Razi",
         "role": "Co-Founder",
         "title": "AI Specialist",
         "bio": "Builds intelligent AI agents and machine learning pipelines that power Bellona's autonomous business systems."
@@ -217,6 +219,7 @@
     "text": "Loading Bellona..."
   },
   "language": {
+    "label": "Language",
     "en": "English",
     "fa": "Persian"
   }

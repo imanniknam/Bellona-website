@@ -4,6 +4,8 @@ export const BRAND = {
   phone: "+1 (555) 012-3456",
 } as const;
 
+export const FOUNDER_KEYS = ["iman", "sina"] as const;
+
 export const FOUNDERS = [
   { key: "iman" as const, name: "Iman Niknam" },
   { key: "sina" as const, name: "Sina Razi" },

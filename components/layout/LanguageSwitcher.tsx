@@ -15,7 +15,7 @@ export function LanguageSwitcher() {
     <div
       className="flex items-center gap-0.5 rounded-lg border border-white/[0.08] bg-white/[0.03] p-0.5"
       role="group"
-      aria-label="Language"
+      aria-label={t("label")}
     >
       {routing.locales.map((loc) => (
         <button
@@ -23,7 +23,8 @@ export function LanguageSwitcher() {
           type="button"
           onClick={() => router.replace(pathname, { locale: loc })}
           className={cn(
-            "px-2.5 py-1 rounded-md text-xs font-medium font-latin transition-colors duration-300",
+            "px-2.5 py-1 rounded-md text-xs font-medium transition-colors duration-300",
+            locale === "en" && "font-latin",
             locale === loc
               ? "text-bellona-cyan bg-bellona-cyan/10"
               : "text-bellona-muted hover:text-bellona-white"
