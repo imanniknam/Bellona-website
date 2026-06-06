@@ -2,10 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Vazirmatn } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import { PageBackground } from "@/components/ui/PageBackground";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -13,9 +12,17 @@ import "../globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   variable: "--font-jakarta",
   display: "swap",
+});
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -73,12 +80,11 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={isRtl ? "rtl" : "ltr"}
-      className={jakarta.variable}
+      className={cn(jakarta.variable, vazirmatn.variable)}
     >
       <body className={cn("antialiased", isRtl ? "font-fa" : "font-body")}>
         <NextIntlClientProvider messages={messages}>
           <PageBackground />
-          <LoadingScreen />
           <Header />
           <main className="relative z-[1]">{children}</main>
           <Footer />
