@@ -33,16 +33,16 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 border-b border-transparent",
-        scrolled ? "header-glass" : "bg-transparent shadow-none"
+        "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 border-b border-transparent safe-top",
+        scrolled || open ? "header-glass" : "bg-transparent shadow-none"
       )}
     >
       <div className="container-bellona px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-[4.25rem]">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-[4.25rem] gap-3">
           <Link
             href="/"
             aria-label="Bellona home"
-            className="shrink-0 flex items-center transition-opacity duration-300 hover:opacity-85"
+            className="shrink-0 flex items-center transition-opacity duration-300 hover:opacity-85 min-w-0"
           >
             <Logo variant="header" />
           </Link>
@@ -69,44 +69,65 @@ export function Header() {
             </BellonaButton>
           </div>
 
-          <button
-            className="lg:hidden p-2 text-bellona-white"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-            aria-expanded={open}
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="w-10 h-10 flex items-center justify-center rounded-lg text-bellona-white hover:bg-white/[0.06] transition-colors"
+              onClick={() => setOpen(!open)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </div>
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden header-glass overflow-hidden"
-          >
-            <nav className="flex flex-col p-6 gap-1">
-              {NAV_ITEMS.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-bellona-muted hover:text-bellona-white py-3 text-sm"
-                >
-                  {t(l.key)}
-                </a>
-              ))}
-              <div className="pt-5 mt-3 border-t border-white/[0.08] flex flex-col gap-4">
-                <LanguageSwitcher />
-                <BellonaButton className="w-full" href="#cta">
-                  {tBrand("ctaPrimary")}
-                </BellonaButton>
+          <>
+            <motion.button
+              type="button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/70 lg:hidden"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+            />
+            <motion.nav
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden fixed inset-x-0 top-[calc(3.5rem+env(safe-area-inset-top))] sm:top-[calc(4rem+env(safe-area-inset-top))] z-50 header-glass border-t border-white/[0.06] max-h-[calc(100dvh-3.5rem-env(safe-area-inset-top))] sm:max-h-[calc(100dvh-4rem-env(safe-area-inset-top))] overflow-y-auto safe-bottom"
+              aria-label="Mobile"
+            >
+              <div className="container-bellona px-4 sm:px-6 py-5 flex flex-col gap-1">
+                {NAV_ITEMS.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="text-bellona-white hover:text-bellona-cyan py-3.5 text-base font-medium border-b border-white/[0.06] last:border-0"
+                  >
+                    {t(l.key)}
+                  </a>
+                ))}
+                <div className="pt-5 mt-2">
+                  <BellonaButton
+                    className="w-full !h-12"
+                    href="#cta"
+                    onClick={() => setOpen(false)}
+                  >
+                    {tBrand("ctaPrimary")}
+                  </BellonaButton>
+                </div>
               </div>
-            </nav>
-          </motion.div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>

@@ -5,7 +5,11 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
@@ -19,8 +23,9 @@ export function LanguageSwitcher() {
       type="button"
       onClick={() => router.replace(pathname, { locale: targetLocale })}
       className={cn(
-        "px-3 py-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] text-xs font-medium text-bellona-muted hover:text-bellona-white hover:border-bellona-cyan/20 transition-colors duration-300",
-        targetLocale === "en" && "font-latin"
+        "min-h-10 min-w-10 px-3 py-2 rounded-lg border border-white/[0.08] bg-white/[0.03] text-xs sm:text-sm font-medium text-bellona-muted hover:text-bellona-white hover:border-bellona-cyan/20 transition-colors duration-300 inline-flex items-center justify-center",
+        targetLocale === "en" && "font-latin",
+        className
       )}
       aria-label={t("switchTo", { language: t(targetLocale) })}
     >

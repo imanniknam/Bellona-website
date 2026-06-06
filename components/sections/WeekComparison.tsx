@@ -23,7 +23,7 @@ export function WeekComparison() {
           className="text-center mb-14 md:mb-20"
         >
           <p className="text-subline-cyan text-sm mb-3">{t("eyebrow")}</p>
-          <h2 className="heading-section text-3xl sm:text-4xl md:text-5xl text-bellona-white">
+          <h2 className="heading-section text-[1.65rem] leading-snug sm:text-4xl md:text-5xl text-bellona-white px-1">
             {t("title1")}
             <br />
             <span className="text-accent-gradient">{t("title2")}</span>
@@ -104,6 +104,7 @@ export function WeekComparison() {
           <BellonaButton
             variant="secondary"
             size="lg"
+            className="w-full sm:w-auto justify-center"
             onClick={() =>
               document
                 .getElementById("process")

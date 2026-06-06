@@ -33,7 +33,7 @@ export function CaseStudies() {
               <motion.article
                 key={key}
                 variants={fadeUp}
-                className="card-elevated card-hover-glow p-7 group"
+                className="card-elevated card-hover-glow p-5 sm:p-7 group"
               >
                 <span className="text-[11px] text-bellona-cyan uppercase tracking-widest">
                   {t(`items.${key}.industry`)}
@@ -42,34 +42,34 @@ export function CaseStudies() {
                   {t(`items.${key}.company`)}
                 </h3>
 
-                <div className="grid grid-cols-3 gap-3 mb-6">
-                  <div>
-                    <p className="text-2xl font-bold text-gradient-brand">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-6">
+                  <div className="min-w-0">
+                    <p className="text-xl sm:text-2xl font-bold text-gradient-brand">
                       <AnimatedCounter value={stats.hoursSaved} />
                     </p>
-                    <p className="text-[10px] text-bellona-muted mt-0.5">
+                    <p className="text-[9px] sm:text-[10px] text-bellona-muted mt-0.5 leading-tight">
                       {t("hoursSaved")}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-2xl font-bold text-gradient-brand">
+                  <div className="min-w-0">
+                    <p className="text-xl sm:text-2xl font-bold text-gradient-brand">
                       <AnimatedCounter
                         value={stats.revenueIncrease}
                         suffix="%"
                       />
                     </p>
-                    <p className="text-[10px] text-bellona-muted mt-0.5">
+                    <p className="text-[9px] sm:text-[10px] text-bellona-muted mt-0.5 leading-tight">
                       {t("revenueUp")}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-2xl font-bold text-gradient-brand">
+                  <div className="min-w-0">
+                    <p className="text-xl sm:text-2xl font-bold text-gradient-brand">
                       <AnimatedCounter
                         value={stats.costReduction}
                         suffix="%"
                       />
                     </p>
-                    <p className="text-[10px] text-bellona-muted mt-0.5">
+                    <p className="text-[9px] sm:text-[10px] text-bellona-muted mt-0.5 leading-tight">
                       {t("costDown")}
                     </p>
                   </div>

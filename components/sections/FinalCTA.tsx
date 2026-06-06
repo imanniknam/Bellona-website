@@ -32,18 +32,18 @@ export function FinalCTA() {
           </motion.div>
           <motion.h2
             variants={fadeUp}
-            className="heading-section text-4xl sm:text-5xl md:text-6xl mb-6"
+            className="heading-section text-[1.65rem] leading-snug sm:text-5xl md:text-6xl mb-5 sm:mb-6 px-2"
           >
-            <span className="font-body text-bellona-muted font-medium text-[0.5em] tracking-wide block mb-2">
+            <span className="font-body text-bellona-muted font-medium text-[0.58em] sm:text-[0.5em] tracking-wide block mb-2">
               {t("title1")}
             </span>
             <span className="text-accent-gradient">{t("title2")}</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-prose text-lg mb-10">
+          <motion.p variants={fadeUp} className="text-prose text-base sm:text-lg mb-8 sm:mb-10 px-2">
             {t.rich("description", richTags)}
           </motion.p>
-          <motion.div variants={fadeUp}>
-            <BellonaButton size="lg" href={`mailto:${BRAND.email}`}>
+          <motion.div variants={fadeUp} className="px-2">
+            <BellonaButton size="lg" className="w-full sm:w-auto justify-center" href={`mailto:${BRAND.email}`}>
               {tBrand("ctaPrimary")}
             </BellonaButton>
           </motion.div>

@@ -19,18 +19,18 @@ export function Trust() {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/[0.08] rtl:divide-x-reverse"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-white/[0.08] sm:rtl:divide-x-reverse"
           >
             {TRUST_STATS.map((stat) => (
               <motion.div
                 key={stat.labelKey}
                 variants={fadeUp}
-                className="text-center px-4 py-2"
+                className="text-center px-2 sm:px-4 py-2"
               >
-                <p className="font-display text-3xl md:text-4xl font-bold text-gradient-brand tracking-tight mb-1">
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-brand tracking-tight mb-1">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="font-body text-xs md:text-sm text-bellona-muted">
+                <p className="font-body text-[11px] sm:text-xs md:text-sm text-bellona-muted leading-snug px-1">
                   {t(stat.labelKey)}
                 </p>
               </motion.div>

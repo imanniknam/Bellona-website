@@ -23,10 +23,10 @@ function FAQItem({
     <div className="border-b border-white/[0.08] last:border-0">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-5 text-start group"
+        className="w-full flex items-center justify-between gap-4 py-4 sm:py-5 text-start group min-h-[3.25rem]"
         aria-expanded={isOpen}
       >
-        <span className="font-medium text-bellona-white pe-8 group-hover:text-bellona-cyan transition-colors duration-500">
+        <span className="font-medium text-sm sm:text-base text-bellona-white group-hover:text-bellona-cyan transition-colors duration-500 leading-relaxed">
           {question}
         </span>
         <span className="shrink-0 w-7 h-7 rounded-lg bg-bellona-cyan/[0.06] flex items-center justify-center text-bellona-cyan">
@@ -70,7 +70,7 @@ export function FAQ() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="card-elevated shimmer-border px-6"
+          className="card-elevated shimmer-border px-4 sm:px-6"
         >
           {items.map((item, i) => (
             <motion.div key={item.q} variants={fadeUp}>

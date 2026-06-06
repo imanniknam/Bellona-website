@@ -21,10 +21,10 @@ export function PainPoints() {
           viewport={viewportOnce}
           className="text-center max-w-3xl mx-auto mb-14 md:mb-20"
         >
-          <h2 className="heading-section text-3xl sm:text-4xl md:text-5xl text-bellona-white mb-4">
+          <h2 className="heading-section text-[1.65rem] leading-snug sm:text-4xl md:text-5xl text-bellona-white mb-4 px-1">
             {t("title1")}
             <br />
-            <span className="text-subline-cyan text-2xl sm:text-3xl md:text-4xl">
+            <span className="text-subline-cyan text-xl sm:text-3xl md:text-4xl">
               {t("title2")}
             </span>
           </h2>

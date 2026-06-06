@@ -38,7 +38,7 @@ export function Logo({
           unoptimized
           priority
         />
-        <span className="font-display text-[17px] md:text-lg font-bold tracking-tight text-bellona-white">
+        <span className="font-display text-base sm:text-[17px] md:text-lg font-bold tracking-tight text-bellona-white truncate">
           {BRAND.name}
         </span>
       </span>

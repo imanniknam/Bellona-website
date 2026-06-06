@@ -67,23 +67,25 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-bellona-muted">
-          <p>
+        <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-bellona-muted text-center sm:text-start">
+          <p className="leading-relaxed">
             &copy; {new Date().getFullYear()} {BRAND.name}. {t("rights")}
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             <a
               href={`mailto:${BRAND.email}`}
-              className="hover:text-bellona-white transition-colors"
+              className="hover:text-bellona-white transition-colors break-all"
             >
               {BRAND.email}
             </a>
-            <a href="#" className="hover:text-bellona-white transition-colors">
-              {t("privacy")}
-            </a>
-            <a href="#" className="hover:text-bellona-white transition-colors">
-              {t("terms")}
-            </a>
+            <div className="flex gap-5">
+              <a href="#" className="hover:text-bellona-white transition-colors">
+                {t("privacy")}
+              </a>
+              <a href="#" className="hover:text-bellona-white transition-colors">
+                {t("terms")}
+              </a>
+            </div>
           </div>
         </div>
       </div>

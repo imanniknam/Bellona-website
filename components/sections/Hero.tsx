@@ -19,7 +19,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-subtle">
       <OrbitalBackground />
 
-      <div className="container-bellona relative z-10 section-padding !pt-28 md:!pt-32 !pb-20">
+      <div className="container-bellona relative z-10 section-padding !pt-24 sm:!pt-28 md:!pt-32 !pb-16 sm:!pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <motion.div
             variants={staggerContainer}
@@ -35,9 +35,9 @@ export function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="heading-hero text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] mb-6"
+              className="heading-hero text-[1.75rem] leading-tight sm:text-5xl md:text-6xl lg:text-[3.75rem] mb-5 sm:mb-6"
             >
-              <span className="font-body text-bellona-muted font-medium text-[0.55em] tracking-wide block mb-2">
+              <span className="font-body text-bellona-muted font-medium text-[0.62em] sm:text-[0.55em] tracking-wide block mb-2">
                 {t("titleLine1")}
               </span>
               <span className="text-gradient-brand">{t("titleLine2")}</span>
@@ -57,12 +57,12 @@ export function Hero() {
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-wrap items-center gap-3 mb-10"
+              className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mb-8 sm:mb-10"
             >
-              <BellonaButton size="lg" href="#cta">
+              <BellonaButton size="lg" className="w-full sm:w-auto justify-center" href="#cta">
                 {tBrand("ctaPrimary")}
               </BellonaButton>
-              <BellonaButton variant="secondary" size="lg">
+              <BellonaButton variant="secondary" size="lg" className="w-full sm:w-auto justify-center">
                 <Play size={15} className="fill-current opacity-80" />
                 {t("watchDemo")}
               </BellonaButton>
@@ -127,11 +127,11 @@ export function Hero() {
             className="relative lg:sticky lg:top-28"
           >
             <div className="card-elevated p-6 md:p-7 glow-brand shimmer-border">
-              <div className="flex items-center justify-between mb-5">
-                <h3 className="font-display font-semibold text-bellona-white text-lg">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 mb-5">
+                <h3 className="font-display font-semibold text-bellona-white text-base sm:text-lg">
                   {t("panelTitle")}
                 </h3>
-                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-400 font-body font-medium">
+                <span className="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-400 font-body font-medium whitespace-nowrap">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   {t("panelStatus")}
                 </span>
@@ -161,7 +161,7 @@ export function Hero() {
                 ))}
               </div>
 
-              <div className="mt-5 pt-5 border-t border-white/[0.08] flex items-center justify-between">
+              <div className="mt-5 pt-5 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex items-center gap-2">
                   {FOUNDERS.map((f) => (
                     <div
@@ -175,7 +175,7 @@ export function Hero() {
                     </div>
                   ))}
                 </div>
-                <p className="font-body text-xs text-bellona-muted">
+                <p className="font-body text-xs text-bellona-muted text-start sm:text-end">
                   {t("panelTeam")}
                 </p>
               </div>

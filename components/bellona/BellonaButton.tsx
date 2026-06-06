@@ -12,6 +12,7 @@ interface BellonaButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
   className?: string;
   href?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 const variants: Record<Variant, string> = {
@@ -37,6 +38,7 @@ export function BellonaButton({
   children,
   className,
   href,
+  onClick,
   ...props
 }: BellonaButtonProps) {
   const classes = cn(
@@ -55,7 +57,7 @@ export function BellonaButton({
         transition={{ type: "spring", stiffness: 420, damping: 28 }}
         className="inline-flex"
       >
-        <Link href={href} className={classes}>
+        <Link href={href} className={classes} onClick={onClick}>
           {children}
         </Link>
       </motion.span>
