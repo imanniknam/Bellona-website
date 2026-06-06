@@ -220,7 +220,8 @@
   },
   "language": {
     "label": "زبان",
-    "en": "انگلیسی",
+    "switchTo": "تغییر به {language}",
+    "en": "English",
     "fa": "فارسی"
   }
 }
