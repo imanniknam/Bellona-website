@@ -205,7 +205,7 @@
     "description": "Join companies using Bellona to build <accent>AI workforces</accent> that operate around the clock.",
     "emailPlaceholder": "you@company.com",
     "submitting": "Sending...",
-    "success": "Thanks — we'll be in touch shortly.",
+    "success": "Thanks — we'll be in touch shortly. Check your inbox and spam folder.",
     "error": "Something went wrong. Please try again."
   },
   "loading": {

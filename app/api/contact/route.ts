@@ -1,6 +1,8 @@
 import { sendLeadEmails } from "@/lib/email";
 import { NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {

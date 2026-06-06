@@ -1,20 +1,40 @@
 import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { BRAND } from "@/lib/constants";
 
 type Locale = "en" | "fa";
 
+function getGmailUser() {
+  return (process.env.GMAIL_USER ?? BRAND.leadEmail).trim();
+}
+
+function getGmailPassword() {
+  return process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, "") ?? "";
+}
+
 function getTransporter() {
-  const user = process.env.GMAIL_USER ?? BRAND.leadEmail;
-  const pass = process.env.GMAIL_APP_PASSWORD;
+  const user = getGmailUser();
+  const pass = getGmailPassword();
 
   if (!pass) {
     throw new Error("GMAIL_APP_PASSWORD is not configured");
   }
 
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: { user, pass },
-  });
+  } satisfies SMTPTransport.Options);
+}
+
+function assertSent(info: SMTPTransport.SentMessageInfo, label: string) {
+  if (info.rejected?.length) {
+    throw new Error(`${label} rejected: ${info.rejected.join(", ")}`);
+  }
+  if (!info.messageId) {
+    throw new Error(`${label} failed: no message id returned`);
+  }
 }
 
 const customerCopy = {
@@ -51,14 +71,16 @@ export async function sendLeadEmails({
   locale: Locale;
 }) {
   const transporter = getTransporter();
-  const from = process.env.GMAIL_USER ?? BRAND.leadEmail;
+  const from = getGmailUser();
   const submittedAt = new Date().toISOString();
 
-  await transporter.sendMail({
-    from: `${BRAND.name} <${from}>`,
+  await transporter.verify();
+
+  const teamInfo = await transporter.sendMail({
+    from: { name: BRAND.name, address: from },
     to: BRAND.leadEmail,
     replyTo: customerEmail,
-    subject: `New Get Started lead — ${BRAND.domain}`,
+    subject: `[Bellona Lead] ${customerEmail}`,
     html: `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
         <h2 style="margin: 0 0 12px;">New lead from ${BRAND.domain}</h2>
@@ -69,19 +91,22 @@ export async function sendLeadEmails({
     `,
     text: `New lead from ${BRAND.domain}\nEmail: ${customerEmail}\nLocale: ${locale}\nSubmitted at: ${submittedAt}`,
   });
+  assertSent(teamInfo, "Team notification");
 
   const copy = customerCopy[locale];
+  const customerInfo = await transporter.sendMail({
+    from: { name: BRAND.name, address: from },
+    to: customerEmail,
+    replyTo: BRAND.leadEmail,
+    subject: copy.subject,
+    html: customerHtml(locale),
+    text: `${copy.heading}\n\n${copy.body}\n\n${copy.footer}`,
+  });
+  assertSent(customerInfo, "Customer confirmation");
 
-  try {
-    await transporter.sendMail({
-      from: `${BRAND.name} <${from}>`,
-      to: customerEmail,
-      replyTo: BRAND.leadEmail,
-      subject: copy.subject,
-      html: customerHtml(locale),
-      text: `${copy.heading}\n\n${copy.body}\n\n${copy.footer}`,
-    });
-  } catch (error) {
-    console.error("Customer confirmation email failed:", error);
-  }
+  console.info("Lead emails sent", {
+    teamMessageId: teamInfo.messageId,
+    customerMessageId: customerInfo.messageId,
+    customerEmail,
+  });
 }
