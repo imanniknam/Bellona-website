@@ -10,8 +10,10 @@ import {
   Users,
   Workflow,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { BellonaSectionTitle } from "@/components/bellona";
 import { SYSTEM_FLOW } from "@/lib/constants";
+import { richTags } from "@/lib/rich-tags";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 
 const ICONS = {
@@ -51,7 +53,7 @@ function FlowNode({
           </div>
           <span className="font-medium text-bellona-white">{label}</span>
           <motion.div
-            className="absolute right-4 w-2 h-2 rounded-full bg-bellona-cyan"
+            className="absolute end-4 w-2 h-2 rounded-full bg-bellona-cyan"
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
           />
@@ -81,38 +83,40 @@ function FlowNode({
 }
 
 export function SystemArchitecture() {
+  const t = useTranslations("architecture");
+
   return (
     <section id="architecture" className="relative section-padding overflow-hidden section-tint-blue">
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20 pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(34,211,255,0.08) 0%, transparent 60%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(34,211,255,0.08) 0%, transparent 60%)",
+        }}
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="container-bellona relative max-w-lg mx-auto">
         <BellonaSectionTitle
-          eyebrow="System Architecture"
-          title={
-            <>
-              From Lead to <span className="text-accent-gradient">Revenue</span>
-            </>
-          }
-          description={
-            <>
-              Every Bellona deployment follows a unified intelligence pipeline — connecting <span className="text-accent">acquisition</span>, automation, and revenue in one seamless flow.
-            </>
-          }
+          eyebrow={t("eyebrow")}
+          title={t.rich("title", richTags)}
+          description={t.rich("description", richTags)}
         />
 
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {SYSTEM_FLOW.map((node, i) => {
             const Icon = ICONS[node.icon];
             return (
               <FlowNode
                 key={node.id}
-                label={node.label}
+                label={t(`nodes.${node.labelKey}`)}
                 icon={Icon}
                 index={i}
                 isLast={i === SYSTEM_FLOW.length - 1}

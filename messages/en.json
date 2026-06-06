@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "title": "Bellona — AI Systems That Work While You Sleep",
+    "description": "Bellona designs AI agents, automations, and intelligent systems that replace repetitive work and help businesses scale faster.",
+    "ogDescription": "Build Your AI Workforce with Bellona."
+  },
+  "brand": {
+    "name": "Bellona",
+    "tagline": "AI Systems That Work While You Sleep",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Watch Demo"
+  },
+  "nav": {
+    "howItWorks": "How It Works",
+    "services": "Services",
+    "results": "Results",
+    "about": "About"
+  },
+  "footer": {
+    "services": "Services",
+    "process": "Process",
+    "team": "Team",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "All rights reserved."
+  },
+  "hero": {
+    "eyebrow": "Your operations, running 24/7",
+    "titleLine1": "It's Not Just",
+    "titleLine2": "You Anymore.",
+    "benefit1": "Your <accent>agents</accent> get deployed. Your <blue>workflows</blue> run.",
+    "benefit2": "Your <accent>leads</accent> get qualified. Your <blue>ops</blue> scale.",
+    "benefit3": "You just... <gradient>move on</gradient> with your day.",
+    "watchDemo": "Watch 2-Min Demo",
+    "testimonialQuote": "Bellona replaced three full-time roles with AI systems in under a month. We finally operate like a real tech company — not a team drowning in manual work.",
+    "testimonialAuthor": "Sarah Chen",
+    "testimonialRole": "Founder",
+    "testimonialLocation": "US",
+    "verifiedClient": "Verified client",
+    "trust1": "100+ automations built",
+    "trust2": "24/7 AI operations",
+    "trust3": "Free strategy audit",
+    "panelTitle": "Your automations this week",
+    "panelStatus": "All on track",
+    "panelTeam": "Handled by your AI team",
+    "weekly": {
+      "agents": { "label": "AI Agents", "status": "12 active & learning" },
+      "workflows": { "label": "Workflows", "status": "47 running smoothly" },
+      "leads": { "label": "Leads", "status": "2,847 processed this week" },
+      "revenue": { "label": "Revenue", "status": "$847K attributed" },
+      "crm": { "label": "CRM Sync", "status": "Live & syncing" }
+    }
+  },
+  "trust": {
+    "automations": "Automations Built",
+    "operations": "AI Operations",
+    "timeSaved": "Time Saved",
+    "efficiency": "Operational Efficiency"
+  },
+  "painPoints": {
+    "title1": "Everything Your Business Needs.",
+    "title2": "None of the Chaos.",
+    "closing1": "The strategy isn't the problem.",
+    "closing2": "You've never had enough systems.",
+    "items": {
+      "manual": {
+        "title": "Manual Operations",
+        "quote": "You know what needs automating. But between client work and daily fires, your workflows stay half-built and your team stays overwhelmed.",
+        "problems": ["Tasks repeated every single day", "Bottlenecks killing your growth", "No time to build what you planned"]
+      },
+      "leads": {
+        "title": "Lead & Sales Chaos",
+        "quote": "Leads come in. Follow-ups slip. Your CRM is a graveyard of missed opportunities because nobody has time to nurture properly.",
+        "problems": ["Leads going cold within hours", "Follow-ups always 'tomorrow'", "Pipeline data you can't trust"]
+      },
+      "broken": {
+        "title": "Broken Automations",
+        "quote": "You didn't start a business to spend weekends fixing Zapier flows or wondering why your integrations broke again.",
+        "problems": ["Integrations that silently fail", "Tools that don't talk to each other", "Weekends lost to tech debt"]
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Capabilities",
+    "title1": "Intelligent Systems",
+    "title2": "We Build",
+    "description": "Six core automation capabilities engineered to <highlight>eliminate manual work</highlight> and compound your operational leverage.",
+    "items": {
+      "agents": { "title": "AI Agents", "description": "Autonomous digital workers that handle repetitive tasks, outreach, and decision-making around the clock." },
+      "workflow": { "title": "Workflow Automation", "description": "End-to-end process automation connecting your tools, teams, and data flows without manual handoffs." },
+      "leads": { "title": "Lead Generation Systems", "description": "Automated prospecting, enrichment, and qualification pipelines that deliver sales-ready leads daily." },
+      "support": { "title": "AI Customer Support", "description": "Intelligent chat and voice systems that resolve inquiries instantly and escalate only when needed." },
+      "crm": { "title": "CRM Automation", "description": "Sales pipelines, follow-ups, and deal tracking automated so your team focuses on closing." },
+      "integrations": { "title": "Custom Integrations", "description": "Bespoke API bridges and middleware that unify your entire business stack into one intelligent system." }
+    }
+  },
+  "weekComparison": {
+    "eyebrow": "Imagine This",
+    "title1": "It's Monday Morning.",
+    "title2": "Everything's Already Done.",
+    "beforeTitle": "Your Monday Before",
+    "beforeIntro": "You open your laptop. Everything hits at once:",
+    "beforeClosing": "Ops pushed to \"tomorrow.\" Again.",
+    "afterTitle": "Your Monday With Bellona",
+    "afterIntro": "You open your laptop. Your systems already ran overnight:",
+    "afterClosing": "That's not a dream. That's what Bellona clients wake up to.",
+    "cta": "See How It Works",
+    "beforeTasks": ["Reply to leads manually??", "Fix broken automation", "Update CRM by hand", "URGENT: Follow up 40 contacts", "Build workflow (again)", "Process invoices", "Train new hire on ops"],
+    "afterTasks": ["AI agents qualifying leads overnight", "Workflows running — 47 active", "CRM synced automatically", "Follow-ups sent on schedule", "New automation deployed", "Reports generated & delivered", "Team focused on strategy"]
+  },
+  "howItWorks": {
+    "eyebrow": "Process",
+    "title": "How Bellona <highlight>Works</highlight>",
+    "description": "A proven five-step framework from audit to optimization — deployed in <time>weeks, not months</time>.",
+    "steps": {
+      "1": { "title": "Audit", "description": "We map your operations, identify bottlenecks, and pinpoint the highest-ROI automation opportunities." },
+      "2": { "title": "Design", "description": "Our architects blueprint custom AI workflows, agent behaviors, and integration paths for your stack." },
+      "3": { "title": "Build", "description": "We engineer your automation systems with rigorous testing and zero disruption to daily operations." },
+      "4": { "title": "Deploy", "description": "Systems go live integrated with your existing tools — fully operational from day one." },
+      "5": { "title": "Optimize", "description": "Continuous monitoring, performance tuning, and scaling as your business evolves." }
+    }
+  },
+  "architecture": {
+    "eyebrow": "System Architecture",
+    "title": "From Lead to <highlight>Revenue</highlight>",
+    "description": "Every Bellona deployment follows a unified intelligence pipeline — connecting <accent>acquisition</accent>, automation, and revenue in one seamless flow.",
+    "nodes": {
+      "lead": "Lead Source",
+      "agent": "AI Agent",
+      "crm": "CRM",
+      "engine": "Automation Engine",
+      "analytics": "Analytics",
+      "revenue": "Revenue"
+    }
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "Built for <highlight>Your Sector</highlight>",
+    "description": "Tailored AI systems for the workflows, <accent>compliance</accent>, and growth patterns of your industry.",
+    "items": {
+      "realEstate": { "name": "Real Estate", "description": "Lead nurturing, property matching, and client follow-ups on autopilot." },
+      "finance": { "name": "Finance", "description": "Compliance workflows, reporting, and client onboarding at scale." },
+      "healthcare": { "name": "Healthcare", "description": "Appointment scheduling, patient intake, and admin automation." },
+      "ecommerce": { "name": "E-Commerce", "description": "Inventory sync, order processing, and support automation." },
+      "consulting": { "name": "Consulting", "description": "Proposal generation, client reporting, and project workflows." },
+      "education": { "name": "Education", "description": "Enrollment, student support, and content delivery systems." }
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Results",
+    "title": "Proven <highlight>Outcomes</highlight>",
+    "description": "Real metrics from companies that replaced <accent>manual operations</accent> with Bellona AI systems.",
+    "hoursSaved": "Hours Saved",
+    "revenueUp": "Revenue Up",
+    "costDown": "Cost Down",
+    "items": {
+      "meridian": { "company": "Meridian Capital", "industry": "Finance", "description": "Automated loan processing and compliance checks, freeing analysts for high-value client work." },
+      "nova": { "company": "NovaCommerce", "industry": "E-Commerce", "description": "Deployed AI agents for cart recovery, outreach, and multi-channel customer support." },
+      "apex": { "company": "Apex Realty Group", "industry": "Real Estate", "description": "End-to-end lead qualification and CRM automation accelerating deal velocity by 2.5x." }
+    }
+  },
+  "whyBellona": {
+    "eyebrow": "Why Bellona",
+    "title": "Traditional Team vs <highlight>Bellona AI</highlight>",
+    "description": "See why forward-thinking companies choose <accent>intelligent systems</accent> over endless hiring.",
+    "traditional": "Traditional Team",
+    "bellona": "Bellona AI",
+    "features": {
+      "availability": { "name": "Availability", "traditional": "Business hours only", "bellona": "24/7/365 autonomous" },
+      "scalability": { "name": "Scalability", "traditional": "Hire more people", "bellona": "Infinite, instant scale" },
+      "cost": { "name": "Cost", "traditional": "Salaries + overhead", "bellona": "One-time build, ongoing ROI" },
+      "speed": { "name": "Speed", "traditional": "Weeks to onboard", "bellona": "Deployed in days" },
+      "consistency": { "name": "Consistency", "traditional": "Human error prone", "bellona": "100% process accuracy" },
+      "intelligence": { "name": "Intelligence", "traditional": "Manual decisions", "bellona": "AI-driven automation" }
+    }
+  },
+  "team": {
+    "eyebrow": "Leadership",
+    "title": "Meet the <highlight>Founders</highlight>",
+    "description": "The engineers behind Bellona — building the <accent>AI systems</accent> that run your business while you sleep.",
+    "founders": {
+      "iman": {
+        "role": "Co-Founder",
+        "title": "Automation Engineer",
+        "bio": "Architects end-to-end automation systems — from workflow design to production deployment across complex business stacks."
+      },
+      "sina": {
+        "role": "Co-Founder",
+        "title": "AI Specialist",
+        "bio": "Builds intelligent AI agents and machine learning pipelines that power Bellona's autonomous business systems."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Common <highlight>Questions</highlight>",
+    "description": "Everything you need to know before building your <accent>AI workforce</accent>.",
+    "items": [
+      { "q": "What types of businesses does Bellona work with?", "a": "Growth-stage companies across finance, e-commerce, real estate, healthcare, consulting, and education. If your business has repeatable processes, we can automate them." },
+      { "q": "How long does deployment take?", "a": "Most systems go live within 2–4 weeks. Simple automations deploy in days; complex multi-agent systems take 4–6 weeks." },
+      { "q": "Do I need technical knowledge?", "a": "No. We build intuitive dashboards and provide full training. Your team uses simple interfaces while AI handles the complexity." },
+      { "q": "What platforms do you integrate with?", "a": "200+ platforms including Salesforce, HubSpot, Slack, n8n, Make, Zapier, and any tool with an API or webhook." },
+      { "q": "How is Bellona different from hiring?", "a": "Traditional hiring adds headcount and overhead. Bellona builds self-running AI systems that scale infinitely without additional payroll." },
+      { "q": "What ROI can I expect?", "a": "Clients typically see 40% cost reduction and 65% improvement in key metrics within 90 days. We project ROI during the audit phase." },
+      { "q": "Do you offer ongoing support?", "a": "Yes. Every engagement includes monitoring, optimization, and scaling support. Your systems evolve with your business." },
+      { "q": "How do I get started?", "a": "Book a free audit. We assess your operations and show exactly where AI delivers the highest impact." }
+    ]
+  },
+  "finalCta": {
+    "title1": "Stop Hiring More People.",
+    "title2": "Build Better Systems.",
+    "description": "Join companies using Bellona to build <accent>AI workforces</accent> that operate around the clock."
+  },
+  "loading": {
+    "text": "Loading Bellona..."
+  },
+  "language": {
+    "en": "English",
+    "fa": "فارسی"
+  }
+}

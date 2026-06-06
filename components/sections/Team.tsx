@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { BellonaSectionTitle } from "@/components/bellona";
 import { FOUNDERS } from "@/lib/constants";
+import { richTags } from "@/lib/rich-tags";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 function getInitials(name: string) {
@@ -13,21 +15,15 @@ function getInitials(name: string) {
 }
 
 export function Team() {
+  const t = useTranslations("team");
+
   return (
     <section id="team" className="relative section-padding overflow-hidden section-tint-violet">
       <div className="container-bellona">
         <BellonaSectionTitle
-          eyebrow="Leadership"
-          title={
-            <>
-              Meet the <span className="text-accent-gradient">Founders</span>
-            </>
-          }
-          description={
-            <>
-              The engineers behind Bellona — building the <span className="text-accent">AI systems</span> that run your business while you sleep.
-            </>
-          }
+          eyebrow={t("eyebrow")}
+          title={t.rich("title", richTags)}
+          description={t.rich("description", richTags)}
         />
 
         <motion.div
@@ -55,15 +51,17 @@ export function Team() {
                   <h3 className="font-semibold text-bellona-white text-lg tracking-tight">
                     {founder.name}
                   </h3>
-                  <p className="text-sm text-bellona-cyan">{founder.role}</p>
+                  <p className="text-sm text-bellona-cyan">
+                    {t(`founders.${founder.key}.role`)}
+                  </p>
                 </div>
               </div>
 
               <p className="text-sm font-medium text-bellona-white mb-2">
-                {founder.title}
+                {t(`founders.${founder.key}.title`)}
               </p>
               <p className="text-sm text-bellona-muted leading-relaxed">
-                {founder.bio}
+                {t(`founders.${founder.key}.bio`)}
               </p>
             </motion.div>
           ))}

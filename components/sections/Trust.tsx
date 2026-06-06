@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { TRUST_STATS } from "@/lib/constants";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 export function Trust() {
+  const t = useTranslations("trust");
+
   return (
     <section className="relative z-[1]">
       <div className="trust-bar-glow" />
@@ -16,14 +19,20 @@ export function Trust() {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/[0.08]"
+            className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/[0.08] rtl:divide-x-reverse"
           >
             {TRUST_STATS.map((stat) => (
-              <motion.div key={stat.label} variants={fadeUp} className="text-center px-4 py-2">
+              <motion.div
+                key={stat.labelKey}
+                variants={fadeUp}
+                className="text-center px-4 py-2"
+              >
                 <p className="font-display text-3xl md:text-4xl font-bold text-gradient-brand tracking-tight mb-1">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="font-body text-xs md:text-sm text-bellona-muted">{stat.label}</p>
+                <p className="font-body text-xs md:text-sm text-bellona-muted">
+                  {t(stat.labelKey)}
+                </p>
               </motion.div>
             ))}
           </motion.div>

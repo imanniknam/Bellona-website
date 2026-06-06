@@ -15,6 +15,7 @@
   --color-bellona-border: rgba(255, 255, 255, 0.1);
   --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-fa: var(--font-vazirmatn), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -33,6 +34,10 @@
 @layer utilities {
   .font-display { font-family: var(--font-display); }
   .font-body { font-family: var(--font-body); }
+  .font-fa { font-family: var(--font-fa); }
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+    font-family: var(--font-fa);
+  }
 
   .bg-page-mesh {
     background:
