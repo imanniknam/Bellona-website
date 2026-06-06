@@ -1,21 +1,20 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { BRAND } from "@/lib/constants";
 
 type Locale = "en" | "fa";
 
-function getResend() {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("RESEND_API_KEY is not configured");
-  }
-  return new Resend(apiKey);
-}
+function getTransporter() {
+  const user = process.env.GMAIL_USER ?? BRAND.leadEmail;
+  const pass = process.env.GMAIL_APP_PASSWORD;
 
-function getFromAddress() {
-  return (
-    process.env.RESEND_FROM_EMAIL ??
-    `${BRAND.name} <onboarding@resend.dev>`
-  );
+  if (!pass) {
+    throw new Error("GMAIL_APP_PASSWORD is not configured");
+  }
+
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
 }
 
 const customerCopy = {
@@ -23,7 +22,7 @@ const customerCopy = {
     subject: "We received your request — Bellona",
     heading: "Thanks for reaching out",
     body: "We received your request to get started with Bellona. Our team will review it and contact you shortly.",
-    footer: `If you did not submit this, you can ignore this email.`,
+    footer: "If you did not submit this, you can ignore this email.",
   },
   fa: {
     subject: "درخواست شما ثبت شد — بلونا",
@@ -51,12 +50,12 @@ export async function sendLeadEmails({
   customerEmail: string;
   locale: Locale;
 }) {
-  const resend = getResend();
-  const from = getFromAddress();
+  const transporter = getTransporter();
+  const from = process.env.GMAIL_USER ?? BRAND.leadEmail;
   const submittedAt = new Date().toISOString();
 
-  const teamResult = await resend.emails.send({
-    from,
+  await transporter.sendMail({
+    from: `${BRAND.name} <${from}>`,
     to: BRAND.leadEmail,
     replyTo: customerEmail,
     subject: `New Get Started lead — ${BRAND.domain}`,
@@ -71,21 +70,18 @@ export async function sendLeadEmails({
     text: `New lead from ${BRAND.domain}\nEmail: ${customerEmail}\nLocale: ${locale}\nSubmitted at: ${submittedAt}`,
   });
 
-  if (teamResult.error) {
-    throw new Error(teamResult.error.message);
-  }
-
   const copy = customerCopy[locale];
-  const customerResult = await resend.emails.send({
-    from,
-    to: customerEmail,
-    replyTo: BRAND.leadEmail,
-    subject: copy.subject,
-    html: customerHtml(locale),
-    text: `${copy.heading}\n\n${copy.body}\n\n${copy.footer}`,
-  });
 
-  if (customerResult.error) {
-    throw new Error(customerResult.error.message);
+  try {
+    await transporter.sendMail({
+      from: `${BRAND.name} <${from}>`,
+      to: customerEmail,
+      replyTo: BRAND.leadEmail,
+      subject: copy.subject,
+      html: customerHtml(locale),
+      text: `${copy.heading}\n\n${copy.body}\n\n${copy.footer}`,
+    });
+  } catch (error) {
+    console.error("Customer confirmation email failed:", error);
   }
 }
