@@ -203,6 +203,7 @@
     "title1": "Stop Hiring More People.",
     "title2": "Build Better Systems.",
     "description": "Join companies using Bellona to build <accent>AI workforces</accent> that operate around the clock.",
+    "emailLabel": "Your email",
     "emailPlaceholder": "you@company.com",
     "submitting": "Sending...",
     "success": "Thanks — we'll be in touch shortly. Check your inbox and spam folder.",

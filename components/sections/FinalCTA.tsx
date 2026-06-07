@@ -70,35 +70,49 @@ export function FinalCTA() {
             {t.rich("description", richTags)}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="px-2">
+          <motion.div variants={fadeUp} className="px-1 sm:px-2">
             {status === "success" ? (
-              <p className="text-bellona-cyan font-medium text-sm sm:text-base">
+              <p className="text-bellona-cyan font-medium text-sm sm:text-base max-w-md mx-auto">
                 {t("success")}
               </p>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-xl mx-auto"
+                className={cn(
+                  "w-full max-w-md sm:max-w-xl mx-auto",
+                  "rounded-2xl border border-white/[0.12] bg-bellona-elevated/90",
+                  "p-3 sm:p-2 shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
+                  "flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-2"
+                )}
               >
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                    if (status === "error") setStatus("idle");
-                  }}
-                  placeholder={t("emailPlaceholder")}
-                  required
-                  autoComplete="email"
-                  disabled={status === "loading"}
-                  className={cn(
-                    "flex-1 h-12 px-4 rounded-lg bg-white/[0.04] border border-white/[0.12]",
-                    "text-bellona-white placeholder:text-bellona-muted/70 text-sm sm:text-base",
-                    "focus:outline-none focus:border-bellona-cyan/40 focus:ring-2 focus:ring-bellona-cyan/20",
-                    "disabled:opacity-60 transition-colors"
-                  )}
-                />
+                <label className="flex flex-col gap-2 sm:flex-1 text-start min-w-0">
+                  <span className="text-xs font-medium text-bellona-muted px-0.5 sm:sr-only">
+                    {t("emailLabel")}
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      if (status === "error") setStatus("idle");
+                    }}
+                    placeholder={t("emailPlaceholder")}
+                    required
+                    autoComplete="email"
+                    inputMode="email"
+                    enterKeyHint="send"
+                    dir="ltr"
+                    disabled={status === "loading"}
+                    className={cn(
+                      "w-full min-h-[3.25rem] px-4 py-3 rounded-xl sm:rounded-lg",
+                      "bg-bellona-black/60 border border-white/[0.14]",
+                      "text-base text-bellona-white placeholder:text-bellona-muted/60",
+                      "focus:outline-none focus:border-bellona-cyan/50 focus:ring-2 focus:ring-bellona-cyan/25",
+                      "disabled:opacity-60 transition-colors appearance-none"
+                    )}
+                  />
+                </label>
                 <input
                   type="text"
                   name="_honey"
@@ -110,7 +124,11 @@ export function FinalCTA() {
                 <BellonaButton
                   type="submit"
                   size="lg"
-                  className="w-full sm:w-auto justify-center shrink-0"
+                  className={cn(
+                    "w-full sm:w-auto justify-center shrink-0",
+                    "min-h-[3.25rem] rounded-xl sm:rounded-lg sm:px-8",
+                    "text-base sm:text-[15px]"
+                  )}
                   disabled={status === "loading"}
                 >
                   {status === "loading" ? t("submitting") : tBrand("ctaPrimary")}
@@ -118,7 +136,7 @@ export function FinalCTA() {
               </form>
             )}
             {status === "error" && (
-              <p className="text-red-400 text-sm mt-3">{t("error")}</p>
+              <p className="text-red-400 text-sm mt-3 max-w-md mx-auto">{t("error")}</p>
             )}
           </motion.div>
         </motion.div>
