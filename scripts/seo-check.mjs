@@ -38,11 +38,11 @@ const AI_SEARCH_CRAWLERS = ["OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot",
 // permanent single-hop redirect, or (where a real page now exists at the same path) a 200.
 const OLD_URLS = ["realEstate", "finance", "healthcare", "ecommerce", "consulting", "education"].flatMap((s) => [
   `/industries/${s}`,
-  `/fa/industries/${s}`,
+  `/en/industries/${s}`,
 ]);
 
 // Reachable pages kept out of the sitemap (noindex). Always checked for placeholders, linked or not.
-const EXTRA_PAGES = ["/privacy", "/terms", "/fa/privacy", "/fa/terms"];
+const EXTRA_PAGES = ["/privacy", "/terms", "/en/privacy", "/en/terms"];
 
 const errors = [];
 const warnings = [];
@@ -104,7 +104,7 @@ const stringsIn = (v, out = []) => {
 };
 const internalLinks = (html) =>
   [...html.matchAll(/<a\s[^>]*href="(\/[^"]*)"/g)].map((m) => decode(m[1]).split("#")[0]).filter((h) => h && !h.startsWith("/_next") && !h.startsWith("/api/"));
-const pairOf = (p) => (p === "/fa" ? "/" : p.startsWith("/fa/") ? p.slice(3) : p === "/" ? "/fa" : `/fa${p}`);
+const pairOf = (p) => (p === "/en" ? "/" : p.startsWith("/en/") ? p.slice(3) : p === "/" ? "/en" : `/en${p}`);
 
 function placeholderChecks(where, html) {
   const head = html.slice(0, html.indexOf("</head>"));
@@ -137,7 +137,7 @@ async function checkPage(base, p, seen) {
   const html = await res.text();
   const head = html.slice(0, html.indexOf("</head>"));
   const body = html.slice(html.indexOf("<body"));
-  const fa = p === "/fa" || p.startsWith("/fa/");
+  const fa = !(p === "/en" || p.startsWith("/en/"));
 
   const htmlTag = html.match(/<html[^>]*>/)?.[0];
   if (attr(htmlTag, "lang") !== (fa ? "fa" : "en")) err(p, `lang="${attr(htmlTag, "lang")}"`);
@@ -179,15 +179,15 @@ async function checkPage(base, p, seen) {
       return [];
     }
   });
-  const isHome = p === "/" || p === "/fa";
-  const isService = /^(\/fa)?\/services\/[^/]+$/.test(p);
+  const isHome = p === "/" || p === "/en";
+  const isService = /^(\/en)?\/services\/[^/]+$/.test(p);
   if (isHome !== types.includes("ProfessionalService")) err(p, isHome ? "home page lacks the ProfessionalService entity" : "full ProfessionalService entity outside the home page");
   if (isService !== types.includes("Service")) err(p, isService ? "service page lacks its Service node" : "Service node outside a service page");
   if (!types.includes("WebSite")) err(p, "no WebSite node");
 
   const links = internalLinks(body);
   for (const sp of seen.servicePaths) {
-    const want = fa ? `/fa${sp}` : sp;
+    const want = fa ? sp : `/en${sp}`;
     if (!links.includes(want)) err(p, `no link to ${want}`);
   }
 

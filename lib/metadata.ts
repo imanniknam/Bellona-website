@@ -37,7 +37,7 @@ export function pageMetadata({
       languages: {
         en: localePath("en", path),
         fa: localePath("fa", path),
-        "x-default": localePath("en", path),
+        "x-default": localePath("fa", path),
       },
     },
     openGraph: {

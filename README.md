@@ -1,12 +1,12 @@
 # Bellona website (v2)
 
-Bilingual marketing site for **Bellona**: English at `/`, Persian (RTL) at `/fa`.
+Bilingual marketing site for **Bellona**: Persian (RTL) at `/` (default), English at `/en`. Old `/fa/...` links 308-redirect to the root.
 Next.js 16 (App Router) + TypeScript + Tailwind CSS 4. Fonts and brand assets are self-hosted.
 
-**Type:** English uses Plus Jakarta Sans. Persian (/fa only, `app/fonts/`, OFL) uses Lalezar for display (h1/h2, display classes, big numbers, `.fa-display`; one weight, never synthesised, emphasis by colour only; Rooyin is kept in `app/fonts/rooyin` to switch back) and Estedad for everything else (body 500, UI 700, captions 500). The rules live at the end of `app/globals.css` ("Persian type").
+**Type:** English uses Plus Jakarta Sans. Persian (Persian pages only, `app/fonts/`, OFL) uses Lalezar for display (h1/h2, display classes, big numbers, `.fa-display`; one weight, never synthesised, emphasis by colour only; Rooyin is kept in `app/fonts/rooyin` to switch back) and Estedad for everything else (body 500, UI 700, captions 500). The rules live at the end of `app/globals.css` ("Persian type").
 
 ```
-app/                 routes: (en)/… and (fa)/fa/… are two root layouts (different <html lang/dir>)
+app/                 routes: (fa)/… and (en)/en/… are two root layouts (different <html lang/dir>)
   actions/contact.ts contact form server action (zod + honeypot → webhook → Resend fallback)
   api/og/route.tsx   Open Graph images
   sitemap.ts robots.ts global-not-found.tsx
@@ -42,7 +42,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000 (English) and http://localhost:3000/fa (Persian).
+Open http://localhost:3000 (Persian) and http://localhost:3000/en (English).
 
 Before shipping:
 
@@ -76,7 +76,7 @@ npm run lint && npm run build
      - `model`: a voxel shape (`components/voxel/models.ts`) shown in place of screenshots, for private work or sites that are down.
      - `partner` (per language): shown as "In collaboration with".
 3. The list is ranked: put stronger projects first.
-   - These update automatically: `/work` (with `?service=<pillar>` filtering), the sitemap, the case-study pages (`/work/<slug>`, `/fa/work/<slug>`) and the "Projects in this service" block on each service page (top six).
+   - These update automatically: `/work` (with `?service=<pillar>` filtering), the sitemap, the case-study pages (`/work/<slug>`, `/en/work/<slug>`) and the "Projects in this service" block on each service page (top six).
 
 `/work/example` is a noindex template preview (`status: "preview"`).
 
@@ -181,6 +181,6 @@ Leave it empty to load nothing.
 ## Quality checklist
 
 - `npm run lint && npm run build` must be clean.
-- Check `/`, `/fa`, a pillar page, `/work`, a case study and `/contact` at 360 / 768 / 1280 / 1440 px.
+- Check `/`, `/en`, a pillar page, `/work`, a case study and `/contact` at 360 / 768 / 1280 / 1440 px.
 - Keyboard: Tab from the top. You should reach the skip link, then the menu button. The menu traps focus and Escape closes it.
 - Lighthouse (mobile) on the production build: `npm run build`, then `npx next start`.

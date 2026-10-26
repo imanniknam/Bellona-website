@@ -19,7 +19,7 @@ export default function GlobalNotFound() {
     <html lang="en" className={`${jakarta.variable} ${jetbrains.variable} ${estedad.variable}`}>
       <body>
         <main className="wrap flex min-h-dvh flex-col items-center justify-center gap-8 py-20 text-center">
-          <Link href="/" className="hx rounded-3xl" aria-label={en.common.homeLabel}>
+          <Link href="/en" className="hx rounded-3xl" aria-label={en.common.homeLabel}>
             <LogoMark variant="light" size={140} />
           </Link>
           <p className="t-eyebrow text-orange-text">404</p>
@@ -28,10 +28,10 @@ export default function GlobalNotFound() {
           </h1>
           <p className="t-lead text-body">{en.pages.notFound.text}</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/" className="btn btn-primary">
+            <Link href="/en" className="btn btn-primary">
               {en.pages.notFound.cta}
             </Link>
-            <Link href="/fa" lang="fa" dir="rtl" className="btn btn-outline font-fa-body">
+            <Link href="/" lang="fa" dir="rtl" className="btn btn-outline font-fa-body">
               {fa.pages.notFound.cta}
             </Link>
           </div>

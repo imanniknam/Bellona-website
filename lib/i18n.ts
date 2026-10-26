@@ -8,16 +8,16 @@ export function getDict(locale: Locale): Dict {
   return locale === "fa" ? fa : en;
 }
 
-/** "/services" → "/services" (en) or "/fa/services" (fa). Keeps hashes and queries. */
+/** Persian is the default language. "/services" → "/services" (fa) or "/en/services" (en). Keeps hashes and queries. */
 export function localePath(locale: Locale, path: string): string {
-  if (locale === "en") return path;
-  if (path === "/") return "/fa";
-  return `/fa${path}`;
+  if (locale === "fa") return path;
+  if (path === "/") return "/en";
+  return `/en${path}`;
 }
 
-/** Strips the /fa prefix so a path can be re-prefixed for the other language. */
+/** Strips the /en prefix so a path can be re-prefixed for the other language. */
 export function stripLocale(pathname: string): string {
-  if (pathname === "/fa") return "/";
-  if (pathname.startsWith("/fa/")) return pathname.slice(3);
+  if (pathname === "/en") return "/";
+  if (pathname.startsWith("/en/")) return pathname.slice(3);
   return pathname;
 }

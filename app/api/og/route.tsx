@@ -32,7 +32,7 @@ export function GET(req: Request) {
               {title ? "bellona agency" : "Websites · Products · AI automation · Growth"}
             </div>
           </div>
-          <div style={{ display: "flex", fontSize: 26, color: C.ink }}>bellonaagency.com{locale === "fa" ? "/fa" : ""}</div>
+          <div style={{ display: "flex", fontSize: 26, color: C.ink }}>bellonaagency.com{locale === "en" ? "/en" : ""}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 340, background: C.surface, borderRadius: 40 }}>
           <svg width="260" height="260" viewBox="8 8 184 184">

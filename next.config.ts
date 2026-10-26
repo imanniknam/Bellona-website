@@ -11,15 +11,20 @@ const industrySlugs: Record<string, string> = {
 
 const nextConfig: NextConfig = {
   experimental: {
-    // Needed because /(en) and /(fa)/fa are separate root layouts (different <html lang/dir>).
+    // Needed because /(fa) and /(en)/en are separate root layouts (different <html lang/dir>).
     globalNotFound: true,
   },
   poweredByHeader: false,
   async redirects() {
-    return Object.entries(industrySlugs).flatMap(([oldSlug, id]) => [
-      { source: `/industries/${oldSlug}`, destination: id, permanent: true },
-      { source: `/fa/industries/${oldSlug}`, destination: `/fa${id}`, permanent: true },
-    ]);
+    return [
+      // Persian moved from /fa to the root (2026-10-26): keep old /fa links working.
+      { source: "/fa", destination: "/", permanent: true },
+      { source: "/fa/:path*", destination: "/:path*", permanent: true },
+      ...Object.entries(industrySlugs).flatMap(([oldSlug, id]) => [
+        { source: `/industries/${oldSlug}`, destination: id, permanent: true },
+        { source: `/en/industries/${oldSlug}`, destination: `/en${id}`, permanent: true },
+      ]),
+    ];
   },
   async headers() {
     return [

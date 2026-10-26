@@ -28,7 +28,7 @@ export const jetbrains = localFont({
   preload: false,
 });
 
-// Persian (/fa only). Both OFL, files and licences in app/fonts/.
+// Persian (the default "/" pages only). Both OFL, files and licences in app/fonts/.
 // The CSS stacks built on these are --font-fa-display and --font-fa-body (globals.css @theme).
 // next/font emits a metric-matched fallback face for each (size-adjust etc.), so the swap doesn't shift layout.
 

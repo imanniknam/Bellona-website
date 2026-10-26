@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { SiteShell } from "@/components/SiteShell";
-import { estedad, jakarta, jetbrains, lalezar } from "../../fonts";
+import { estedad, jakarta, jetbrains, lalezar } from "../fonts";
 import { baseMetadata } from "@/lib/metadata";
-import "../../globals.css";
+import "../globals.css";
 
 export const metadata: Metadata = baseMetadata("fa");
 
