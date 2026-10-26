@@ -1,34 +1,34 @@
 {
-  "name": "bellona-website",
-  "version": "0.1.0",
+  "name": "bellona-web",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "seo:check": "node scripts/seo-check.mjs"
   },
   "dependencies": {
-    "framer-motion": "^12.40.0",
-    "lucide-react": "^0.511.0",
-    "next": "^15.3.3",
-    "next-intl": "^4.13.0",
-    "nodemailer": "^8.0.10",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "resend": "^6.12.4"
+    "lenis": "1.3.27",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1",
+    "zod": "4.6.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.1.8",
-    "@types/node": "^22.15.21",
-    "@types/nodemailer": "^8.0.0",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
-    "eslint": "^9.27.0",
-    "eslint-config-next": "^15.3.3",
-    "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3"
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

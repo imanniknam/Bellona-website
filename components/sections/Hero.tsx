@@ -1,142 +1,83 @@
-"use client";
+import type { CSSProperties } from "react";
+import type { Dict } from "@/content/types";
+import { projects } from "@/content/work";
+import { digits } from "@/lib/format";
+import { HeroMark } from "../hero/HeroMark";
+import { IsoGrid } from "../hero/IsoGrid";
+import { Rich } from "../Rich";
+import { MiniCube, VoxelArt } from "../voxel/Voxel";
+import type { Vox } from "../voxel/models";
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { BellonaButton } from "@/components/bellona";
-import { OrbitalBackground } from "@/components/ui/OrbitalBackground";
-import { FOUNDERS, WEEKLY_KEYS, WEEKLY_ICONS } from "@/lib/constants";
-import { richTags } from "@/lib/rich-tags";
-import { fadeUp, slideInRight, staggerContainer } from "@/lib/animations";
+import { ArrowIcon, LLink } from "../ui";
+import { RollText } from "../RollText";
 
-const TRUST_KEYS = ["trust1", "trust2", "trust3"] as const;
+/**
+ * Small cubes around the logo, positioned relative to the logo's own box and always outside it:
+ * a loose ring on the floor, larger and lower in front, smaller and higher behind (depth).
+ * Mirrored automatically in RTL (inline-start).
+ */
+const SATELLITES: { x: string; y: string; size: string; v: Vox[] }[] = [
+  { x: "-42%", y: "68%", size: "h-14", v: [[0, 0, 0, "k"], [1, 0, 0, "o"]] }, // front, start side
+  { x: "-26%", y: "16%", size: "h-8", v: [[0, 0, 0, "o"]] }, // back, start side
+  { x: "114%", y: "26%", size: "h-9", v: [[0, 0, 0, "o"]] }, // back, end side
+  { x: "110%", y: "70%", size: "h-16", v: [[0, 0, 0, "o"], [0, 0, 1, "o"]] }, // front, end side
+];
 
-export function Hero() {
-  const t = useTranslations("hero");
-  const tBrand = useTranslations("brand");
-
+/**
+ * Hero: headline on one side, the animated cube mark on the tiled floor on the other (desktop),
+ * stacked on phones. Sized so the mark's intro is in view on first load.
+ */
+export function Hero({ d }: { d: Dict }) {
+  const { hero, locale } = d;
+  const shipped = projects.filter((p) => p.status === "published").length;
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-subtle">
-      <OrbitalBackground />
-
-      <div className="container-bellona relative z-10 section-padding !pt-24 sm:!pt-28 md:!pt-32 !pb-16 sm:!pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.p
-              variants={fadeUp}
-              className="font-body text-sm text-bellona-cyan font-medium mb-5 tracking-wide"
-            >
-              {t("eyebrow")}
-            </motion.p>
-
-            <motion.h1
-              variants={fadeUp}
-              className="heading-hero text-[1.75rem] leading-tight sm:text-5xl md:text-6xl lg:text-[3.75rem] mb-5 sm:mb-6"
-            >
-              <span className="font-body text-bellona-muted font-medium text-[0.62em] sm:text-[0.55em] tracking-wide block mb-2">
-                {t("titleLine1")}
-              </span>
-              <span className="text-gradient-brand">{t("titleLine2")}</span>
-            </motion.h1>
-
-            <motion.div variants={fadeUp} className="space-y-1.5 mb-8">
-              <p className="font-body text-base md:text-lg text-bellona-white/85">
-                {t.rich("benefit1", richTags)}
-              </p>
-              <p className="font-body text-base md:text-lg text-bellona-white/85">
-                {t.rich("benefit2", richTags)}
-              </p>
-              <p className="font-body text-base md:text-lg text-bellona-muted italic">
-                {t.rich("benefit3", richTags)}
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mb-8 sm:mb-10">
-              <BellonaButton size="lg" className="w-full sm:w-auto justify-center" href="#cta">
-                {tBrand("ctaPrimary")}
-              </BellonaButton>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-wrap gap-x-6 gap-y-2"
-            >
-              {TRUST_KEYS.map((key) => (
-                <span
-                  key={key}
-                  className="font-body text-xs text-bellona-muted flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-bellona-blue" />
-                  {t(key)}
+    <section aria-labelledby="hero-title" className="relative overflow-hidden">
+      {/* Desktop: one floor behind the whole hero, fading out under the text (globals.css, .hero-floor). */}
+      <IsoGrid className="hero-floor absolute inset-0 hidden size-full lg:block" decor={locale === "fa" ? "left" : "right"} cubes={false} />
+      <div className="mx-auto grid max-w-[1360px] items-center gap-2 px-4 pt-8 sm:px-6 lg:min-h-[min(760px,calc(100svh-104px))] lg:grid-cols-[1.05fr_1fr] lg:gap-6 lg:py-4">
+        <div className="hero-in relative z-10 flex flex-col items-center gap-5 text-center sm:gap-6 lg:items-start lg:gap-5 lg:text-start">
+          <p className="tagline t-eyebrow inline-flex items-center gap-2.5 text-muted">
+            <MiniCube className="size-3.5" />
+            {hero.tagline}
+          </p>
+          <h1 id="hero-title" className="t-hero text-balance">
+            <Rich text={hero.title} />
+          </h1>
+          <p className="t-lead max-w-[520px] text-[17px] text-body lg:text-lg">{hero.sub}</p>
+          <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+            <LLink locale={locale} href="/contact?need=unsure" className="btn btn-primary" track="hero_start">
+              <RollText>{hero.primary}</RollText>
+              <ArrowIcon />
+            </LLink>
+            <LLink locale={locale} href="/work" className="btn btn-outline bg-paper" track="hero_work">
+              <RollText>{hero.secondary}</RollText>
+            </LLink>
+          </div>
+          <ul className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-muted lg:justify-start">
+            {[{ value: digits(shipped, locale), label: hero.projectsLabel }, ...hero.stats].map((s, i) => (
+              <li key={s.label} className="flex items-center gap-4">
+                {i > 0 && <span aria-hidden="true" className="hidden size-1 rounded-full bg-muted-dark sm:block" />}
+                <span>
+                  {s.value && <strong className="text-ink">{s.value}</strong>} {s.label}
                 </span>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={slideInRight}
-            initial="hidden"
-            animate="visible"
-            className="relative lg:sticky lg:top-28"
-          >
-            <div className="card-elevated p-6 md:p-7 glow-brand shimmer-border">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 mb-5">
-                <h3 className="font-display font-semibold text-bellona-white text-base sm:text-lg">
-                  {t("panelTitle")}
-                </h3>
-                <span className="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-400 font-body font-medium whitespace-nowrap">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  {t("panelStatus")}
-                </span>
-              </div>
-
-              <div className="space-y-2.5">
-                {WEEKLY_KEYS.map((key, i) => (
-                  <motion.div
-                    key={key}
-                    initial={{ opacity: 0, x: 12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 + i * 0.1 }}
-                    className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-bellona-cyan/20 hover:bg-bellona-cyan/[0.04] transition-all duration-300"
-                  >
-                    <span className="text-lg w-8 text-center">
-                      {WEEKLY_ICONS[key]}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-display text-sm font-medium text-bellona-white">
-                        {t(`weekly.${key}.label`)}
-                      </p>
-                      <p className="font-body text-xs text-bellona-muted">
-                        {t(`weekly.${key}.status`)}
-                      </p>
-                    </div>
-                  </motion.div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="relative -mx-4 h-[340px] sm:-mx-6 sm:h-[460px] lg:mx-0 lg:h-[min(640px,calc(100svh-120px))]">
+          <IsoGrid className="hero-floor-mobile absolute inset-0 size-full lg:hidden" cubes={false} />
+          <div className="relative flex h-full items-center justify-center">
+            <div className="relative">
+              <HeroMark className="h-auto w-[210px] sm:w-[290px] lg:w-[min(380px,44svh)]" />
+              <div aria-hidden="true" className="pointer-events-none hidden lg:block">
+                {SATELLITES.map((c, i) => (
+                  <span key={i} className="iso-float absolute" style={{ insetInlineStart: c.x, top: c.y, "--i": i } as CSSProperties}>
+                    <VoxelArt voxels={c.v} className={`${c.size} w-auto`} headroom={0} anim="pop" />
+                  </span>
                 ))}
               </div>
-
-              <div className="mt-5 pt-5 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <div className="flex items-center gap-2">
-                  {FOUNDERS.map((f) => (
-                    <div
-                      key={f.name}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-bellona-cyan/25 to-bellona-violet/15 flex items-center justify-center text-[10px] font-bold text-bellona-cyan border border-white/[0.08]"
-                    >
-                      {f.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                  ))}
-                </div>
-                <p className="font-body text-xs text-bellona-muted text-start sm:text-end">
-                  {t("panelTeam")}
-                </p>
-              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

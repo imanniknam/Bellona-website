@@ -1,89 +1,56 @@
-"use client";
+import type { CSSProperties } from "react";
+import type { Dict, Faq as FaqItem } from "@/content/types";
+import { FaqLd } from "../JsonLd";
+import { Rich } from "../Rich";
+import { BookLink, Eyebrow } from "../ui";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { BellonaSectionTitle } from "@/components/bellona";
-import { richTags } from "@/lib/rich-tags";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
-
-function FAQItem({
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}: {
-  question: string;
-  answer: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
+/** Native <details> accordion: answers are in the HTML for crawlers and work without JS. */
+export function FaqList({ items }: { items: FaqItem[] }) {
   return (
-    <div className="border-b border-white/[0.08] last:border-0">
-      <button
-        onClick={onToggle}
-        className="w-full flex items-center justify-between gap-4 py-4 sm:py-5 text-start group min-h-[3.25rem]"
-        aria-expanded={isOpen}
-      >
-        <span className="font-medium text-sm sm:text-base text-bellona-white group-hover:text-bellona-cyan transition-colors duration-500 leading-relaxed">
-          {question}
-        </span>
-        <span className="shrink-0 w-7 h-7 rounded-lg bg-bellona-cyan/[0.06] flex items-center justify-center text-bellona-cyan">
-          {isOpen ? <Minus size={14} /> : <Plus size={14} />}
-        </span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="text-sm text-bellona-muted leading-relaxed pb-5">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <ul className="rule-list flex flex-col border-y border-line">
+      {items.map((f, i) => (
+        <li key={f.q} data-reveal="fade" style={{ "--d": Math.min(i, 4) } as CSSProperties}>
+          <details className="group">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 py-6 text-lg font-semibold [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span
+                aria-hidden="true"
+                className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface transition-transform group-open:rotate-45 group-open:bg-orange"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" className="fill-none stroke-current" strokeWidth={2.4} strokeLinecap="round">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </span>
+            </summary>
+            <p className="max-w-3xl pb-7 leading-relaxed text-body">{f.a}</p>
+          </details>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-export function FAQ() {
-  const t = useTranslations("faq");
-  const items = t.raw("items") as { q: string; a: string }[];
-  const [open, setOpen] = useState<number | null>(0);
-
+export function Faq({ d, items, title }: { d: Dict; items?: FaqItem[]; title?: string }) {
+  const list = items ?? d.faq.items;
   return (
-    <section id="faq" className="relative section-padding section-panel overflow-hidden">
-      <div className="container-bellona max-w-2xl">
-        <BellonaSectionTitle
-          eyebrow={t("eyebrow")}
-          title={t.rich("title", richTags)}
-          description={t.rich("description", richTags)}
-        />
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="card-elevated shimmer-border px-4 sm:px-6"
-        >
-          {items.map((item, i) => (
-            <motion.div key={item.q} variants={fadeUp}>
-              <FAQItem
-                question={item.q}
-                answer={item.a}
-                isOpen={open === i}
-                onToggle={() => setOpen(open === i ? null : i)}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+    <section id="faq" aria-labelledby="faq-title" className="section">
+      <div className="wrap grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+        <div data-reveal="" className="flex flex-col gap-6 lg:sticky lg:top-8 lg:self-start">
+          <Eyebrow>{d.faq.eyebrow}</Eyebrow>
+          <h2 id="faq-title" className="t-h2-sm">
+            <Rich text={title ?? d.faq.title} />
+          </h2>
+          <p className="text-lg text-muted">{d.faq.side}</p>
+          <div className="flex flex-col items-start gap-3">
+            <BookLink d={d} className="btn btn-ink" track="faq_book" />
+            <a href={`mailto:${d.common.email}`} className="font-semibold underline underline-offset-4 hover:text-orange-text" dir="ltr">
+              {d.common.email}
+            </a>
+          </div>
+        </div>
+        <FaqList items={list} />
       </div>
+      <FaqLd items={list} />
     </section>
   );
 }
