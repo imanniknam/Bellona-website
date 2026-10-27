@@ -19,7 +19,7 @@ export const en: Dict = {
   meta: {
     siteName: "Bellona",
     home: {
-      title: "Bellona: website design, AI agents and automation",
+      title: "Bellona Agency (بلونا): website design, AI agents and automation",
       description:
         "Bellona designs and codes custom websites and web platforms, connects them to AI automation that answers and follows up every lead, and grows the traffic behind them. English and Persian. Book a free growth audit.",
     },

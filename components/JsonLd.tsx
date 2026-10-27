@@ -14,7 +14,8 @@ function Script({ data }: { data: object }) {
 
 /** One id for the business, shared by both locales; every other node points to it. */
 export const ORG_ID = `${siteUrl}/#organization`;
-const ALTERNATE_NAMES = ["بلونا", "آژانس بلونا", "Bellona Agency"];
+// Every spelling people search the brand by (Persian, English, the domain).
+const ALTERNATE_NAMES = ["بلونا", "آژانس بلونا", "بلونا ایجنسی", "Bellona Agency", "Bellona AI", "bellonaagency"];
 const SHARIF = { "@type": "CollegeOrUniversity", name: "Sharif University of Technology" };
 
 /** Only what the team section shows: name, role, skills and (if stated) Sharif University. */
