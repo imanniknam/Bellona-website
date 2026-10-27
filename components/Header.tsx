@@ -79,23 +79,23 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
 
   return (
     <header className="relative z-20">
-      <div className="mx-auto flex h-16 max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6 lg:h-20">
-        <Link href={localePath(locale, "/")} aria-label={common.homeLabel} className="hx group flex items-center gap-2.5 rounded-full">
-          <span className="flex size-10 items-center justify-center rounded-full bg-ink transition-transform duration-300 group-hover:scale-105 lg:size-11">
-            <LogoMark variant="dark" size={26} className="lg:size-[30px]" />
+      <div className="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6 lg:h-24">
+        <Link href={localePath(locale, "/")} aria-label={common.homeLabel} className="hx group flex items-center gap-2.5 rounded-full lg:gap-3">
+          <span className="flex size-11 items-center justify-center rounded-full bg-ink transition-transform duration-300 group-hover:scale-105 lg:size-14">
+            <LogoMark variant="dark" size={28} className="lg:size-[36px]" />
           </span>
-          <span className="fa-display text-lg font-extrabold tracking-[-0.03em] lg:text-xl">{common.wordmark}</span>
+          <span className="fa-display text-xl font-extrabold tracking-[-0.03em] lg:text-2xl">{common.wordmark}</span>
         </Link>
 
         <nav aria-label={common.primaryNav} className="hidden xl:block">
-          <ul className="flex items-center gap-0.5 rounded-full bg-surface p-1">
+          <ul className="flex items-center gap-0.5 rounded-full bg-surface p-1.5">
             {/* Contact lives in the CTA and the menu, so the pill stays on one line at 1280px. */}
             {common.nav.filter((item) => item.key !== "contact").map((item) => (
               <li key={item.key}>
                 <Link
                   href={localePath(locale, item.href)}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className="block whitespace-nowrap rounded-full px-4 py-2 text-[15px] font-medium transition-colors hover:bg-paper aria-[current=page]:bg-ink aria-[current=page]:text-paper"
+                  className="block whitespace-nowrap rounded-full px-4 py-2.5 text-base font-medium 2xl:px-5 2xl:text-[17px] transition-colors hover:bg-paper aria-[current=page]:bg-ink aria-[current=page]:text-paper"
                 >
                   <RollText>{item.label}</RollText>
                 </Link>
@@ -107,7 +107,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
                 hrefLang={otherLocale}
                 lang={otherLocale}
                 aria-label={common.langSwitch.ariaLabel}
-                className="block whitespace-nowrap rounded-full px-4 py-2 text-[15px] font-medium transition-colors hover:bg-paper"
+                className="block whitespace-nowrap rounded-full px-4 py-2.5 text-base font-medium 2xl:px-5 2xl:text-[17px] transition-colors hover:bg-paper"
                 data-track="cta"
                 data-track-label="lang_switch"
               >
@@ -123,7 +123,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
             hrefLang={otherLocale}
             lang={otherLocale}
             aria-label={common.langSwitch.ariaLabel}
-            className="flex h-10 items-center rounded-full bg-surface px-3.5 text-sm font-semibold xl:hidden"
+            className="flex h-11 items-center rounded-full bg-surface px-4 text-sm font-semibold xl:hidden"
             data-track="cta"
             data-track-label="lang_switch"
           >
@@ -131,14 +131,14 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
           </Link>
           <a
             {...bookProps}
-            className="hidden h-11 items-center gap-2.5 rounded-full bg-ink text-paper transition-[background-color,color,transform] duration-300 ps-1.5 pe-5 hover:-translate-y-0.5 hover:bg-orange hover:text-ink md:flex"
+            className="hidden h-12 items-center gap-3 rounded-full bg-ink text-paper transition-[background-color,color,transform] duration-300 ps-1.5 pe-6 hover:-translate-y-0.5 hover:bg-orange hover:text-ink md:flex"
             data-track="cta"
             data-track-label="header_book"
           >
-            <span aria-hidden="true" className="flex size-8 items-center justify-center rounded-full bg-orange text-base font-extrabold text-ink">
+            <span aria-hidden="true" className="flex size-9 items-center justify-center rounded-full bg-orange text-lg font-extrabold text-ink">
               {common.bookInitial}
             </span>
-            <span className="whitespace-nowrap text-[15px] font-semibold"><RollText>{common.bookCall}</RollText></span>
+            <span className="whitespace-nowrap text-base font-semibold 2xl:text-[17px]"><RollText>{common.bookCall}</RollText></span>
             {book.external && <span className="sr-only"> {common.opensNewTab}</span>}
           </a>
           {/* The menu is for narrower screens; at xl the nav pill above covers it. */}
@@ -149,7 +149,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
             aria-haspopup="dialog"
             aria-label={common.menuOpen}
             onClick={() => setOpen(true)}
-            className="flex size-10 items-center justify-center rounded-full bg-ink text-paper transition-colors duration-300 hover:bg-orange hover:text-ink xl:hidden"
+            className="flex size-11 items-center justify-center rounded-full bg-ink text-paper transition-colors duration-300 hover:bg-orange hover:text-ink xl:hidden"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" className="fill-none stroke-current" strokeWidth={2} strokeLinecap="round">
               <path d="M5 9h14M5 15h14" />
@@ -169,7 +169,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
             data-lenis-prevent=""
             className="menu-panel on-dark absolute inset-y-0 end-0 flex w-full max-w-[360px] flex-col overflow-y-auto bg-ink text-paper"
           >
-            <div className="flex h-16 shrink-0 items-center justify-between gap-4 px-5">
+            <div className="flex h-[72px] shrink-0 items-center justify-between gap-4 px-5">
               <h2 id={titleId} className="t-eyebrow text-orange-on-dark">
                 {common.menuTitle}
               </h2>
