@@ -83,6 +83,8 @@ export const projects: Project[] = [
     tone: "ink",
     model: "house",
     url: "https://kharazie.at",
+    cover: "/work/ai-real-estate-os/cover-art.jpg",
+    gallery: shots("ai-real-estate-os", 4),
     stack: ["n8n", "Baserow", "Claude API", "Google Drive", "SMTP / IMAP", "Docker"],
     en: {
       title: "AI Real Estate Operating System",
@@ -171,7 +173,7 @@ export const projects: Project[] = [
     industries: ["education"],
     tone: "graphite",
     url: "https://yasinow.ir",
-    cover: "/work/yasin/cover.jpg",
+    cover: "/work/yasin/cover-art.jpg",
     gallery: shots("yasin", 3),
     stack: ["Next.js 15", "GSAP", "Three.js", "Lenis", "TypeScript"],
     en: {
@@ -213,7 +215,7 @@ export const projects: Project[] = [
     industries: ["education"],
     tone: "ink",
     url: "https://konjed.top",
-    cover: "/work/konjed/cover.jpg",
+    cover: "/work/konjed/cover-art.jpg",
     gallery: [desktop("/work/konjed/shot-1.jpg"), desktop("/work/konjed/shot-2.jpg"), mobile("/work/konjed/mobile.jpg")],
     en: {
       title: "Konjed",
@@ -253,7 +255,7 @@ export const projects: Project[] = [
     industries: ["education"],
     tone: "orange",
     url: "https://microshamim-rosy.vercel.app",
-    cover: "/work/microshamim/cover.jpg",
+    cover: "/work/microshamim/cover-art.jpg",
     gallery: [desktop("/work/microshamim/shot-1.jpg"), desktop("/work/microshamim/shot-2.jpg"), mobile("/work/microshamim/mobile.jpg")],
     en: {
       title: "Microshamim",
@@ -287,7 +289,7 @@ export const projects: Project[] = [
     industries: ["ecommerce"],
     tone: "paper",
     url: "https://sabzinow.ir",
-    cover: "/work/sabzino/cover.jpg",
+    cover: "/work/sabzino/cover-art.jpg",
     gallery: shots("sabzino", 3),
     stack: ["React 19", "TypeScript", "Cloudflare D1", "Drizzle", "Zarinpal"],
     en: {
@@ -328,7 +330,7 @@ export const projects: Project[] = [
     industries: ["media"],
     tone: "paper",
     url: "https://danenews.ir",
-    cover: "/work/dane-news/cover.jpg",
+    cover: "/work/dane-news/cover-art.jpg",
     gallery: shots("dane-news", 3),
     stack: ["Next.js 16", "Payload CMS", "PostgreSQL", "TypeScript", "S3"],
     en: {
@@ -376,7 +378,7 @@ export const projects: Project[] = [
     industries: ["ecommerce"],
     tone: "paper",
     url: "https://niraperfume.com",
-    cover: "/work/nira-perfume/cover.jpg",
+    cover: "/work/nira-perfume/cover-art.jpg",
     gallery: [
       desktop("/work/nira-perfume/shot-1.jpg"),
       desktop("/work/nira-perfume/shot-2.jpg"),
@@ -414,7 +416,7 @@ export const projects: Project[] = [
     pillars: ["web", "product"],
     tone: "orange",
     url: "https://contemo.ir",
-    cover: "/work/contemo/cover.jpg",
+    cover: "/work/contemo/cover-art.jpg",
     gallery: shots("contemo", 3),
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Motion", "Canvas"],
     en: {
@@ -454,7 +456,7 @@ export const projects: Project[] = [
     pillars: ["web"],
     tone: "graphite",
     url: "https://shamimhouse.ir",
-    cover: "/work/shamim-house/cover.jpg",
+    cover: "/work/shamim-house/cover-art.jpg",
     gallery: shots("shamim-house", 3),
     stack: ["Next.js 16", "React 19", "Framer Motion", "GSAP", "Zod"],
     en: {
@@ -495,7 +497,7 @@ export const projects: Project[] = [
     industries: ["education"],
     tone: "paper",
     url: "https://asastudy-website.vercel.app",
-    cover: "/work/asa-study/cover.jpg",
+    cover: "/work/asa-study/cover-art.jpg",
     gallery: shots("asa-study", 3),
     stack: ["Next.js 15", "next-intl", "TypeScript", "Radix UI", "Framer Motion"],
     en: {
@@ -537,6 +539,8 @@ export const projects: Project[] = [
     // prowem.com only shows "Coming soon"; a cube illustration until app screenshots arrive (TODO-OWNER).
     model: "code",
     url: "https://prowem.com",
+    cover: "/work/prowem/cover-art.jpg",
+    gallery: [desktop("/work/prowem/cover.jpg")],
     stack: ["Flutter", "Dart", "REST API", "PHP", "iOS", "Android"],
     en: {
       title: "Prowem Sports Platform",
@@ -577,6 +581,8 @@ export const projects: Project[] = [
     // The site did not load from our network for screenshots; a cube illustration until it does (TODO-OWNER).
     model: "shop",
     url: "https://mojasamesaidi.ir",
+    cover: "/work/mojasame-saidi/cover-art.jpg",
+    gallery: [desktop("/work/mojasame-saidi/cover.jpg")],
     stack: ["Next.js 15", "Prisma", "PostgreSQL", "Zustand", "Zod"],
     en: {
       title: "Mojasame Saidi",
@@ -615,6 +621,8 @@ export const projects: Project[] = [
     tone: "graphite",
     // The Railway address from the portfolio returns 404; no link or screenshot until a live address arrives (TODO-OWNER).
     model: "robot",
+    cover: "/work/elm-kala/cover-art.jpg",
+    gallery: [desktop("/work/elm-kala/cover.jpg")],
     stack: ["Production web app", "Railway"],
     en: {
       title: "Elm-Kala",
@@ -644,6 +652,8 @@ export const projects: Project[] = [
     tone: "orange",
     // The Railway address from the portfolio returns 404; no link or screenshot until a live address arrives (TODO-OWNER).
     model: "cap",
+    cover: "/work/school-builders/cover-art.jpg",
+    gallery: [desktop("/work/school-builders/cover.jpg")],
     stack: ["Next.js 16", "TypeScript", "Motion"],
     en: {
       title: "Iran School-Builders Charity",
