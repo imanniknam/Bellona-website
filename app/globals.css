@@ -63,7 +63,7 @@
   :lang(fa) body,
   body:lang(fa) {
     font-family: var(--font-fa-body);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.9;
   }
   ::selection {
@@ -211,12 +211,12 @@
   }
   :lang(fa) .t-lead {
     line-height: 1.9;
-    font-weight: 700;
+    font-weight: 500;
   }
   :lang(fa) .t-eyebrow {
     font-family: var(--font-fa-body);
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: none;
   }
   :lang(fa) .tagline {
@@ -648,7 +648,8 @@ html.lenis {
 /* ---------------------------------------------------------------------------
  * Persian type (/fa). Unlayered so it beats the weight / tracking / leading utilities in components.
  *   Display weight (900): h1, h2, display classes, big numbers and anything marked .fa-display.
- *   Lahzeh for everything (owner: "all bold"): headings 900 · body, captions & footer 700 · UI 800 · strong 900.
+ *   Lahzeh for everything: headings 900 (owner: keep them bold) · body, captions & footer 400 · lead 500
+ *   · UI and eyebrows 700 · strong 700 (owner: "less bold except the headings").
  * ------------------------------------------------------------------------- */
 
 /* Persian is never letter-spaced: tracking breaks the letter joins. */
@@ -662,16 +663,16 @@ html.lenis {
   line-height: 1.9;
 }
 :lang(fa) :is(.btn, .chip, .chip-check, nav a:not(footer *), .t-eyebrow, .tagline) {
-  font-weight: 800;
+  font-weight: 700;
 }
 :lang(fa) footer :is(p, li, a, span):not(.fa-display, .fa-display *, .t-eyebrow, .tagline) {
-  font-weight: 700;
+  font-weight: 400;
 }
 :lang(fa) :is(figcaption, small, form p) {
-  font-weight: 700;
+  font-weight: 400;
 }
 :lang(fa) :is(strong, b):not(.fa-display *) {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* Display last, so it wins every tie with the role rules above. */
