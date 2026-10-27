@@ -147,7 +147,6 @@ export const en: Dict = {
     ],
   },
 
-  proofStrip: { label: "Shipped for" },
 
   system: {
     eyebrow: "OUR CORE OFFER",

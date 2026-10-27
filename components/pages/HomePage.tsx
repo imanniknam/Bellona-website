@@ -10,11 +10,10 @@ import { Start } from "../sections/Start";
 import { System } from "../sections/System";
 import { Team } from "../sections/Team";
 import { Testimonials } from "../sections/Testimonials";
-import { ClientMarquee, ClientStrip } from "../sections/Who";
 import { Work } from "../sections/Work";
 
 /**
- * Home: one story, in order. What we sell (hero) → proof we ship (marquee) → the pain → the core offer
+ * Home: one story, in order. What we sell (hero) → the pain → the core offer
  * → ways to start → work → how it goes → promises → who builds it → objections → contact.
  */
 export function HomePage({ locale }: { locale: Locale }) {
@@ -22,8 +21,6 @@ export function HomePage({ locale }: { locale: Locale }) {
   return (
     <>
       <Hero d={d} />
-      <ClientMarquee d={d} />
-      <ClientStrip d={d} />
       <div className="pt-24 lg:pt-32">
         <Problems d={d} />
       </div>

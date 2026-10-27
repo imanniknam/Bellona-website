@@ -130,7 +130,7 @@ export const projects: Project[] = [
     industries: ["education"],
     tone: "graphite",
     url: "https://codechee.ir",
-    cover: "/work/codechee/cover.jpg",
+    cover: "/work/codechee/cover-art.jpg",
     gallery: [
       desktop("/work/codechee/shot-1.jpg"),
       desktop("/work/codechee/shot-2.jpg"),

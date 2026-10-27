@@ -183,8 +183,6 @@ export interface Dict {
     projectsLabel: string;
     stats: { value: string; label: string }[];
   };
-  /** Marquee of the clients we shipped for (names come from content/work.ts). */
-  proofStrip: { label: string };
   /** The core offer: one system in three layers. */
   system: {
     eyebrow: string;

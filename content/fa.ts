@@ -142,7 +142,6 @@ export const fa: Dict = {
     ],
   },
 
-  proofStrip: { label: "ساخته‌شده برای" },
 
   system: {
     eyebrow: "پیشنهاد اصلی ما",

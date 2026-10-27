@@ -743,32 +743,3 @@ html.lenis {
   }
 }
 
-/* "Shipped for" marquee: two identical rows slide by one row's width. Paused on hover, static with reduced motion. */
-.marquee {
-  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-}
-.marquee-row {
-  animation: marquee 48s linear infinite;
-}
-.marquee:hover .marquee-row,
-.marquee:focus-within .marquee-row {
-  animation-play-state: paused;
-}
-[dir="rtl"] .marquee-row {
-  animation-name: marqueeRtl;
-}
-@keyframes marquee {
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes marqueeRtl {
-  to {
-    transform: translateX(100%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-row {
-    animation: none;
-  }
-}
