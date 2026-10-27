@@ -743,3 +743,35 @@ html.lenis {
   }
 }
 
+/* Mobile menu: the drawer slides in from the inline end over a fading backdrop. */
+@keyframes menuFade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes menuSlide {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes menuSlideRtl {
+  from {
+    transform: translateX(-100%);
+  }
+}
+.menu-backdrop {
+  animation: menuFade 0.3s ease-out;
+}
+.menu-panel {
+  animation: menuSlide 0.45s var(--ease-out);
+}
+[dir="rtl"] .menu-panel {
+  animation-name: menuSlideRtl;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-backdrop,
+  .menu-panel {
+    animation: none;
+  }
+}
+
