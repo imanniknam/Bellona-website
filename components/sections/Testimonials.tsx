@@ -29,7 +29,7 @@ export function Testimonials({ d }: { d: Dict }) {
                   <blockquote className="text-xl leading-normal">&ldquo;{c.quote}&rdquo;</blockquote>
                   <figcaption className="mt-auto flex items-center gap-3">
                     {t.avatar ? (
-                      <Image src={t.avatar} alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
+                      <Image src={t.avatar} alt={c.name} width={44} height={44} className="size-11 rounded-full object-cover" />
                     ) : (
                       <span aria-hidden="true" className={`size-11 rounded-full ${dot[i % 3]}`} />
                     )}

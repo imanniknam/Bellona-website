@@ -239,6 +239,8 @@ export interface Dict {
     filterAll: string;
     byIndustry: string;
     placeholderImage: string;
+    /** Alt text for a project cover; {title} is replaced with the project name. */
+    coverAlt: string;
     placeholderNote: string;
     view: string;
     caseStudy: {

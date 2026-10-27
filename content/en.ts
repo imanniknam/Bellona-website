@@ -600,6 +600,7 @@ export const en: Dict = {
     filterAll: "All",
     byIndustry: "By industry",
     placeholderImage: "[PROJECT IMAGE]",
+    coverAlt: "{title}: website designed and built by Bellona",
     placeholderNote: "Case study coming soon",
     view: "View case study",
     caseStudy: {

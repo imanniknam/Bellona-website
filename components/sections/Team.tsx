@@ -7,7 +7,7 @@ import { Eyebrow, StickySplit } from "../ui";
 
 function Avatar({ m, index }: { m: TeamMember; index: number }) {
   if (m.photo) {
-    return <Image src={m.photo} alt="" width={160} height={160} className="size-20 rounded-full object-cover" />;
+    return <Image src={m.photo} alt={m.name} width={160} height={160} className="size-20 rounded-full object-cover" />;
   }
   return (
     <span
