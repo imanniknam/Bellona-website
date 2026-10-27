@@ -31,8 +31,8 @@
 
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   /* Persian (/fa). Jakarta stays in the stack so Latin words inside Persian text render cleanly. */
-  --font-fa-display: var(--font-lalezar), var(--font-estedad), var(--font-jakarta), sans-serif;
-  --font-fa-body: var(--font-estedad), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-fa-display: var(--font-lahzeh), var(--font-jakarta), sans-serif;
+  --font-fa-body: var(--font-lahzeh), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 
   --radius-card: 28px;
@@ -63,7 +63,7 @@
   :lang(fa) body,
   body:lang(fa) {
     font-family: var(--font-fa-body);
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.9;
   }
   ::selection {
@@ -211,12 +211,12 @@
   }
   :lang(fa) .t-lead {
     line-height: 1.9;
-    font-weight: 500;
+    font-weight: 700;
   }
   :lang(fa) .t-eyebrow {
     font-family: var(--font-fa-body);
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: none;
   }
   :lang(fa) .tagline {
@@ -647,9 +647,8 @@ html.lenis {
 
 /* ---------------------------------------------------------------------------
  * Persian type (/fa). Unlayered so it beats the weight / tracking / leading utilities in components.
- *   Lalezar (display): h1, h2, display classes, big numbers and anything marked .fa-display.
- *   Estedad: everything else. Body 500 · UI (buttons, nav, tags, eyebrows) 700 · captions & footer 500
- *   · small emphasis (strong) 800. (Lighter than before at the owner's request: less busy, easier on the eye.)
+ *   Display weight (900): h1, h2, display classes, big numbers and anything marked .fa-display.
+ *   Lahzeh for everything (owner: "all bold"): headings 900 · body, captions & footer 700 · UI 800 · strong 900.
  * ------------------------------------------------------------------------- */
 
 /* Persian is never letter-spaced: tracking breaks the letter joins. */
@@ -663,24 +662,24 @@ html.lenis {
   line-height: 1.9;
 }
 :lang(fa) :is(.btn, .chip, .chip-check, nav a:not(footer *), .t-eyebrow, .tagline) {
-  font-weight: 700;
+  font-weight: 800;
 }
 :lang(fa) footer :is(p, li, a, span):not(.fa-display, .fa-display *, .t-eyebrow, .tagline) {
-  font-weight: 500;
+  font-weight: 700;
 }
 :lang(fa) :is(figcaption, small, form p) {
-  font-weight: 500;
+  font-weight: 700;
 }
 :lang(fa) :is(strong, b):not(.fa-display *) {
-  font-weight: 800;
+  font-weight: 900;
 }
 
 /* Display last, so it wins every tie with the role rules above. */
-/* Display face (Lalezar): one weight, never synthesised; emphasis inside it is colour only. */
+/* Display (Lahzeh Black): one weight for headings, never synthesised; emphasis inside it is colour only. */
 :lang(fa) :is(h1, h2:not(.t-eyebrow), .t-hero, .t-h1, .t-h2, .t-h2-sm, .t-h3, .t-num, .fa-display),
 :lang(fa) :is(h1, h2:not(.t-eyebrow), .t-hero, .t-h1, .t-h2, .t-h2-sm, .t-h3, .t-num, .fa-display) * {
   font-family: var(--font-fa-display);
-  font-weight: 400;
+  font-weight: 900;
   font-synthesis: none;
 }
 :lang(fa) :is(h1, h2:not(.t-eyebrow), .t-hero, .t-h1, .t-h2, .t-h2-sm, .t-h3, .fa-display) {
