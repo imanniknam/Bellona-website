@@ -103,7 +103,9 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
   const h = guidesHub[locale];
   const c = s[locale];
   const draft = s.status !== "published";
-  const author = s.author ? d.team.members.find((m) => m.name === s.author || m.name.includes(s.author ?? "")) : undefined;
+  // `author` may list the name in each language, separated by "|".
+  const names = s.author ? s.author.split("|") : [];
+  const author = d.team.members.find((m) => names.includes(m.name));
   const updated = s.updated ? new Date(s.updated) : null;
   const dateText = updated ? new Intl.DateTimeFormat(locale === "fa" ? "fa-IR" : "en-GB", { dateStyle: "long" }).format(updated) : null;
   const url = `${siteUrl}${localePath(locale, spokePath(s))}`;

@@ -59,11 +59,15 @@ export function pageMetadata({
  * Case-study <title>: "Konjed: Education, Gamified learning" / «کنجد؛ آموزش، یادگیری گیمیفای‌شده».
  * Long ones keep only the most specific sector part, so the full title stays around 60 characters.
  */
-export function caseStudyTitle(locale: Locale, title: string, sector: string): string {
+export function caseStudyTitle(locale: Locale, title: string, sector: string, website = false): string {
   const parts = sector.split(" · ");
-  const join = (s: string) => (locale === "fa" ? `${title}؛ ${s}` : `${title}: ${s}`);
+  // Persian website projects lead with «طراحی سایت» (the main search term, docs/seo keyword C1).
+  const name = locale === "fa" && website ? `طراحی سایت ${title}` : title;
+  const join = (s: string) => (locale === "fa" ? `${name}؛ ${s}` : `${name}: ${s}`);
   const full = join(parts.join(locale === "fa" ? "، " : ", "));
-  return full.length > 50 ? join(parts[parts.length - 1]) : full;
+  if (full.length <= 50) return full;
+  const short = join(parts[parts.length - 1]);
+  return short.length <= 56 ? short : name;
 }
 
 export const baseMetadata = (locale: Locale): Metadata => {

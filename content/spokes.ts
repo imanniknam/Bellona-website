@@ -222,7 +222,8 @@ export const spokes: Spoke[] = [
     slug: "nextjs",
     parent: "website-design",
     need: "web",
-    status: "draft",
+    // Published 2026-10-27 (owner: push SEO). Questions still waiting on facts stay hidden until answered.
+    status: "published",
     needs: [3, 4, 30],
     en: {
       metaTitle: "Next.js website design: fast, bilingual, SEO-ready",
@@ -304,17 +305,426 @@ export const spokes: Spoke[] = [
     },
   },
 
+  // --------------------------------------------------------------------------------------- e-commerce website design (C1)
+  {
+    kind: "service",
+    slug: "ecommerce",
+    parent: "website-design",
+    need: "web",
+    status: "published",
+    needs: [],
+    en: {
+      metaTitle: "E-commerce website design: custom online stores",
+      metaDescription:
+        "Custom online stores, designed and coded from scratch: product discovery, cart and checkout, online payment and an admin panel your team runs. Examples: Sabzino, Nira Perfume, Mojasame Saidi, Elm-Kala.",
+      eyebrow: "Website design",
+      h1: "E-commerce **website design**",
+      definition:
+        "An e-commerce website is a store that sells online end to end: customers find products, add them to a cart, pay online and track orders, while the team manages products, stock, prices and orders from an admin panel.",
+      answers: [
+        {
+          q: "What does a custom online store include?",
+          a: "Product categories and search, product pages, a cart and checkout, customer accounts, online payment, and an admin panel for products, stock, prices and orders. It is fast on mobile, ready for search engines, and every form is validated so orders arrive complete.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "Categories, search and curated collections",
+                "Cart, checkout and customer accounts",
+                "Online payment through an Iranian gateway (e.g. Zarinpal)",
+                "Admin panel: products, stock, prices and orders",
+                "Mobile-first, SEO-ready pages",
+              ],
+            },
+          ],
+        },
+        {
+          q: "Which online stores have you built?",
+          a: "Sabzino (cart, accounts, Zarinpal payment and an independent admin panel), Nira Perfume (a brand-led storefront with search and cart), Mojasame Saidi (a premium, mobile-first store on Next.js with Prisma and PostgreSQL) and Elm-Kala (a guided store for scientific and educational equipment).",
+          details: [
+            {
+              kind: "links",
+              items: [
+                { label: "Sabzino", href: "/work/sabzino" },
+                { label: "Nira Perfume", href: "/work/nira-perfume" },
+                { label: "Mojasame Saidi", href: "/work/mojasame-saidi" },
+                { label: "Elm-Kala", href: "/work/elm-kala" },
+              ],
+            },
+          ],
+        },
+        {
+          q: "Custom store or a ready-made platform?",
+          a: "A ready-made platform is quicker to open; a custom store is built around how you sell, so it is faster, looks like your brand, and can grow features a template cannot, such as guided buying or a custom-order flow. We design and code the store itself, without a template.",
+        },
+        {
+          q: "How do I get a price for my online store?",
+          a: "Book the free growth audit. In 30 minutes we look at your products and how you sell, and if it fits you get a fixed quote in writing with scope, price and timeline.",
+          details: [{ kind: "links", items: [{ label: "Book the free growth audit", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+    fa: {
+      metaTitle: "طراحی سایت فروشگاهی و فروشگاه اینترنتی اختصاصی",
+      metaDescription:
+        "طراحی سایت فروشگاهی اختصاصی، بدون قالب آماده: دسته‌بندی و جست‌وجوی محصول، سبد خرید، پرداخت آنلاین و پنل مدیریت سفارش. نمونه‌ها: سبزینو، عطر نیرا، مجسمه سعیدی و علم‌کالا.",
+      eyebrow: "طراحی سایت",
+      h1: "طراحی سایت **فروشگاهی**",
+      definition:
+        "سایت فروشگاهی (فروشگاه اینترنتی) فروش را از اول تا آخر آنلاین می‌کند: مشتری محصول را پیدا می‌کند، به سبد خرید اضافه می‌کند، آنلاین پرداخت می‌کند و سفارشش را پیگیری می‌کند؛ تیم شما هم محصول، موجودی، قیمت و سفارش‌ها را از پنل مدیریت اداره می‌کند.",
+      answers: [
+        {
+          q: "طراحی سایت فروشگاهی شامل چه چیزهایی است؟",
+          a: "دسته‌بندی و جست‌وجوی محصول، صفحه‌ی محصول، سبد خرید و تسویه‌حساب، حساب کاربری مشتری، پرداخت آنلاین و پنل مدیریت محصول، موجودی، قیمت و سفارش. فروشگاه روی موبایل سریع است، برای سئو آماده است و فرم‌های مسیر خرید اعتبارسنجی می‌شوند تا سفارش کامل برسد.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "دسته‌بندی، جست‌وجو و مجموعه‌های منتخب",
+                "سبد خرید، تسویه‌حساب و حساب مشتری",
+                "پرداخت آنلاین با درگاه ایرانی (مثل زرین‌پال)",
+                "پنل مدیریت: محصول، موجودی، قیمت و سفارش",
+                "صفحه‌های موبایل‌محور و آماده‌ی سئو",
+              ],
+            },
+          ],
+        },
+        {
+          q: "چه فروشگاه‌های اینترنتی‌ای طراحی کرده‌اید؟",
+          a: "فروشگاه اجتماعی سبزینو (سبد خرید، حساب مشتری، پرداخت زرین‌پال و پنل مدیریت مستقل)، عطر نیرا (ویترین برندمحور با جست‌وجو و سبد خرید)، فروشگاه مجسمه سعیدی (فروشگاه پریمیوم موبایل‌محور با Next.js، Prisma و PostgreSQL) و فروشگاه تخصصی علم‌کالا (فروشگاه هدایت‌شده برای تجهیزات علمی و آموزشی).",
+          details: [
+            {
+              kind: "links",
+              items: [
+                { label: "فروشگاه اجتماعی سبزینو", href: "/work/sabzino" },
+                { label: "عطر نیرا", href: "/work/nira-perfume" },
+                { label: "فروشگاه مجسمه سعیدی", href: "/work/mojasame-saidi" },
+                { label: "فروشگاه تخصصی علم‌کالا", href: "/work/elm-kala" },
+              ],
+            },
+          ],
+        },
+        {
+          q: "فروشگاه اختصاصی بهتر است یا فروشگاه‌ساز آماده؟",
+          a: "فروشگاه‌ساز آماده سریع‌تر راه می‌افتد؛ فروشگاه اختصاصی بر اساس شیوه‌ی فروش شما ساخته می‌شود، پس سریع‌تر است، شبیه برند شماست و امکاناتی می‌گیرد که قالب نمی‌دهد، مثل خرید هدایت‌شده یا سفارش اختصاصی. ما خود فروشگاه را طراحی و کدنویسی می‌کنیم، بدون قالب آماده.",
+        },
+        {
+          q: "قیمت طراحی سایت فروشگاهی را چطور بگیرم؟",
+          a: "بررسی رایگان رشد را رزرو کنید. در ۳۰ دقیقه محصولات و روش فروش شما را بررسی می‌کنیم و اگر به توافق رسیدیم، قیمت قطعی و مکتوب با دامنه و زمان‌بندی می‌گیرید.",
+          details: [{ kind: "links", items: [{ label: "رزرو بررسی رایگان", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+  },
+
+  // --------------------------------------------------------------------------------------- corporate website design (C1)
+  {
+    kind: "service",
+    slug: "corporate",
+    parent: "website-design",
+    need: "web",
+    status: "published",
+    needs: [],
+    en: {
+      metaTitle: "Corporate website design: custom company websites",
+      metaDescription:
+        "Company websites designed and coded from scratch: a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready. Persian, English or both.",
+      eyebrow: "Website design",
+      h1: "Corporate **website design**",
+      definition:
+        "A corporate website is a company's main presence online: who you are, what you offer, proof that you deliver, and a clear way to get in touch. Its job is to turn the right visitors into enquiries.",
+      answers: [
+        {
+          q: "What does a corporate website include?",
+          a: "A home page built around one clear offer, service pages, an about page, case studies or a portfolio, and a contact page with forms that go straight to your email, Telegram or CRM. A content system lets your team edit text without a developer, and the site is fast and ready for search engines.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "Offer, page structure and copy direction",
+                "Custom UI/UX design, coded without a template",
+                "Service, about, portfolio and contact pages",
+                "Forms connected to email, Telegram or a CRM",
+                "Fast on mobile, SEO-ready, with analytics",
+              ],
+            },
+          ],
+        },
+        {
+          q: "Which company websites have you built?",
+          a: "Shamim House (a brand platform for a group of startups, with structured partnership forms), Contemo (a content-services platform with a live pricing engine), Microshamim (an innovation hub with several spaces explained clearly) and the national Iran School-Builders Charity portal.",
+          details: [
+            {
+              kind: "links",
+              items: [
+                { label: "Shamim House", href: "/work/shamim-house" },
+                { label: "Contemo", href: "/work/contemo" },
+                { label: "Microshamim", href: "/work/microshamim" },
+                { label: "Iran School-Builders Charity", href: "/work/school-builders" },
+              ],
+            },
+          ],
+        },
+        {
+          q: "Will the site help us get customers, not just look good?",
+          a: "That is what it is designed for: one clear offer, a strong call to action on every page and forms that are easy to fill. Forms can connect to AI automation, so every enquiry is answered and followed up in seconds instead of waiting in an inbox.",
+        },
+        {
+          q: "How do I get a price for our company website?",
+          a: "Book the free growth audit. We review what you have and what you need, and if it fits you get a fixed quote in writing with scope, price and timeline.",
+          details: [{ kind: "links", items: [{ label: "Book the free growth audit", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+    fa: {
+      metaTitle: "طراحی سایت شرکتی حرفه‌ای و اختصاصی",
+      metaDescription:
+        "طراحی سایت شرکتی اختصاصی و کدنویسی‌شده: پیشنهاد روشن، صفحه‌های خدمات و درباره ما، فرم‌هایی که مستقیم به ایمیل یا CRM می‌رسند، سریع روی موبایل و آماده‌ی سئو. فارسی، انگلیسی یا دوزبانه.",
+      eyebrow: "طراحی سایت",
+      h1: "طراحی سایت **شرکتی**",
+      definition:
+        "سایت شرکتی ویترین اصلی یک شرکت در اینترنت است: شما که هستید، چه ارائه می‌دهید، چه کارهایی کرده‌اید و چطور می‌شود با شما تماس گرفت. کارش این است که بازدیدکننده‌ی درست را به مشتری تبدیل کند.",
+      answers: [
+        {
+          q: "طراحی سایت شرکتی شامل چه چیزهایی است؟",
+          a: "صفحه‌ی اصلی بر پایه‌ی یک پیشنهاد روشن، صفحه‌های خدمات، درباره ما، نمونه‌کار و صفحه‌ی تماس با فرم‌هایی که مستقیم به ایمیل، تلگرام یا CRM شما می‌رسند. تیم‌تان می‌تواند متن‌ها را بدون برنامه‌نویس ویرایش کند و سایت سریع و آماده‌ی موتور جست‌وجوست.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "پیشنهاد، ساختار صفحه‌ها و جهت‌دهی متن",
+                "طراحی UI/UX اختصاصی و کدنویسی‌شده، بدون قالب",
+                "صفحه‌های خدمات، درباره ما، نمونه‌کار و تماس",
+                "فرم‌های وصل به ایمیل، تلگرام یا CRM",
+                "سریع روی موبایل، آماده‌ی سئو، با آنالیتیکس",
+              ],
+            },
+          ],
+        },
+        {
+          q: "چه سایت‌های شرکتی‌ای طراحی کرده‌اید؟",
+          a: "اکوسیستم خانه شمیم (پلتفرم برند برای مجموعه‌ای از استارتاپ‌ها با فرم‌های همکاری)، پلتفرم محتوایی کانتمو (با موتور قیمت‌گذاری زنده)، میکروشمیم (مرکز نوآوری با چند فضای مختلف) و پرتال ملی جامعه خیرین مدرسه‌ساز کشور.",
+          details: [
+            {
+              kind: "links",
+              items: [
+                { label: "اکوسیستم خانه شمیم", href: "/work/shamim-house" },
+                { label: "پلتفرم محتوایی کانتمو", href: "/work/contemo" },
+                { label: "میکروشمیم", href: "/work/microshamim" },
+                { label: "جامعه خیرین مدرسه‌ساز کشور", href: "/work/school-builders" },
+              ],
+            },
+          ],
+        },
+        {
+          q: "سایت شرکتی برای ما مشتری هم می‌آورد یا فقط ظاهر خوبی دارد؟",
+          a: "برای همین طراحی می‌شود: یک پیشنهاد روشن، دعوت به اقدام واضح در هر صفحه و فرم‌هایی که راحت پر می‌شوند. فرم‌ها می‌توانند به اتوماسیون هوش مصنوعی وصل شوند تا هر درخواست در چند ثانیه جواب بگیرد و پیگیری شود، نه اینکه در صندوق ایمیل بماند.",
+        },
+        {
+          q: "قیمت طراحی سایت شرکتی را چطور بگیرم؟",
+          a: "بررسی رایگان رشد را رزرو کنید. وضعیت فعلی و نیازتان را بررسی می‌کنیم و اگر به توافق رسیدیم، قیمت قطعی و مکتوب با دامنه و زمان‌بندی می‌گیرید.",
+          details: [{ kind: "links", items: [{ label: "رزرو بررسی رایگان", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+  },
+
+  // --------------------------------------------------------------------------------------- bilingual website design (C1)
+  {
+    kind: "service",
+    slug: "bilingual",
+    parent: "website-design",
+    need: "web",
+    status: "published",
+    needs: [],
+    en: {
+      metaTitle: "Bilingual website design: Persian and English",
+      metaDescription:
+        "Persian–English websites with separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
+      eyebrow: "Website design",
+      h1: "Bilingual **website design**",
+      definition:
+        "A bilingual website serves two languages as two complete versions of the same site, each with its own addresses and full translation. For Persian and English that also means a true right-to-left layout for Persian, not a mirrored English page.",
+      answers: [
+        {
+          q: "What makes a bilingual Persian–English website done right?",
+          a: "Each language has its own URLs and full translation; Persian gets a real right-to-left layout with Persian digits and proper fonts; the two versions link to each other with hreflang tags, so search engines show the right language; and editors manage both versions side by side.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "Separate URLs per language (e.g. / and /en)",
+                "True right-to-left layout and Persian typography",
+                "hreflang and language tags for search engines",
+                "Language switch to the same page in the other language",
+                "Content edited in both languages from one place",
+              ],
+            },
+          ],
+        },
+        {
+          q: "Which bilingual websites have you built?",
+          a: "ASA-Study, an admissions platform for international students with full Persian and English routing and right-to-left behaviour; and this site, which serves Persian and English as two linked versions of every page.",
+          details: [{ kind: "links", items: [{ label: "ASA-Study", href: "/work/asa-study" }] }],
+        },
+        {
+          q: "Does a bilingual website help SEO?",
+          a: "Yes, when it is built correctly. Each language version can rank on its own for searches in that language, and hreflang tells search engines which version to show. A machine-translated or mirrored page usually does the opposite.",
+        },
+        {
+          q: "How do I get a price for a bilingual website?",
+          a: "Book the free growth audit. We look at both audiences and the content you have, and if it fits you get a fixed quote in writing.",
+          details: [{ kind: "links", items: [{ label: "Book the free growth audit", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+    fa: {
+      metaTitle: "طراحی سایت دوزبانه فارسی و انگلیسی",
+      metaDescription:
+        "طراحی سایت دوزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌به‌چپ واقعی، برچسب‌های زبان درست برای گوگل و ویرایش محتوا در هر دو زبان. نمونه‌ها: ASA-Study و همین سایت.",
+      eyebrow: "طراحی سایت",
+      h1: "طراحی سایت **دوزبانه**",
+      definition:
+        "سایت دوزبانه دو نسخه‌ی کامل از یک سایت است، هر زبان با آدرس‌ها و ترجمه‌ی کامل خودش. برای فارسی و انگلیسی یعنی نسخه‌ی فارسی چیدمان راست‌به‌چپ واقعی دارد، نه یک صفحه‌ی انگلیسی که فقط برعکس شده.",
+      answers: [
+        {
+          q: "سایت دوزبانه‌ی فارسی و انگلیسی درست چه ویژگی‌هایی دارد؟",
+          a: "هر زبان آدرس و ترجمه‌ی کامل خودش را دارد؛ نسخه‌ی فارسی چیدمان راست‌به‌چپ واقعی، اعداد فارسی و فونت مناسب دارد؛ دو نسخه با برچسب hreflang به هم وصل‌اند تا گوگل زبان درست را نشان دهد؛ و تیم شما محتوای هر دو زبان را کنار هم ویرایش می‌کند.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "آدرس جدا برای هر زبان (مثل / و /en)",
+                "چیدمان راست‌به‌چپ واقعی و تایپوگرافی فارسی",
+                "برچسب‌های hreflang و زبان برای موتور جست‌وجو",
+                "دکمه‌ی تغییر زبان به همان صفحه در زبان دیگر",
+                "ویرایش محتوای هر دو زبان از یک جا",
+              ],
+            },
+          ],
+        },
+        {
+          q: "چه سایت‌های دوزبانه‌ای طراحی کرده‌اید؟",
+          a: "سامانه پذیرش ASA-Study، پلتفرمی برای دانشجویان بین‌المللی با مسیرهای کامل فارسی و انگلیسی و رفتار راست‌به‌چپ؛ و همین سایت، که هر صفحه را در دو نسخه‌ی فارسی و انگلیسیِ به‌هم‌پیوسته ارائه می‌کند.",
+          details: [{ kind: "links", items: [{ label: "سامانه پذیرش ASA-Study", href: "/work/asa-study" }] }],
+        },
+        {
+          q: "سایت دوزبانه به سئو کمک می‌کند؟",
+          a: "بله، اگر درست ساخته شود. هر نسخه می‌تواند برای جست‌وجوهای زبان خودش جداگانه رتبه بگیرد و hreflang به گوگل می‌گوید کدام نسخه را نشان دهد. صفحه‌ی ترجمه‌ی ماشینی یا برعکس‌شده معمولاً نتیجه‌ی عکس دارد.",
+        },
+        {
+          q: "قیمت طراحی سایت دوزبانه را چطور بگیرم؟",
+          a: "بررسی رایگان رشد را رزرو کنید. مخاطبان هر دو زبان و محتوای موجودتان را بررسی می‌کنیم و اگر به توافق رسیدیم، قیمت قطعی و مکتوب می‌گیرید.",
+          details: [{ kind: "links", items: [{ label: "رزرو بررسی رایگان", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+  },
+
+  // --------------------------------------------------------------------------------------- website redesign (C1)
+  {
+    kind: "service",
+    slug: "redesign",
+    parent: "website-design",
+    need: "web",
+    status: "published",
+    needs: [],
+    en: {
+      metaTitle: "Website redesign and migration without losing SEO",
+      metaDescription:
+        "Redesign your website or move it off WordPress without losing traffic: every post, tag and author migrated, old links redirected, and the site kept online throughout. Example: Dane Scientific News.",
+      eyebrow: "Website design",
+      h1: "Website **redesign**",
+      definition:
+        "A website redesign rebuilds an existing site's design, structure or platform while keeping what already works: its content, its search rankings and the links people already use.",
+      answers: [
+        {
+          q: "How do you redesign a website without losing SEO?",
+          a: "We start by listing what works: pages that bring traffic, links others point to, content worth keeping. Then every old address gets a permanent redirect to its new page, content and metadata are migrated, and the new site is checked before and after launch so no link breaks.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "Audit: traffic pages, backlinks and content worth keeping",
+                "New structure, design and build",
+                "Content migration: posts, tags, authors, media",
+                "Permanent (301) redirects for every old URL",
+                "Launch check: no broken links, sitemap resubmitted",
+              ],
+            },
+          ],
+        },
+        {
+          q: "Have you migrated a site off WordPress?",
+          a: `Yes. Dane Scientific News moved from WordPress to a custom Next.js and Payload CMS platform: ${fmt.n(facts.projects.dane.migratedPosts, "en")} posts with their tags and authors migrated, a messy taxonomy tidied, and every old link kept working.`,
+          details: [{ kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }] }],
+        },
+        {
+          q: "Does our site go offline during the redesign?",
+          a: "No. The new site is built and tested separately and replaces the old one only when it is ready. We can also improve the current site step by step, for example by connecting automation first.",
+        },
+        {
+          q: "How do I get a price for a redesign?",
+          a: "Book the free growth audit. We review the current site and what should change, and if it fits you get a fixed quote in writing.",
+          details: [{ kind: "links", items: [{ label: "Book the free growth audit", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+    fa: {
+      metaTitle: "بازطراحی سایت و انتقال از وردپرس بدون افت سئو",
+      metaDescription:
+        "بازطراحی سایت یا انتقال از وردپرس بدون از دست دادن ترافیک: انتقال همه‌ی مطالب، برچسب‌ها و نویسنده‌ها، ریدایرکت لینک‌های قدیمی و آنلاین ماندن سایت در تمام مدت. نمونه: پایگاه علمی خبری دانه.",
+      eyebrow: "طراحی سایت",
+      h1: "بازطراحی **سایت**",
+      definition:
+        "بازطراحی سایت یعنی طراحی، ساختار یا پلتفرم یک سایت موجود را از نو بسازید و در عین حال چیزهایی را که کار می‌کنند نگه دارید: محتوا، رتبه در گوگل و لینک‌هایی که دیگران به آن داده‌اند.",
+      answers: [
+        {
+          q: "چطور سایت را بازطراحی کنیم بدون اینکه سئو افت کند؟",
+          a: "اول فهرست می‌کنیم چه چیزهایی جواب می‌دهد: صفحه‌های پرترافیک، لینک‌هایی که سایت‌های دیگر داده‌اند و محتوای ارزشمند. بعد برای هر آدرس قدیمی ریدایرکت دائمی به صفحه‌ی جدید می‌گذاریم، محتوا و متادیتا را منتقل می‌کنیم و سایت جدید را قبل و بعد از انتشار بررسی می‌کنیم تا هیچ لینکی نشکند.",
+          details: [
+            {
+              kind: "steps",
+              items: [
+                "بررسی: صفحه‌های پرترافیک، بک‌لینک‌ها و محتوای ارزشمند",
+                "ساختار، طراحی و ساخت جدید",
+                "انتقال محتوا: مطالب، برچسب‌ها، نویسنده‌ها و تصاویر",
+                "ریدایرکت دائمی (۳۰۱) برای همه‌ی آدرس‌های قدیمی",
+                "بررسی بعد از انتشار: بدون لینک شکسته، ارسال دوباره‌ی نقشه‌ی سایت",
+              ],
+            },
+          ],
+        },
+        {
+          q: "سایتی را از وردپرس منتقل کرده‌اید؟",
+          a: `بله. پایگاه علمی خبری دانه از وردپرس به پلتفرم اختصاصی Next.js و Payload CMS منتقل شد: ${fmt.n(facts.projects.dane.migratedPosts, "fa")} مطلب با برچسب‌ها و نویسنده‌هایشان منتقل شد، طبقه‌بندی شلوغ مرتب شد و همه‌ی لینک‌های قدیمی سالم ماندند.`,
+          details: [{ kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی خبری دانه", href: "/work/dane-news" }] }],
+        },
+        {
+          q: "سایت ما در زمان بازطراحی از دسترس خارج می‌شود؟",
+          a: "نه. سایت جدید جداگانه ساخته و تست می‌شود و فقط وقتی آماده شد جای قبلی را می‌گیرد. می‌شود سایت فعلی را هم قدم‌به‌قدم بهتر کرد؛ مثلاً اول اتوماسیون را به آن وصل کنیم.",
+        },
+        {
+          q: "قیمت بازطراحی سایت را چطور بگیرم؟",
+          a: "بررسی رایگان رشد را رزرو کنید. سایت فعلی و چیزهایی را که باید تغییر کند بررسی می‌کنیم و اگر به توافق رسیدیم، قیمت قطعی و مکتوب می‌گیرید.",
+          details: [{ kind: "links", items: [{ label: "رزرو بررسی رایگان", href: "/contact?need=web" }] }],
+        },
+      ],
+    },
+  },
+
   // --------------------------------------------------------------------------------------- website cost guide (C2)
   {
     kind: "guide",
     slug: "website-design-cost",
     need: "web",
-    status: "draft",
-    updated: null,
-    author: null,
+    // Published without figures: the price questions stay hidden until docs/seo/QUESTIONS_FOR_TEAM.md #30 is answered.
+    status: "published",
+    updated: "2026-10-27",
+    author: "Amirhossein Bazdar|امیرحسین بازدار",
     needs: [30, 33],
     en: {
-      metaTitle: "Website design cost in 2026: real ranges and cost drivers",
+      metaTitle: "Website design cost in 2026: what drives the price",
       metaDescription: "What a website costs and why: the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
       eyebrow: "Guide",
       h1: "How much does **a website** cost?",
@@ -352,7 +762,7 @@ export const spokes: Spoke[] = [
       ],
     },
     fa: {
-      metaTitle: "قیمت طراحی سایت ۱۴۰۵؛ بازه‌های واقعی و عوامل هزینه",
+      metaTitle: "قیمت طراحی سایت ۱۴۰۵؛ چه چیزی هزینه را تعیین می‌کند",
       metaDescription: "طراحی سایت چقدر هزینه دارد و چرا: عواملی که قیمت را بالا و پایین می‌برند، هر سطح چه چیزی دارد، هزینه‌های بعد از راه‌اندازی و راه گرفتن قیمت قطعی.",
       eyebrow: "راهنما",
       h1: "قیمت طراحی سایت **چقدر است؟**",

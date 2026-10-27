@@ -181,3 +181,25 @@ To preview drafts, build with `SHOW_DRAFTS=1` (for example in a separate Render 
 - Expanding the existing service pages (P1-03…05) and case-study outcomes (P1-06): they need the same facts.
 - The education page (P1-12) exists; answer-first sections can be added once outcomes are supplied.
 - Phase E (alt text, HTML weight, fonts) and Phase F (form field) are not started.
+
+## 9. Persian-first and «طراحی سایت» push (2026-10-26 → 27, branch `farsi`)
+
+Full Persian report: [SEO_REPORT_FA.md](SEO_REPORT_FA.md).
+
+- **Locales swapped:** Persian at `/`, English at `/en`; `/fa/*` 308-redirects to `/*`; hreflang `x-default` → fa; `seo-check.mjs` follows the new prefix.
+- **Published spokes** (no invented facts; `a: null` answers stay hidden until QUESTIONS_FOR_TEAM #3, #4, #30 are answered):
+  - New: `/services/website-design/{ecommerce,corporate,bilingual,redesign}`
+  - Was draft: `/services/website-design/nextjs` and `/guides/website-design-cost` (author Amirhossein Bazdar, updated 2026-10-27). The guide's title no longer promises "real ranges".
+- **Titles:**
+  - Persian home, website-design pillar, work, about and contact lead with «طراحی سایت».
+  - Persian web case studies are titled «طراحی سایت <project>؛ …» (`caseStudyTitle(..., website)`).
+  - The duplicated «· بلونا · بلونا» suffix is removed.
+- **Brand:** «آژانس بلونا» appears in the hero tagline and the first paragraph; more `alternateName` spellings in the schema.
+- **Images:** project covers get keyword alt text, team and testimonial photos get names. There were 64 empty-alt warnings; there are now 0.
+- **Internal links:** a second footer row links every published spoke and guide sitewide. `SpokePages` author lookup accepts "EN name|FA name".
+- **seo:check:** 78 sitemap URLs, 114 internal links, 0 errors, 0 warnings.
+- **Not done (needs the owner):**
+  - Deploy `farsi` to Vercel (bellonaagency.com still serves the old English-first build).
+  - Search Console and Bing verification plus sitemap submission.
+  - `CANONICAL_HOST_MODE=redirect` on Render.
+  - Backlinks and directory listings.

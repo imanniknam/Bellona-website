@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     locale,
     path: `/work/${slug}`,
-    title: caseStudyTitle(locale, c.title, c.sector),
+    title: caseStudyTitle(locale, c.title, c.sector, project.pillars.includes("web")),
     description: c.summary,
     noindex: project.status !== "published",
   });

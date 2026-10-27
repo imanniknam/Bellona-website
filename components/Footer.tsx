@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Dict } from "@/content/types";
+import { guidesHub } from "@/content/spokes";
+import { publishedSpokes, spokePath } from "@/lib/drafts";
 import { localePath } from "@/lib/i18n";
 import { legalPagesPublished } from "@/lib/site";
 import { LogoMark } from "./LogoMark";
@@ -16,6 +18,10 @@ function InstagramIcon() {
 
 export function Footer({ d }: { d: Dict }) {
   const { common, locale } = d;
+  const spokeLinks = [...publishedSpokes("service"), ...publishedSpokes("guide")].map((s) => ({
+    href: spokePath(s),
+    label: s[locale].h1.replace(/\*\*/g, ""),
+  }));
   return (
     <footer className="on-dark bg-ink text-paper">
       <div className="wrap flex flex-col gap-10 pb-6 pt-10">
@@ -58,6 +64,23 @@ export function Footer({ d }: { d: Dict }) {
             ))}
           </ul>
         </nav>
+        {/* Sitewide crawl path to the published sub-pages and guides (e.g. «طراحی سایت فروشگاهی»). */}
+        {spokeLinks.length > 0 && (
+          <nav aria-labelledby="footer-deeper" className="flex flex-wrap items-baseline gap-x-7 gap-y-3">
+            <p id="footer-deeper" className="t-eyebrow text-orange-on-dark">
+              {guidesHub[locale].deeper}
+            </p>
+            <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
+              {spokeLinks.map((s) => (
+                <li key={s.href}>
+                  <Link href={localePath(locale, s.href)} className="text-soft-dark hover:text-orange">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-muted-dark">
           <p>{common.footer.rights}</p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
