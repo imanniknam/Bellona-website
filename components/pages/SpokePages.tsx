@@ -5,7 +5,7 @@ import { publishedSpokes, visibleSpokes, spokePath } from "@/lib/drafts";
 import { digits } from "@/lib/format";
 import { getDict, localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
-import { FaqLd, ORG_ID, personId, ServiceNodeLd } from "../JsonLd";
+import { FaqLd, ItemListLd, ORG_ID, personId, ServiceNodeLd } from "../JsonLd";
 import { ogImagePath } from "@/lib/metadata";
 import { Breadcrumbs } from "../Breadcrumbs";
 import { Answers } from "../sections/Answers";
@@ -129,33 +129,63 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
   );
 }
 
-/** /guides */
+/** /guides: grouped by topic; every card has a short summary, the author and the last-updated date (SEO-GUIDELINE 5-2). */
 export function GuidesHubPage({ locale }: { locale: Locale }) {
   const guides = visibleSpokes("guide");
   if (!guides.length) notFound();
   const d = getDict(locale);
   const h = guidesHub[locale];
+  const dateFormat = new Intl.DateTimeFormat(locale === "fa" ? "fa-IR" : "en-GB", { dateStyle: "long" });
+  const groups = (["web", "growth", "ai"] as const).map((need) => ({ need, items: guides.filter((g) => g.need === need) })).filter((g) => g.items.length);
   return (
     <>
       <Breadcrumbs d={d} trail={[{ name: h.eyebrow, path: "/guides" }]} />
       <PageHero eyebrow={h.eyebrow} title={h.h1} sub={h.sub} />
-      <section aria-label={h.eyebrow} className="wrap pb-24">
-        <ul className="grid gap-4 md:grid-cols-2">
-          {guides.map((g) => (
-            <li key={g.slug}>
-              <LLink locale={locale} href={spokePath(g)} className="card lift group flex h-full flex-col gap-3 border border-line p-7">
-                <span className="t-h3">{g[locale].h1.replace(/\*\*/g, "")}</span>
-                <span className="leading-relaxed text-muted">{g[locale].metaDescription}</span>
-                <span className="mt-auto inline-flex items-center gap-2 font-semibold group-hover:text-orange-text">
-                  {h.read}
-                  <ArrowIcon size={16} />
-                </span>
-              </LLink>
-            </li>
-          ))}
-        </ul>
+      <section aria-label={h.eyebrow} className="wrap flex flex-col gap-14 pb-24">
+        <p className="t-lead max-w-3xl text-body">{h.intro}</p>
+        {groups.map(({ need, items }) => (
+          <div key={need} className="flex flex-col gap-6">
+            <h2 className="t-h2-sm">{h.groups[need]}</h2>
+            <ul className="grid gap-4 md:grid-cols-2">
+              {items.map((g) => {
+                const author = g.author ? d.team.members.find((m) => g.author?.split("|").includes(m.name)) : undefined;
+                return (
+                  <li key={g.slug}>
+                    <LLink locale={locale} href={spokePath(g)} className="card lift group flex h-full flex-col gap-3 border border-line p-7">
+                      <span className="t-h3">{g[locale].h1.replace(/\*\*/g, "")}</span>
+                      <span className="leading-relaxed text-muted">{g[locale].definition}</span>
+                      {(author || g.updated) && (
+                        <span className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted">
+                          {author && (
+                            <span>
+                              {h.by}: {author.name}
+                            </span>
+                          )}
+                          {g.updated && (
+                            <span>
+                              {h.lastUpdated}: <time dateTime={g.updated}>{dateFormat.format(new Date(g.updated))}</time>
+                            </span>
+                          )}
+                        </span>
+                      )}
+                      <span className="mt-auto inline-flex items-center gap-2 font-semibold group-hover:text-orange-text">
+                        {h.read}
+                        <ArrowIcon size={16} />
+                      </span>
+                    </LLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
       </section>
       <Contact d={d} />
+      <ItemListLd
+        name={h.h1.replace(/\*\*/g, "")}
+        url={`${siteUrl}${localePath(locale, "/guides")}`}
+        items={guides.map((g) => ({ name: g[locale].h1.replace(/\*\*/g, ""), url: `${siteUrl}${localePath(locale, spokePath(g))}` }))}
+      />
     </>
   );
 }

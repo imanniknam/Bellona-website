@@ -62,7 +62,15 @@ export function OrganizationLd({ d }: { d: Dict }) {
         slogan: d.common.tagline,
         availableLanguage: LANGUAGES,
         knowsAbout: KNOWS_ABOUT[d.locale],
-        contactPoint: [{ "@type": "ContactPoint", contactType: "sales", email: d.common.email, availableLanguage: LANGUAGES }],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            email: d.common.email,
+            ...((d.common.channels ?? []).find((c) => c.href.startsWith("tel:")) ? { telephone: (d.common.channels ?? []).find((c) => c.href.startsWith("tel:"))!.href.slice(4) } : {}),
+            availableLanguage: LANGUAGES,
+          },
+        ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: d.meta.services.title,
@@ -147,6 +155,21 @@ export function FaqLd({ items }: { items: Faq[] }) {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+      }}
+    />
+  );
+}
+
+/** A list page (the guides hub): the pages it lists, in order. */
+export function ItemListLd({ name, url, items }: { name: string; url: string; items: { name: string; url: string }[] }) {
+  return (
+    <Script
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": `${url}#list`,
+        name,
+        itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, url: it.url })),
       }}
     />
   );

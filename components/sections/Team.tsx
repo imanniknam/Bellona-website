@@ -25,7 +25,7 @@ function Avatar({ m, index }: { m: TeamMember; index: number }) {
 export function Team({ d, headless = false }: { d: Dict; headless?: boolean }) {
   const { team } = d;
   return (
-    <section id="team" aria-labelledby="team-title" className="section">
+    <section data-shared="" id="team" aria-labelledby="team-title" className="section">
       <StickySplit
         wide
         head={

@@ -43,7 +43,7 @@ export const extra: Extra = {
     fa: [
       {
         q: "اعتبارسنجی تحریریه در دانه چه چیزهایی را می‌سنجد؟",
-        a: "پلتفرم دانه برای یک تحریریه‌ی علمی ساخته شد، پس قواعد تحریریه در خود سیستم هستند: منبع، لید، کپشن، اعتبار تصویر و ساختار مطالب بلند اعتبارسنجی می‌شوند و مطلبی که ناقص باشد منتشر نمی‌شود.",
+        a: "پلتفرم دانه برای یک تحریریه‌ی علمی ساخته شد، پس قواعد تحریریه در خود سیستم هستند: منبع، لید، کپشن، اعتبار تصویر و ساختار مطالب بلند اعتبارسنجی می‌شوند و این‌ها در خود سیستم بررسی می‌شوند.",
         details: [
           p("مهاجرت فقط انتقال متن نبود. هر مطلب با برچسب‌ها و نویسنده‌اش منتقل شد و طبقه‌بندی شلوغ قبلی به ۸ دسته و ۱۰۵ موضوع رسید تا خواننده و موتور جست‌وجو بتوانند مسیر را دنبال کنند."),
           p("صفحه‌ی اصلی فهرست خبرهای مهم و ستون دسته‌بندی را نشان می‌دهد و بخش‌هایی مثل فضا و نجوم و فناوری هرکدام صفحه و ساختار خودشان را دارند. تحریریه این بخش‌ها را از Payload CMS مدیریت می‌کند، نه از قالب وردپرس."),
@@ -53,7 +53,7 @@ export const extra: Extra = {
     en: [
       {
         q: "What does editorial validation check on Dane?",
-        a: "The Dane platform was built for a science newsroom, so the editorial rules live in the system itself: sources, leads, captions, image credits and the structure of long-form pieces are validated, and an incomplete piece does not go out.",
+        a: "The Dane platform was built for a science newsroom, so the editorial rules live in the system itself: sources, leads, captions, image credits and the structure of long-form pieces are validated, and are checked inside the system.",
         details: [
           p("The migration was more than moving text. Every post moved with its tags and author, and the sprawling old taxonomy became 8 categories and 105 topics, so readers and search engines can follow a clear path."),
           p("The home page shows a list of breaking news and a category sidebar, and sections such as space and astronomy and technology each have their own page and structure. The newsroom manages them in Payload CMS rather than in a WordPress theme."),
@@ -97,16 +97,16 @@ export const extra: Extra = {
       },
       {
         q: "Which decisions made learning on Codechee feel like play?",
-        a: "The main challenge was making learning feel like play while keeping progress visible. So courses are levelled, gameplay, quizzes and an escape room sit next to them, and each student has an account that tracks progress.",
+        a: "The main challenge was making learning feel like play while keeping progress visible. So courses are leveled, gameplay, quizzes and an escape room sit next to them, and each student has an account that tracks progress.",
         details: [
-          p("Clear levels tell a student where they are and what comes next, and progress tracking keeps that picture. Quizzes and the escape room turn practice into a challenge rather than homework. Separate programmes for schools and events such as Sharif Cup are presented on the site as well."),
+          p("Clear levels tell a student where they are and what comes next, and progress tracking keeps that picture. Quizzes and the escape room turn practice into a challenge rather than homework. Separate programs for schools and events such as Sharif Cup are presented on the site as well."),
         ],
       },
       {
         q: "What problem does Codechee solve, and for whom?",
         a: "Codechee teaches Python, data, AI and cybersecurity to school students. It turns subjects that usually look dry into paths a teenager wants to keep following.",
         details: [
-          p("For an education business the problem is not just building a website; it must be clear what the product is, who it is for and how enrolment works. On Codechee those answers sit in the page structure and in the student account, which is what separates a learning platform from an ordinary site."),
+          p("For an education business the problem is not just building a website; it must be clear what the product is, who it is for and how enrollment works. On Codechee those answers sit in the page structure and in the student account, which is what separates a learning platform from an ordinary site."),
         ],
       },
     ],
@@ -133,14 +133,14 @@ export const extra: Extra = {
     en: [
       {
         q: "What does a visitor see on Yasin Skill School?",
-        a: "The home page opens with an illustrated adventure map, then cards for life skills and future skills, followed by specialised courses such as ICDL, graphic design, digital marketing and accounting.",
+        a: "The home page opens with an illustrated adventure map, then cards for life skills and future skills, followed by specialized courses such as ICDL, graphic design, digital marketing and accounting.",
         details: [
           p("All of it is laid out as one continuous story, so building a skill feels like an adventure. Course paths, mentors and registration are part of that story too, so a visitor moves from curiosity to signing up without leaving the experience."),
         ],
       },
       {
         q: "Which decisions kept the site light?",
-        a: "Copy is centralised, desktop and mobile media are optimised separately, and effects adapt to the device. Fonts are hosted on the site itself so loading does not depend on an outside service.",
+        a: "Copy is centralised, desktop and mobile media are optimized separately, and effects adapt to the device. Fonts are hosted on the site itself so loading does not depend on an outside service.",
         details: [
           p("The game-like narrative is built with GSAP, Three.js and Lenis, but that weight is only acceptable if it stays smooth on phones and on Iranian connections. That is why effects are device-aware and the copy and media are managed separately."),
         ],
@@ -212,7 +212,7 @@ export const extra: Extra = {
     en: [
       {
         q: "What does a visitor see on Microshamim?",
-        a: "The site shows the space before anyone visits: a floor-plan model of the building, the skills you can learn shown as coloured tags, and separate pages for the skill school, the co-working space, the content studio and events.",
+        a: "The site shows the space before anyone visits: a floor-plan model of the building, the skills you can learn shown as colored tags, and separate pages for the skill school, the co-working space, the content studio and events.",
         details: [
           p("Each space has its own page, so someone who only wants a co-working desk does not have to read about everything else. A magazine section keeps the hub's content next to the introductions of the spaces, and the call to request use of the space repeats throughout the site."),
         ],
@@ -255,14 +255,14 @@ export const extra: Extra = {
     en: [
       {
         q: "What does a customer see in the Sabzino store?",
-        a: "The store has three main categories: natural drinks, international spices and vegetable-based products. The catalogue shows items such as natural verjuice and prepared aubergine products, and a brand story section explains why Sabzino exists.",
+        a: "The store has three main categories: natural drinks, international spices and vegetable-based products. The catalog shows items such as natural verjuice and prepared aubergine products, and a brand story section explains why Sabzino exists.",
         details: [
           p("Because Sabzino is a social enterprise, the brand story is part of the buying decision and has a place on the home page. The cart, customer account and checkout are responsive too and work on a phone just as they do on a desktop."),
         ],
       },
       {
-        q: "Which decisions took Sabzino from a catalogue to a real store?",
-        a: "Three things were needed that a catalogue does not have: online payment through Zarinpal, customer accounts, and an independent admin where the Sabzino team manages products, inventory, pricing and orders without a developer.",
+        q: "Which decisions took Sabzino from a catalog to a real store?",
+        a: "Three things were needed that a catalog does not have: online payment through Zarinpal, customer accounts, and an independent admin where the Sabzino team manages products, inventory, pricing and orders without a developer.",
         details: [
           p("The store's data lives in Cloudflare D1 with Drizzle ORM, and secure deployment tooling keeps releases simple. The result is that the team can run the store itself and does not wait for a developer for every small change."),
         ],
@@ -314,7 +314,7 @@ export const extra: Extra = {
         q: "What problem does Nira solve?",
         a: "A brand that sells both to consumers and to companies often has a site that only speaks to one of them. Nira has both audiences on one site without either getting lost in the other.",
         details: [
-          p("If you also have two kinds of customer, for example consumers and organisations, the same structure lets each see its own storefront and keeps the path to buying or asking short."),
+          p("If you also have two kinds of customer, for example consumers and organizations, the same structure lets each see its own storefront and keeps the path to buying or asking short."),
         ],
       },
     ],
@@ -457,14 +457,14 @@ export const extra: Extra = {
         q: "Which decisions made the site genuinely bilingual?",
         a: "Persian and English have separate URLs and right-to-left layout applies to Persian only, rather than a simple translation laid over the same page. Each university is an independent, bilingual document, ready to connect to a CMS later.",
         details: [
-          p("An international student has to compare universities, cities and programmes in their own language. So bilingual routing with next-intl and full RTL behaviour were part of the architecture from the start, not an add-on at the end."),
+          p("An international student has to compare universities, cities and programs in their own language. So bilingual routing with next-intl and full RTL behavior were part of the architecture from the start, not an add-on at the end."),
         ],
       },
       {
         q: "What problem does ASA-Study solve?",
         a: "Choosing a university in another country without information in your own language is a risky decision. ASA-Study puts university information in a searchable, two-language directory and makes the admission path transparent.",
         details: [
-          p("If your audience also comes from several countries, a bilingual site is more than translation; URL structure, language labels for search engines and page behaviour all have to be right for each language."),
+          p("If your audience also comes from several countries, a bilingual site is more than translation; URL structure, language labels for search engines and page behavior all have to be right for each language."),
         ],
       },
     ],
@@ -498,9 +498,9 @@ export const extra: Extra = {
     en: [
       {
         q: "What does the Prowem app offer a user?",
-        a: "Live match results, schedules, standings and a top-scorers list appear on two phone screens. The same data is available to organisers so they can manage teams and players.",
+        a: "Live match results, schedules, standings and a top-scorers list appear on two phone screens. The same data is available to organizers so they can manage teams and players.",
         details: [
-          p("A fan wants to know the score while the match is still on, so live updating is the most important feature. Organisers manage teams and players in the same app, which is why the app is built on a modular architecture."),
+          p("A fan wants to know the score while the match is still on, so live updating is the most important feature. Organizers manage teams and players in the same app, which is why the app is built on a modular architecture."),
         ],
       },
       {
@@ -512,7 +512,7 @@ export const extra: Extra = {
       },
       {
         q: "What problem does Prowem solve?",
-        a: "A tournament organiser deals with several things at once: registering teams, setting the schedule, announcing results and keeping spectators informed. The app runs these from one place and delivers results to users the moment they happen.",
+        a: "A tournament organizer deals with several things at once: registering teams, setting the schedule, announcing results and keeping spectators informed. The app runs these from one place and delivers results to users the moment they happen.",
         details: [
           p("If your product also needs to deliver live data to a mobile app and a website, the same pattern, a shared API and a single codebase for both operating systems, lowers both cost and errors."),
         ],
@@ -562,7 +562,7 @@ export const extra: Extra = {
       },
       {
         q: "What problem does Mojasame Saidi solve?",
-        a: "A handmade product cannot be shown well in a generic store template. This store puts the piece at the centre, shows up in search and can grow an admin panel when it is needed.",
+        a: "A handmade product cannot be shown well in a generic store template. This store puts the piece at the center, shows up in search and can grow an admin panel when it is needed.",
         details: [
           p("If your product is handmade, limited or expensive, a buyer trusts the feel of the page more than the price. That is why the store was built custom rather than on a template."),
         ],
@@ -614,7 +614,7 @@ export const extra: Extra = {
         q: "What problem does Elm-Kala solve?",
         a: "People buying lab, robotics or classroom equipment often do not know which product fits. Instead of an empty list, Elm-Kala moves them step by step towards a choice and connects them to an adviser when they need one.",
         details: [
-          p("Any business that sells specialised products faces the same problem: the customer lacks product knowledge. A guided store is one answer, but not always the best; the free audit is where we weigh that."),
+          p("Any business that sells specialized products faces the same problem: the customer lacks product knowledge. A guided store is one answer, but not always the best; the free audit is where we weigh that."),
         ],
       },
     ],
@@ -657,7 +657,7 @@ export const extra: Extra = {
         q: "Which decisions made the portal clear for donors?",
         a: "The information architecture is built around news, projects and provinces so a donor can reach what they want without a guide. The ways to take part are separate and explicit, not a lost button in the footer.",
         details: [
-          p("The Persian design is responsive and built on Next.js 16, so pages open clearly and quickly on phones too. That matters for an organisation whose audience comes from many ages and devices."),
+          p("The Persian design is responsive and built on Next.js 16, so pages open clearly and quickly on phones too. That matters for an organization whose audience comes from many ages and devices."),
         ],
       },
       {

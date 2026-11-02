@@ -106,7 +106,7 @@ export const guidesB: Spoke[] = [
       answers: [
         {
           q: "Why is Next.js SEO easier to get right?",
-          a: "Next.js renders each page on the server, so the full HTML text is in the first response and a search engine, or an AI assistant that does not run JavaScript, can read it immediately. It also gives you direct control of metadata, sitemaps, robots, redirects and image optimisation, which are the main SEO levers.",
+          a: "Next.js renders each page on the server, so the full HTML text is in the first response and a search engine, or an AI assistant that does not run JavaScript, can read it immediately. It also gives you direct control of metadata, sitemaps, robots, redirects and image optimization, which are the main SEO levers.",
           details: [
             { kind: "p", text: "A page that builds its text in the browser forces the crawler to run JavaScript before it sees anything. Server rendering (or static generation) removes that step. It is the reason most of our own sites, including this one, are built with Next.js." },
             { kind: "links", items: [{ label: "Next.js website design", href: "/services/website-design/nextjs" }] },
@@ -165,7 +165,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           details: [{ kind: "code", lang: "tsx", text: jsonLdCode }],
         },
         {
-          q: "How do you optimise images?",
+          q: "How do you optimize images?",
           a: "Use next/image with honest width and height so nothing shifts, give a sizes attribute so a phone does not download a desktop-sized file, mark the first large image on the page priority, and write descriptive alt text. Decorative images get an empty alt.",
           details: [{ kind: "code", lang: "tsx", text: imageCode }],
         },
@@ -390,7 +390,7 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
       eyebrow: "Guide",
       h1: "Be visible in **AI search**",
       definition:
-        "AI assistants such as ChatGPT, Claude and Perplexity answer questions by reading web pages, then quoting or summarising them. Being visible to them is mostly the same work as good SEO, with extra weight on pages that state their answer plainly, are readable without JavaScript and say the same thing about you everywhere.",
+        "AI assistants such as ChatGPT, Claude and Perplexity answer questions by reading web pages, then quoting or summarizing them. Being visible to them is mostly the same work as good SEO, with extra weight on pages that state their answer plainly, are readable without JavaScript and say the same thing about you everywhere.",
       answers: [
         {
           q: "AI search: how do AI assistants actually read a website?",
@@ -659,7 +659,7 @@ Disallow: /api/`,
         },
         {
           q: "Which n8n nodes do you use?",
-          a: "A Webhook or email trigger to start, IF and Switch nodes for rules, a Baserow or HubSpot node for the CRM, Send Email and an IMAP trigger for outgoing and incoming mail, Wait for timing, an AI node where a step needs judgement, a Schedule trigger for the digest, and an Error Trigger workflow for failures.",
+          a: "A Webhook or email trigger to start, IF and Switch nodes for rules, a Baserow or HubSpot node for the CRM, Send Email and an IMAP trigger for outgoing and incoming mail, Wait for timing, an AI node where a step needs judgment, a Schedule trigger for the digest, and an Error Trigger workflow for failures.",
           details: [
             {
               kind: "table",
@@ -672,7 +672,7 @@ Disallow: /api/`,
                 ["Send messages", "Send Email node (SMTP)"],
                 ["Wait between messages", "Wait node"],
                 ["Detect a reply", "Email trigger (IMAP)"],
-                ["Judgement and wording", "An AI model node"],
+                ["Judgment and wording", "An AI model node"],
                 ["Daily digest", "Schedule trigger"],
                 ["Failures", "A separate workflow starting with an Error Trigger"],
               ],
@@ -723,7 +723,7 @@ Disallow: /api/`,
         },
         {
           q: "How can Bellona help with lead follow-up automation?",
-          a: "We design, build and run n8n workflows like this one, including self-hosted n8n if you want your data on your own server. Start with the free growth audit and you get a fixed quote in writing.",
+          a: "We design, build and run n8n workflows like this one, including self-hosted n8n if you want your data on your own server. Begin with the free growth audit and a fixed quote in writing follows.",
           details: [{ kind: "links", items: [{ label: "n8n implementation", href: "/services/ai-automation/n8n" }, { label: "CRM automation", href: "/services/ai-automation/crm" }, { label: "Book the free growth audit", href: "/contact?need=ai" }] }],
         },
       ],

@@ -2,6 +2,7 @@ import { facts, fmt } from "../facts";
 import type { Answer } from "../spokes";
 import type { Locale } from "../types";
 import { projects } from "../work";
+import { mergeMore, pageExtra } from "./hubs-extra";
 
 /**
  * Extra questions for the top-level pages (SEO-GUIDELINE D11, D12), keyed by locale-less path.
@@ -17,7 +18,7 @@ const sprintEn = fmt.weeks(facts.timelines.automationSprintWeeks, "en");
 const nFa = (v: number) => fmt.n(v, "fa");
 const nEn = (v: number) => fmt.n(v, "en");
 
-export const more: More = {
+const base: More = {
   // ======================================================================================= about (D11)
   "/about": {
     fa: [
@@ -37,7 +38,7 @@ export const more: More = {
       {
         q: "ارزش‌های کاری ما چیست؟",
         a: "قیمت قطعی و مکتوب قبل از شروع، پیشرفت هر هفته با دموی کوتاه، مالکیت کد و حساب‌ها با شما، کار مستقیم با سازنده‌ها بدون واسطه، و ماندن بعد از تحویل. این‌ها تعهدهایی است که در صفحه‌ی پکیج‌ها هم نوشته شده است.",
-        details: [{ kind: "links", items: [{ label: "پکیج‌ها و تعهدهای ما", href: "/offers" }] }],
+        details: [{ kind: "links", items: [{ label: "پکیج‌ها و تعهدهای ما", href: "/offers" }, { label: "آژانس دیجیتال همه‌کاره: یک تیم از ایده تا رشد", href: "/partner" }] }],
       },
       {
         q: "کارهای شما را کجا ببینم؟",
@@ -52,7 +53,7 @@ export const more: More = {
       },
       {
         q: "Who is Bellona Agency?",
-        a: "A small team of engineers from Sharif University of Technology, small on purpose: you talk directly to the people who design, code and automate your system, so decisions take hours, not weeks. Each member's specialism is listed in the team section.",
+        a: "A small team of engineers from Sharif University of Technology, small on purpose: you talk directly to the people who design, code and automate your system, so decisions take hours, not weeks. Each member's specialty is listed in the team section.",
       },
       {
         q: "How does Bellona work?",
@@ -62,7 +63,7 @@ export const more: More = {
       {
         q: "What are our working values?",
         a: "A fixed price in writing before we start, progress every week with a short demo, code and accounts owned by you, direct work with the builders without middlemen, and staying on after delivery. These commitments are also written on the offers page.",
-        details: [{ kind: "links", items: [{ label: "Offers and our commitments", href: "/offers" }] }],
+        details: [{ kind: "links", items: [{ label: "Offers and our commitments", href: "/offers" }, { label: "An all-in-one digital agency: one team from idea to growth", href: "/partner" }] }],
       },
       {
         q: "Where can I see your work?",
@@ -109,6 +110,7 @@ export const more: More = {
       {
         q: "تفاوت پکیج لانچ و سیستم رشد چیست؟",
         a: "لانچ یک سایت اختصاصی و فروش‌محور است که یک‌بار ساخته و تحویل می‌شود. سیستم رشد بلونا همه‌ی موارد لانچ را دارد و روی آن یک اسپرینت اتوماسیون برای پیگیری مشتری‌ها، سئو و محتوا و کمپین ماهانه، گزارش ماهانه‌ی ترافیک و سرنخ و فروش و بهبود مستمر اضافه می‌کند؛ یعنی بعد از انتشار هم یک تیم مسئول نتیجه می‌ماند. اگر فقط سایت لازم دارید، لانچ کافی است.",
+        details: [{ kind: "links", items: [{ label: "آژانس دیجیتال همه‌کاره", href: "/partner" }] }],
       },
       {
         q: "بعد از اسپرینت اتوماسیون چه تحویل می‌گیرم؟",
@@ -152,6 +154,7 @@ export const more: More = {
       {
         q: "What is the difference between Launch and the Growth System?",
         a: "Launch is a custom, sales-focused website that is built and handed over once. The Bellona Growth System includes everything in Launch and adds an automation sprint for customer follow-up, monthly SEO, content and campaigns, a monthly report on traffic, leads and sales, and continuous improvement, so a team stays responsible for results after the site is live. If you only need a website, Launch is enough.",
+        details: [{ kind: "links", items: [{ label: "An all-in-one digital agency", href: "/partner" }] }],
       },
       {
         q: "What do I get after the automation sprint?",
@@ -297,3 +300,5 @@ export const more: More = {
     ],
   },
 };
+
+export const more: More = mergeMore(base, pageExtra);

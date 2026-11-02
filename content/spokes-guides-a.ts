@@ -28,7 +28,7 @@ export const guidesA: Spoke[] = [
     projects: ["dane-news"],
     guides: ["nextjs-seo-checklist", "website-design-cost"],
     en: {
-      metaTitle: "Migrate WordPress to Next.js without losing SEO",
+      metaTitle: "Migrate from WordPress to Next.js, keep your SEO",
       metaDescription: "Migrate from WordPress to Next.js without losing traffic: URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
       eyebrow: "Guide",
       h1: "Migrate from WordPress to **Next.js without losing SEO**",
@@ -410,7 +410,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     projects: ["sabzino", "mojasame-saidi", "nira-perfume", "elm-kala"],
     guides: ["website-design-cost", "nextjs-seo-checklist"],
     en: {
-      metaTitle: "Custom store or store builder? A buyer's guide",
+      metaTitle: "Custom online store or store builder? A guide",
       metaDescription: "Custom online store or store builder? Compare cost, speed, design, SEO and ownership, when each is right, with examples from four stores we built.",
       eyebrow: "Guide",
       h1: "Custom **online store or store builder?**",
@@ -440,13 +440,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
           q: "When is a store builder the right choice?",
-          a: "When you are testing a new product, selling a small catalogue of standard items, have a small budget or need to open this month. A store builder gets you selling quickly, and you can move to a custom store later once you know what your customers actually need.",
+          a: "When you are testing a new product, selling a small catalog of standard items, have a small budget or need to open this month. A store builder gets you selling quickly, and you can move to a custom store later once you know what your customers actually need.",
           details: [
             {
               kind: "steps",
               items: [
                 "You are validating a product and want to sell fast",
-                "A small catalogue of standard products",
+                "A small catalog of standard products",
                 "A limited budget for the first launch",
                 "No need for features that a plugin cannot give",
               ],
@@ -455,7 +455,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
           q: "When is a custom online store worth it?",
-          a: "When the buying experience is part of what you sell, when you need features a template does not offer (guided buying, custom orders, special payment or admin flows), when speed and SEO are central, or when you want to own the code and data. A premium brand and a complex catalogue are typical reasons.",
+          a: "When the buying experience is part of what you sell, when you need features a template does not offer (guided buying, custom orders, special payment or admin flows), when speed and SEO are central, or when you want to own the code and data. A premium brand and a complex catalog are typical reasons.",
           details: [
             {
               kind: "steps",
@@ -650,7 +650,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     projects: ["asa-study"],
     guides: ["nextjs-seo-checklist", "migrate-wordpress-to-nextjs"],
     en: {
-      metaTitle: "Bilingual Persian-English website: hreflang, RTL",
+      metaTitle: "Persian–English bilingual website: hreflang, RTL",
       metaDescription: "Persian–English bilingual website: URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
       eyebrow: "Guide",
       h1: "Persian–English bilingual website: **hreflang and RTL done right**",
@@ -749,7 +749,7 @@ export const metadata = {
         {
           q: "How should content be managed in both languages?",
           a: "From one place with one structure, so no page exists in only one language and nothing is forgotten. Give each page a translation status, review translations rather than publishing machine output, and keep a shared list of terms so the same thing is always called the same thing.",
-          details: [{ kind: "p", text: "In ASA-Study each university is an independent, localised document, so the English and Persian versions of one university are kept together and edited as a pair." }],
+          details: [{ kind: "p", text: "In ASA-Study each university is an independent, localized document, so the English and Persian versions of one university are kept together and edited as a pair." }],
         },
         {
           q: "Does each language need its own SEO?",
@@ -758,7 +758,7 @@ export const metadata = {
         },
         {
           q: "How did ASA-Study handle two languages?",
-          a: "International students choosing a university in Iran have to compare cities, universities and programmes in their own language. We built English and Persian routing with complete RTL behaviour, a searchable university directory with a city filter, data-driven profiles and a CMS-ready structure where each university is a localised document.",
+          a: "International students choosing a university in Iran have to compare cities, universities and programs in their own language. We built English and Persian routing with complete RTL behavior, a searchable university directory with a city filter, data-driven profiles and a CMS-ready structure where each university is a localized document.",
           details: [{ kind: "links", items: [{ label: "Case study: ASA-Study", href: "/work/asa-study" }] }],
         },
         {

@@ -5,7 +5,7 @@ import type { Locale } from "../types";
 /**
  * Extra questions for the sub-pages and guides (SEO-GUIDELINE D2–D6, D9), keyed by spoke slug. content/spokes.ts
  * inserts them before each page's last answer. Every claim about Bellona comes from content/work.ts or
- * content/facts.ts; general explanations (what Next.js is, how hreflang works) are labelled as general.
+ * content/facts.ts; general explanations (what Next.js is, how hreflang works) are labeled as general.
  * TODO(owner): a price range per level for the cost guide, CMS choice and typical timelines
  * (docs/seo/QUESTIONS_FOR_TEAM.md #3, #4, #30); they stay out of the text until confirmed.
  */
@@ -105,7 +105,7 @@ export const more: More = {
       },
       {
         q: "How is a bilingual site built with next-intl?",
-        a: "next-intl is a library for routing and translation in Next.js. Each language gets its own URLs and full translation, with right-to-left layout for Persian. We built the ASA-Study platform on Next.js 15 with next-intl, with separate Persian and English pages and full RTL behaviour.",
+        a: "next-intl is a library for routing and translation in Next.js. Each language gets its own URLs and full translation, with right-to-left layout for Persian. We built the ASA-Study platform on Next.js 15 with next-intl, with separate Persian and English pages and full RTL behavior.",
         details: [{ kind: "links", items: [{ label: "ASA-Study admissions platform", href: "/work/asa-study" }] }],
       },
       {
@@ -191,7 +191,7 @@ export const more: More = {
       },
       {
         q: "فروشگاه تخصصی علم‌کالا چه می‌کند؟",
-        a: "خریدار تجهیزات آزمایشگاه، رباتیک یا کلاس معمولاً نمی‌داند کدام محصول به کارش می‌آید. علم‌کالا فروشگاهی هدایت‌شده است: کشف محصول بر پایه‌ی دسته‌بندی و محصولات منتخب، راهنمای کاربرد برای هر دسته و مسیر مشاوره‌محور برای خریدارانی که در انتخاب کمک می‌خواهند.",
+        a: "علم‌کالا فروشگاهی هدایت‌شده برای کسی است که نمی‌داند کدام تجهیزات آزمایشگاه، رباتیک یا کلاس به کارش می‌آید: کشف محصول بر پایه‌ی دسته‌بندی و محصولات منتخب، راهنمای کاربرد برای هر دسته و مسیر مشاوره‌محور برای خریدارانی که در انتخاب کمک می‌خواهند.",
         details: [{ kind: "links", items: [{ label: "فروشگاه تخصصی علم‌کالا", href: "/work/elm-kala" }] }],
       },
       {
@@ -220,7 +220,7 @@ export const more: More = {
       },
       {
         q: "What does online-store SEO involve?",
-        a: "Unique titles and descriptions for product and category pages, clean URLs, fast pages on mobile and Product structured data (name, price, availability) so Google can recognise the product. This work starts when the store is built, not after.",
+        a: "Unique titles and descriptions for product and category pages, clean URLs, fast pages on mobile and Product structured data (name, price, availability) so Google can recognize the product. This work starts when the store is built, not after.",
         details: [
           {
             kind: "steps",
@@ -228,7 +228,7 @@ export const more: More = {
               "A unique title, description and URL for every product and category",
               "A clear category structure that guides both customers and Google",
               "Product structured data on product pages",
-              "Fast pages on mobile and optimised images",
+              "Fast pages on mobile and optimized images",
               "Sitemap and standard URLs",
             ],
           },
@@ -236,7 +236,7 @@ export const more: More = {
       },
       {
         q: "What was the challenge with Sabzino and how was it built?",
-        a: "Sabzino, a social enterprise selling vegetable-based products, international spices and natural drinks, wanted a real store, not a catalogue. We built a responsive cart, customer accounts, online payment through Zarinpal and an independent admin panel where the team manages products, stock, prices and orders.",
+        a: "Sabzino, a social enterprise selling vegetable-based products, international spices and natural drinks, wanted a real store, not a catalog. We built a responsive cart, customer accounts, online payment through Zarinpal and an independent admin panel where the team manages products, stock, prices and orders.",
         details: [{ kind: "links", items: [{ label: "Sabzino online store", href: "/work/sabzino" }] }],
       },
       {
@@ -290,7 +290,7 @@ export const more: More = {
       },
       {
         q: "جامعه خیرین مدرسه‌ساز کشور چه نیازی داشت؟",
-        a: "یک خیریه‌ی ملی جایی عمومی می‌خواست برای پروژه‌های اخیر، خبرهای همه‌ی استان‌ها و راه‌های روشن مشارکت خیرین. پرتال را با معماری اطلاعات بر پایه‌ی خبر، پروژه و استان، مسیرهای روشن مشارکت و طراحی فارسی واکنش‌گرا ساختیم.",
+        a: "برای جامعه خیرین مدرسه‌ساز کشور پرتالی ساختیم که پروژه‌های اخیر، خبر استان‌ها و راه‌های مشارکت خیرین را کنار هم می‌گذارد. آن را با معماری اطلاعات بر پایه‌ی خبر، پروژه و استان، مسیرهای روشن مشارکت و طراحی فارسی واکنش‌گرا ساختیم.",
         details: [{ kind: "links", items: [{ label: "جامعه خیرین مدرسه‌ساز کشور", href: "/work/school-builders" }] }],
       },
       {
@@ -392,7 +392,7 @@ export const more: More = {
       },
       {
         q: "ASA-Study چطور یک سایت دوزبانه شد؟",
-        a: "دانشجوی بین‌المللی برای انتخاب دانشگاه در ایران باید شهرها، دانشگاه‌ها و رشته‌ها را به زبان خودش مقایسه کند. مسیریابی فارسی و انگلیسی با رفتار کامل راست‌به‌چپ، فهرست قابل جست‌وجوی دانشگاه‌ها با فیلتر شهر و پروفایل داده‌محور برای هر دانشگاه ساختیم.",
+        a: "برای دانشجوی بین‌المللی که دانشگاهی در ایران انتخاب می‌کند، شهرها، دانشگاه‌ها و رشته‌ها باید به زبان خودش قابل مقایسه باشند. مسیریابی فارسی و انگلیسی با رفتار کامل راست‌به‌چپ، فهرست قابل جست‌وجوی دانشگاه‌ها با فیلتر شهر و پروفایل داده‌محور برای هر دانشگاه ساختیم.",
       },
       {
         q: "اشتباه‌های رایج در طراحی سایت دوزبانه چیست؟",
@@ -446,7 +446,7 @@ export const more: More = {
       },
       {
         q: "How did ASA-Study become a bilingual site?",
-        a: "An international student choosing a university in Iran must compare cities, universities and programmes in their own language. We built Persian and English routing with full right-to-left behaviour, a searchable university list with a city filter and a data-driven profile for each university.",
+        a: "For an international student choosing a university in Iran, cities, universities and programs have to be comparable in their own language. We built Persian and English routing with full right-to-left behavior, a searchable university list with a city filter and a data-driven profile for each university.",
       },
       {
         q: "What are common mistakes in bilingual website design?",
@@ -680,7 +680,7 @@ export const more: More = {
             head: ["Level", "For whom", "Usually includes"],
             rows: [
               ["Intro site / landing page", "Presenting one offer or campaign", "One to a few pages, a contact form, speed and baseline SEO"],
-              ["Corporate site", "A company or organisation that wants to look professional", "Service, about, case-study and contact pages; a CMS; forms connected to email or a CRM"],
+              ["Corporate site", "A company or organization that wants to look professional", "Service, about, case-study and contact pages; a CMS; forms connected to email or a CRM"],
               ["Online store", "Selling products online", "Categories, cart, online payment, customer accounts and an admin panel"],
               ["Platform or web app", "A product with accounts and custom logic", "Product design, database, API, admin panel and maintenance"],
             ],
@@ -711,7 +711,7 @@ export const more: More = {
       },
       {
         q: "Why can two quotes for \"a website\" differ so much?",
-        a: "Because \"a website\" has no single meaning: one agency customises a template while another designs and codes from scratch, one builds a few pages and another includes forms, a CMS, a second language and SEO. Before comparing prices, put the scope of each quote side by side.",
+        a: "Because \"a website\" has no single meaning: one agency customizes a template while another designs and codes from scratch, one builds a few pages and another includes forms, a CMS, a second language and SEO. Before comparing prices, put the scope of each quote side by side.",
       },
       {
         q: "How do you avoid hidden costs?",

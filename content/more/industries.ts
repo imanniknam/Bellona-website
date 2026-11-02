@@ -2,6 +2,7 @@ import { facts, fmt } from "../facts";
 import type { Answer } from "../spokes";
 import type { Locale } from "../types";
 import { projectsForIndustry } from "../work";
+import { industryExtra, mergeMore } from "./hubs-extra";
 
 /**
  * Industry pages (SEO-GUIDELINE D13): the industry's problem, what we build, the work for that industry with a
@@ -19,7 +20,7 @@ const links = (id: string, locale: Locale) => ({
   items: projectsForIndustry(id).map((p) => ({ label: p[locale].title, href: `/work/${p.slug}` })),
 });
 
-export const more: More = {
+const base: More = {
   // ======================================================================================= education
   education: {
     fa: [
@@ -53,7 +54,7 @@ export const more: More = {
       },
       {
         q: "What do we build for education?",
-        a: "Gamified learning platforms with levelled paths, enrolment funnels, student accounts with progress tracking, sites for schools and skill centres, and student-support agents. All of it is custom and hand-coded, designed to be as accessible as possible on a phone.",
+        a: "Gamified learning platforms with leveled paths, enrollment funnels, student accounts with progress tracking, sites for schools and skill centers, and student-support agents. All of it is custom and hand-coded, designed to be as accessible as possible on a phone.",
       },
       {
         q: "Which education projects have we done?",
@@ -65,8 +66,8 @@ export const more: More = {
         a: "On an ordinary education site content is listed; on a gamified platform there are paths, missions, points and achievements so the learner stays motivated to continue. Codechee with its Starcamps and Konjed with its missions and points take this approach.",
       },
       {
-        q: "How can enrolment and student support be automated?",
-        a: "The enrolment form connects to email or a CRM, and an AI agent can answer common questions from students and parents in seconds and hand special cases to a person.",
+        q: "How can enrollment and student support be automated?",
+        a: "The enrollment form connects to email or a CRM, and an AI agent can answer common questions from students and parents in seconds and hand special cases to a person.",
         details: [{ kind: "links", items: [{ label: "Business AI automation", href: "/services/ai-automation" }] }],
       },
     ],
@@ -204,3 +205,5 @@ export const more: More = {
     ],
   },
 };
+
+export const more: More = mergeMore(base, industryExtra, true);

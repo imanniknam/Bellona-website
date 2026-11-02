@@ -15,7 +15,7 @@ export function Flow({ d }: { d: Dict }) {
   const { flow } = d;
   const last = flow.nodes.length - 1;
   return (
-    <section aria-labelledby="flow-title" className="section">
+    <section data-shared="" aria-labelledby="flow-title" className="section">
       <div className="wrap grid items-start gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:rtl:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         <div className="flex flex-col gap-10">
           <SectionHead id="flow-title" eyebrow={flow.eyebrow} title={flow.title} sub={flow.sub} size="t-h2-sm" />

@@ -38,6 +38,17 @@ export function Contact({
               {d.common.email}
             </a>
           </p>
+          {d.common.channels?.length ? (
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-muted-dark">
+              {d.common.channels.map((c) => (
+                <li key={c.href}>
+                  <a href={c.href} className="font-semibold text-paper underline underline-offset-4 hover:text-orange" {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
         <ContactForm
           locale={d.locale}

@@ -85,10 +85,14 @@ export const fa: Dict = {
       rights: "© ۲۰۲۶ بلونا. تمامی حقوق محفوظ است.",
       legal: { privacy: "حریم خصوصی", terms: "شرایط استفاده" },
       emailLabel: "ایمیل",
+      partner: "آژانس دیجیتال همه‌کاره",
       // TODO(owner): add a quick chat channel (Telegram or WhatsApp), and a phone number and address if you want them public (SEO-GUIDELINE B9).
       social: [{ label: "اینستاگرام", href: "https://www.instagram.com/bellona.ai" }],
     },
     email: "bellona.ai.team@gmail.com",
+    // TODO(owner): a domain email such as hello@bellonaagency.com instead of the Gmail address (here and in every schema node).
+    // TODO(owner): quick-chat channels, e.g. channels: [{ label: "تلگرام", href: "https://t.me/..." }, { label: "تلفن", href: "tel:+98..." }].
+    // They then appear in the footer, on /contact and in the ContactPoint schema; nothing is shown until then.
   },
 
   /** SEO <title>/description per locale-less path (docs/seo/SEO_SITE_ARCHITECTURE.md). Labels in `meta` stay short. */
@@ -100,7 +104,8 @@ export const fa: Dict = {
       title: "پکیج‌های طراحی سایت و اتوماسیون با قیمت قطعی",
     },
     "/partner": {
-      title: "همراه دیجیتال کامل؛ از ایده تا رشد",
+      title: "آژانس دیجیتال همه‌کاره؛ از ایده تا رشد",
+      description: "آژانس دیجیتال همه‌کاره: استراتژی، طراحی، ساخت، اتوماسیون، مارکتینگ و پشتیبانی از یک تیم و یک برنامه. بررسی رایگان رشد را رزرو کنید.",
     },
     "/industries": {
       title: "طراحی سایت و اتوماسیون هوش مصنوعی برای صنایع",
@@ -970,7 +975,7 @@ export const fa: Dict = {
     },
     partner: {
       eyebrow: "همراه کامل شما",
-      h1: "همراه دیجیتال **کامل شما.**",
+      h1: "آژانس دیجیتال **همه‌کاره** برای کسب‌وکار شما.",
       sub: "یک تیم از ایده تا رشد: استراتژی، طراحی، ساخت، اتوماسیون، مارکتینگ و پشتیبانی، همه بر اساس یک برنامه.",
       problem: {
         title: "پنج آژانس. **پنج برنامه. هیچ مسئولی.**",

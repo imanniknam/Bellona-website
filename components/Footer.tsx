@@ -45,6 +45,11 @@ export function Footer({ d }: { d: Dict }) {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href={localePath(locale, "/partner")} className="text-soft-dark hover:text-orange">
+                  {common.footer.partner}
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -106,6 +111,13 @@ export function Footer({ d }: { d: Dict }) {
                 <span dir="ltr">{common.email}</span>
               </a>
             </li>
+            {(common.channels ?? []).map((c) => (
+              <li key={c.href}>
+                <a href={c.href} className="hover:text-paper" {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                  {c.label}
+                </a>
+              </li>
+            ))}
             {common.footer.social.map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-paper" data-track="cta" data-track-label="footer_instagram">

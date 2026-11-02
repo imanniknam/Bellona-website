@@ -32,7 +32,7 @@ export const workAlt: Record<string, { gallery: L[] }> = {
     gallery: [
       l("Illustrated adventure map on the Yasin Skill School home page", "نقشه‌ی تصویرسازی‌شده‌ی ماجراجویی در صفحه‌ی اصلی مدرسه مهارت یاسین"),
       l("Life-skills and future-skills cards on the Yasin Skill School website", "کارت‌های مهارت‌های زندگی و مهارت‌های آینده در سایت مدرسه مهارت یاسین"),
-      l("Specialised courses at Yasin Skill School: ICDL, graphic design, digital marketing, accounting and more", "دوره‌های تخصصی مدرسه مهارت یاسین: ICDL، طراحی گرافیک، دیجیتال مارکتینگ، حسابداری و بیشتر"),
+      l("Specialized courses at Yasin Skill School: ICDL, graphic design, digital marketing, accounting and more", "دوره‌های تخصصی مدرسه مهارت یاسین: ICDL، طراحی گرافیک، دیجیتال مارکتینگ، حسابداری و بیشتر"),
       l("Yasin Skill School home page on a phone", "صفحه‌ی اصلی مدرسه مهارت یاسین روی موبایل"),
     ],
   },
@@ -46,14 +46,14 @@ export const workAlt: Record<string, { gallery: L[] }> = {
   microshamim: {
     gallery: [
       l("Floor-plan model of the Microshamim space, shown before visiting", "ماکت پلان فضای میکروشمیم برای دیدن محل پیش از مراجعه"),
-      l("Skills you can learn at Microshamim, shown as coloured tags", "مهارت‌هایی که در میکروشمیم یاد می‌گیرید، به‌شکل برچسب‌های رنگی"),
+      l("Skills you can learn at Microshamim, shown as colored tags", "مهارت‌هایی که در میکروشمیم یاد می‌گیرید، به‌شکل برچسب‌های رنگی"),
       l("Microshamim home page on a phone", "صفحه‌ی اصلی میکروشمیم روی موبایل"),
     ],
   },
   sabzino: {
     gallery: [
       l("Sabzino product categories: natural drinks, international spices and vegetable-based products", "دسته‌بندی محصولات سبزینو: نوشیدنی‌های طبیعی، ادویه‌های بین‌المللی و محصولات بر پایه‌ی سبزی"),
-      l("Sabzino product catalogue with natural verjuice and prepared aubergine products", "فهرست محصولات سبزینو با آبغوره‌ی طبیعی و محصولات بادمجان آماده"),
+      l("Sabzino product catalog with natural verjuice and prepared aubergine products", "فهرست محصولات سبزینو با آبغوره‌ی طبیعی و محصولات بادمجان آماده"),
       l("Brand story section of the Sabzino online store", "بخش داستان برند در فروشگاه اینترنتی سبزینو"),
       l("Sabzino store home page on a phone", "صفحه‌ی اصلی فروشگاه سبزینو روی موبایل"),
     ],

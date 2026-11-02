@@ -30,7 +30,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
   );
 }
 
-export function Faq({ d, items, title }: { d: Dict; items?: FaqItem[]; title?: string }) {
+export function Faq({ d, items, title, ld = true }: { d: Dict; items?: FaqItem[]; title?: string; ld?: boolean }) {
   const list = items ?? d.faq.items;
   return (
     <section id="faq" aria-labelledby="faq-title" className="section">
@@ -50,7 +50,7 @@ export function Faq({ d, items, title }: { d: Dict; items?: FaqItem[]; title?: s
         </div>
         <FaqList items={list} />
       </div>
-      <FaqLd items={list} />
+      {ld && <FaqLd items={list} />}
     </section>
   );
 }

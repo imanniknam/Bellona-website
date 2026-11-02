@@ -7,7 +7,7 @@ import { SectionHead } from "../ui";
 export function Start({ d, headingLevel = "h2" }: { d: Dict; headingLevel?: "h2" | "h3" }) {
   const { start, locale } = d;
   return (
-    <section id="process" aria-labelledby={headingLevel === "h2" ? "start-title" : undefined} className="section">
+    <section data-shared="" id="process" aria-labelledby={headingLevel === "h2" ? "start-title" : undefined} className="section">
       <div className="wrap flex flex-col gap-14">
         {headingLevel === "h2" && <SectionHead id="start-title" eyebrow={start.eyebrow} title={start.title} center />}
         <ol className="grid gap-4 md:grid-cols-3">

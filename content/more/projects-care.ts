@@ -23,7 +23,7 @@ export const care: Care = {
     en: [
       {
         q: "What took the most care on Codechee?",
-        a: "Three things had to come out right: levelled courses, a sense of play in the exercises, and the student account. If any one were weak, the platform would turn into an ordinary education site.",
+        a: "Three things had to come out right: leveled courses, a sense of play in the exercises, and the student account. If any one were weak, the platform would turn into an ordinary education site.",
         details: [steps(["Learning paths with clear levels", "Gameplay, quizzes and an escape room for practice", "A student account that tracks progress"])],
       },
     ],
@@ -43,7 +43,7 @@ export const care: Care = {
         q: "What took the most care on the Yasin site?",
         a: "The balance between spectacle and speed. The game-like narrative has to stay beautiful, but the site must not slow down on phones or on Iranian connections, so every effect had to earn its weight.",
         details: [
-          p("That is why the copy is kept in one place, media is optimised separately for desktop and mobile, and effects scale with the power of the device. The result is a site that presents the course paths, mentors and registration without lag."),
+          p("That is why the copy is kept in one place, media is optimized separately for desktop and mobile, and effects scale with the power of the device. The result is a site that presents the course paths, mentors and registration without lag."),
         ],
       },
     ],
@@ -100,7 +100,7 @@ export const care: Care = {
     en: [
       {
         q: "What took the most care on Sabzino?",
-        a: "The parts a catalogue does not need but a real store depends on: payment, customer accounts and inventory management. If any of them fails, sales stop.",
+        a: "The parts a catalog does not need but a real store depends on: payment, customer accounts and inventory management. If any of them fails, sales stop.",
         details: [
           steps(["Checkout and online payment through Zarinpal", "Customer accounts and order history", "An admin for products, inventory, pricing and orders"]),
           p("The three work together: an order that is paid has to show up in the admin and update inventory."),
@@ -193,7 +193,7 @@ export const care: Care = {
     en: [
       {
         q: "What took the most care on Prowem?",
-        a: "Keeping data in sync between the iOS app, the Android app and the event platform. A fan has to see mid-match the same result the organiser recorded.",
+        a: "Keeping data in sync between the iOS app, the Android app and the event platform. A fan has to see mid-match the same result the organizer recorded.",
         details: [steps(["One Flutter codebase for both operating systems", "A REST API between the app and the event platform", "A modular architecture for team and player management"])],
       },
     ],

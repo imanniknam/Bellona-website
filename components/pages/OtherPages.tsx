@@ -60,8 +60,14 @@ export function PartnerPage({ locale }: { locale: Locale }) {
           <Compare d={d} />
         </div>
       </section>
-      {/* The home page asks the general questions; the partner page keeps the one about life after launch. */}
-      <Faq d={d} items={d.faq.items.slice(5)} />
+      {(pageMore["/partner"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/partner"][locale]} locale={locale} />
+        </div>
+      )}
+      {/* The home page asks the general questions; the partner page keeps the one about life after launch. One FAQPage covers both lists. */}
+      <Faq d={d} items={d.faq.items.slice(5)} ld={false} />
+      <FaqLd items={[...faqOf(pageMore["/partner"]?.[locale] ?? []), ...d.faq.items.slice(5)]} />
       <Contact d={d} />
     </>
   );

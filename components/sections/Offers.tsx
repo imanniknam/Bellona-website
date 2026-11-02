@@ -73,7 +73,7 @@ export function Offers({ d, headless = false }: { d: Dict; headless?: boolean })
   const { offers, locale } = d;
   const product = d.pillars.items.find((p) => p.id === "product");
   return (
-    <section id="offers" aria-labelledby={headless ? undefined : "offers-title"} aria-label={headless ? offers.eyebrow : undefined} className="section bg-surface">
+    <section data-shared="" id="offers" aria-labelledby={headless ? undefined : "offers-title"} aria-label={headless ? offers.eyebrow : undefined} className="section bg-surface">
       <div className="wrap flex flex-col gap-12">
         {!headless && <SectionHead id="offers-title" eyebrow={offers.eyebrow} title={offers.title} sub={offers.sub} />}
         <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -103,7 +103,7 @@ export function Offers({ d, headless = false }: { d: Dict; headless?: boolean })
 export function Promises({ d }: { d: Dict }) {
   const { promises } = d.offers;
   return (
-    <section aria-labelledby="promises-title" className="section">
+    <section data-shared="" aria-labelledby="promises-title" className="section">
       <div className="wrap grid gap-12 lg:grid-cols-[1fr_2fr]">
         <div data-reveal="" className="flex flex-col gap-4">
           <Eyebrow>{promises.eyebrow}</Eyebrow>

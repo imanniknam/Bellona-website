@@ -2,6 +2,7 @@ import { facts, fmt } from "../facts";
 import type { Answer } from "../spokes";
 import type { Locale } from "../types";
 import { care } from "./projects-care";
+import { projects } from "../work";
 import { extra } from "./projects-extra";
 
 /**
@@ -129,11 +130,11 @@ const raw: More = {
       },
       {
         q: "What path does a prospect take through the system?",
-        a: "Workflows find and qualify an investor, write and send outreach, handle replies, analyse the project and prepare documents. Every interaction is logged in the CRM and a daily report reaches the team.",
+        a: "Workflows find and qualify an investor, write and send outreach, handle replies, analyze the project and prepare documents. Every interaction is logged in the CRM and a daily report reaches the team.",
         details: [
           {
             kind: "steps",
-            items: ["Find and score an investor", "Write and send outreach with Claude and email", "Handle replies", "Analyse the project and create documents in Google Drive", "Log everything in the CRM and send a daily report"],
+            items: ["Find and score an investor", "Write and send outreach with Claude and email", "Handle replies", "Analyze the project and create documents in Google Drive", "Log everything in the CRM and send a daily report"],
           },
         ],
       },
@@ -178,7 +179,7 @@ const raw: More = {
     en: [
       {
         q: "Why did Sabzino need a real store and what did we build?",
-        a: "Sabzino, a social enterprise with vegetable-based products, international spices and natural drinks, did not want a catalogue. We built a real store: a responsive cart, customer accounts, checkout, online payment through Zarinpal and an independent admin for products, stock, prices and orders.",
+        a: "Sabzino, a social enterprise with vegetable-based products, international spices and natural drinks, did not want a catalog. We built a real store: a responsive cart, customer accounts, checkout, online payment through Zarinpal and an independent admin for products, stock, prices and orders.",
       },
       {
         q: "How do payments and the admin panel work?",
@@ -214,7 +215,7 @@ const raw: More = {
     en: [
       {
         q: "How was Codechee built?",
-        a: "Codechee teaches Python, data, AI and cybersecurity to school students, and learning had to feel like play. We built gamified learning paths (Starcamps) with levelled courses, gameplay, quiz and escape-room sections, programmes for schools and events such as Sharif Cup, and student accounts with progress tracking.",
+        a: "Codechee teaches Python, data, AI and cybersecurity to school students, and learning had to feel like play. We built gamified learning paths (Starcamps) with leveled courses, gameplay, quiz and escape-room sections, programs for schools and events such as Sharif Cup, and student accounts with progress tracking.",
       },
       {
         q: "I want a gamified learning platform; where do I start?",
@@ -249,11 +250,11 @@ const raw: More = {
     en: [
       {
         q: "How did we build an adventurous site that does not slow down on phones?",
-        a: "Yasin wanted learning a skill to feel like an adventure, not a brochure. We built the game-like narrative with GSAP, Three.js and Lenis so it stays responsive, optimised desktop and mobile media separately and made the effects adapt to device capability.",
+        a: "Yasin wanted learning a skill to feel like an adventure, not a brochure. We built the game-like narrative with GSAP, Three.js and Lenis so it stays responsive, optimized desktop and mobile media separately and made the effects adapt to device capability.",
       },
       {
         q: "What was done for Iranian internet conditions?",
-        a: "Fonts are self-hosted so the site does not depend on an external service, and media is optimised separately per device. This both speeds the site up and keeps it dependable on weak connections.",
+        a: "Fonts are self-hosted so the site does not depend on an external service, and media is optimized separately per device. This both speeds the site up and keeps it dependable on weak connections.",
       },
       {
         q: "What do the technologies do?",
@@ -358,7 +359,7 @@ const raw: More = {
     en: [
       {
         q: "How was ASA-Study built?",
-        a: "An international student choosing a university in Iran must compare cities, universities and programmes in their own language. We built English/Persian routing with complete RTL behaviour, a searchable university directory with a city filter, data-driven university profiles and a CMS-ready structure where each university is its own localised document.",
+        a: "An international student choosing a university in Iran must compare cities, universities and programs in their own language. We built English/Persian routing with complete RTL behavior, a searchable university directory with a city filter, data-driven university profiles and a CMS-ready structure where each university is its own localized document.",
       },
       {
         q: "What do the technologies do?",
@@ -605,9 +606,10 @@ const raw: More = {
   },
 };
 
-const CTA: Record<Locale, string> = {
-  fa: " تماس ۳۰ دقیقه‌ای است؛ مسئله را بیاورید، نه برنامه را، و فقط برای دامنه‌ی توافق‌شده‌ی مکتوب پرداخت می‌کنید.",
-  en: " The call takes 30 minutes: bring the problem, not a plan, and you pay only for the scope agreed in writing.",
+// Names the project, so the closing sentence is not the same word for word on a dozen case studies.
+const CTA: Record<Locale, (title: string) => string> = {
+  fa: (title) => ` تماس ۳۰ دقیقه‌ای است؛ برای پروژه‌ای مثل «${title}» مسئله را بیاورید، نه برنامه را، و فقط برای دامنه‌ی توافق‌شده‌ی مکتوب پرداخت می‌کنید.`,
+  en: (title) => ` The call takes 30 minutes: for a project like ${title}, bring the problem, not a plan, and you pay only for the scope agreed in writing.`,
 };
 const words = (t: string) => t.trim().split(/\s+/).length;
 
@@ -620,7 +622,7 @@ export const more: More = Object.fromEntries(
         locale,
         // Longer case-study sections (projects-extra.ts) go in before the closing "where do we start" question.
         [...byLocale[locale].slice(0, -1), ...(extra[slug]?.[locale] ?? []), ...(care[slug]?.[locale] ?? []), ...byLocale[locale].slice(-1)].map((x) =>
-          x.a && words(x.a) < 25 && x.details?.some((d) => d.kind === "links" && d.items.some((i) => i.href === "/contact")) ? { ...x, a: x.a + CTA[locale] } : x,
+          x.a && words(x.a) < 25 && x.details?.some((d) => d.kind === "links" && d.items.some((i) => i.href === "/contact")) ? { ...x, a: x.a + CTA[locale](projects.find((p) => p.slug === slug)?.[locale].title ?? "") } : x,
         ),
       ]),
     ),

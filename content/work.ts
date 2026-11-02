@@ -152,9 +152,9 @@ export const projects: Project[] = [
       challenge:
         "Codechee teaches Python, data, AI and cybersecurity to school students. Learning had to feel like play, with clear levels and visible progress.",
       built: [
-        "Gamified learning paths (Starcamps) with levelled courses",
+        "Gamified learning paths (Starcamps) with leveled courses",
         "Gameplay, quiz and escape-room sections",
-        "Programmes for schools and events such as Sharif Cup",
+        "Programs for schools and events such as Sharif Cup",
         "Student accounts with progress tracking",
       ],
       results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
@@ -191,7 +191,7 @@ export const projects: Project[] = [
       built: [
         "A game-like narrative with GSAP, Three.js and Lenis that stays responsive",
         "Journeys for courses, mentors and registration",
-        "Centralised copy and separately optimised desktop and mobile media",
+        "Centralised copy and separately optimized desktop and mobile media",
         "Device-aware effects and self-hosted fonts for reliable performance in Iran",
       ],
       results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
@@ -306,7 +306,7 @@ export const projects: Project[] = [
       client: "Sabzino",
       sector: "E-commerce · Social enterprise",
       summary: "An online store for a social enterprise selling vegetable-based products, international spices and natural drinks.",
-      challenge: "Sabzino needed a real store, not a catalogue: online payments, customer accounts and an admin the team can run on its own.",
+      challenge: "Sabzino needed a real store, not a catalog: online payments, customer accounts and an admin the team can run on its own.",
       built: [
         "Responsive cart, customer accounts and checkout",
         "Online payments through Zarinpal",
@@ -519,13 +519,13 @@ export const projects: Project[] = [
       title: "ASA-Study",
       client: "ASA-Study",
       sector: "Education · International admissions",
-      summary: "A bilingual admissions platform that guides international students through Iranian universities, programmes and application services.",
-      challenge: "International students choosing a university in Iran need to compare cities, universities and programmes, in their own language.",
+      summary: "A bilingual admissions platform that guides international students through Iranian universities, programs and application services.",
+      challenge: "International students choosing a university in Iran need to compare cities, universities and programs, in their own language.",
       built: [
-        "English/Persian routing with complete RTL behaviour",
+        "English/Persian routing with complete RTL behavior",
         "A searchable university directory you can filter by city",
         "Data-driven university profiles",
-        "A CMS-ready structure: each university is its own localised document",
+        "A CMS-ready structure: each university is its own localized document",
       ],
       results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,

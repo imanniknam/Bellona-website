@@ -32,7 +32,7 @@ export const serviceSpokes: Spoke[] = [
       eyebrow: "Marketing & growth",
       h1: "Website **SEO services**",
       definition:
-        "SEO (search engine optimisation) is the work that lets search engines find, understand and rank your pages for what people search. It has a technical side (can Google read the site quickly?), a content side (does each page answer a real search?) and a measurement side (is it bringing customers?).",
+        "SEO (search engine optimization) is the work that lets search engines find, understand and rank your pages for what people search. It has a technical side (can Google read the site quickly?), a content side (does each page answer a real search?) and a measurement side (is it bringing customers?).",
       answers: [
         {
           q: "What do SEO services include, starting with technical SEO?",
@@ -91,13 +91,13 @@ export const serviceSpokes: Spoke[] = [
         },
         {
           q: "How does an SEO engagement run?",
-          a: "Five steps: audit, plan, implement, measure and improve. We start by reading the current site and Search Console data, write a prioritised plan, implement the technical and content work, report monthly on what changed, and adjust the plan from the numbers.",
+          a: "Five steps: audit, plan, implement, measure and improve. We start by reading the current site and Search Console data, write a prioritized plan, implement the technical and content work, report monthly on what changed, and adjust the plan from the numbers.",
           details: [
             {
               kind: "steps",
               items: [
                 "Audit: technical state, indexed pages, current rankings",
-                "Plan: keyword-to-page map and a prioritised list of fixes",
+                "Plan: keyword-to-page map and a prioritized list of fixes",
                 "Implement: technical work and content",
                 "Measure: Search Console, rankings, Core Web Vitals, leads",
                 "Improve: drop what does not work, strengthen what does",
@@ -397,7 +397,7 @@ export const serviceSpokes: Spoke[] = [
         },
         {
           q: "How long does CRM automation take?",
-          a: `A focused automation sprint, one process automated end to end, goes live in ${sprintEn}. Simple automations take days and multi-agent systems take longer. The timeline is fixed in the quote after the free audit.`,
+          a: `One process automated end to end goes live in a focused sprint of ${sprintEn}. Simple automations take days and multi-agent systems take longer. The timeline is fixed in the quote after the free audit.`,
         },
         {
           q: "How do I get a price for CRM automation?",
@@ -449,7 +449,7 @@ export const serviceSpokes: Spoke[] = [
         },
         {
           q: "اتوماسیون CRM چقدر طول می‌کشد؟",
-          a: `یک اسپرینت اتوماسیون متمرکز، یعنی یک فرایند کامل از اول تا آخر، در ${sprintFa} راه می‌افتد. اتوماسیون‌های ساده چند روز و سیستم‌های چندایجنتی بیشتر طول می‌کشند. زمان‌بندی بعد از بررسی رایگان در پیشنهاد قیمت قطعی می‌آید.`,
+          a: `یک فرایند کامل از اول تا آخر در یک اسپرینت اتوماسیون متمرکز و در ${sprintFa} راه می‌افتد. اتوماسیون‌های ساده چند روز و سیستم‌های چندایجنتی بیشتر طول می‌کشند. زمان‌بندی بعد از بررسی رایگان در پیشنهاد قیمت قطعی می‌آید.`,
         },
         {
           q: "قیمت اتوماسیون CRM را چطور بگیرم؟",

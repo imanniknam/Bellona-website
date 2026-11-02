@@ -6,7 +6,7 @@ import { projects } from "../work";
 /**
  * In-depth questions for each service pillar (SEO-GUIDELINE D1, D7, D8, D12), keyed by pillar id.
  * Answer-first: a direct answer of about 40–80 words, then detail. Every claim about Bellona comes from the
- * case studies (content/work.ts), the team copy or content/facts.ts; general explanations are labelled as such.
+ * case studies (content/work.ts), the team copy or content/facts.ts; general explanations are labeled as such.
  * TODO(owner): published price ranges and a typical website timeline (docs/seo/QUESTIONS_FOR_TEAM.md #4, #30).
  */
 type More = Record<string, Record<Locale, Answer[]>>;
@@ -174,10 +174,10 @@ export const more: More = {
             caption: "Three ways to get a website",
             head: ["Criterion", "Ready-made template", "Freelancer", "Agency (like Bellona)"],
             rows: [
-              ["Customisation", "Limited to what the template offers", "Depends on one person's skills", "Custom design and code"],
+              ["Customization", "Limited to what the template offers", "Depends on one person's skills", "Custom design and code"],
               ["Speed and SEO", "Depends on plugins and the template", "Depends on one person's experience", "Structure, speed and SEO are part of the build"],
               ["Responsibility after delivery", "Yours", "One person; availability is not guaranteed", "Monitoring, fixes and improvement are part of the work"],
-              ["Range of skills", "None", "Usually one specialism", "Design, engineering, automation and growth together"],
+              ["Range of skills", "None", "Usually one specialty", "Design, engineering, automation and growth together"],
               ["Starting cost", "Lowest", "Medium", "Highest, but the quote is fixed and in writing"],
             ],
           },
@@ -224,14 +224,14 @@ export const more: More = {
               "Design: a custom interface that matches your brand",
               "Build: coding, connecting forms, testing on mobile and desktop",
               "Launch: going live on your domain and registering with search engines",
-              "Improvement: monitoring and refining from real visitor behaviour",
+              "Improvement: monitoring and refining from real visitor behavior",
             ],
           },
         ],
       },
       {
         q: "What kinds of websites do you design?",
-        a: "Corporate and organisation sites, online stores, education sites, media and news platforms, bilingual sites, landing pages and redesigns of existing sites. Each type has its own page explaining its goal, structure and examples.",
+        a: "Corporate and organization sites, online stores, education sites, media and news platforms, bilingual sites, landing pages and redesigns of existing sites. Each type has its own page explaining its goal, structure and examples.",
       },
       {
         q: "Which websites have you designed?",
@@ -262,7 +262,7 @@ export const more: More = {
         a: "Yes. Monitoring, fixes and improvement are part of every engagement. You can continue with the monthly growth partnership so pages, automation and content keep getting better.",
       },
       {
-        q: "Is the site optimised for mobile and speed?",
+        q: "Is the site optimized for mobile and speed?",
         a: "Yes. Every page is designed mobile-first, images load at the right size, and heavy libraries only load on the pages that need them. Speed is part of SEO, not a side job.",
       },
       {
@@ -507,7 +507,7 @@ export const more: More = {
       },
       {
         q: "Why automate instead of hiring?",
-        a: "Hiring means a fixed monthly cost. A system is built once and grows with you without labour cost rising in step. Automation does not replace human judgement; it takes the repetitive work away.",
+        a: "Hiring means a fixed monthly cost. A system is built once and grows with you without labour cost rising in step. Automation does not replace human judgment; it takes the repetitive work away.",
       },
       {
         q: "How is automation priced?",

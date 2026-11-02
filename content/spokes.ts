@@ -115,7 +115,7 @@ const rawSpokes: Spoke[] = [
       answers: [
         {
           q: "What can an AI agent do for a business?",
-          a: "An agent takes over repetitive work that follows rules but needs judgement: replying to new leads, qualifying them, following up until there is an answer, logging everything in the CRM and preparing reports. Your team keeps the decisions that need a person, and the agent hands those over with the context attached.",
+          a: "An agent takes over repetitive work that follows rules but needs judgment: replying to new leads, qualifying them, following up until there is an answer, logging everything in the CRM and preparing reports. Your team keeps the decisions that need a person, and the agent hands those over with the context attached.",
         },
         {
           q: "How long does it take to build an AI agent?",
@@ -182,7 +182,7 @@ const rawSpokes: Spoke[] = [
       answers: [
         {
           q: "What does an n8n implementation include?",
-          a: "Mapping the process first, then building the workflows, connecting each tool, handling errors so failures alert someone instead of silently stopping, and documenting it so your team understands what runs where. Where a step needs judgement, we add an AI node or agent inside the workflow.",
+          a: "Mapping the process first, then building the workflows, connecting each tool, handling errors so failures alert someone instead of silently stopping, and documenting it so your team understands what runs where. Where a step needs judgment, we add an AI node or agent inside the workflow.",
         },
         {
           q: "What is an example of an n8n system you have built?",
@@ -588,7 +588,7 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "Which bilingual websites have you built?",
-          a: "ASA-Study, an admissions platform for international students with full Persian and English routing and right-to-left behaviour; and this site, which serves Persian and English as two linked versions of every page.",
+          a: "ASA-Study, an admissions platform for international students with full Persian and English routing and right-to-left behavior; and this site, which serves Persian and English as two linked versions of every page.",
           details: [{ kind: "links", items: [{ label: "ASA-Study", href: "/work/asa-study" }] }],
         },
         {
@@ -914,6 +914,9 @@ export const guidesHub = {
     eyebrow: "Guides",
     h1: "Guides for **deciding well**",
     sub: "Straight answers to the questions we hear most before a project starts.",
+    intro:
+      "These guides answer the questions we hear most before a project starts: what a website costs, moving off WordPress, bilingual sites, Next.js SEO, being visible in AI search and automating customer follow-up. Each guide shows its author and the date it was last updated, and draws on real Bellona projects.",
+    groups: { web: "Website design", growth: "SEO and visibility", ai: "AI automation" },
     read: "Read the guide",
     deeper: "Go deeper",
     relatedWork: "Related work",
@@ -931,6 +934,9 @@ export const guidesHub = {
     eyebrow: "راهنما",
     h1: "راهنماهایی برای **تصمیم درست**",
     sub: "جواب روشن به سؤال‌هایی که قبل از شروع پروژه بیشتر از همه می‌شنویم.",
+    intro:
+      "این راهنماها جواب سؤال‌هایی هستند که پیش از شروع پروژه بیشتر از همه می‌شنویم: هزینه‌ی طراحی سایت، انتقال از وردپرس، سایت دوزبانه، سئوی Next.js، دیده شدن در جست‌وجوی هوش مصنوعی و خودکارسازی پیگیری مشتری. هر راهنما نویسنده و تاریخ آخرین به‌روزرسانی‌اش را نشان می‌دهد و بر پایه‌ی پروژه‌های واقعی بلونا نوشته شده است.",
+    groups: { web: "طراحی سایت", growth: "سئو و دیده شدن", ai: "اتوماسیون هوش مصنوعی" },
     read: "خواندن راهنما",
     deeper: "بیشتر بدانید",
     relatedWork: "نمونه‌کارهای مرتبط",

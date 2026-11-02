@@ -176,10 +176,18 @@ export interface Dict {
       rights: string;
       legal: { privacy: string; terms: string };
       emailLabel: string;
+      /** Footer link label for the /partner page. */
+      partner: string;
       /** Social profiles shown in the footer and menu (and listed as schema.org sameAs). */
       social: { label: string; href: string }[];
     };
     email: string;
+    /**
+     * Quick-contact channels (Telegram, WhatsApp, a phone as a tel: link). Empty until the owner provides them; each one
+     * is then shown in the footer and on /contact, listed as a ContactPoint, and its clicks are tracked
+     * (SEO-GUIDELINE v2, 10). Nothing is rendered while this is undefined.
+     */
+    channels?: { label: string; href: string }[];
   };
   hero: {
     tagline: string;

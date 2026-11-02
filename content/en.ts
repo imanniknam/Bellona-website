@@ -91,10 +91,14 @@ export const en: Dict = {
       rights: "© 2026 Bellona. All rights reserved.",
       legal: { privacy: "Privacy", terms: "Terms" },
       emailLabel: "Email",
+      partner: "All-in-one digital agency",
       // TODO(owner): add a quick chat channel (Telegram or WhatsApp), and a phone number and address if you want them public (SEO-GUIDELINE B9).
       social: [{ label: "Instagram", href: "https://www.instagram.com/bellona.ai" }],
     },
     email: "bellona.ai.team@gmail.com",
+    // TODO(owner): a domain email such as hello@bellonaagency.com instead of the Gmail address (here and in every schema node).
+    // TODO(owner): quick-chat channels, e.g. channels: [{ label: "Telegram", href: "https://t.me/..." }, { label: "Phone", href: "tel:+98..." }].
+    // They then appear in the footer, on /contact and in the ContactPoint schema; nothing is shown until then.
   },
 
   /** SEO <title>/description per locale-less path (docs/seo/SEO_SITE_ARCHITECTURE.md). Labels in `meta` stay short. */
@@ -106,7 +110,8 @@ export const en: Dict = {
       title: "Website and automation packages, fixed quotes",
     },
     "/partner": {
-      title: "Your digital partner from idea to growth",
+      title: "All-in-one digital agency: idea to growth",
+      description: "An all-in-one digital agency: strategy, design, build, automation, marketing and support from one team and one plan. Book a free growth audit.",
     },
     "/industries": {
       title: "Websites and AI automation by industry",
@@ -990,7 +995,7 @@ export const en: Dict = {
     },
     partner: {
       eyebrow: "YOUR COMPLETE PARTNER",
-      h1: "Your complete **digital partner.**",
+      h1: "An **all-in-one digital agency** for your business.",
       sub: "One team from idea to growth: strategy, design, build, automation, marketing and support, working from one plan.",
       problem: {
         title: "Five agencies. **Five plans. Zero ownership.**",

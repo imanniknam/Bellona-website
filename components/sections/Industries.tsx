@@ -93,7 +93,7 @@ export function Industries({ d, full = false }: { d: Dict; full?: boolean }) {
 
   if (full) {
     return (
-      <section id="industries" aria-labelledby="industries-title" className="pb-24">
+      <section data-shared="" id="industries" aria-labelledby="industries-title" className="pb-24">
         <div className="wrap flex flex-col gap-12">
           <h2 id="industries-title" className="sr-only">
             {industries.eyebrow}
@@ -106,7 +106,7 @@ export function Industries({ d, full = false }: { d: Dict; full?: boolean }) {
   }
 
   return (
-    <section id="industries" aria-labelledby="industries-title" className="section bg-surface">
+    <section data-shared="" id="industries" aria-labelledby="industries-title" className="section bg-surface">
       <StickySplit
         head={
           <>
