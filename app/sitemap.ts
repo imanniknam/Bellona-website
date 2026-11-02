@@ -4,6 +4,7 @@ import { join } from "node:path";
 import type { MetadataRoute } from "next";
 import { en } from "@/content/en";
 import type { Locale } from "@/content/types";
+import { postPath, publishedPosts } from "@/content/blog";
 import { projects } from "@/content/work";
 import { publishedSpokes, spokePath } from "@/lib/drafts";
 import { spokes } from "@/content/spokes";
@@ -20,6 +21,7 @@ const SPOKE_FILES = ["content/spokes.ts", "content/spokes-services.ts", "content
 function sources(path: string, locale: Locale): string[] {
   const copy = `content/${locale}.ts`;
   if (path === "/") return [copy];
+  if (path.startsWith("/blog")) return ["content/blog.ts"];
   if (path.startsWith("/guides") || path.split("/").length > 3 || spokePaths.has(path)) return SPOKE_FILES;
   if (path.startsWith("/services")) return [copy, "content/more/pillars.ts"];
   if (path.startsWith("/work/")) return [copy, "content/work.ts", "content/work-alt.ts", "content/more/projects.ts", `public/work/${path.slice(6)}`];
@@ -66,13 +68,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work",
     ...projects.filter((p) => p.status === "published").map((p) => `/work/${p.slug}`),
     ...(publishedSpokes("guide").length ? ["/guides", ...publishedSpokes("guide").map(spokePath)] : []),
+    ...(publishedPosts().length ? ["/blog", ...publishedPosts().map(postPath)] : []),
     "/about",
     "/contact",
   ];
   return paths.flatMap((path) =>
     (["en", "fa"] as const).map((locale) => {
       // A guide's own "last updated" date wins; everything else uses the last commit touching its sources.
-      const own = spokes.find((s) => s.kind === "guide" && path === `/guides/${s.slug}`)?.updated;
+      const own = spokes.find((s) => s.kind === "guide" && path === `/guides/${s.slug}`)?.updated ?? publishedPosts().find((p) => path === postPath(p))?.updated;
       const lastModified = own ? new Date(own) : lastCommit(sources(path, locale));
       return {
         url: `${siteUrl}${localePath(locale, path)}`,

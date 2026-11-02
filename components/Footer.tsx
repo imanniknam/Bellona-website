@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Dict } from "@/content/types";
+import { blogHub, postPath, publishedPosts } from "@/content/blog";
 import { guidesHub } from "@/content/spokes";
 import { publishedSpokes, spokePath } from "@/lib/drafts";
 import { localePath } from "@/lib/i18n";
@@ -21,6 +22,7 @@ export function Footer({ d }: { d: Dict }) {
   const toLink = (s: ReturnType<typeof publishedSpokes>[number]) => ({ href: spokePath(s), label: s[locale].h1.replace(/\*\*/g, "") });
   const spokeLinks = publishedSpokes("service").map(toLink);
   const guideLinks = publishedSpokes("guide").map(toLink);
+  const postLinks = publishedPosts().map((p) => ({ href: postPath(p), label: p[locale].h1.replace(/\*\*/g, "") }));
   return (
     <footer className="on-dark bg-ink text-paper">
       <div className="wrap flex flex-col gap-10 pb-6 pt-10">
@@ -93,6 +95,24 @@ export function Footer({ d }: { d: Dict }) {
             </p>
             <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
               {guideLinks.map((s) => (
+                <li key={s.href}>
+                  <Link href={localePath(locale, s.href)} className="text-soft-dark hover:text-orange">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        {postLinks.length > 0 && (
+          <nav aria-labelledby="footer-blog" className="flex flex-wrap items-baseline gap-x-7 gap-y-3">
+            <p id="footer-blog" className="t-eyebrow text-orange-on-dark">
+              <Link href={localePath(locale, "/blog")} className="hover:text-paper">
+                {blogHub[locale].eyebrow}
+              </Link>
+            </p>
+            <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
+              {postLinks.map((s) => (
                 <li key={s.href}>
                   <Link href={localePath(locale, s.href)} className="text-soft-dark hover:text-orange">
                     {s.label}
