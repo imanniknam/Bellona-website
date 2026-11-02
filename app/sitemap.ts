@@ -1,4 +1,6 @@
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { MetadataRoute } from "next";
 import { en } from "@/content/en";
 import type { Locale } from "@/content/types";
@@ -9,23 +11,38 @@ import { localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 
 /**
- * The files a page is built from, for its lastmod (docs/seo TA-13): its language's copy plus the page
- * component, and for case studies the project data and screenshots.
+ * The content files a page is built from, for its lastmod (SEO-GUIDELINE 7-1): its language's copy plus the data
+ * files that hold the rest of its text. Page components are layout, not content, so they do not count.
  */
 const spokePaths = new Set([...publishedSpokes("service"), ...publishedSpokes("guide")].map(spokePath));
+const SPOKE_FILES = ["content/spokes.ts", "content/spokes-services.ts", "content/spokes-guides-a.ts", "content/spokes-guides-b.ts", "content/more/spokes.ts", "content/facts.ts"];
 
 function sources(path: string, locale: Locale): string[] {
   const copy = `content/${locale}.ts`;
-  if (path === "/") return [copy, "components/pages/HomePage.tsx"];
-  if (path.startsWith("/guides") || path.split("/").length > 3 || spokePaths.has(path)) return ["content/spokes.ts", "content/more/spokes.ts", "content/facts.ts", "components/pages/SpokePages.tsx"];
-  if (path.startsWith("/services")) return [copy, "components/pages/ServicePages.tsx"];
-  if (path.startsWith("/work/")) return [copy, "content/work.ts", "components/pages/OtherPages.tsx", `public/work/${path.slice(6)}`];
-  if (path.startsWith("/work") || path.startsWith("/industries")) return [copy, "content/work.ts", "components/pages/OtherPages.tsx"];
-  return [copy, "components/pages/OtherPages.tsx"];
+  if (path === "/") return [copy];
+  if (path.startsWith("/guides") || path.split("/").length > 3 || spokePaths.has(path)) return SPOKE_FILES;
+  if (path.startsWith("/services")) return [copy, "content/more/pillars.ts"];
+  if (path.startsWith("/work/")) return [copy, "content/work.ts", "content/work-alt.ts", "content/more/projects.ts", `public/work/${path.slice(6)}`];
+  if (path.startsWith("/work")) return [copy, "content/work.ts", "content/more/pages.ts"];
+  if (path.startsWith("/industries")) return [copy, "content/work.ts", "content/more/industries.ts", "content/more/pages.ts"];
+  return [copy, "content/more/pages.ts"];
 }
 
-/** Last git commit date touching those files. Undefined (lastmod omitted) if git isn't available. */
+/**
+ * Date a path last changed. content-dates.json (scripts/content-dates.mjs) holds the last commit date per file and is
+ * committed, because deploy hosts clone shallowly and git there cannot tell. Falls back to git, then to no lastmod.
+ */
+let recorded: Record<string, string> | undefined;
 function lastCommit(files: string[]): Date | undefined {
+  try {
+    recorded ??= JSON.parse(readFileSync(join(process.cwd(), "content-dates.json"), "utf8")) as Record<string, string>;
+  } catch {
+    recorded = {};
+  }
+  const times = Object.entries(recorded)
+    .filter(([file]) => files.some((f) => file === f || file.startsWith(`${f}/`)))
+    .map(([, date]) => new Date(date).getTime());
+  if (times.length) return new Date(Math.max(...times));
   try {
     const out = execFileSync("git", ["log", "-1", "--format=%cI", "--", ...files], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
     return out ? new Date(out) : undefined;

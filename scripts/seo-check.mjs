@@ -14,7 +14,7 @@
  * Usage: npm run seo:check
  */
 import { spawn } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -346,21 +346,28 @@ async function main() {
       if (res.status !== 200) err(f, `returns ${res.status}`, "icon");
     }
 
-    // lastmod: at least 80% of the URLs must differ from the deploy time, which is the one value many URLs share.
+    // lastmod: at least 80% of the URLs must carry a date other than the deploy time (section 7-1).
     {
       const mods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+      const sec = (v) => Math.floor(new Date(v).getTime() / 1000);
+      // Deploy time: the build's mtime when we started the server, else the Last-Modified header of the home page.
+      const deploy = new Set();
+      if (!process.env.SEO_CHECK_BASE && existsSync(path.join(root, ".next", "BUILD_ID"))) deploy.add(sec(statSync(path.join(root, ".next", "BUILD_ID")).mtime));
+      const lm = (await fetch(base + "/", { redirect: "manual" })).headers.get("last-modified");
+      if (lm) deploy.add(sec(lm));
+      // Deploy time unknown (a remote site that sends no Last-Modified): a value shared by 90% of the URLs is a stamp.
       const count = {};
-      for (const m of mods) count[m] = (count[m] || 0) + 1;
-      const [top, n] = Object.entries(count).sort((a, b) => b[1] - a[1])[0] || ["", 0];
-      const buildTime = n >= 30 ? top : null;
-      const different = mods.filter((m) => m !== buildTime).length;
+      for (const m of mods) count[sec(m)] = (count[sec(m)] || 0) + 1;
+      const [top, n] = Object.entries(count).sort((a, b) => b[1] - a[1])[0] || [0, 0];
+      if (!deploy.size && n > mods.length * 0.9) deploy.add(Number(top));
+      const different = mods.filter((m) => !deploy.has(sec(m))).length;
       if (mods.length < pages.length) err("/sitemap.xml", `${pages.length - mods.length} URLs have no lastmod`, "lastmod");
-      if (mods.length && different / mods.length < 0.8) err("/sitemap.xml", `only ${different}/${mods.length} lastmod values differ from the shared value ${buildTime}`, "lastmod");
+      if (mods.length && different / mods.length < 0.8) err("/sitemap.xml", `only ${different}/${mods.length} lastmod values differ from the deploy time`, "lastmod");
       for (const m of mods) if (new Date(m) > new Date(Date.now() + 60_000)) err("/sitemap.xml", `lastmod in the future: ${m}`, "lastmod");
       await new Promise((r) => setTimeout(r, 1500));
       const mods2 = [...(await (await fetch(base + "/sitemap.xml")).text()).matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
       if (mods.join() !== mods2.join()) err("/sitemap.xml", "lastmod changes between fetches (request time, not content time)", "lastmod");
-      console.log(`lastmod: ${new Set(mods).size} distinct values over ${mods.length} URLs${buildTime ? `, most common (${n}×): ${buildTime}` : ""}`);
+      console.log(`lastmod: ${new Set(mods).size} distinct values over ${mods.length} URLs, ${different} differ from the deploy time`);
     }
 
     const robots = await (await fetch(base + "/robots.txt")).text();

@@ -40,17 +40,25 @@ export function pageMetadata({
   const ogTitle = absoluteTitle ? title : `${title} · ${d.meta.siteName}`;
   // The home page (absolute title) gets the brand as its default OG title, never an empty one.
   const og = ogImagePath(locale, ogImageTitle ?? (absoluteTitle ? "Bellona Agency" : title));
+  // The Metadata API drops the trailing slash of the site root, but the root is "https://bellonaagency.com/"
+  // everywhere else (sitemap, schema). So the two home pages render canonical, hreflang and og:url themselves
+  // (components/RootLinks.tsx); every other page uses the API as usual (SEO-GUIDELINE 7-2).
+  const isRoot = path === "/";
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
-    alternates: {
-      canonical: url,
-      languages: {
-        en: localePath("en", path),
-        fa: localePath("fa", path),
-        "x-default": localePath("fa", path),
-      },
-    },
+    ...(isRoot
+      ? {}
+      : {
+          alternates: {
+            canonical: url,
+            languages: {
+              en: localePath("en", path),
+              fa: localePath("fa", path),
+              "x-default": localePath("fa", path),
+            },
+          },
+        }),
     openGraph: {
       ...(article
         ? {
@@ -60,7 +68,7 @@ export function pageMetadata({
             ...(article.author ? { authors: [article.author] } : {}),
           }
         : { type: "website" as const }),
-      url,
+      ...(isRoot ? {} : { url }),
       siteName: d.meta.siteName,
       title: ogTitle,
       description,

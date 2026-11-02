@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/content-dates.mjs",
     "build": "next build",
+    "dates": "node scripts/content-dates.mjs",
     "start": "next start",
     "lint": "eslint .",
     "seo:check": "node scripts/seo-check.mjs",

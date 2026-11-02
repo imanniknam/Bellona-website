@@ -61,6 +61,7 @@ export function ProjectCard({
           alt={coverAltText(project, d)}
           fill
           priority={priority}
+          fetchPriority={priority ? "high" : undefined}
           sizes={compact ? "(min-width: 1024px) 400px, (min-width: 768px) 33vw, 100vw" : "(min-width: 1024px) 620px, 100vw"}
           className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
         />

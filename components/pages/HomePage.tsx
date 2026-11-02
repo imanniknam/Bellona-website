@@ -1,5 +1,6 @@
 import type { Locale } from "@/content/types";
 import { getDict } from "@/lib/i18n";
+import { RootLinks } from "../RootLinks";
 import { Contact } from "../sections/Contact";
 import { Faq } from "../sections/Faq";
 import { Hero } from "../sections/Hero";
@@ -19,6 +20,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   const d = getDict(locale);
   return (
     <>
+      <RootLinks locale={locale} />
       <Hero d={d} />
       <div className="pt-24 lg:pt-32">
         <Problems d={d} />

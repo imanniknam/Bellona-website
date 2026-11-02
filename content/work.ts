@@ -261,7 +261,8 @@ export const projects: Project[] = [
     pillars: ["web"],
     industries: ["education"],
     tone: "orange",
-    url: "https://microshamim-rosy.vercel.app",
+    // TODO(owner): final domain of the Microshamim site. The Vercel test address below is not linked or indexed (SEO-GUIDELINE 8).
+    // url: "https://microshamim-rosy.vercel.app",
     cover: "/work/microshamim/cover-art.jpg",
     gallery: [desktop("/work/microshamim/shot-1.jpg"), desktop("/work/microshamim/shot-2.jpg"), mobile("/work/microshamim/mobile.jpg")],
     en: {
@@ -509,7 +510,8 @@ export const projects: Project[] = [
     pillars: ["web"],
     industries: ["education"],
     tone: "paper",
-    url: "https://asastudy-website.vercel.app",
+    // TODO(owner): final domain of the ASA-Study site. The Vercel test address below is not linked or indexed (SEO-GUIDELINE 8).
+    // url: "https://asastudy-website.vercel.app",
     cover: "/work/asa-study/cover-art.jpg",
     gallery: shots("asa-study", 3),
     stack: ["Next.js 15", "next-intl", "TypeScript", "Radix UI", "Framer Motion"],

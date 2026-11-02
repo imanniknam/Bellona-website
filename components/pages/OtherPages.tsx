@@ -325,7 +325,7 @@ export function CaseStudyPage({ locale, slug }: { locale: Locale; slug: string }
       <div className="wrap">
         <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-[28px] bg-ink sm:rounded-[40px]">
           {project.cover ? (
-            <Image src={project.cover} alt={coverAltText(project, d)} fill priority sizes="(min-width: 1280px) 1232px, 100vw" className="object-cover object-top" />
+            <Image src={project.cover} alt={coverAltText(project, d)} fill priority fetchPriority="high" sizes="(min-width: 1280px) 1232px, 100vw" className="object-cover object-top" />
           ) : project.model ? (
             <VoxelArt model={project.model} className="h-1/2 w-auto" gap="stroke-ink" swap={{ k: "w" }} anim="rise" label={c.title} />
           ) : (
