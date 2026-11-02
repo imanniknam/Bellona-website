@@ -1,9 +1,11 @@
 {
+ "components/pages/BlogPages.tsx": "2026-11-02T16:01:27+03:30",
  "components/pages/HomePage.tsx": "2026-11-02T14:15:33+03:30",
  "components/pages/OtherPages.tsx": "2026-11-02T14:37:36+03:30",
  "components/pages/ServicePages.tsx": "2026-11-02T14:06:10+03:30",
  "components/pages/SpokePages.tsx": "2026-11-02T14:37:36+03:30",
  "content/AUDIT.md": "2026-10-26T20:29:25+03:00",
+ "content/blog.ts": "2026-11-02T16:01:27+03:30",
  "content/COPY.md": "2026-10-26T20:29:25+03:00",
  "content/en.ts": "2026-11-02T14:39:15+03:30",
  "content/fa.ts": "2026-11-02T14:39:15+03:30",
