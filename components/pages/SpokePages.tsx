@@ -5,7 +5,7 @@ import { publishedSpokes, visibleSpokes, spokePath } from "@/lib/drafts";
 import { digits } from "@/lib/format";
 import { getDict, localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
-import { ORG_ID } from "../JsonLd";
+import { FaqLd, ORG_ID, ServiceNodeLd } from "../JsonLd";
 import { Breadcrumbs } from "../Breadcrumbs";
 import { Answers } from "../sections/Answers";
 import { Contact } from "../sections/Contact";
@@ -81,6 +81,9 @@ function Related({ s, locale, pillarSlug }: { s: Spoke; locale: Locale; pillarSl
   );
 }
 
+/** Answered questions as FAQ items, for the FAQPage schema (unanswered ones never appear). */
+const answerFaq = (answers: Spoke["en"]["answers"]) => answers.flatMap((x) => (x.a ? [{ q: x.q, a: x.a }] : []));
+
 /** /services/<pillar>/<spoke> */
 export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; parent: string; slug: string }) {
   const s = findSpoke("service", slug, parent);
@@ -114,6 +117,8 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={guidesHub[locale].needsAnswer} />
       <Related s={s} locale={locale} pillarSlug={parent} />
       <Contact d={d} defaultNeed={s.need} />
+      <ServiceNodeLd d={d} name={c.h1.replace(/\*\*/g, "")} serviceType={pillar.title} description={c.metaDescription} path={spokePath(s)} />
+      <FaqLd items={answerFaq(c.answers)} />
     </>
   );
 }
@@ -191,6 +196,7 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={h.needsAnswer} />
       <Related s={s} locale={locale} pillarSlug={s.need === "ai" ? "ai-automation" : s.need === "growth" ? "marketing-growth" : "website-design"} />
       <Contact d={d} defaultNeed={s.need} />
+      <FaqLd items={answerFaq(c.answers)} />
       {!draft && author && updated && (
         <script
           type="application/ld+json"
@@ -206,6 +212,8 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
               datePublished: s.updated,
               dateModified: s.updated,
               author: { "@type": "Person", name: author.name, jobTitle: author.role },
+              image: `${siteUrl}/api/og?locale=${locale}&title=Bellona%20Agency`,
+              mainEntityOfPage: url,
               publisher: { "@id": ORG_ID },
             }).replace(/</g, "\\u003c"),
           }}

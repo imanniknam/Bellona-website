@@ -15,8 +15,9 @@
  *  - old production URLs redirect permanently (301/308) in a single hop to a 200
  *  - robots.txt: "User-agent: *" + "Allow: /", no root Disallow, no Host line, Sitemap line, explicit AI-search
  *    crawler group (G-02)
- *  - schema (P1-08): the full ProfessionalService entity only on the home pages; a Service node on each service
- *    page and nowhere else; a WebSite node on every page
+ *  - schema (SEO-GUIDELINE C): the ProfessionalService entity and a WebSite node on every page; BreadcrumbList on
+ *    every inner page; a Service node on each service page and sub-page and nowhere else; CreativeWork on case
+ *    studies, Article on guides, ContactPage on /contact (full validator: npm run seo:schema)
  *  - every page links to every service page (footer, P1-07)
  *  - sitemap lastmod is stable between two fetches and never in the future (TA-13)
  * Warnings: content images with empty alt that aren't marked decorative; internal links to redirects;
@@ -179,11 +180,16 @@ async function checkPage(base, p, seen) {
       return [];
     }
   });
-  const isHome = p === "/" || p === "/en";
-  const isService = /^(\/en)?\/services\/[^/]+$/.test(p);
-  if (isHome !== types.includes("ProfessionalService")) err(p, isHome ? "home page lacks the ProfessionalService entity" : "full ProfessionalService entity outside the home page");
-  if (isService !== types.includes("Service")) err(p, isService ? "service page lacks its Service node" : "Service node outside a service page");
+  const bare = p.replace(/^\/en(?=\/|$)/, "") || "/";
+  const isHome = bare === "/";
+  const isService = /^\/services\/[^/]+(\/[^/]+)?$/.test(bare);
+  if (!types.includes("ProfessionalService")) err(p, "no ProfessionalService entity");
   if (!types.includes("WebSite")) err(p, "no WebSite node");
+  if (isService !== types.includes("Service")) err(p, isService ? "service page lacks its Service node" : "Service node outside a service page");
+  if (!isHome && !types.includes("BreadcrumbList")) err(p, "no BreadcrumbList");
+  if (/^\/work\/[^/]+$/.test(bare) && !types.includes("CreativeWork")) err(p, "case study lacks CreativeWork");
+  if (/^\/guides\/[^/]+$/.test(bare) && !types.includes("Article")) err(p, "guide lacks Article");
+  if (bare === "/contact" && !types.includes("ContactPage")) err(p, "contact page lacks ContactPage");
 
   const links = internalLinks(body);
   for (const sp of seen.servicePaths) {

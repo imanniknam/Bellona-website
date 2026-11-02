@@ -8,6 +8,7 @@ import { publishedSpokes, spokePath } from "@/lib/drafts";
 import { digits, stepNum } from "@/lib/format";
 import { getDict } from "@/lib/i18n";
 import { Breadcrumbs } from "../Breadcrumbs";
+import { AboutPageLd, CaseStudyLd, ContactPageLd } from "../JsonLd";
 import { Rich } from "../Rich";
 import { Contact } from "../sections/Contact";
 import { Faq } from "../sections/Faq";
@@ -389,6 +390,7 @@ export function CaseStudyPage({ locale, slug }: { locale: Locale; slug: string }
         )}
       </nav>
       <Contact d={d} />
+      <CaseStudyLd d={d} project={project} />
     </>
   );
 }
@@ -436,6 +438,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
       <Team d={d} />
       <Why d={d} withCompare={false} />
       <Contact d={d} />
+      <AboutPageLd d={d} />
     </>
   );
 }
@@ -446,6 +449,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
   return (
     <>
       <Breadcrumbs d={d} trail={[{ name: d.meta.contact.title, path: "/contact" }]} />
+      <ContactPageLd d={d} />
       <Contact d={d} asH1 title={p.h1} sub={p.sub} />
       <section aria-labelledby="next-title" className="pt-24 lg:pt-32">
         <div className="wrap">
