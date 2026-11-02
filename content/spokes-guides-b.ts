@@ -17,6 +17,7 @@ const nFa = (v: number) => fmt.n(v, "fa");
 const UPDATED = "2026-11-02";
 const BAZDAR = "Amirhossein Bazdar|امیرحسین بازدار";
 const NIKNAM = "Iman Niknam|ایمان نیک‌نام";
+const RAZI = "Sina Razi|سینا راضی";
 
 const metadataCode = `// app/layout.tsx: site-wide defaults
 import type { Metadata } from "next";
@@ -380,7 +381,7 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
     need: "growth",
     status: "published",
     updated: UPDATED,
-    author: BAZDAR,
+    author: RAZI,
     needs: [],
     projects: ["dane-news"],
     guides: ["nextjs-seo-checklist", "bilingual-website-hreflang-rtl"],
