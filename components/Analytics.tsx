@@ -26,6 +26,12 @@ export function Analytics({ id, locale }: { id: string | null; locale: string })
   useEffect(() => {
     if (!id) return;
     const onClick = (e: MouseEvent) => {
+      // Conversion events (SEO-GUIDELINE H): email and chat-app links count as leads wherever they appear.
+      // TODO(owner): there is no Telegram/WhatsApp link on the site yet; once one is added it is tracked here with no further change.
+      const link = (e.target as Element | null)?.closest<HTMLAnchorElement>("a[href]");
+      const href = link?.getAttribute("href") ?? "";
+      if (/^mailto:/i.test(href)) track("email_click", { locale, page: window.location.pathname });
+      else if (/^https?:\/\/(t\.me|wa\.me|api\.whatsapp\.com)\//i.test(href)) track("chat_click", { channel: /t\.me/i.test(href) ? "telegram" : "whatsapp", locale, page: window.location.pathname });
       const el = (e.target as Element | null)?.closest<HTMLElement>("[data-track]");
       if (!el) return;
       track("cta_click", {

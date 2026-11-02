@@ -64,7 +64,11 @@ export function ContactForm({
 
   useEffect(() => {
     if (state.status === "idle") return;
-    track(state.status === "success" ? "form_success" : state.status === "stored" ? "form_stored" : state.status === "invalid" ? "form_invalid" : "form_error", { locale });
+    track(state.status === "success" ? "form_success" : state.status === "stored" ? "form_stored" : state.status === "invalid" ? "form_invalid" : "form_error", {
+      locale,
+      need: (state.values?.needs ?? prefill.needs).join(",") || undefined,
+      offer: prefill.offer,
+    });
     statusRef.current?.focus();
   }, [state, locale]);
 
