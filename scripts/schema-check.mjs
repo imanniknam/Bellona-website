@@ -20,7 +20,7 @@ const err = (p, m) => errors.push(`${p}: ${m}`);
 const warn = (p, m) => warns.push(`${p}: ${m}`);
 
 const REQUIRED = {
-  ProfessionalService: ["name", "url", "logo", "email", "sameAs", "founder", "knowsAbout", "availableLanguage"],
+  Organization: ["name", "url", "logo", "email", "sameAs", "founder", "knowsAbout", "availableLanguage"],
   WebSite: ["url", "name", "inLanguage", "publisher"],
   BreadcrumbList: ["itemListElement"],
   Service: ["name", "description", "provider", "serviceType", "url"],
@@ -49,7 +49,7 @@ function checkNode(p, n) {
     }
     if (t === "Article" && !(n.author && (n.author.name || n.author["@id"]))) err(p, "Article author has no name");
     if (t === "FAQPage") for (const q of n.mainEntity || []) if (!q.name || !q.acceptedAnswer?.text) err(p, "FAQPage question without name or answer text");
-    if (t === "ProfessionalService" && /TODO|\[[A-Z]/.test(JSON.stringify(n))) err(p, "placeholder text in the organization node");
+    if (t === "Organization" && /TODO|\[[A-Z]/.test(JSON.stringify(n))) err(p, "placeholder text in the organization node");
   }
 }
 
@@ -121,7 +121,7 @@ async function main() {
     const types = new Set(nodes.flatMap(typesOf));
     const bare = p.replace(/^\/en(?=\/|$)/, "") || "/";
     const need = (t, cond) => cond && !types.has(t) && err(p, `expected ${t}`);
-    need("ProfessionalService", true);
+    need("Organization", true);
     need("WebSite", true);
     need("BreadcrumbList", bare !== "/");
     need("Service", /^\/services\/[^/]+(\/[^/]+)?$/.test(bare));

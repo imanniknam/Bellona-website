@@ -17,7 +17,7 @@ export const en: Dict = {
   locale: "en",
   dir: "ltr",
   meta: {
-    siteName: "Bellona",
+    siteName: "Bellona Agency",
     home: {
       title: "Bellona Agency | Custom Website Design & AI Automation",
       description:
@@ -64,7 +64,7 @@ export const en: Dict = {
     wordmark: "bellona",
     agency: "agency",
     tagline: "BUILD · AUTOMATE · GROW",
-    homeLabel: "Bellona home",
+    homeLabel: "Bellona Agency",
     home: "Home",
     breadcrumb: "Breadcrumb",
     menuOpen: "Open menu",
@@ -103,7 +103,7 @@ export const en: Dict = {
       title: "Web design, product and AI automation services",
     },
     "/offers": {
-      title: "Website and automation packages with fixed quotes",
+      title: "Website and automation packages, fixed quotes",
     },
     "/partner": {
       title: "Your digital partner from idea to growth",
@@ -112,11 +112,11 @@ export const en: Dict = {
       title: "Websites and AI automation by industry",
     },
     "/industries/education": {
-      title: "Education website design: gamified learning platforms",
+      title: "Education website design: learning platforms",
       description: "Education website design: learning platforms, gamified courses and enrollment sites, designed and built by Bellona. Work includes Konjed, Codechee, Yasin and Microshamim.",
     },
     "/industries/real-estate": {
-      title: "Real estate website design and AI sales automation",
+      title: "Real estate website design and AI automation",
       description: "Real estate website design: listing websites, automatic buyer follow-up and CRM automation for real-estate businesses, like the AI sales system we built for kharazie.at.",
     },
     "/industries/ecommerce": {
@@ -128,7 +128,7 @@ export const en: Dict = {
       description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps every old link working, like Dane Scientific News.",
     },
     "/work": {
-      title: "Portfolio: website, product and automation projects",
+      title: "Portfolio: website, product and AI projects",
       description: `${shipped} websites, products and automation systems Bellona built and delivered, from online stores and education to real estate and media.`,
     },
     "/about": {
@@ -331,7 +331,7 @@ export const en: Dict = {
         line: "Sites that look sharp, load fast and turn visitors into leads.",
         chips: ["UI/UX", "Landing pages", "CMS", "Conversion design"],
         page: {
-          metaTitle: "Custom website design: corporate, e-commerce, bilingual",
+          metaTitle: "Custom website design: corporate and e-commerce",
           metaDescription:
             "Bellona website design agency: corporate sites, online stores and landing pages, hand-coded without templates, fast on mobile and SEO-ready. Fixed quote after a free audit.",
           h1: "Custom, **bilingual** website design",
@@ -355,10 +355,6 @@ export const en: Dict = {
             {
               q: "Can you redesign our current site?",
               a: "Yes. We start with an audit of what works and what doesn't, then keep what earns its place.",
-            },
-            {
-              q: "How long does a website take?",
-              a: "It depends on scope. You get a firm timeline after the free growth audit.",
             },
           ],
         },
@@ -448,22 +444,6 @@ export const en: Dict = {
             "Agents read from your website forms and product data, write to your CRM, and hand marketing a clean, qualified pipeline.",
           faq: [
             {
-              q: "How long does deployment take?",
-              a: `Most systems go live within ${sprint} weeks. Simple automations deploy in days; complex multi-agent systems take ${complexAgents} weeks.`,
-            },
-            {
-              q: "Do I need technical knowledge?",
-              a: "No. We build simple dashboards and provide full training. Your team uses clean interfaces while the systems handle the complexity.",
-            },
-            {
-              q: "What platforms do you integrate with?",
-              a: "n8n, Make, Zapier, HubSpot, Baserow, Google Workspace, email, website chat and messengers, plus any tool with an API or webhook.",
-            },
-            {
-              q: "How is this different from hiring?",
-              a: "Hiring adds headcount and fixed monthly cost. We build systems once, and they grow with you without growing payroll at the same rate.",
-            },
-            {
               q: "What return can I expect?",
               a: "It depends on the process. In the free audit we estimate the hours and cost the automation would save for your case, before you commit to anything.",
             },
@@ -481,7 +461,7 @@ export const en: Dict = {
         line: "Campaigns, SEO and content, and lead-generation systems that bring the right clients in.",
         chips: ["Campaigns", "SEO & content", "Lead generation"],
         page: {
-          metaTitle: "SEO, content and lead generation: a growth system",
+          metaTitle: "SEO, content and lead generation: growth system",
           metaDescription:
             "Website SEO, content production, campaigns and a lead-generation system that brings the right customers and hands them to sales.",
           h1: "Lead generation **and growth** systems",
@@ -536,10 +516,6 @@ export const en: Dict = {
           connects:
             "The plan decides what we design, build, automate and market, so every pillar works toward the same number.",
           faq: [
-            {
-              q: "Is this consulting or hands-on work?",
-              a: "Both. We write the plan, then set up the CRM, sales process and systems that carry it out.",
-            },
           ],
         },
       },
@@ -783,11 +759,13 @@ export const en: Dict = {
   team: {
     eyebrow: "WHO BUILDS IT",
     title: "Engineers, **not account managers.**",
-    sub: "Bellona is a small team of engineers from Sharif University of Technology, and small on purpose: you talk directly to the people who design, code and automate your system, so decisions take hours, not weeks.",
+    // TODO(owner): add the city here if you want it stated (not written until confirmed).
+    sub: "Bellona Agency is a website design and AI automation team of engineers from Sharif University of Technology, and small on purpose: you talk directly to the people who design, code and automate your system, so decisions take hours, not weeks.",
     skillsLabel: "Skills",
     educationLabel: "Education",
     members: [
       {
+        id: "iman-niknam",
         name: "Iman Niknam",
         initials: "IN",
         role: "Co-founder",
@@ -796,6 +774,7 @@ export const en: Dict = {
         education: "Computer Engineering student, Sharif University of Technology",
       },
       {
+        id: "sina-razi",
         name: "Sina Razi",
         initials: "SR",
         role: "Co-founder",
@@ -804,6 +783,7 @@ export const en: Dict = {
         education: "Industrial Engineering student, Sharif University of Technology",
       },
       {
+        id: "amirhossein-bazdar",
         name: "Amirhossein Bazdar",
         initials: "AB",
         role: "CTO",
@@ -811,6 +791,7 @@ export const en: Dict = {
         education: "Computer Engineering student, Sharif University of Technology",
       },
       {
+        id: "hafez-modirrousta",
         name: "Hafez Modirrousta",
         initials: "HM",
         role: "CMO",
@@ -829,7 +810,7 @@ export const en: Dict = {
     side: "Still unsure? Book a free growth audit, or email us.",
     items: [
       {
-        q: "How much does it cost?",
+        q: "How is a project priced?",
         a: "It depends on scope, so we don't publish a price list that would be wrong for you. After the free audit you get a fixed quote in writing, and you only pay for the agreed scope.",
       },
       {
@@ -851,10 +832,6 @@ export const en: Dict = {
       {
         q: "Do you stay on after launch?",
         a: "Yes. Monitoring, fixes and improvements are part of every engagement.",
-      },
-      {
-        q: "Do I need technical knowledge?",
-        a: "No. We build simple dashboards and train your team.",
       },
     ],
   },

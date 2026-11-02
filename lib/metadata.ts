@@ -8,6 +8,9 @@ import { siteUrl } from "./site";
  * `path` is the locale-less path, e.g. "/services/ai-automation". A matching entry in the locale's `seo`
  * map (content/{en,fa}.ts) overrides the title/description, so on-page labels can stay short.
  */
+/** The generated social image for a page: /api/og shows Latin titles only (it cannot shape Persian script). */
+export const ogImagePath = (locale: Locale, title: string) => `/api/og?locale=${locale}&title=${encodeURIComponent(title)}`;
+
 export function pageMetadata({
   locale,
   path,
@@ -16,6 +19,7 @@ export function pageMetadata({
   noindex = false,
   absoluteTitle = false,
   article,
+  ogTitle: ogImageTitle,
 }: {
   locale: Locale;
   path: string;
@@ -25,6 +29,8 @@ export function pageMetadata({
   absoluteTitle?: boolean;
   /** Guides are articles: og:type "article" with published/modified time and author (SEO-GUIDELINE B4). */
   article?: { publishedTime?: string; modifiedTime?: string; author?: string };
+  /** Latin title for the social image, when the page title is Persian (guides: their own English title). */
+  ogTitle?: string;
 }): Metadata {
   const d = getDict(locale);
   title = d.seo[path]?.title ?? title;
@@ -32,7 +38,7 @@ export function pageMetadata({
   const url = localePath(locale, path);
   const ogTitle = absoluteTitle ? title : `${title} · ${d.meta.siteName}`;
   // The home page (absolute title) gets the brand as its default OG title, never an empty one.
-  const og = `/api/og?locale=${locale}&title=${encodeURIComponent(absoluteTitle ? "Bellona Agency" : title)}`;
+  const og = ogImagePath(locale, ogImageTitle ?? (absoluteTitle ? "Bellona Agency" : title));
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,

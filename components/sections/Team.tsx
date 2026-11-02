@@ -48,6 +48,7 @@ export function Team({ d, headless = false }: { d: Dict; headless?: boolean }) {
           {team.members.map((m, i) => (
             <li
               key={m.name}
+              id={m.id}
               data-reveal="pop"
               style={{ "--d": i } as CSSProperties}
               className="card lift group flex flex-col gap-5 bg-surface p-7"

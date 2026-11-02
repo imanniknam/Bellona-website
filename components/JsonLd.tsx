@@ -15,8 +15,13 @@ function Script({ data }: { data: object }) {
 
 /** One id for the business, shared by both locales; every other node points to it. */
 export const ORG_ID = `${siteUrl}/#organization`;
-// Every spelling people search the brand by (Persian, English, the domain).
-const ALTERNATE_NAMES = ["بلونا", "آژانس بلونا", "بلونا ایجنسی", "Bellona Agency", "Bellona AI", "bellonaagency"];
+// Every spelling people search the brand by (English, Persian, the domain).
+// TODO(owner): "Bellona AI" was dropped from the names; add it back only if it is the current name.
+const ALTERNATE_NAMES = ["Bellona Agency", "آژانس بلونا", "بلونا", "بلونا ایجنسی", "bellonaagency"];
+/** Square PNG, 512x512 on a plain background: what search engines accept as an organisation logo. */
+const LOGO = { "@type": "ImageObject", url: `${siteUrl}/brand/bellona-logo-512.png`, width: 512, height: 512 };
+/** A team member is one entity in both languages: its @id is the card anchor on the Persian /about page. */
+export const personId = (m: TeamMember) => `${siteUrl}/about#${m.id}`;
 const SHARIF = { "@type": "CollegeOrUniversity", name: "Sharif University of Technology" };
 const LANGUAGES = ["fa", "en"];
 const KNOWS_ABOUT: Record<Locale, string[]> = {
@@ -27,6 +32,7 @@ const KNOWS_ABOUT: Record<Locale, string[]> = {
 /** Only what the team section shows: name, role, skills and (if stated) Sharif University. */
 const person = (m: TeamMember) => ({
   "@type": "Person",
+  "@id": personId(m),
   name: m.name,
   jobTitle: m.role,
   knowsAbout: m.skills,
@@ -35,21 +41,22 @@ const person = (m: TeamMember) => ({
 
 /**
  * The business entity, rendered on every page from the shared layout (SEO-GUIDELINE C1).
- * `areaServed`, `address` and `telephone` stay out until the owner provides them:
- * TODO(owner): areaServed, telephone and address for the Organization node.
+ * It is a plain Organization: ProfessionalService is a LocalBusiness and would need a street address.
+ * TODO(owner): once there is a real address, change the type to ["Organization", "ProfessionalService"] and add
+ * address, telephone and areaServed. None of them is invented here.
  */
-export function ProfessionalServiceLd({ d }: { d: Dict }) {
+export function OrganizationLd({ d }: { d: Dict }) {
   return (
     <Script
       data={{
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "@id": ORG_ID,
-        name: "Bellona",
+        name: d.meta.siteName,
         alternateName: ALTERNATE_NAMES,
-        url: siteUrl,
-        logo: `${siteUrl}/brand/bellona-app-icon.svg`,
-        image: `${siteUrl}/api/og?locale=${d.locale}&title=Bellona%20Agency`,
+        url: `${siteUrl}/`,
+        logo: LOGO,
+        image: LOGO.url,
         email: d.common.email,
         description: d.meta.home.description,
         slogan: d.common.tagline,
@@ -121,8 +128,14 @@ export function ServiceLd({ d, p }: { d: Dict; p: Pillar }) {
 }
 
 export function FaqLd({ items }: { items: Faq[] }) {
-  // Placeholder answers ("[…]") are left out of structured data.
-  const real = items.filter((f) => !f.a.includes("["));
+  // One FAQPage per page: a page that lists questions in several sections passes them all in one call.
+  // Placeholder answers ("[…]") and repeated questions are left out of structured data.
+  const seen = new Set<string>();
+  const real = items.filter((f) => {
+    if (f.a.includes("[") || seen.has(f.q)) return false;
+    seen.add(f.q);
+    return true;
+  });
   if (!real.length) return null;
   return (
     <Script
@@ -156,6 +169,13 @@ export function BreadcrumbLd({ d, trail }: { d: Dict; trail: { name: string; pat
   );
 }
 
+const TYPE_LABEL: Record<Project["type"], Record<Locale, string>> = {
+  website: { fa: "طراحی سایت", en: "Website design" },
+  product: { fa: "پلتفرم و محصول دیجیتال", en: "Digital product development" },
+  automation: { fa: "اتوماسیون هوش مصنوعی", en: "AI automation" },
+  "mobile-app": { fa: "اپلیکیشن موبایل", en: "Mobile app development" },
+};
+
 /** A case study: a CreativeWork made by the business, about the client's sector, pointing at the client's site (C5). */
 export function CaseStudyLd({ d, project }: { d: Dict; project: Project }) {
   const c = project[d.locale];
@@ -173,6 +193,9 @@ export function CaseStudyLd({ d, project }: { d: Dict; project: Project }) {
         inLanguage: d.locale,
         creator: { "@id": ORG_ID },
         about: c.sector,
+        keywords: [TYPE_LABEL[project.type][d.locale], c.sector].join(", "),
+        // Only a known delivery year (never guessed). TODO(owner): the year of projects where it is empty.
+        ...(project.year ? { dateCreated: String(project.year) } : {}),
         mainEntityOfPage: pageUrl,
         url: project.url ?? pageUrl,
         ...(project.cover ? { image: `${siteUrl}${project.cover}` } : {}),
@@ -200,7 +223,7 @@ export function AboutPageLd({ d }: { d: Dict }) {
             about: { "@id": ORG_ID },
             mainEntity: { "@id": ORG_ID },
           },
-          ...d.team.members.map((m) => ({ ...person(m), worksFor: { "@id": ORG_ID } })),
+          ...d.team.members.map((m) => ({ ...person(m), url: `${url}#${m.id}`, worksFor: { "@id": ORG_ID } })),
         ],
       }}
     />

@@ -106,6 +106,16 @@ export const more: More = {
         a: "بله. وب‌اپ، پلتفرم، فروشگاه اینترنتی، MVP و اپلیکیشن موبایل را به‌صورت پروژه‌ای می‌سازیم. کدچی، کنجد و Prowem همین‌طور شروع شدند و قیمت قطعی و زمان‌بندی بعد از بررسی رایگان مکتوب می‌شود.",
         details: [{ kind: "links", items: [{ label: "توسعه‌ی فول‌استک و محصول", href: "/services/full-stack-development" }] }],
       },
+      {
+        q: "تفاوت پکیج لانچ و سیستم رشد چیست؟",
+        a: "لانچ یک سایت اختصاصی و فروش‌محور است که یک‌بار ساخته و تحویل می‌شود. سیستم رشد بلونا همه‌ی موارد لانچ را دارد و روی آن یک اسپرینت اتوماسیون برای پیگیری مشتری‌ها، سئو و محتوا و کمپین ماهانه، گزارش ماهانه‌ی ترافیک و سرنخ و فروش و بهبود مستمر اضافه می‌کند؛ یعنی بعد از انتشار هم یک تیم مسئول نتیجه می‌ماند. اگر فقط سایت لازم دارید، لانچ کافی است.",
+      },
+      {
+        q: "بعد از اسپرینت اتوماسیون چه تحویل می‌گیرم؟",
+        a: "یک فرایند کاملاً خودکار و کارکردنی، همراه نقشه‌ی فرایند و برآورد زمانی که صرفه‌جویی می‌شود، ایجنت هوش مصنوعی و گردش‌کار n8n (روی سرور خودتان اگر بخواهید)، CRM راه‌اندازی یا مرتب‌شده، اتصال به ایمیل، چت سایت یا پیام‌رسان، هشدار خطا، مستندات و آموزش تیم شما.",
+        details: [{ kind: "links", items: [{ label: "پیاده‌سازی n8n", href: "/services/ai-automation/n8n" }, { label: "اتوماسیون CRM", href: "/services/ai-automation/crm" }] }],
+      },
+      // TODO(owner): «پرداخت چند مرحله‌ای است؟» needs the real payment terms. Not written (and so not rendered) until they are known.
     ],
     en: [
       {
@@ -138,6 +148,15 @@ export const more: More = {
         q: "Do you build products and platforms, not just websites?",
         a: "Yes. We build web apps, platforms, online stores, MVPs and mobile apps as projects. Codechee, Konjed and Prowem started this way, and the fixed price and timeline are written down after the free audit.",
         details: [{ kind: "links", items: [{ label: "Full-stack and product development", href: "/services/full-stack-development" }] }],
+      },
+      {
+        q: "What is the difference between Launch and the Growth System?",
+        a: "Launch is a custom, sales-focused website that is built and handed over once. The Bellona Growth System includes everything in Launch and adds an automation sprint for customer follow-up, monthly SEO, content and campaigns, a monthly report on traffic, leads and sales, and continuous improvement, so a team stays responsible for results after the site is live. If you only need a website, Launch is enough.",
+      },
+      {
+        q: "What do I get after the automation sprint?",
+        a: "One fully automated, working process, with a process map and an estimate of the time it saves, an AI agent and n8n workflow (on your own server if you prefer), a CRM that is set up or tidied, a connection to email, website chat or a messenger, error alerts, documentation and training for your team.",
+        details: [{ kind: "links", items: [{ label: "n8n implementation", href: "/services/ai-automation/n8n" }, { label: "CRM automation", href: "/services/ai-automation/crm" }] }],
       },
     ],
   },

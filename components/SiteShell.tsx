@@ -7,7 +7,7 @@ import { Cursor } from "./Cursor";
 import { Motion } from "./Motion";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { ProfessionalServiceLd, WebSiteLd } from "./JsonLd";
+import { OrganizationLd, WebSiteLd } from "./JsonLd";
 
 /**
  * The <html> document shared by the EN and FA root layouts. Each layout passes its own font
@@ -35,7 +35,7 @@ export function SiteShell({ locale, fontVars, children }: { locale: Locale; font
           {children}
         </main>
         <Footer d={d} />
-        <ProfessionalServiceLd d={d} />
+        <OrganizationLd d={d} />
         <WebSiteLd d={d} />
         <Motion />
         <Cursor />

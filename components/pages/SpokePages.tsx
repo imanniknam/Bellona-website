@@ -5,7 +5,8 @@ import { publishedSpokes, visibleSpokes, spokePath } from "@/lib/drafts";
 import { digits } from "@/lib/format";
 import { getDict, localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
-import { FaqLd, ORG_ID, ServiceNodeLd } from "../JsonLd";
+import { FaqLd, ORG_ID, personId, ServiceNodeLd } from "../JsonLd";
+import { ogImagePath } from "@/lib/metadata";
 import { Breadcrumbs } from "../Breadcrumbs";
 import { Answers } from "../sections/Answers";
 import { Contact } from "../sections/Contact";
@@ -216,8 +217,8 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
               url,
               datePublished: s.updated,
               dateModified: s.updated,
-              author: { "@type": "Person", name: author.name, jobTitle: author.role },
-              image: `${siteUrl}/api/og?locale=${locale}&title=Bellona%20Agency`,
+              author: { "@type": "Person", "@id": personId(author), name: author.name, jobTitle: author.role, url: `${siteUrl}${localePath(locale, "/about")}#${author.id}` },
+              image: `${siteUrl}${ogImagePath(locale, s.en.metaTitle)}`,
               mainEntityOfPage: url,
               publisher: { "@id": ORG_ID },
             }).replace(/</g, "\\u003c"),

@@ -355,7 +355,7 @@ export const serviceSpokes: Spoke[] = [
     projects: ["ai-real-estate-os"],
     guides: ["lead-follow-up-automation-n8n"],
     en: {
-      metaTitle: "CRM automation: automatic lead follow-up and sales",
+      metaTitle: "CRM automation: automatic lead follow-up",
       metaDescription: "CRM automation and sales follow-up with Baserow, HubSpot and n8n: leads logged automatically, followed up on time, scored and reported daily, like our real-estate system.",
       eyebrow: "AI agents & automation",
       h1: "CRM automation **for sales**",
@@ -392,7 +392,7 @@ export const serviceSpokes: Spoke[] = [
           a: "Each new lead is checked against rules you set, such as who they are, what they asked for and how they came in, and gets a score. The team sees the strongest leads first. In the real-estate system, investor discovery and qualification runs automatically before anyone writes a message.",
         },
         {
-          q: "How are errors handled?",
+          q: "What happens if the CRM connection breaks?",
           a: "A connection that breaks is reported, not left silent: central error handling alerts the team, and a daily report shows what ran. The real-estate system has both, and backup and security documentation was prepared for handover.",
         },
         {
@@ -444,7 +444,7 @@ export const serviceSpokes: Spoke[] = [
           a: "هر لید تازه با قواعدی که شما تعیین می‌کنید، مثل اینکه کیست، چه خواسته و از کجا آمده، سنجیده می‌شود و امتیاز می‌گیرد. تیم قوی‌ترین لیدها را اول می‌بیند. در سیستم املاک، پیدا کردن و ارزیابی سرمایه‌گذار پیش از اینکه کسی پیامی بنویسد خودکار انجام می‌شود.",
         },
         {
-          q: "اگر خطایی پیش بیاید چه می‌شود؟",
+          q: "اگر اتصال CRM قطع شود چه می‌شود؟",
           a: "اتصالی که قطع شود بی‌صدا نمی‌ماند: مدیریت متمرکز خطا به تیم هشدار می‌دهد و گزارش روزانه نشان می‌دهد چه چیزی اجرا شد. سیستم املاک هر دو را دارد و مستندات پشتیبان‌گیری و امنیت هم برای تحویل آماده شد.",
         },
         {
@@ -471,7 +471,7 @@ export const serviceSpokes: Spoke[] = [
     projects: ["ai-real-estate-os"],
     guides: ["lead-follow-up-automation-n8n"],
     en: {
-      metaTitle: "AI chatbot for your website: answers customers 24/7",
+      metaTitle: "AI chatbot for your website: answers 24/7",
       metaDescription: "An AI chatbot for your website and messengers that answers customers in seconds, hands special cases to a person and logs every conversation in your CRM.",
       eyebrow: "AI agents & automation",
       h1: "AI chatbot **for your website**",

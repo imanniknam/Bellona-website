@@ -448,7 +448,7 @@ const rawSpokes: Spoke[] = [
     projects: ["shamim-house","contemo","school-builders"],
     guides: ["website-design-cost"],
     en: {
-      metaTitle: "Custom corporate website design: fast and SEO-ready",
+      metaTitle: "Corporate website design: fast and SEO-ready",
       metaDescription:
         "Corporate website design: company websites coded from scratch, with a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready.",
       eyebrow: "Website design",
@@ -562,7 +562,7 @@ const rawSpokes: Spoke[] = [
     projects: ["asa-study"],
     guides: ["bilingual-website-hreflang-rtl","website-design-cost"],
     en: {
-      metaTitle: "Bilingual website design: Persian and English, RTL",
+      metaTitle: "Bilingual website design: Persian, English, RTL",
       metaDescription:
         "Bilingual website design for Persian and English: separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
       eyebrow: "Website design",
@@ -656,7 +656,7 @@ const rawSpokes: Spoke[] = [
     projects: ["dane-news"],
     guides: ["migrate-wordpress-to-nextjs","website-design-cost"],
     en: {
-      metaTitle: "Website redesign and migration without losing SEO",
+      metaTitle: "Website redesign and migration, no SEO loss",
       metaDescription:
         "Website redesign without losing traffic: move off WordPress with every post, tag and author migrated, old links redirected and the site kept online throughout. Example: Dane Scientific News.",
       eyebrow: "Website design",
@@ -752,7 +752,7 @@ const rawSpokes: Spoke[] = [
     projects: ["mojasame-saidi","school-builders"],
     guides: ["custom-vs-store-builder"],
     en: {
-      metaTitle: "Website design cost in 2026: what drives the price",
+      metaTitle: "Website design cost in 2026: what sets the price",
       metaDescription: "Website design cost explained: what a website costs and why, the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
       eyebrow: "Guide",
       h1: "How much does **website design cost?**",

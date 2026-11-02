@@ -60,7 +60,8 @@ export function PartnerPage({ locale }: { locale: Locale }) {
           <Compare d={d} />
         </div>
       </section>
-      <Faq d={d} />
+      {/* The home page asks the general questions; the partner page keeps the one about life after launch. */}
+      <Faq d={d} items={d.faq.items.slice(5)} />
       <Contact d={d} />
     </>
   );
@@ -82,7 +83,6 @@ export function OffersPage({ locale }: { locale: Locale }) {
           <FaqLd items={faqOf(pageMore["/offers"][locale])} />
         </div>
       )}
-      <Faq d={d} />
       <Contact d={d} />
     </>
   );

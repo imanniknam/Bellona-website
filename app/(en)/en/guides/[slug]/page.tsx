@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     path: spokePath(s),
     title: c.metaTitle,
+    ogTitle: s.en.metaTitle,
     description: c.metaDescription,
     noindex: s.status !== "published",
     article: { publishedTime: s.updated ?? undefined, modifiedTime: s.updated ?? undefined, author: s.author?.split("|")[0] ?? undefined },

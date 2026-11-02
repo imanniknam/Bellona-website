@@ -125,7 +125,7 @@ export const more: More = {
         ],
       },
       {
-        q: "هزینه و زمان طراحی سایت چقدر است؟",
+        q: "هزینه‌ی طراحی سایت چقدر است؟",
         a: "هزینه و زمان به تعداد صفحه‌ها، امکانات و اتصال‌ها بستگی دارد؛ برای همین قیمت ثابتی منتشر نمی‌کنیم. بعد از بررسی رایگان رشد، دامنه، قیمت قطعی و زمان‌بندی را مکتوب می‌گیرید و فقط برای همان دامنه پرداخت می‌کنید.",
         details: [{ kind: "links", items: [{ label: "راهنمای قیمت طراحی سایت ۱۴۰۵", href: "/guides/website-design-cost" }] }],
       },
@@ -249,7 +249,7 @@ export const more: More = {
         ],
       },
       {
-        q: "How much does a website cost and how long does it take?",
+        q: "How much does website design cost?",
         a: "Cost and time depend on the number of pages, the features and the integrations, so we do not publish a fixed price list. After the free growth audit you get scope, a fixed price and a timeline in writing, and you pay only for that scope.",
         details: [{ kind: "links", items: [{ label: "Website design cost in 2026: a guide", href: "/guides/website-design-cost" }] }],
       },
@@ -569,11 +569,11 @@ export const more: More = {
         ],
       },
       {
-        q: "سئو چقدر طول می‌کشد تا نتیجه بدهد؟",
+        q: "نتیجه‌ی مارکتینگ و سئو معمولاً کی دیده می‌شود؟",
         a: "سئو کاری تدریجی است و نتیجه‌ی آن معمولاً بعد از چند ماه دیده می‌شود، نه چند روز؛ مدت دقیق به رقابت در حوزه‌ی شما، وضعیت فعلی سایت و محتوای تولیدشده بستگی دارد. هر کسی نتیجه‌ی تضمینی و سریع بدهد، ادعایی را مطرح می‌کند که نمی‌شود تضمین کرد.",
       },
       {
-        q: "چه چیزی اندازه‌گیری می‌شود؟",
+        q: "کدام شاخص‌های رشد را پیگیری می‌کنید؟",
         a: "نمایش و کلیک در نتایج گوگل، رتبه‌ی صفحه‌های اصلی، تعداد ایندکس‌شده‌ها، سرعت و Core Web Vitals، تعداد درخواست بررسی رایگان و منبع هر درخواست. فرم‌های سایت رویداد ثبت می‌کنند تا بدانید کدام صفحه مشتری می‌آورد.",
       },
       {
@@ -632,11 +632,11 @@ export const more: More = {
         ],
       },
       {
-        q: "How long does SEO take to show results?",
+        q: "When do marketing and SEO results usually show?",
         a: "SEO is gradual and results usually show after months, not days; the exact time depends on competition in your field, the current state of the site and the content produced. Anyone promising guaranteed fast results is promising something that cannot be guaranteed.",
       },
       {
-        q: "What do you measure?",
+        q: "Which growth metrics do you track?",
         a: "Impressions and clicks in Google results, rankings of the main pages, the number of indexed pages, speed and Core Web Vitals, the number of free-audit requests and the source of each. The site's forms log events so you know which page brings customers.",
       },
       {

@@ -84,6 +84,8 @@ export interface Industry {
 
 /** Card order on the site: name → role (most prominent) → skills → field & university. */
 export interface TeamMember {
+  /** Stable slug: the card anchor on /about and the Person @id (shared by both languages). */
+  id: string;
   name: string;
   initials: string;
   role: string;

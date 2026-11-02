@@ -206,7 +206,6 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
       {(pillarMore[p.id]?.[locale] ?? []).length > 0 && (
         <>
           <Answers answers={pillarMore[p.id][locale]} locale={locale} />
-          <FaqLd items={faqOf(pillarMore[p.id][locale])} />
         </>
       )}
 
@@ -222,9 +221,10 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
           </div>
           <FaqList items={p.page.faq} />
         </div>
-        <FaqLd items={p.page.faq} />
       </section>
       )}
+      {/* One FAQPage for everything the page shows: the in-depth answers and the accordion (SEO-GUIDELINE 2-1). */}
+      <FaqLd items={[...faqOf(pillarMore[p.id]?.[locale] ?? []), ...p.page.faq]} />
 
       <section aria-labelledby="other-pillars" className="section bg-surface">
         <div className="wrap flex flex-col gap-10">

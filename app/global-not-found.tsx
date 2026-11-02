@@ -9,7 +9,8 @@ import "./globals.css";
 
 // Unmatched URLs (both languages share one 404 because EN and FA are separate root layouts).
 export const metadata: Metadata = {
-  title: `${en.meta.notFound.title} · Bellona`,
+  // One 404 for both languages, so the title carries both: "Page not found · Bellona Agency" and its Persian twin.
+  title: `${en.meta.notFound.title} · ${en.meta.siteName} | ${fa.meta.notFound.title} · ${fa.meta.siteName}`,
   description: en.meta.notFound.description,
   robots: { index: false },
 };
