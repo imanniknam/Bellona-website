@@ -65,6 +65,12 @@ export function Answers({
                     {dt.text}
                   </p>
                 );
+              if (dt.kind === "code")
+                return (
+                  <pre key={j} dir="ltr" className="overflow-x-auto rounded-2xl bg-ink p-5 text-left text-[13px] leading-relaxed text-soft-dark">
+                    <code lang={dt.lang}>{dt.text}</code>
+                  </pre>
+                );
               if (dt.kind === "steps")
                 return (
                   <ol key={j} className="flex list-decimal flex-col gap-2 ps-6 text-body marker:font-bold marker:text-orange-text rtl:list-[persian]">

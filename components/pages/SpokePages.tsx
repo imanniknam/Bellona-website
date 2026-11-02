@@ -40,11 +40,14 @@ function Related({ s, locale, pillarSlug }: { s: Spoke; locale: Locale; pillarSl
   const pages: { href: string; label: string }[] = [];
   const pillar = pillarSlug ? d.pillars.items.find((p) => p.slug === pillarSlug) : undefined;
   if (pillar) pages.push({ href: `/services/${pillar.slug}`, label: pillar.title });
-  for (const x of publishedSpokes("service")) if (x.slug !== s.slug && x.parent === s.parent) pages.push({ href: spokePath(x), label: x[locale].h1.replace(/\*\*/g, "") });
+  const group = (x: Spoke) => x.parent ?? x.pillar;
+  for (const x of publishedSpokes("service")) if (x.slug !== s.slug && group(x) && group(x) === (s.parent ?? s.pillar)) pages.push({ href: spokePath(x), label: x[locale].h1.replace(/\*\*/g, "") });
   for (const slug of s.guides ?? []) {
     const g = publishedSpokes("guide").find((x) => x.slug === slug);
-    if (g) pages.push({ href: spokePath(g), label: g[locale].h1.replace(/\*\*/g, "") });
+    if (g && g.slug !== s.slug) pages.push({ href: spokePath(g), label: g[locale].h1.replace(/\*\*/g, "") });
   }
+  // A guide also links to the sub-pages that name it (the reverse of the lines above).
+  if (s.kind === "guide") for (const x of publishedSpokes("service")) if (x.guides?.includes(s.slug)) pages.push({ href: spokePath(x), label: x[locale].h1.replace(/\*\*/g, "") });
   const work = (s.projects ?? []).flatMap((slug) => allProjects.filter((p) => p.slug === slug && p.status === "published"));
   if (!pages.length && !work.length) return null;
   return (
@@ -85,11 +88,13 @@ function Related({ s, locale, pillarSlug }: { s: Spoke; locale: Locale; pillarSl
 const answerFaq = (answers: Spoke["en"]["answers"]) => answers.flatMap((x) => (x.a ? [{ q: x.q, a: x.a }] : []));
 
 /** /services/<pillar>/<spoke> */
-export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; parent: string; slug: string }) {
+export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; parent?: string; slug: string }) {
   const s = findSpoke("service", slug, parent);
   if (!s) notFound();
   const d = getDict(locale);
-  const pillar = d.pillars.items.find((p) => p.slug === parent);
+  // A sub-page belongs to its parent service; a standalone page (e.g. /services/seo) relates to s.pillar.
+  const pillarSlug = parent ?? s.pillar;
+  const pillar = d.pillars.items.find((p) => p.slug === pillarSlug);
   if (!pillar) notFound();
   const c = s[locale];
   const draft = s.status !== "published";
@@ -99,7 +104,7 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
         d={d}
         trail={[
           { name: d.meta.services.title, path: "/services" },
-          { name: pillar.title, path: `/services/${pillar.slug}` },
+          ...(parent ? [{ name: pillar.title, path: `/services/${pillar.slug}` }] : []),
           { name: c.h1.replace(/\*\*/g, ""), path: spokePath(s) },
         ]} />
       {draft && <DraftBanner s={s} locale={locale} />}
@@ -115,7 +120,7 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
         </div>
       </PageHero>
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={guidesHub[locale].needsAnswer} />
-      <Related s={s} locale={locale} pillarSlug={parent} />
+      <Related s={s} locale={locale} pillarSlug={pillar.slug} />
       <Contact d={d} defaultNeed={s.need} />
       <ServiceNodeLd d={d} name={c.h1.replace(/\*\*/g, "")} serviceType={pillar.title} description={c.metaDescription} path={spokePath(s)} />
       <FaqLd items={answerFaq(c.answers)} />
@@ -194,7 +199,7 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
         )}
       </PageHero>
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={h.needsAnswer} tocLabel={h.toc} />
-      <Related s={s} locale={locale} pillarSlug={s.need === "ai" ? "ai-automation" : s.need === "growth" ? "marketing-growth" : "website-design"} />
+      <Related s={s} locale={locale} pillarSlug={s.pillar ?? (s.need === "ai" ? "ai-automation" : s.need === "growth" ? "marketing-growth" : "website-design")} />
       <Contact d={d} defaultNeed={s.need} />
       <FaqLd items={answerFaq(c.answers)} />
       {!draft && author && updated && (
@@ -224,4 +229,4 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
 }
 
 /** Published spokes of one pillar, for the pillar page's "go deeper" links. */
-export const pillarSpokes = (pillarSlug: string) => spokes.filter((s) => s.kind === "service" && s.parent === pillarSlug && s.status === "published");
+export const pillarSpokes = (pillarSlug: string) => spokes.filter((s) => (s.parent === pillarSlug || s.pillar === pillarSlug) && s.status === "published");

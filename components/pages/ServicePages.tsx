@@ -13,6 +13,7 @@ import { more as pageMore } from "@/content/more/pages";
 import { FaqLd, ServiceLd } from "../JsonLd";
 import { Answers } from "../sections/Answers";
 import { faqOf } from "@/lib/faq";
+import { spokePath } from "@/lib/drafts";
 import { Flow } from "../sections/Flow";
 import { Monday } from "../sections/Monday";
 import { PillarCard, Stats } from "../sections/Pillars";
@@ -143,7 +144,7 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
           <ul className="grid gap-4 md:grid-cols-2">
             {pillarSpokes(p.slug).map((s) => (
               <li key={s.slug}>
-                <LLink locale={locale} href={`/services/${p.slug}/${s.slug}`} className="card lift group flex h-full flex-col gap-2 border border-line p-6">
+                <LLink locale={locale} href={spokePath(s)} className="card lift group flex h-full flex-col gap-2 border border-line p-6">
                   <span className="text-xl font-bold rtl:font-extrabold">{s[locale].h1.replace(/\*\*/g, "")}</span>
                   <span className="leading-relaxed text-muted">{s[locale].metaDescription}</span>
                 </LLink>

@@ -12,4 +12,4 @@ export const visibleSpokes = (kind: Spoke["kind"]) => spokes.filter((s) => s.kin
 /** Pages that are live: sitemap, internal links, structured data. */
 export const publishedSpokes = (kind: Spoke["kind"]) => spokes.filter((s) => s.kind === kind && s.status === "published");
 
-export const spokePath = (s: Spoke) => (s.kind === "service" ? `/services/${s.parent}/${s.slug}` : `/guides/${s.slug}`);
+export const spokePath = (s: Spoke) => (s.kind === "service" ? (s.parent ? `/services/${s.parent}/${s.slug}` : `/services/${s.slug}`) : `/guides/${s.slug}`);

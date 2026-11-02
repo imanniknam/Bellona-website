@@ -11,7 +11,7 @@ export const dynamicParams = false;
 
 // Only published spokes (plus drafts in SHOW_DRAFTS=1 preview builds) get a page.
 export function generateStaticParams() {
-  return visibleSpokes("service").map((s) => ({ slug: s.parent!, sub: s.slug }));
+  return visibleSpokes("service").flatMap((s) => (s.parent ? [{ slug: s.parent, sub: s.slug }] : []));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

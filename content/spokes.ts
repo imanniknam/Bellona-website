@@ -1,5 +1,8 @@
 import { facts, fmt } from "./facts";
 import { more as spokeExtra } from "./more/spokes";
+import { guidesA } from "./spokes-guides-a";
+import { guidesB } from "./spokes-guides-b";
+import { serviceSpokes } from "./spokes-services";
 import type { PillarId } from "./types";
 
 /**
@@ -20,7 +23,8 @@ export type AnswerDetail =
   | { kind: "p"; text: string }
   | { kind: "steps"; items: string[] }
   | { kind: "table"; caption: string; head: string[]; rows: string[][] }
-  | { kind: "links"; items: { label: string; href: string }[] };
+  | { kind: "links"; items: { label: string; href: string }[] }
+  | { kind: "code"; lang: string; text: string };
 
 export interface Answer {
   /** Question-shaped H2, phrased the way people search (docs/seo/seo_keyword_database.csv). */
@@ -45,8 +49,10 @@ export interface Spoke {
   kind: "service" | "guide";
   /** Last URL segment. Services live at /services/<parent>/<slug>, guides at /guides/<slug>. */
   slug: string;
-  /** Pillar slug the service spoke belongs to. */
+  /** Pillar slug the service spoke belongs to (the URL is /services/<parent>/<slug>); omit for a standalone page (/services/<slug>). */
   parent?: string;
+  /** The pillar a standalone service page or a guide relates to: its service link, breadcrumb context and "go deeper" listing. */
+  pillar?: string;
   /** Pre-selects the contact form's "need". */
   need: PillarId;
   status: "draft" | "published";
@@ -98,7 +104,7 @@ const rawSpokes: Spoke[] = [
     status: "draft",
     needs: [19, 20, 30, 31],
     projects: ["ai-real-estate-os"],
-    guides: ["ai-agent-cost"],
+    guides: ["lead-follow-up-automation-n8n"],
     en: {
       metaTitle: "AI agent development for businesses",
       metaDescription: `Custom AI agents that qualify leads, follow up, answer customers and keep your CRM current. Built and connected by Bellona; most go live in ${sprintEn}.`,
@@ -161,10 +167,11 @@ const rawSpokes: Spoke[] = [
     slug: "n8n",
     parent: "ai-automation",
     need: "ai",
-    status: "draft",
+    // Published 2026-11-02 (SEO-GUIDELINE E1); the two answers that need prices stay hidden until the team provides them.
+    status: "published",
     needs: [30, 32],
     projects: ["ai-real-estate-os"],
-    guides: ["ai-agent-cost"],
+    guides: ["lead-follow-up-automation-n8n"],
     en: {
       metaTitle: "n8n implementation and workflow automation",
       metaDescription: `We design, build and run n8n workflows that connect your CRM, email, documents and AI. Our real-estate sales system runs on ${wfEn} n8n workflows.`,
@@ -235,7 +242,7 @@ const rawSpokes: Spoke[] = [
     status: "published",
     needs: [3, 4, 30],
     projects: ["yasin","dane-news","asa-study","mojasame-saidi","contemo","shamim-house"],
-    guides: ["website-design-cost"],
+    guides: ["nextjs-seo-checklist","website-design-cost"],
     en: {
       metaTitle: "Next.js website design: fast and SEO-ready",
       metaDescription: "Next.js website design: server rendering so Google and AI assistants read every page, fast on mobile, and proper bilingual Persian and English with right-to-left layout.",
@@ -325,7 +332,7 @@ const rawSpokes: Spoke[] = [
     status: "published",
     needs: [],
     projects: ["sabzino","nira-perfume","mojasame-saidi","elm-kala"],
-    guides: ["website-design-cost"],
+    guides: ["custom-vs-store-builder","website-design-cost"],
     en: {
       metaTitle: "E-commerce website design: custom online stores",
       metaDescription:
@@ -553,7 +560,7 @@ const rawSpokes: Spoke[] = [
     status: "published",
     needs: [],
     projects: ["asa-study"],
-    guides: ["website-design-cost"],
+    guides: ["bilingual-website-hreflang-rtl","website-design-cost"],
     en: {
       metaTitle: "Bilingual website: Persian and English, RTL and LTR",
       metaDescription:
@@ -647,7 +654,7 @@ const rawSpokes: Spoke[] = [
     status: "published",
     needs: [],
     projects: ["dane-news"],
-    guides: ["website-design-cost"],
+    guides: ["migrate-wordpress-to-nextjs","website-design-cost"],
     en: {
       metaTitle: "Website redesign and migration without losing SEO",
       metaDescription:
@@ -743,7 +750,7 @@ const rawSpokes: Spoke[] = [
     author: "Amirhossein Bazdar|امیرحسین بازدار",
     needs: [30, 33],
     projects: ["mojasame-saidi","school-builders"],
-    guides: [],
+    guides: ["custom-vs-store-builder"],
     en: {
       metaTitle: "Website design cost in 2026: what drives the price",
       metaDescription: "What a website costs and why: the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
@@ -892,7 +899,7 @@ const rawSpokes: Spoke[] = [
  * The published list. Extra questions (content/more/spokes.ts, keyed by slug) are inserted before each page's last
  * answer, which is always the "how do I get a price" call to action, so that stays at the end.
  */
-export const spokes: Spoke[] = rawSpokes.map((s) => {
+export const spokes: Spoke[] = [...rawSpokes, ...serviceSpokes, ...guidesA, ...guidesB].map((s) => {
   const extra = spokeExtra[s.slug];
   if (!extra) return s;
   const merge = (c: SpokeCopy, add: Answer[]): SpokeCopy => ({ ...c, answers: [...c.answers.slice(0, -1), ...add, ...c.answers.slice(-1)] });

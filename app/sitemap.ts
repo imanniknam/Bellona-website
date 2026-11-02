@@ -12,10 +12,12 @@ import { siteUrl } from "@/lib/site";
  * The files a page is built from, for its lastmod (docs/seo TA-13): its language's copy plus the page
  * component, and for case studies the project data and screenshots.
  */
+const spokePaths = new Set([...publishedSpokes("service"), ...publishedSpokes("guide")].map(spokePath));
+
 function sources(path: string, locale: Locale): string[] {
   const copy = `content/${locale}.ts`;
   if (path === "/") return [copy, "components/pages/HomePage.tsx"];
-  if (path.startsWith("/guides") || path.split("/").length > 3) return ["content/spokes.ts", "content/facts.ts", "components/pages/SpokePages.tsx"];
+  if (path.startsWith("/guides") || path.split("/").length > 3 || spokePaths.has(path)) return ["content/spokes.ts", "content/more/spokes.ts", "content/facts.ts", "components/pages/SpokePages.tsx"];
   if (path.startsWith("/services")) return [copy, "components/pages/ServicePages.tsx"];
   if (path.startsWith("/work/")) return [copy, "content/work.ts", "components/pages/OtherPages.tsx", `public/work/${path.slice(6)}`];
   if (path.startsWith("/work") || path.startsWith("/industries")) return [copy, "content/work.ts", "components/pages/OtherPages.tsx"];

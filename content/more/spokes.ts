@@ -549,6 +549,56 @@ export const more: More = {
     ],
   },
 
+  // ======================================================================================= n8n (E1)
+  n8n: {
+    fa: [
+      {
+        q: "n8n چیست و برای چه کارهایی خوب است؟",
+        a: "n8n ابزار اتوماسیون گردش‌کار متن‌باز است که اپ‌ها و سرویس‌ها را با نودهای بصری به هم وصل می‌کند. برای هر کاری خوب است که چند ابزار و چند قدم دارد: پیگیری لید، به‌روزرسانی CRM، ساخت سند، گزارش روزانه، ارسال و دریافت ایمیل و اجرای ایجنت هوش مصنوعی در میانه‌ی یک فرایند.",
+        details: [{ kind: "links", items: [{ label: "راهنما: اتوماسیون پیگیری لید با n8n", href: "/guides/lead-follow-up-automation-n8n" }] }],
+      },
+      {
+        q: "n8n روی سرور خودمان یعنی چه؟",
+        a: "n8n را می‌شود روی فضای ابری خودش یا روی سرور خودتان اجرا کرد. روی سرور خودتان، داده‌ها و اعتبارنامه‌ها داخل زیرساخت شما می‌مانند و برای گردش‌کارهای طولانی یا پر از هوش مصنوعی مناسب‌تر است. اگر بخواهید، n8n را روی سرور خودتان راه‌اندازی می‌کنیم.",
+      },
+      {
+        q: "کدام فرایندها را اول خودکار کنیم؟",
+        a: "فرایندی که هر روز تکرار می‌شود، وقت زیادی می‌برد و قاعده‌اش روشن است: پیگیری لیدهای تازه، ثبت اطلاعات در CRM، ساخت سند و گزارش روزانه. با یک فرایند شروع کنید و آن را از اول تا آخر خودکار کنید؛ همین یک اسپرینت اتوماسیون است.",
+      },
+      {
+        q: "خطاها و پایداری گردش‌کارها چطور مدیریت می‌شود؟",
+        a: "هشدار خطا جزو کار است: گردش‌کاری که شکست بخورد به تیم هشدار می‌دهد و بی‌صدا متوقف نمی‌شود. در سیستم املاک ما مدیریت متمرکز خطا و گزارش روزانه هست و مستندات پشتیبان‌گیری و امنیت برای تحویل آماده شد.",
+      },
+      {
+        q: "تیم ما بعد از تحویل چطور از آن استفاده می‌کند؟",
+        a: "مستندات و آموزش تیم جزو کار است: می‌دانید چه چیزی کجا اجرا می‌شود، چطور هشدارها را بخوانید و چه چیزی را خودتان می‌توانید تغییر دهید. بعد از تحویل هم می‌توانید با همراهی ماهانه ادامه دهید تا گردش‌کارها گسترش پیدا کنند.",
+      },
+    ],
+    en: [
+      {
+        q: "What is n8n and what is it good for?",
+        a: "n8n is an open-source workflow automation tool that connects apps and services with visual nodes. It suits any job with several tools and several steps: following up leads, updating a CRM, creating documents, a daily report, sending and receiving email and running an AI agent in the middle of a process.",
+        details: [{ kind: "links", items: [{ label: "Guide: automate lead follow-up with n8n", href: "/guides/lead-follow-up-automation-n8n" }] }],
+      },
+      {
+        q: "What does n8n on our own server mean?",
+        a: "n8n can run on its own cloud or on your server. On your own server, data and credentials stay inside your infrastructure, which also suits long or AI-heavy workflows. If you prefer, we set up n8n on your own server.",
+      },
+      {
+        q: "Which processes should we automate first?",
+        a: "One that repeats every day, takes a lot of time and has clear rules: following up new leads, logging information in a CRM, creating documents and the daily report. Start with one process and automate it end to end; that is exactly what one automation sprint is.",
+      },
+      {
+        q: "How are errors and reliability handled?",
+        a: "Error alerts are part of the work: a workflow that fails alerts the team and does not stop silently. Our real-estate system has central error handling and a daily digest, and backup and security documentation was prepared for handover.",
+      },
+      {
+        q: "How does our team use it after handover?",
+        a: "Documentation and team training are part of the work: you know what runs where, how to read the alerts and what you can change yourselves. After handover you can continue with the monthly partnership so the workflows keep growing.",
+      },
+    ],
+  },
+
   // ======================================================================================= cost guide (D9)
   "website-design-cost": {
     fa: [
@@ -572,6 +622,33 @@ export const more: More = {
       {
         q: "طراحی با قالب آماده یا اختصاصی، از نظر هزینه چه فرقی دارد؟",
         a: "قالب آماده هزینه‌ی شروع کمتری دارد؛ طراحی اختصاصی هزینه‌ی شروع بیشتر ولی کنترل کامل روی ظاهر، سرعت و سئو، و وابستگی کمتر به افزونه‌ها دارد. مقایسه‌ی منصفانه باید هزینه‌ی نگهداری و محدودیت‌های سال‌های بعد را هم بشمارد، نه فقط قیمت روز اول را.",
+      },
+      {
+        q: "یک پیشنهاد قیمت مکتوب باید چه چیزهایی داشته باشد؟",
+        a: "دامنه‌ی دقیق کار (چه صفحه‌ها و امکاناتی)، قیمت کل، زمان‌بندی، آنچه شامل نمی‌شود، تعداد دفعات اصلاح، مالکیت کد و دامنه و شرایط پشتیبانی بعد از تحویل. اگر هرکدام از این‌ها در پیشنهاد نباشد، بعداً محل اختلاف می‌شود؛ پس قبل از امضا بخواهید روشن نوشته شوند.",
+        details: [
+          {
+            kind: "steps",
+            items: [
+              "فهرست صفحه‌ها و امکانات شامل‌شده",
+              "قیمت کل و نحوه‌ی پرداخت",
+              "تاریخ شروع و تحویل",
+              "آنچه شامل نیست و هزینه‌ی افزودن آن",
+              "تعداد دفعات اصلاح",
+              "مالکیت کد، دامنه و حساب‌های هاست",
+              "پشتیبانی بعد از تحویل",
+            ],
+          },
+        ],
+      },
+      {
+        q: "چرا دو پیشنهاد برای «یک» سایت می‌تواند خیلی فرق کند؟",
+        a: "چون «یک سایت» معنای واحدی ندارد: یکی قالب آماده را شخصی‌سازی می‌کند و دیگری طراحی و کد اختصاصی می‌نویسد؛ یکی فقط چند صفحه می‌سازد و دیگری فرم، CMS، دوزبانه بودن و سئو را هم شامل می‌کند. قبل از مقایسه‌ی قیمت‌ها، دامنه‌ی کار را در هر پیشنهاد کنار هم بگذارید.",
+      },
+      {
+        q: "چطور از هزینه‌های پنهان جلوگیری کنیم؟",
+        a: "با قیمت قطعی مکتوب برای دامنه‌ی مشخص، فهرست جدای هزینه‌های بعد از راه‌اندازی (دامنه، هاست، سرویس‌های پولی، نگهداری) و روشن بودن اینکه تغییر دامنه چطور قیمت‌گذاری می‌شود. در بلونا قیمت قطعی بعد از بررسی رایگان داده می‌شود و فقط برای دامنه‌ی توافق‌شده پرداخت می‌کنید.",
+        details: [{ kind: "links", items: [{ label: "رزرو بررسی رایگان رشد", href: "/contact?need=web" }] }],
       },
       {
         q: "از هر شرکت یا آژانس طراحی سایت چه بپرسیم؟",
@@ -613,6 +690,33 @@ export const more: More = {
       {
         q: "What is the cost difference between a template and a custom design?",
         a: "A template has a lower starting cost; a custom design costs more at the start but gives full control of look, speed and SEO and less dependence on plugins. A fair comparison counts maintenance and the limits you will hit in later years, not just day-one price.",
+      },
+      {
+        q: "What should a written quote contain?",
+        a: "The exact scope (which pages and features), the total price, the timeline, what is not included, the number of revision rounds, who owns the code and domain, and the support terms after delivery. If any of these is missing it becomes a point of dispute later, so ask for them to be written down before you sign.",
+        details: [
+          {
+            kind: "steps",
+            items: [
+              "A list of the pages and features included",
+              "The total price and how it is paid",
+              "Start and delivery dates",
+              "What is not included, and what adding it costs",
+              "The number of revision rounds",
+              "Ownership of code, domain and hosting accounts",
+              "Support after delivery",
+            ],
+          },
+        ],
+      },
+      {
+        q: "Why can two quotes for \"a website\" differ so much?",
+        a: "Because \"a website\" has no single meaning: one agency customises a template while another designs and codes from scratch, one builds a few pages and another includes forms, a CMS, a second language and SEO. Before comparing prices, put the scope of each quote side by side.",
+      },
+      {
+        q: "How do you avoid hidden costs?",
+        a: "With a fixed, written price for a defined scope, a separate list of costs after launch (domain, hosting, paid services, maintenance), and clarity on how a change of scope is priced. At Bellona the fixed price comes after the free audit and you pay only for the agreed scope.",
+        details: [{ kind: "links", items: [{ label: "Book the free growth audit", href: "/contact?need=web" }] }],
       },
       {
         q: "What should you ask any website design agency?",
