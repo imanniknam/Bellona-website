@@ -70,7 +70,7 @@ export function ContactForm({
       offer: prefill.offer,
     });
     statusRef.current?.focus();
-  }, [state, locale]);
+  }, [state, locale, prefill.needs, prefill.offer]);
 
   if (state.status === "success" || state.status === "stored") {
     return (
