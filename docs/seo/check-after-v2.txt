@@ -1,0 +1,27 @@
+lastmod: 3 distinct values over 100 URLs, 100 differ from the deploy time
+seo:check https://bellonaagency.com: 100 sitemap URLs, 136 internal links, 12 redirects
+case-study words (main, no closing block): min 507 (/work/elm-kala), max 586 (/en/work/microshamim)
+
+Warnings (4):
+  1 × direct answer is 21  (e.g. /en/work/microshamim)
+  1 × direct answer is 22  (e.g. /work/microshamim)
+  2 × direct answer is 24  (e.g. /work/contemo)
+
+Group results:
+  PASS  sitemap
+  PASS  lastmod
+  PASS  canonical
+  PASS  hreflang
+  PASS  title
+  PASS  description
+  PASS  h1
+  PASS  jsonld
+  PASS  og
+  PASS  redirect
+  PASS  404
+  PASS  icon
+  PASS  links
+  PASS  leak
+  PASS  content
+
+No errors.

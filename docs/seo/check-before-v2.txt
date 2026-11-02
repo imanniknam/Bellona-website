@@ -1,0 +1,630 @@
+lastmod: 3 distinct values over 100 URLs, most common (86×): 2026-11-02T06:34:39.000Z
+seo:check https://bellonaagency.com: 100 sitemap URLs, 136 internal links, 12 redirects
+case-study words (main, no closing block): min 200 (/en/work/elm-kala), max 452 (/work/ai-real-estate-os)
+
+Group results:
+  PASS  sitemap
+  FAIL  lastmod (1)
+  FAIL  canonical (2)
+  FAIL  hreflang (4)
+  FAIL  title (98)
+  FAIL  description (37)
+  PASS  h1
+  FAIL  jsonld (327)
+  FAIL  og (100)
+  FAIL  redirect (2)
+  PASS  404
+  FAIL  icon (3)
+  FAIL  links (4)
+  PASS  leak
+  FAIL  content (30)
+
+Errors (608):
+  [description] /en: meta description is 171 characters (100-160)
+  [hreflang] /en: hreflang fa=https://bellonaagency.com (expected https://bellonaagency.com/)
+  [hreflang] /en: hreflang x-default=https://bellonaagency.com (expected https://bellonaagency.com/)
+  [og] /en: og:site_name "Bellona"
+  [jsonld] /en: Organization.name "Bellona"
+  [jsonld] /en: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en: WebSite.name "Bellona"
+  [canonical] /: canonical https://bellonaagency.com (expected https://bellonaagency.com/)
+  [canonical] /: og:url https://bellonaagency.com (expected https://bellonaagency.com/)
+  [hreflang] /: hreflang fa=https://bellonaagency.com (expected https://bellonaagency.com/)
+  [hreflang] /: hreflang x-default=https://bellonaagency.com (expected https://bellonaagency.com/)
+  [og] /: og:site_name "بلونا"
+  [jsonld] /: Organization.name "Bellona"
+  [jsonld] /: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /: WebSite.name "بلونا"
+  [title] /en/offers: title lacks the suffix "· Bellona Agency": Website and automation packages with fixed quotes · Bellona
+  [og] /en/offers: og:site_name "Bellona"
+  [jsonld] /en/offers: 2 FAQPage blocks (max 1)
+  [jsonld] /en/offers: Organization.name "Bellona"
+  [jsonld] /en/offers: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/offers: WebSite.name "Bellona"
+  [title] /offers: title lacks the suffix "· آژانس بلونا": پکیج‌های طراحی سایت و اتوماسیون با قیمت قطعی · بلونا
+  [og] /offers: og:site_name "بلونا"
+  [jsonld] /offers: 2 FAQPage blocks (max 1)
+  [jsonld] /offers: Organization.name "Bellona"
+  [jsonld] /offers: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /offers: WebSite.name "بلونا"
+  [title] /en/services: title lacks the suffix "· Bellona Agency": Web design, product and AI automation services · Bellona
+  [og] /en/services: og:site_name "Bellona"
+  [jsonld] /en/services: Organization.name "Bellona"
+  [jsonld] /en/services: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services: WebSite.name "Bellona"
+  [title] /services: title lacks the suffix "· آژانس بلونا": خدمات طراحی سایت، توسعه محصول و اتوماسیون هوش مصنوعی · بلونا
+  [og] /services: og:site_name "بلونا"
+  [jsonld] /services: Organization.name "Bellona"
+  [jsonld] /services: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services: WebSite.name "بلونا"
+  [title] /en/services/website-design: title lacks the suffix "· Bellona Agency": Custom website design: corporate, e-commerce, bilingual · Bellona
+  [description] /en/services/website-design: meta description is 172 characters (100-160)
+  [og] /en/services/website-design: og:site_name "Bellona"
+  [jsonld] /en/services/website-design: 2 FAQPage blocks (max 1)
+  [jsonld] /en/services/website-design: Organization.name "Bellona"
+  [jsonld] /en/services/website-design: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design: WebSite.name "Bellona"
+  [title] /services/website-design: title lacks the suffix "· آژانس بلونا": طراحی سایت حرفه‌ای و اختصاصی؛ شرکتی، فروشگاهی و دوزبانه · بلونا
+  [og] /services/website-design: og:site_name "بلونا"
+  [jsonld] /services/website-design: 2 FAQPage blocks (max 1)
+  [jsonld] /services/website-design: Organization.name "Bellona"
+  [jsonld] /services/website-design: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design: WebSite.name "بلونا"
+  [title] /en/services/full-stack-development: title lacks the suffix "· Bellona Agency": Web app development: MVP and custom dashboards · Bellona
+  [og] /en/services/full-stack-development: og:site_name "Bellona"
+  [jsonld] /en/services/full-stack-development: Organization.name "Bellona"
+  [jsonld] /en/services/full-stack-development: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/full-stack-development: WebSite.name "Bellona"
+  [title] /services/full-stack-development: title lacks the suffix "· آژانس بلونا": طراحی وب‌اپ، ساخت MVP و داشبورد اختصاصی · بلونا
+  [og] /services/full-stack-development: og:site_name "بلونا"
+  [jsonld] /services/full-stack-development: Organization.name "Bellona"
+  [jsonld] /services/full-stack-development: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/full-stack-development: WebSite.name "بلونا"
+  [title] /en/services/ai-automation: title lacks the suffix "· Bellona Agency": Business AI automation, agents and n8n · Bellona
+  [og] /en/services/ai-automation: og:site_name "Bellona"
+  [jsonld] /en/services/ai-automation: 2 FAQPage blocks (max 1)
+  [jsonld] /en/services/ai-automation: Organization.name "Bellona"
+  [jsonld] /en/services/ai-automation: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/ai-automation: WebSite.name "Bellona"
+  [title] /services/ai-automation: title lacks the suffix "· آژانس بلونا": اتوماسیون هوش مصنوعی کسب‌وکار، ایجنت و n8n · بلونا
+  [og] /services/ai-automation: og:site_name "بلونا"
+  [jsonld] /services/ai-automation: 2 FAQPage blocks (max 1)
+  [jsonld] /services/ai-automation: Organization.name "Bellona"
+  [jsonld] /services/ai-automation: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/ai-automation: WebSite.name "بلونا"
+  [title] /en/services/marketing-growth: title lacks the suffix "· Bellona Agency": SEO, content and lead generation: a growth system · Bellona
+  [og] /en/services/marketing-growth: og:site_name "Bellona"
+  [jsonld] /en/services/marketing-growth: Organization.name "Bellona"
+  [jsonld] /en/services/marketing-growth: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/marketing-growth: WebSite.name "Bellona"
+  [title] /services/marketing-growth: title lacks the suffix "· آژانس بلونا": سئو، محتوا و جذب لید؛ سیستم رشد · بلونا
+  [description] /services/marketing-growth: meta description is 94 characters (100-160)
+  [og] /services/marketing-growth: og:site_name "بلونا"
+  [jsonld] /services/marketing-growth: Organization.name "Bellona"
+  [jsonld] /services/marketing-growth: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/marketing-growth: WebSite.name "بلونا"
+  [title] /en/services/business-development: title lacks the suffix "· Bellona Agency": Business development, CRM setup and market entry · Bellona
+  [og] /en/services/business-development: og:site_name "Bellona"
+  [jsonld] /en/services/business-development: 2 FAQPage blocks (max 1)
+  [jsonld] /en/services/business-development: Organization.name "Bellona"
+  [jsonld] /en/services/business-development: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/business-development: WebSite.name "Bellona"
+  [title] /services/business-development: title lacks the suffix "· آژانس بلونا": توسعه کسب‌وکار، راه‌اندازی CRM و ورود به بازار · بلونا
+  [og] /services/business-development: og:site_name "بلونا"
+  [jsonld] /services/business-development: 2 FAQPage blocks (max 1)
+  [jsonld] /services/business-development: Organization.name "Bellona"
+  [jsonld] /services/business-development: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/business-development: WebSite.name "بلونا"
+  [title] /en/services/ai-automation/n8n: title lacks the suffix "· Bellona Agency": n8n automation and workflow implementation · Bellona
+  [og] /en/services/ai-automation/n8n: og:site_name "Bellona"
+  [jsonld] /en/services/ai-automation/n8n: Organization.name "Bellona"
+  [jsonld] /en/services/ai-automation/n8n: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/ai-automation/n8n: WebSite.name "Bellona"
+  [title] /services/ai-automation/n8n: title lacks the suffix "· آژانس بلونا": پیاده‌سازی و اتوماسیون n8n برای کسب‌وکار · بلونا
+  [description] /services/ai-automation/n8n: meta description is 171 characters (100-160)
+  [og] /services/ai-automation/n8n: og:site_name "بلونا"
+  [jsonld] /services/ai-automation/n8n: Organization.name "Bellona"
+  [jsonld] /services/ai-automation/n8n: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/ai-automation/n8n: WebSite.name "بلونا"
+  [title] /en/services/website-design/nextjs: title lacks the suffix "· Bellona Agency": Next.js website design: fast and SEO-ready · Bellona
+  [description] /en/services/website-design/nextjs: meta description is 169 characters (100-160)
+  [og] /en/services/website-design/nextjs: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/nextjs: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/nextjs: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/nextjs: WebSite.name "Bellona"
+  [title] /services/website-design/nextjs: title lacks the suffix "· آژانس بلونا": طراحی سایت با نکست جی اس (Next.js)؛ سریع و سئومحور · بلونا
+  [og] /services/website-design/nextjs: og:site_name "بلونا"
+  [jsonld] /services/website-design/nextjs: Organization.name "Bellona"
+  [jsonld] /services/website-design/nextjs: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/nextjs: WebSite.name "بلونا"
+  [title] /en/services/website-design/ecommerce: title lacks the suffix "· Bellona Agency": E-commerce website design: custom online stores · Bellona
+  [description] /en/services/website-design/ecommerce: meta description is 177 characters (100-160)
+  [og] /en/services/website-design/ecommerce: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/ecommerce: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/ecommerce: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/ecommerce: WebSite.name "Bellona"
+  [title] /services/website-design/ecommerce: title lacks the suffix "· آژانس بلونا": طراحی سایت فروشگاهی و فروشگاه اینترنتی اختصاصی · بلونا
+  [description] /services/website-design/ecommerce: meta description is 169 characters (100-160)
+  [og] /services/website-design/ecommerce: og:site_name "بلونا"
+  [jsonld] /services/website-design/ecommerce: Organization.name "Bellona"
+  [jsonld] /services/website-design/ecommerce: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/ecommerce: WebSite.name "بلونا"
+  [title] /en/services/website-design/corporate: title lacks the suffix "· Bellona Agency": Custom corporate website design: fast and SEO-ready · Bellona
+  [description] /en/services/website-design/corporate: meta description is 173 characters (100-160)
+  [og] /en/services/website-design/corporate: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/corporate: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/corporate: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/corporate: WebSite.name "Bellona"
+  [title] /services/website-design/corporate: title lacks the suffix "· آژانس بلونا": طراحی سایت شرکتی اختصاصی؛ سریع و آماده‌ی سئو · بلونا
+  [description] /services/website-design/corporate: meta description is 193 characters (100-160)
+  [og] /services/website-design/corporate: og:site_name "بلونا"
+  [jsonld] /services/website-design/corporate: Organization.name "Bellona"
+  [jsonld] /services/website-design/corporate: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/corporate: WebSite.name "بلونا"
+  [title] /en/services/website-design/bilingual: title lacks the suffix "· Bellona Agency": Bilingual website design: Persian and English, RTL · Bellona
+  [description] /en/services/website-design/bilingual: meta description is 222 characters (100-160)
+  [og] /en/services/website-design/bilingual: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/bilingual: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/bilingual: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/bilingual: WebSite.name "Bellona"
+  [title] /services/website-design/bilingual: title lacks the suffix "· آژانس بلونا": طراحی سایت دوزبانه فارسی و انگلیسی (RTL و LTR) · بلونا
+  [description] /services/website-design/bilingual: meta description is 191 characters (100-160)
+  [og] /services/website-design/bilingual: og:site_name "بلونا"
+  [jsonld] /services/website-design/bilingual: Organization.name "Bellona"
+  [jsonld] /services/website-design/bilingual: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/bilingual: WebSite.name "بلونا"
+  [title] /en/services/website-design/redesign: title lacks the suffix "· Bellona Agency": Website redesign and migration without losing SEO · Bellona
+  [description] /en/services/website-design/redesign: meta description is 190 characters (100-160)
+  [og] /en/services/website-design/redesign: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/redesign: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/redesign: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/redesign: WebSite.name "Bellona"
+  [title] /services/website-design/redesign: title lacks the suffix "· آژانس بلونا": بازطراحی سایت و انتقال از وردپرس بدون افت سئو · بلونا
+  [description] /services/website-design/redesign: meta description is 188 characters (100-160)
+  [og] /services/website-design/redesign: og:site_name "بلونا"
+  [jsonld] /services/website-design/redesign: Organization.name "Bellona"
+  [jsonld] /services/website-design/redesign: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/redesign: WebSite.name "بلونا"
+  [title] /en/services/seo: title lacks the suffix "· Bellona Agency": SEO services: technical, content and Next.js SEO · Bellona
+  [description] /en/services/seo: meta description is 169 characters (100-160)
+  [og] /en/services/seo: og:site_name "Bellona"
+  [jsonld] /en/services/seo: Organization.name "Bellona"
+  [jsonld] /en/services/seo: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/seo: WebSite.name "Bellona"
+  [title] /services/seo: title lacks the suffix "· آژانس بلونا": خدمات سئو سایت: تکنیکال، محتوا و Next.js · بلونا
+  [og] /services/seo: og:site_name "بلونا"
+  [jsonld] /services/seo: Organization.name "Bellona"
+  [jsonld] /services/seo: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/seo: WebSite.name "بلونا"
+  [title] /en/services/website-design/landing-page: title lacks the suffix "· Bellona Agency": Landing page design: fast pages that convert · Bellona
+  [description] /en/services/website-design/landing-page: meta description is 173 characters (100-160)
+  [og] /en/services/website-design/landing-page: og:site_name "Bellona"
+  [jsonld] /en/services/website-design/landing-page: Organization.name "Bellona"
+  [jsonld] /en/services/website-design/landing-page: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/website-design/landing-page: WebSite.name "Bellona"
+  [title] /services/website-design/landing-page: title lacks the suffix "· آژانس بلونا": طراحی لندینگ پیج: سریع و تبدیل‌محور · بلونا
+  [og] /services/website-design/landing-page: og:site_name "بلونا"
+  [jsonld] /services/website-design/landing-page: Organization.name "Bellona"
+  [jsonld] /services/website-design/landing-page: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/website-design/landing-page: WebSite.name "بلونا"
+  [title] /en/services/ai-automation/crm: title lacks the suffix "· Bellona Agency": CRM automation: automatic lead follow-up and sales · Bellona
+  [description] /en/services/ai-automation/crm: meta description is 170 characters (100-160)
+  [og] /en/services/ai-automation/crm: og:site_name "Bellona"
+  [jsonld] /en/services/ai-automation/crm: Organization.name "Bellona"
+  [jsonld] /en/services/ai-automation/crm: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/ai-automation/crm: WebSite.name "Bellona"
+  [title] /services/ai-automation/crm: title lacks the suffix "· آژانس بلونا": اتوماسیون CRM: پیگیری خودکار لید و فروش · بلونا
+  [og] /services/ai-automation/crm: og:site_name "بلونا"
+  [jsonld] /services/ai-automation/crm: Organization.name "Bellona"
+  [jsonld] /services/ai-automation/crm: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/ai-automation/crm: WebSite.name "بلونا"
+  [title] /en/services/ai-automation/chatbot: title lacks the suffix "· Bellona Agency": AI chatbot for your website: answers customers 24/7 · Bellona
+  [og] /en/services/ai-automation/chatbot: og:site_name "Bellona"
+  [jsonld] /en/services/ai-automation/chatbot: Organization.name "Bellona"
+  [jsonld] /en/services/ai-automation/chatbot: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/services/ai-automation/chatbot: WebSite.name "Bellona"
+  [title] /services/ai-automation/chatbot: title lacks the suffix "· آژانس بلونا": چت‌بات هوش مصنوعی برای سایت: پاسخ ۲۴ ساعته · بلونا
+  [og] /services/ai-automation/chatbot: og:site_name "بلونا"
+  [jsonld] /services/ai-automation/chatbot: Organization.name "Bellona"
+  [jsonld] /services/ai-automation/chatbot: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /services/ai-automation/chatbot: WebSite.name "بلونا"
+  [title] /en/partner: title lacks the suffix "· Bellona Agency": Your digital partner from idea to growth · Bellona
+  [og] /en/partner: og:site_name "Bellona"
+  [jsonld] /en/partner: Organization.name "Bellona"
+  [jsonld] /en/partner: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/partner: WebSite.name "Bellona"
+  [title] /partner: title lacks the suffix "· آژانس بلونا": همراه دیجیتال کامل؛ از ایده تا رشد · بلونا
+  [og] /partner: og:site_name "بلونا"
+  [jsonld] /partner: Organization.name "Bellona"
+  [jsonld] /partner: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /partner: WebSite.name "بلونا"
+  [title] /en/industries: title lacks the suffix "· Bellona Agency": Websites and AI automation by industry · Bellona
+  [og] /en/industries: og:site_name "Bellona"
+  [jsonld] /en/industries: Organization.name "Bellona"
+  [jsonld] /en/industries: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/industries: WebSite.name "Bellona"
+  [title] /industries: title lacks the suffix "· آژانس بلونا": طراحی سایت و اتوماسیون هوش مصنوعی برای صنایع · بلونا
+  [description] /industries: meta description is 88 characters (100-160)
+  [og] /industries: og:site_name "بلونا"
+  [jsonld] /industries: Organization.name "Bellona"
+  [jsonld] /industries: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /industries: WebSite.name "بلونا"
+  [title] /en/industries/real-estate: title lacks the suffix "· Bellona Agency": Real estate website design and AI sales automation · Bellona
+  [description] /en/industries/real-estate: meta description is 169 characters (100-160)
+  [og] /en/industries/real-estate: og:site_name "Bellona"
+  [jsonld] /en/industries/real-estate: Organization.name "Bellona"
+  [jsonld] /en/industries/real-estate: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/industries/real-estate: WebSite.name "Bellona"
+  [title] /industries/real-estate: title lacks the suffix "· آژانس بلونا": طراحی سایت املاک و اتوماسیون فروش با هوش مصنوعی · بلونا
+  [og] /industries/real-estate: og:site_name "بلونا"
+  [jsonld] /industries/real-estate: Organization.name "Bellona"
+  [jsonld] /industries/real-estate: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /industries/real-estate: WebSite.name "بلونا"
+  [title] /en/industries/education: title lacks the suffix "· Bellona Agency": Education website design: gamified learning platforms · Bellona
+  [description] /en/industries/education: meta description is 170 characters (100-160)
+  [og] /en/industries/education: og:site_name "Bellona"
+  [jsonld] /en/industries/education: Organization.name "Bellona"
+  [jsonld] /en/industries/education: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/industries/education: WebSite.name "Bellona"
+  [title] /industries/education: title lacks the suffix "· آژانس بلونا": طراحی سایت آموزشی و پلتفرم یادگیری گیمیفای‌شده · بلونا
+  [og] /industries/education: og:site_name "بلونا"
+  [jsonld] /industries/education: Organization.name "Bellona"
+  [jsonld] /industries/education: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /industries/education: WebSite.name "بلونا"
+  [title] /en/industries/ecommerce: title lacks the suffix "· Bellona Agency": Online store design and sales automation · Bellona
+  [og] /en/industries/ecommerce: og:site_name "Bellona"
+  [jsonld] /en/industries/ecommerce: Organization.name "Bellona"
+  [jsonld] /en/industries/ecommerce: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/industries/ecommerce: WebSite.name "Bellona"
+  [title] /industries/ecommerce: title lacks the suffix "· آژانس بلونا": طراحی فروشگاه اینترنتی و اتوماسیون فروش · بلونا
+  [og] /industries/ecommerce: og:site_name "بلونا"
+  [jsonld] /industries/ecommerce: Organization.name "Bellona"
+  [jsonld] /industries/ecommerce: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /industries/ecommerce: WebSite.name "بلونا"
+  [title] /en/industries/media: title lacks the suffix "· Bellona Agency": Media website design and publishing platforms · Bellona
+  [description] /en/industries/media: meta description is 163 characters (100-160)
+  [og] /en/industries/media: og:site_name "Bellona"
+  [jsonld] /en/industries/media: Organization.name "Bellona"
+  [jsonld] /en/industries/media: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/industries/media: WebSite.name "Bellona"
+  [title] /industries/media: title lacks the suffix "· آژانس بلونا": طراحی سایت خبری و پلتفرم انتشار برای رسانه‌ها · بلونا
+  [og] /industries/media: og:site_name "بلونا"
+  [jsonld] /industries/media: Organization.name "Bellona"
+  [jsonld] /industries/media: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /industries/media: WebSite.name "بلونا"
+  [title] /en/work: title lacks the suffix "· Bellona Agency": Portfolio: website, product and automation projects · Bellona
+  [og] /en/work: og:site_name "Bellona"
+  [jsonld] /en/work: Organization.name "Bellona"
+  [jsonld] /en/work: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work: WebSite.name "Bellona"
+  [title] /work: title lacks the suffix "· آژانس بلونا": نمونه‌کار طراحی سایت، محصول و اتوماسیون · بلونا
+  [description] /work: meta description is 98 characters (100-160)
+  [og] /work: og:site_name "بلونا"
+  [jsonld] /work: Organization.name "Bellona"
+  [jsonld] /work: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work: WebSite.name "بلونا"
+  [title] /en/work/ai-real-estate-os: title lacks the suffix "· Bellona Agency": AI Real Estate Operating System: AI automation · Bellona
+  [description] /en/work/ai-real-estate-os: meta description is 166 characters (100-160)
+  [og] /en/work/ai-real-estate-os: og:site_name "Bellona"
+  [jsonld] /en/work/ai-real-estate-os: Organization.name "Bellona"
+  [jsonld] /en/work/ai-real-estate-os: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/ai-real-estate-os: WebSite.name "Bellona"
+  [content] /en/work/ai-real-estate-os: 440 words in main (min 500)
+  [title] /work/ai-real-estate-os: title lacks the suffix "· آژانس بلونا": سیستم‌عامل هوشمند فروش املاک؛ اتوماسیون هوش مصنوعی · بلونا
+  [og] /work/ai-real-estate-os: og:site_name "بلونا"
+  [jsonld] /work/ai-real-estate-os: Organization.name "Bellona"
+  [jsonld] /work/ai-real-estate-os: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/ai-real-estate-os: WebSite.name "بلونا"
+  [content] /work/ai-real-estate-os: 452 words in main (min 500)
+  [title] /en/work/codechee: title lacks the suffix "· Bellona Agency": Codechee: Education, Programming & AI · Bellona
+  [og] /en/work/codechee: og:site_name "Bellona"
+  [jsonld] /en/work/codechee: Organization.name "Bellona"
+  [jsonld] /en/work/codechee: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/codechee: WebSite.name "Bellona"
+  [content] /en/work/codechee: 224 words in main (min 500)
+  [title] /work/codechee: title lacks the suffix "· آژانس بلونا": پلتفرم کدچی؛ آموزش، برنامه‌نویسی و هوش مصنوعی · بلونا
+  [og] /work/codechee: og:site_name "بلونا"
+  [jsonld] /work/codechee: Organization.name "Bellona"
+  [jsonld] /work/codechee: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/codechee: WebSite.name "بلونا"
+  [content] /work/codechee: 222 words in main (min 500)
+  [title] /en/work/yasin: title lacks the suffix "· Bellona Agency": Yasin Skill School: Education, Immersive learning · Bellona
+  [og] /en/work/yasin: og:site_name "Bellona"
+  [jsonld] /en/work/yasin: Organization.name "Bellona"
+  [jsonld] /en/work/yasin: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/yasin: WebSite.name "Bellona"
+  [content] /en/work/yasin: 325 words in main (min 500)
+  [title] /work/yasin: title lacks the suffix "· آژانس بلونا": طراحی سایت مدرسه مهارت یاسین؛ تجربه‌ی تعاملی · بلونا
+  [og] /work/yasin: og:site_name "بلونا"
+  [jsonld] /work/yasin: Organization.name "Bellona"
+  [jsonld] /work/yasin: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/yasin: WebSite.name "بلونا"
+  [content] /work/yasin: 306 words in main (min 500)
+  [title] /en/work/konjed: title lacks the suffix "· Bellona Agency": Konjed: Education, Gamified learning · Bellona
+  [og] /en/work/konjed: og:site_name "Bellona"
+  [jsonld] /en/work/konjed: Organization.name "Bellona"
+  [jsonld] /en/work/konjed: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/konjed: WebSite.name "Bellona"
+  [content] /en/work/konjed: 280 words in main (min 500)
+  [title] /work/konjed: title lacks the suffix "· آژانس بلونا": پلتفرم کنجد؛ آموزش، یادگیری گیمیفای‌شده · بلونا
+  [og] /work/konjed: og:site_name "بلونا"
+  [jsonld] /work/konjed: Organization.name "Bellona"
+  [jsonld] /work/konjed: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/konjed: WebSite.name "بلونا"
+  [content] /work/konjed: 253 words in main (min 500)
+  [title] /en/work/microshamim: title lacks the suffix "· Bellona Agency": Microshamim: Innovation hub, Education · Bellona
+  [og] /en/work/microshamim: og:site_name "Bellona"
+  [jsonld] /en/work/microshamim: Organization.name "Bellona"
+  [jsonld] /en/work/microshamim: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/microshamim: WebSite.name "Bellona"
+  [links] /en/work/microshamim: link to a test domain: https://microshamim-rosy.vercel.app
+  [content] /en/work/microshamim: 269 words in main (min 500)
+  [title] /work/microshamim: title lacks the suffix "· آژانس بلونا": طراحی سایت میکروشمیم؛ مرکز نوآوری، آموزش · بلونا
+  [og] /work/microshamim: og:site_name "بلونا"
+  [jsonld] /work/microshamim: Organization.name "Bellona"
+  [jsonld] /work/microshamim: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/microshamim: WebSite.name "بلونا"
+  [links] /work/microshamim: link to a test domain: https://microshamim-rosy.vercel.app
+  [content] /work/microshamim: 268 words in main (min 500)
+  [title] /en/work/sabzino: title lacks the suffix "· Bellona Agency": Sabzino: E-commerce, Social enterprise · Bellona
+  [og] /en/work/sabzino: og:site_name "Bellona"
+  [jsonld] /en/work/sabzino: Organization.name "Bellona"
+  [jsonld] /en/work/sabzino: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/sabzino: WebSite.name "Bellona"
+  [content] /en/work/sabzino: 329 words in main (min 500)
+  [title] /work/sabzino: title lacks the suffix "· آژانس بلونا": طراحی سایت فروشگاه اجتماعی سبزینو؛ کسب‌وکار اجتماعی · بلونا
+  [og] /work/sabzino: og:site_name "بلونا"
+  [jsonld] /work/sabzino: Organization.name "Bellona"
+  [jsonld] /work/sabzino: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/sabzino: WebSite.name "بلونا"
+  [content] /work/sabzino: 304 words in main (min 500)
+  [title] /en/work/dane-news: title lacks the suffix "· Bellona Agency": Dane Scientific News: Media, Science publishing · Bellona
+  [og] /en/work/dane-news: og:site_name "Bellona"
+  [jsonld] /en/work/dane-news: Organization.name "Bellona"
+  [jsonld] /en/work/dane-news: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/dane-news: WebSite.name "Bellona"
+  [content] /en/work/dane-news: 423 words in main (min 500)
+  [title] /work/dane-news: title lacks the suffix "· آژانس بلونا": پایگاه علمی خبری دانه؛ رسانه، انتشار علمی · بلونا
+  [og] /work/dane-news: og:site_name "بلونا"
+  [jsonld] /work/dane-news: Organization.name "Bellona"
+  [jsonld] /work/dane-news: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/dane-news: WebSite.name "بلونا"
+  [content] /work/dane-news: 407 words in main (min 500)
+  [title] /en/work/nira-perfume: title lacks the suffix "· Bellona Agency": Nira Perfume: Retail, Fragrance · Bellona
+  [og] /en/work/nira-perfume: og:site_name "Bellona"
+  [jsonld] /en/work/nira-perfume: Organization.name "Bellona"
+  [jsonld] /en/work/nira-perfume: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/nira-perfume: WebSite.name "Bellona"
+  [content] /en/work/nira-perfume: 230 words in main (min 500)
+  [title] /work/nira-perfume: title lacks the suffix "· آژانس بلونا": طراحی سایت عطر نیرا؛ فروشگاهی، عطر · بلونا
+  [og] /work/nira-perfume: og:site_name "بلونا"
+  [jsonld] /work/nira-perfume: Organization.name "Bellona"
+  [jsonld] /work/nira-perfume: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/nira-perfume: WebSite.name "بلونا"
+  [content] /work/nira-perfume: 211 words in main (min 500)
+  [title] /en/work/contemo: title lacks the suffix "· Bellona Agency": Contemo: Services, Content production · Bellona
+  [og] /en/work/contemo: og:site_name "Bellona"
+  [jsonld] /en/work/contemo: Organization.name "Bellona"
+  [jsonld] /en/work/contemo: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/contemo: WebSite.name "Bellona"
+  [content] /en/work/contemo: 286 words in main (min 500)
+  [title] /work/contemo: title lacks the suffix "· آژانس بلونا": پلتفرم محتوایی کانتمو؛ خدمات، تولید محتوا · بلونا
+  [description] /work/contemo: meta description is 94 characters (100-160)
+  [og] /work/contemo: og:site_name "بلونا"
+  [jsonld] /work/contemo: Organization.name "Bellona"
+  [jsonld] /work/contemo: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/contemo: WebSite.name "بلونا"
+  [content] /work/contemo: 288 words in main (min 500)
+  [title] /en/work/shamim-house: title lacks the suffix "· Bellona Agency": Shamim House: Venture building, Brand platform · Bellona
+  [og] /en/work/shamim-house: og:site_name "Bellona"
+  [jsonld] /en/work/shamim-house: Organization.name "Bellona"
+  [jsonld] /en/work/shamim-house: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/shamim-house: WebSite.name "Bellona"
+  [content] /en/work/shamim-house: 283 words in main (min 500)
+  [title] /work/shamim-house: title lacks the suffix "· آژانس بلونا": طراحی سایت اکوسیستم خانه شمیم؛ پلتفرم برند · بلونا
+  [description] /work/shamim-house: meta description is 93 characters (100-160)
+  [og] /work/shamim-house: og:site_name "بلونا"
+  [jsonld] /work/shamim-house: Organization.name "Bellona"
+  [jsonld] /work/shamim-house: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/shamim-house: WebSite.name "بلونا"
+  [content] /work/shamim-house: 265 words in main (min 500)
+  [title] /en/work/asa-study: title lacks the suffix "· Bellona Agency": ASA-Study: Education, International admissions · Bellona
+  [og] /en/work/asa-study: og:site_name "Bellona"
+  [jsonld] /en/work/asa-study: Organization.name "Bellona"
+  [jsonld] /en/work/asa-study: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/asa-study: WebSite.name "Bellona"
+  [links] /en/work/asa-study: link to a test domain: https://asastudy-website.vercel.app
+  [content] /en/work/asa-study: 273 words in main (min 500)
+  [title] /work/asa-study: title lacks the suffix "· آژانس بلونا": طراحی سایت سامانه پذیرش ASA-Study · بلونا
+  [og] /work/asa-study: og:site_name "بلونا"
+  [jsonld] /work/asa-study: Organization.name "Bellona"
+  [jsonld] /work/asa-study: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/asa-study: WebSite.name "بلونا"
+  [links] /work/asa-study: link to a test domain: https://asastudy-website.vercel.app
+  [content] /work/asa-study: 280 words in main (min 500)
+  [title] /en/work/prowem: title lacks the suffix "· Bellona Agency": Prowem Sports Platform: Sports, Mobile app · Bellona
+  [og] /en/work/prowem: og:site_name "Bellona"
+  [jsonld] /en/work/prowem: Organization.name "Bellona"
+  [jsonld] /en/work/prowem: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/prowem: WebSite.name "Bellona"
+  [content] /en/work/prowem: 272 words in main (min 500)
+  [title] /work/prowem: title lacks the suffix "· آژانس بلونا": پلتفرم ورزشی Prowem؛ ورزش، اپلیکیشن موبایل · بلونا
+  [og] /work/prowem: og:site_name "بلونا"
+  [jsonld] /work/prowem: Organization.name "Bellona"
+  [jsonld] /work/prowem: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/prowem: WebSite.name "بلونا"
+  [content] /work/prowem: 250 words in main (min 500)
+  [title] /en/work/mojasame-saidi: title lacks the suffix "· Bellona Agency": Mojasame Saidi: E-commerce, Handcrafted decor · Bellona
+  [og] /en/work/mojasame-saidi: og:site_name "Bellona"
+  [jsonld] /en/work/mojasame-saidi: Organization.name "Bellona"
+  [jsonld] /en/work/mojasame-saidi: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/mojasame-saidi: WebSite.name "Bellona"
+  [content] /en/work/mojasame-saidi: 282 words in main (min 500)
+  [title] /work/mojasame-saidi: title lacks the suffix "· آژانس بلونا": طراحی سایت فروشگاه مجسمه سعیدی؛ دکور دست‌ساز · بلونا
+  [og] /work/mojasame-saidi: og:site_name "بلونا"
+  [jsonld] /work/mojasame-saidi: Organization.name "Bellona"
+  [jsonld] /work/mojasame-saidi: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/mojasame-saidi: WebSite.name "بلونا"
+  [content] /work/mojasame-saidi: 272 words in main (min 500)
+  [title] /en/work/elm-kala: title lacks the suffix "· Bellona Agency": Elm-Kala: E-commerce, Scientific equipment · Bellona
+  [description] /en/work/elm-kala: meta description is 84 characters (100-160)
+  [og] /en/work/elm-kala: og:site_name "Bellona"
+  [jsonld] /en/work/elm-kala: Organization.name "Bellona"
+  [jsonld] /en/work/elm-kala: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/elm-kala: WebSite.name "Bellona"
+  [content] /en/work/elm-kala: 200 words in main (min 500)
+  [title] /work/elm-kala: title lacks the suffix "· آژانس بلونا": طراحی سایت فروشگاه تخصصی علم‌کالا؛ تجهیزات علمی · بلونا
+  [description] /work/elm-kala: meta description is 65 characters (100-160)
+  [og] /work/elm-kala: og:site_name "بلونا"
+  [jsonld] /work/elm-kala: Organization.name "Bellona"
+  [jsonld] /work/elm-kala: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/elm-kala: WebSite.name "بلونا"
+  [content] /work/elm-kala: 200 words in main (min 500)
+  [title] /en/work/school-builders: title lacks the suffix "· Bellona Agency": Iran School-Builders Charity: Public portal · Bellona
+  [og] /en/work/school-builders: og:site_name "Bellona"
+  [jsonld] /en/work/school-builders: Organization.name "Bellona"
+  [jsonld] /en/work/school-builders: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/work/school-builders: WebSite.name "Bellona"
+  [content] /en/work/school-builders: 255 words in main (min 500)
+  [title] /work/school-builders: title lacks the suffix "· آژانس بلونا": طراحی سایت جامعه خیرین مدرسه‌ساز کشور؛ پرتال عمومی · بلونا
+  [description] /work/school-builders: meta description is 96 characters (100-160)
+  [og] /work/school-builders: og:site_name "بلونا"
+  [jsonld] /work/school-builders: Organization.name "Bellona"
+  [jsonld] /work/school-builders: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /work/school-builders: WebSite.name "بلونا"
+  [content] /work/school-builders: 233 words in main (min 500)
+  [title] /en/guides: title lacks the suffix "· Bellona Agency": Website and AI automation guides · Bellona
+  [og] /en/guides: og:site_name "Bellona"
+  [jsonld] /en/guides: Organization.name "Bellona"
+  [jsonld] /en/guides: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides: WebSite.name "Bellona"
+  [title] /guides: title lacks the suffix "· آژانس بلونا": راهنمای طراحی سایت و اتوماسیون هوش مصنوعی · بلونا
+  [og] /guides: og:site_name "بلونا"
+  [jsonld] /guides: Organization.name "Bellona"
+  [jsonld] /guides: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides: WebSite.name "بلونا"
+  [title] /en/guides/website-design-cost: title lacks the suffix "· Bellona Agency": Website design cost in 2026: what drives the price · Bellona
+  [description] /en/guides/website-design-cost: meta description is 177 characters (100-160)
+  [og] /en/guides/website-design-cost: og:site_name "Bellona"
+  [jsonld] /en/guides/website-design-cost: Organization.name "Bellona"
+  [jsonld] /en/guides/website-design-cost: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/website-design-cost: WebSite.name "Bellona"
+  [title] /guides/website-design-cost: title lacks the suffix "· آژانس بلونا": قیمت طراحی سایت ۱۴۰۵؛ چه چیزی هزینه را تعیین می‌کند · بلونا
+  [og] /guides/website-design-cost: og:site_name "بلونا"
+  [jsonld] /guides/website-design-cost: Organization.name "Bellona"
+  [jsonld] /guides/website-design-cost: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/website-design-cost: WebSite.name "بلونا"
+  [title] /en/guides/migrate-wordpress-to-nextjs: title lacks the suffix "· Bellona Agency": Migrate from WordPress to Next.js without losing SEO · Bellona
+  [description] /en/guides/migrate-wordpress-to-nextjs: meta description is 195 characters (100-160)
+  [og] /en/guides/migrate-wordpress-to-nextjs: og:site_name "Bellona"
+  [jsonld] /en/guides/migrate-wordpress-to-nextjs: Organization.name "Bellona"
+  [jsonld] /en/guides/migrate-wordpress-to-nextjs: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/migrate-wordpress-to-nextjs: WebSite.name "Bellona"
+  [title] /guides/migrate-wordpress-to-nextjs: title lacks the suffix "· آژانس بلونا": انتقال سایت از وردپرس به Next.js بدون افت سئو · بلونا
+  [description] /guides/migrate-wordpress-to-nextjs: meta description is 169 characters (100-160)
+  [og] /guides/migrate-wordpress-to-nextjs: og:site_name "بلونا"
+  [jsonld] /guides/migrate-wordpress-to-nextjs: Organization.name "Bellona"
+  [jsonld] /guides/migrate-wordpress-to-nextjs: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/migrate-wordpress-to-nextjs: WebSite.name "بلونا"
+  [title] /en/guides/custom-vs-store-builder: title lacks the suffix "· Bellona Agency": Custom online store or store builder? A buyer's guide · Bellona
+  [description] /en/guides/custom-vs-store-builder: meta description is 165 characters (100-160)
+  [og] /en/guides/custom-vs-store-builder: og:site_name "Bellona"
+  [jsonld] /en/guides/custom-vs-store-builder: Organization.name "Bellona"
+  [jsonld] /en/guides/custom-vs-store-builder: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/custom-vs-store-builder: WebSite.name "Bellona"
+  [title] /guides/custom-vs-store-builder: title lacks the suffix "· آژانس بلونا": فروشگاه‌ساز یا فروشگاه اینترنتی اختصاصی؟ · بلونا
+  [og] /guides/custom-vs-store-builder: og:site_name "بلونا"
+  [jsonld] /guides/custom-vs-store-builder: Organization.name "Bellona"
+  [jsonld] /guides/custom-vs-store-builder: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/custom-vs-store-builder: WebSite.name "بلونا"
+  [title] /en/guides/bilingual-website-hreflang-rtl: title lacks the suffix "· Bellona Agency": Persian–English bilingual website: hreflang and RTL · Bellona
+  [description] /en/guides/bilingual-website-hreflang-rtl: meta description is 167 characters (100-160)
+  [og] /en/guides/bilingual-website-hreflang-rtl: og:site_name "Bellona"
+  [jsonld] /en/guides/bilingual-website-hreflang-rtl: Organization.name "Bellona"
+  [jsonld] /en/guides/bilingual-website-hreflang-rtl: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/bilingual-website-hreflang-rtl: WebSite.name "Bellona"
+  [title] /guides/bilingual-website-hreflang-rtl: title lacks the suffix "· آژانس بلونا": سایت دوزبانه فارسی و انگلیسی: hreflang و RTL · بلونا
+  [og] /guides/bilingual-website-hreflang-rtl: og:site_name "بلونا"
+  [jsonld] /guides/bilingual-website-hreflang-rtl: Organization.name "Bellona"
+  [jsonld] /guides/bilingual-website-hreflang-rtl: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/bilingual-website-hreflang-rtl: WebSite.name "بلونا"
+  [title] /en/guides/nextjs-seo-checklist: title lacks the suffix "· Bellona Agency": Next.js SEO checklist: metadata, sitemap and JSON-LD · Bellona
+  [description] /en/guides/nextjs-seo-checklist: meta description is 175 characters (100-160)
+  [og] /en/guides/nextjs-seo-checklist: og:site_name "Bellona"
+  [jsonld] /en/guides/nextjs-seo-checklist: Organization.name "Bellona"
+  [jsonld] /en/guides/nextjs-seo-checklist: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/nextjs-seo-checklist: WebSite.name "Bellona"
+  [title] /guides/nextjs-seo-checklist: title lacks the suffix "· آژانس بلونا": چک‌لیست سئو Next.js: متادیتا، سایت‌مپ و JSON-LD · بلونا
+  [og] /guides/nextjs-seo-checklist: og:site_name "بلونا"
+  [jsonld] /guides/nextjs-seo-checklist: Organization.name "Bellona"
+  [jsonld] /guides/nextjs-seo-checklist: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/nextjs-seo-checklist: WebSite.name "بلونا"
+  [title] /en/guides/ai-search-readiness: title lacks the suffix "· Bellona Agency": Be visible to AI search: ChatGPT and AI assistants · Bellona
+  [description] /en/guides/ai-search-readiness: meta description is 207 characters (100-160)
+  [og] /en/guides/ai-search-readiness: og:site_name "Bellona"
+  [jsonld] /en/guides/ai-search-readiness: Organization.name "Bellona"
+  [jsonld] /en/guides/ai-search-readiness: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/ai-search-readiness: WebSite.name "Bellona"
+  [title] /guides/ai-search-readiness: title lacks the suffix "· آژانس بلونا": دیده شدن در ChatGPT و جست‌وجوی هوش مصنوعی · بلونا
+  [og] /guides/ai-search-readiness: og:site_name "بلونا"
+  [jsonld] /guides/ai-search-readiness: Organization.name "Bellona"
+  [jsonld] /guides/ai-search-readiness: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/ai-search-readiness: WebSite.name "بلونا"
+  [title] /en/guides/lead-follow-up-automation-n8n: title lacks the suffix "· Bellona Agency": Lead follow-up automation with n8n: a workflow guide · Bellona
+  [description] /en/guides/lead-follow-up-automation-n8n: meta description is 182 characters (100-160)
+  [og] /en/guides/lead-follow-up-automation-n8n: og:site_name "Bellona"
+  [jsonld] /en/guides/lead-follow-up-automation-n8n: Organization.name "Bellona"
+  [jsonld] /en/guides/lead-follow-up-automation-n8n: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/guides/lead-follow-up-automation-n8n: WebSite.name "Bellona"
+  [title] /guides/lead-follow-up-automation-n8n: title lacks the suffix "· آژانس بلونا": اتوماسیون پیگیری لید با n8n: راهنمای گردش‌کار · بلونا
+  [og] /guides/lead-follow-up-automation-n8n: og:site_name "بلونا"
+  [jsonld] /guides/lead-follow-up-automation-n8n: Organization.name "Bellona"
+  [jsonld] /guides/lead-follow-up-automation-n8n: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /guides/lead-follow-up-automation-n8n: WebSite.name "بلونا"
+  [title] /en/about: title lacks the suffix "· Bellona Agency": About Bellona: engineers from Sharif University · Bellona
+  [og] /en/about: og:site_name "Bellona"
+  [jsonld] /en/about: Organization.name "Bellona"
+  [jsonld] /en/about: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/about: WebSite.name "Bellona"
+  [title] /about: title lacks the suffix "· آژانس بلونا": درباره بلونا؛ تیم طراحی سایت از دانشگاه شریف · بلونا
+  [og] /about: og:site_name "بلونا"
+  [jsonld] /about: Organization.name "Bellona"
+  [jsonld] /about: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /about: WebSite.name "بلونا"
+  [title] /en/contact: title lacks the suffix "· Bellona Agency": Contact us and book a free growth audit · Bellona
+  [description] /en/contact: meta description is 68 characters (100-160)
+  [og] /en/contact: og:site_name "Bellona"
+  [jsonld] /en/contact: Organization.name "Bellona"
+  [jsonld] /en/contact: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /en/contact: WebSite.name "Bellona"
+  [title] /contact: title lacks the suffix "· آژانس بلونا": سفارش طراحی سایت و مشاوره رایگان · بلونا
+  [description] /contact: meta description is 83 characters (100-160)
+  [og] /contact: og:site_name "بلونا"
+  [jsonld] /contact: Organization.name "Bellona"
+  [jsonld] /contact: Organization.logo is not a .png: "https://bellonaagency.com/brand/bellona-app-icon.svg"
+  [jsonld] /contact: WebSite.name "بلونا"
+  [jsonld] /en, /en/offers, /en/partner: FAQ question repeated on several pages: How much does it cost?
+  [jsonld] /en, /en/offers, /en/partner: FAQ question repeated on several pages: How long does it take?
+  [jsonld] /en, /en/offers, /en/partner: FAQ question repeated on several pages: We already have a website. Can you work with it?
+  [jsonld] /en, /en/offers, /en/partner: FAQ question repeated on several pages: Who owns the code and accounts?
+  [jsonld] /en, /en/offers, /en/partner: FAQ question repeated on several pages: Do you work with clients outside Iran?
+  [jsonld] /, /offers, /services/website-design, /partner: FAQ question repeated on several pages: هزینه‌ی طراحی سایت چقدر است؟
+  [jsonld] /, /offers, /partner: FAQ question repeated on several pages: چقدر طول می‌کشد؟
+  [jsonld] /, /offers, /partner: FAQ question repeated on several pages: سایت داریم. روی همان کار می‌کنید؟
+  [jsonld] /, /offers, /partner: FAQ question repeated on several pages: مالکیت کد و حساب‌ها با کیست؟
+  [jsonld] /, /offers, /partner: FAQ question repeated on several pages: با مشتری خارج از ایران هم کار می‌کنید؟
+  [jsonld] /en/offers, /en/partner: FAQ question repeated on several pages: Do you stay on after launch?
+  [jsonld] /en/offers, /en/services/ai-automation, /en/partner: FAQ question repeated on several pages: Do I need technical knowledge?
+  [jsonld] /offers, /partner: FAQ question repeated on several pages: بعد از تحویل هم همراهی می‌کنید؟
+  [jsonld] /offers, /services/ai-automation, /partner: FAQ question repeated on several pages: تیم ما باید فنی باشد؟
+  [jsonld] /services/ai-automation, /services/ai-automation/crm: FAQ question repeated on several pages: اگر خطایی پیش بیاید چه می‌شود؟
+  [jsonld] /en/services/marketing-growth, /en/services/seo: FAQ question repeated on several pages: What do you measure?
+  [jsonld] /services/marketing-growth, /services/seo: FAQ question repeated on several pages: سئو چقدر طول می‌کشد تا نتیجه بدهد؟
+  [jsonld] /en/guides/ai-search-readiness, /en/guides/lead-follow-up-automation-n8n: FAQ question repeated on several pages: How can Bellona help?
+  [jsonld] /guides/ai-search-readiness, /guides/lead-follow-up-automation-n8n: FAQ question repeated on several pages: بلونا چطور کمک می‌کند؟
+  [redirect] /fa/: redirects to /fa (expected /)
+  [redirect] /fa/: target /fa returns 308 (not a single hop to 200)
+  [icon] /favicon.ico: returns 404
+  [icon] /apple-icon.png: returns 404
+  [icon] /manifest.webmanifest: returns 404
+  [lastmod] /sitemap.xml: only 14/100 lastmod values differ from the shared value 2026-11-02T06:34:39.000Z
