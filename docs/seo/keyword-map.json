@@ -1,0 +1,33 @@
+{
+  "_note": "Main keyword per page (SEO-GUIDELINE F): one per page, never shared. fa = Persian page (/), en = English page (/en). `related` are secondary terms used naturally in the text, FAQ and headings. Volumes and current rankings: TODO(owner) from Search Console and a keyword tool; none are measured here.",
+  "pages": [
+    { "path": "/", "cluster": "Brand", "fa": "آژانس بلونا", "en": "Bellona Agency", "related": ["بلونا", "طراحی سایت اختصاصی", "اتوماسیون هوش مصنوعی"], "h1Exempt": true },
+    { "path": "/about", "cluster": "Brand", "fa": "درباره بلونا", "en": "about Bellona", "related": ["تیم بلونا", "دانشگاه شریف"] },
+    { "path": "/services/website-design", "cluster": "Website design core", "fa": "طراحی سایت", "en": "website design", "related": ["شرکت طراحی سایت", "آژانس طراحی سایت", "طراحی سایت اختصاصی", "طراحی سایت بدون قالب", "طراحی سایت حرفه‌ای", "سفارش طراحی سایت", "طراحی وب‌سایت"] },
+    { "path": "/guides/website-design-cost", "cluster": "Price", "fa": "قیمت طراحی سایت", "en": "website design cost", "related": ["هزینه طراحی سایت", "تعرفه طراحی سایت ۱۴۰۵"] },
+    { "path": "/services/website-design/ecommerce", "cluster": "Online stores", "fa": "طراحی سایت فروشگاهی", "en": "e-commerce website design", "related": ["طراحی فروشگاه اینترنتی", "سایت فروشگاهی اختصاصی"] },
+    { "path": "/guides/custom-vs-store-builder", "cluster": "Online stores", "fa": "فروشگاه‌ساز یا فروشگاه اینترنتی اختصاصی", "en": "custom online store or store builder", "related": ["هزینه فروشگاه اینترنتی"] },
+    { "path": "/services/website-design/corporate", "cluster": "Corporate", "fa": "طراحی سایت شرکتی", "en": "corporate website design", "related": ["طراحی سایت سازمانی", "طراحی پورتال", "طراحی سایت خیریه"] },
+    { "path": "/services/website-design/bilingual", "cluster": "Bilingual", "fa": "طراحی سایت دوزبانه", "en": "bilingual website design", "related": ["سایت فارسی انگلیسی", "سایت چندزبانه", "سایت RTL"] },
+    { "path": "/guides/bilingual-website-hreflang-rtl", "cluster": "Bilingual", "fa": "سایت دوزبانه فارسی و انگلیسی", "en": "Persian–English bilingual website", "related": ["hreflang فارسی", "RTL"] },
+    { "path": "/services/website-design/nextjs", "cluster": "Technology", "fa": "طراحی سایت با نکست جی اس", "en": "Next.js website design", "related": ["طراحی سایت با Next.js", "جایگزین وردپرس", "CMS هدلس", "Payload CMS"] },
+    { "path": "/services/website-design/redesign", "cluster": "Redesign", "fa": "بازطراحی سایت", "en": "website redesign", "related": ["انتقال سایت از وردپرس", "مهاجرت سایت بدون افت سئو"] },
+    { "path": "/guides/migrate-wordpress-to-nextjs", "cluster": "Redesign", "fa": "انتقال سایت از وردپرس", "en": "migrate from WordPress to Next.js", "related": ["مهاجرت سئو"] },
+    { "path": "/services/website-design/landing-page", "cluster": "Landing pages", "fa": "طراحی لندینگ پیج", "en": "landing page design", "related": ["صفحه فرود کمپین"] },
+    { "path": "/industries/education", "cluster": "Industries", "fa": "طراحی سایت آموزشی", "en": "education website design", "related": ["طراحی سایت مدرسه"] },
+    { "path": "/industries/real-estate", "cluster": "Industries", "fa": "طراحی سایت املاک", "en": "real estate website design", "related": ["CRM املاک"] },
+    { "path": "/industries/ecommerce", "cluster": "Industries", "fa": "طراحی فروشگاه اینترنتی", "en": "online store design", "related": [] },
+    { "path": "/industries/media", "cluster": "Industries", "fa": "طراحی سایت خبری", "en": "media website design", "related": ["طراحی سایت رسانه‌ای"] },
+    { "path": "/services/ai-automation", "cluster": "Automation", "fa": "اتوماسیون هوش مصنوعی", "en": "AI automation", "related": ["ایجنت هوش مصنوعی", "اتوماسیون کسب‌وکار", "پیگیری خودکار لید"] },
+    { "path": "/services/ai-automation/n8n", "cluster": "n8n", "fa": "اتوماسیون n8n", "en": "n8n automation", "related": ["خدمات n8n", "میزبانی n8n"] },
+    { "path": "/services/ai-automation/crm", "cluster": "CRM", "fa": "اتوماسیون CRM", "en": "CRM automation", "related": ["اتوماسیون فروش", "CRM املاک"] },
+    { "path": "/guides/lead-follow-up-automation-n8n", "cluster": "CRM", "fa": "اتوماسیون پیگیری لید", "en": "lead follow-up automation", "related": ["CRM املاک"] },
+    { "path": "/services/ai-automation/chatbot", "cluster": "Chatbot", "fa": "چت‌بات هوش مصنوعی", "en": "AI chatbot", "related": ["پاسخ خودکار مشتری"] },
+    { "path": "/services/seo", "cluster": "SEO", "fa": "سئو سایت", "en": "SEO services", "related": ["سئو تکنیکال", "سئوی سایت Next.js", "خدمات سئو", "سئوی سایت فروشگاهی"] },
+    { "path": "/guides/nextjs-seo-checklist", "cluster": "SEO", "fa": "سئو Next.js", "en": "Next.js SEO", "related": ["رندر سمت سرور و سئو"] },
+    { "path": "/guides/ai-search-readiness", "cluster": "AI search", "fa": "دیده شدن در ChatGPT", "en": "AI search", "related": ["سئو برای هوش مصنوعی"] },
+    { "path": "/services/marketing-growth", "cluster": "Growth", "fa": "جذب لید", "en": "lead generation", "related": ["تولید محتوا", "بازاریابی دیجیتال", "کمپین"] },
+    { "path": "/services/full-stack-development", "cluster": "Product and apps", "fa": "طراحی وب‌اپ", "en": "web app development", "related": ["ساخت MVP", "طراحی داشبورد", "اپلیکیشن موبایل Flutter"] },
+    { "path": "/services/business-development", "cluster": "Business development", "fa": "توسعه کسب‌وکار", "en": "business development", "related": ["راه‌اندازی CRM", "ورود به بازار"] }
+  ]
+}

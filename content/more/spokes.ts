@@ -553,7 +553,7 @@ export const more: More = {
   n8n: {
     fa: [
       {
-        q: "n8n چیست و برای چه کارهایی خوب است؟",
+        q: "اتوماسیون n8n چیست و برای چه کارهایی خوب است؟",
         a: "n8n ابزار اتوماسیون گردش‌کار متن‌باز است که اپ‌ها و سرویس‌ها را با نودهای بصری به هم وصل می‌کند. برای هر کاری خوب است که چند ابزار و چند قدم دارد: پیگیری لید، به‌روزرسانی CRM، ساخت سند، گزارش روزانه، ارسال و دریافت ایمیل و اجرای ایجنت هوش مصنوعی در میانه‌ی یک فرایند.",
         details: [{ kind: "links", items: [{ label: "راهنما: اتوماسیون پیگیری لید با n8n", href: "/guides/lead-follow-up-automation-n8n" }] }],
       },
@@ -576,7 +576,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What is n8n and what is it good for?",
+        q: "What is n8n automation and what is it good for?",
         a: "n8n is an open-source workflow automation tool that connects apps and services with visual nodes. It suits any job with several tools and several steps: following up leads, updating a CRM, creating documents, a daily report, sending and receiving email and running an AI agent in the middle of a process.",
         details: [{ kind: "links", items: [{ label: "Guide: automate lead follow-up with n8n", href: "/guides/lead-follow-up-automation-n8n" }] }],
       },

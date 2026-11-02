@@ -24,7 +24,7 @@ export const more: More = {
   education: {
     fa: [
       {
-        q: "سایت و پلتفرم آموزشی چه چالش‌هایی دارد؟",
+        q: "طراحی سایت آموزشی چه چالش‌هایی دارد؟",
         a: "یادگیری آنلاین باید با بازی رقابت کند: اگر پلتفرم خسته‌کننده باشد، دانش‌آموز می‌رود. چالش اصلی این است که یادگیری حس بازی بدهد، پیشرفت دیده شود، ثبت‌نام ساده باشد و سایت روی موبایل و با اینترنت ضعیف هم روان بماند.",
       },
       {
@@ -48,7 +48,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What challenges do education websites and platforms have?",
+        q: "What challenges does education website design have?",
         a: "Online learning has to compete with play: if a platform is dull, the student leaves. The core challenge is making learning feel like a game, making progress visible, keeping sign-up simple and keeping the site smooth on phones and weak connections.",
       },
       {
@@ -76,7 +76,7 @@ export const more: More = {
   ecommerce: {
     fa: [
       {
-        q: "چالش‌های فروشگاه اینترنتی چیست؟",
+        q: "چالش‌های طراحی فروشگاه اینترنتی چیست؟",
         a: "فروشگاه اینترنتی باید همزمان سریع، قابل اعتماد و ساده‌ی خرید باشد: محصول پیدا شود، پرداخت بی‌دردسر انجام شود، و تیم فروشگاه بدون برنامه‌نویس محصول، موجودی و سفارش را مدیریت کند. روی موبایل و در جست‌وجو هم باید دیده شود.",
       },
       {
@@ -96,7 +96,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What are the challenges of an online store?",
+        q: "What are the challenges of online store design?",
         a: "An online store has to be fast, trustworthy and easy to buy from all at once: products must be findable, payment painless, and the store team must manage products, stock and orders without a developer. It also has to be seen on mobile and in search.",
       },
       {
@@ -120,7 +120,7 @@ export const more: More = {
   "real-estate": {
     fa: [
       {
-        q: "مشکل اصلی فروش در املاک چیست؟",
+        q: "طراحی سایت املاک و اتوماسیون چه مشکلی را حل می‌کند؟",
         a: "فروش پروژه‌ی ملکی به سرمایه‌گذار یعنی هر روز پیدا کردن، سنجیدن، نوشتن، پیگیری و آماده کردن سند. اگر این زنجیره دستی بماند، فرصت‌ها در پیگیری‌های عقب‌افتاده گم می‌شوند و CRM پر از مخاطبی می‌شود که کسی سراغشان نرفته.",
       },
       {
@@ -140,7 +140,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What is the main sales problem in real estate?",
+        q: "What problem does real estate website design solve?",
         a: "Selling a property project to an investor means finding, qualifying, writing to, following up and preparing documents every day. If that chain stays manual, opportunities get lost in late follow-ups and the CRM fills with contacts nobody got to.",
       },
       {
@@ -164,7 +164,7 @@ export const more: More = {
   media: {
     fa: [
       {
-        q: "رسانه‌ها هنگام مهاجرت از وردپرس چه چالشی دارند؟",
+        q: "طراحی سایت خبری هنگام مهاجرت از وردپرس چه چالشی دارد؟",
         a: "بزرگ‌ترین ریسک از دست رفتن لینک‌ها و ترافیک است: هر مطلب قدیمی باید به آدرس جدیدش برسد و طبقه‌بندی شلوغ دسته‌ها و برچسب‌ها مرتب شود. تحریریه هم باید بتواند مطلب را بدون برنامه‌نویس منتشر کند و قواعد تحریریه رعایت شود.",
       },
       {
@@ -184,7 +184,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What challenges do media sites face when leaving WordPress?",
+        q: "What challenges does media website design face when leaving WordPress?",
         a: "The biggest risk is losing links and traffic: every old post must reach its new address and a sprawling taxonomy of categories and tags must be tidied. The newsroom must also be able to publish without a developer, with editorial rules respected.",
       },
       {

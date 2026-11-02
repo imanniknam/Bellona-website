@@ -112,35 +112,35 @@ export const en: Dict = {
       title: "Websites and AI automation by industry",
     },
     "/industries/education": {
-      title: "Education websites and gamified learning platforms",
-      description: "Learning platforms, gamified courses and enrollment sites, designed and built by Bellona. Work includes Konjed, Codechee, Yasin and Microshamim.",
+      title: "Education website design: gamified learning platforms",
+      description: "Education website design: learning platforms, gamified courses and enrollment sites, designed and built by Bellona. Work includes Konjed, Codechee, Yasin and Microshamim.",
     },
     "/industries/real-estate": {
-      title: "Websites and AI sales automation for real estate",
-      description: "Listing websites, automatic buyer follow-up and CRM automation for real-estate businesses, like the AI sales system we built for kharazie.at.",
+      title: "Real estate website design and AI sales automation",
+      description: "Real estate website design: listing websites, automatic buyer follow-up and CRM automation for real-estate businesses, like the AI sales system we built for kharazie.at.",
     },
     "/industries/ecommerce": {
       title: "Online store design and sales automation",
-      description: "Custom online stores with payments, admin panels and AI support. Work includes Sabzino, Nira Perfume, Mojasame Saidi and Elm-Kala.",
+      description: "Online store design: custom online stores with payments, admin panels and AI support. Work includes Sabzino, Nira Perfume, Mojasame Saidi and Elm-Kala.",
     },
     "/industries/media": {
-      title: "Media websites and publishing platforms",
-      description: "Publishing platforms with a headless CMS, editorial rules and content migration that keeps every old link working, like Dane Scientific News.",
+      title: "Media website design and publishing platforms",
+      description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps every old link working, like Dane Scientific News.",
     },
     "/work": {
       title: "Portfolio: website, product and automation projects",
       description: `${shipped} websites, products and automation systems Bellona built and delivered, from online stores and education to real estate and media.`,
     },
     "/about": {
-      title: "About us: an engineering team from Sharif University",
-      description: "Meet Bellona: a four-person engineering team from Sharif University of Technology that builds websites and products and automates repetitive work with AI.",
+      title: "About Bellona: engineers from Sharif University",
+      description: "About Bellona: a four-person engineering team from Sharif University of Technology that builds websites and products and automates repetitive work with AI.",
     },
     "/contact": {
       title: "Contact us and book a free growth audit",
     },
   },
   hero: {
-    tagline: "BUILD · AUTOMATE · GROW",
+    tagline: "BELLONA AGENCY · BUILD · AUTOMATE · GROW",
     // TODO(owner): confirm this H1 (SEO-GUIDELINE B2); it is the English equivalent of the Persian one.
     title: "Custom website design that brings customers. **A system that keeps them.**",
     sub: "Bellona is a website design agency and AI automation studio. We design and hand-code your custom website or platform, connect it to AI so no message goes unanswered, and grow the traffic behind it.",
@@ -374,10 +374,10 @@ export const en: Dict = {
         line: "Web apps, dashboards and internal tools, from database to interface, taken from MVP to launch.",
         chips: ["Web apps", "MVP & launch", "Dashboards", "APIs & integrations", "Maintenance"],
         page: {
-          metaTitle: "Web app, MVP and custom dashboard development",
+          metaTitle: "Web app development: MVP and custom dashboards",
           metaDescription:
-            "Web apps, digital products, dashboards, internal tools, APIs and integrations, built, launched and maintained by one team.",
-          h1: "Web app and **digital product** development",
+            "Web app development, digital products, dashboards, internal tools, APIs and integrations, built, launched and maintained by one team.",
+          h1: "**Web app development** and digital products",
           tagline: "Software built **around how you actually work.**",
           sub: "Web apps, digital products, dashboards and internal tools, from database to interface, plus the APIs and integrations that connect them to everything else. We take products from first version to launch, and keep them running.",
           includedTitle: "What's included",
@@ -410,8 +410,8 @@ export const en: Dict = {
         page: {
           metaTitle: "Business AI automation, agents and n8n",
           metaDescription:
-            "AI agents, process and CRM automation, automatic lead follow-up and smart customer support with n8n, running around the clock.",
-          h1: "Business automation **with AI agents**",
+            "AI automation: AI agents, process and CRM automation, automatic lead follow-up and smart customer support with n8n, running around the clock.",
+          h1: "Business **AI automation** with agents",
           tagline: "AI systems that work **while you sleep.**",
           sub: "Agents and workflows that qualify leads, sync your CRM, answer customers and run operations around the clock.",
           includedTitle: "Six capabilities, **one system.**",
@@ -518,7 +518,7 @@ export const en: Dict = {
         page: {
           metaTitle: "Business development, CRM setup and market entry",
           metaDescription:
-            "Market and competitor research, go-to-market planning, sales process and CRM setup, partnerships and growth strategy.",
+            "Business development: market and competitor research, go-to-market planning, sales process and CRM setup, partnerships and growth strategy.",
           h1: "Business development, **from plan to CRM**",
           tagline: "Growth, **with a plan behind it.**",
           sub: "Market and competitor research, go-to-market planning, sales process and CRM setup, partnerships, and the strategy that ties them together.",
@@ -678,7 +678,7 @@ export const en: Dict = {
         id: "real-estate",
         icon: "home",
         title: "Real Estate",
-        h1: "Websites and **sales automation** for real estate",
+        h1: "Real estate **website design** and sales automation",
         text: "Lead nurturing, property matching, and client follow-ups on autopilot.",
         build: ["Listing website", "Lead nurturing", "CRM automation"],
       },
@@ -686,7 +686,7 @@ export const en: Dict = {
         id: "education",
         icon: "book",
         title: "Education",
-        h1: "Websites and **learning platforms** for education",
+        h1: "Education **website design** and learning platforms",
         text: "Learning platforms, gamified courses and enrollment sites that students actually enjoy using.",
         build: ["Learning platform", "Enrollment funnel", "Student support agent"],
       },
@@ -702,7 +702,7 @@ export const en: Dict = {
         id: "media",
         icon: "chat",
         title: "Media & Publishing",
-        h1: "Websites and **publishing platforms** for media",
+        h1: "Media **website design** and publishing platforms",
         text: "Publishing platforms with editorial rules built in, migrated without breaking a single old link.",
         build: ["Headless CMS", "Content migration", "SEO redirects"],
       },
@@ -825,7 +825,7 @@ export const en: Dict = {
 
   faq: {
     eyebrow: "FAQ",
-    title: "Questions? **Good.**",
+    title: "Questions about Bellona Agency? **Good.**",
     side: "Still unsure? Book a free growth audit, or email us.",
     items: [
       {
@@ -1037,8 +1037,8 @@ export const en: Dict = {
     },
     about: {
       eyebrow: "ABOUT",
-      h1: "Engineers who got tired of **doing things twice.**",
-      storyTitle: "Our story",
+      h1: "About Bellona: engineers who got tired of **doing things twice.**",
+      storyTitle: "About Bellona: our story",
       story: [
         "Bellona started as an AI and automation studio: agents, workflows and integrations that take repetitive work off a team's plate and run around the clock.",
         "Building those systems kept leading to the same place. The automation needed a better website feeding it, a product to live in, and a growth plan to point it at. So we grew into a complete digital partner: one team from idea to growth.",

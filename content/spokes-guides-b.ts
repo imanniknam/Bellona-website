@@ -105,7 +105,7 @@ export const guidesB: Spoke[] = [
         "Next.js builds pages on the server, which already gives search engines the complete text in the first response. The rest of Next.js SEO is a checklist: correct metadata, one canonical address per page, a real sitemap, a robots file, structured data, fast images and fonts, and redirects. This guide lists each item with code for the App Router.",
       answers: [
         {
-          q: "Why is Next.js good for SEO in the first place?",
+          q: "Why is Next.js SEO easier to get right?",
           a: "Next.js renders each page on the server, so the full HTML text is in the first response and a search engine, or an AI assistant that does not run JavaScript, can read it immediately. It also gives you direct control of metadata, sitemaps, robots, redirects and image optimisation, which are the main SEO levers.",
           details: [
             { kind: "p", text: "A page that builds its text in the browser forces the crawler to run JavaScript before it sees anything. Server rendering (or static generation) removes that step. It is the reason most of our own sites, including this one, are built with Next.js." },
@@ -235,14 +235,14 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
     },
     fa: {
       metaTitle: "چک‌لیست سئو Next.js: متادیتا، سایت‌مپ و JSON-LD",
-      metaDescription: "چک‌لیست عملی سئو در نکست جی اس (Next.js) با کد: Metadata API، canonical و hreflang، sitemap.ts، robots.ts، JSON-LD، تصویرها، فونت‌ها و ریدایرکت‌ها، و راه آزمودن هر مورد.",
+      metaDescription: "چک‌لیست عملی سئو Next.js با کد: Metadata API، canonical و hreflang، sitemap.ts، robots.ts، JSON-LD، تصویرها، فونت‌ها و ریدایرکت‌ها، و راه آزمودن هر مورد.",
       eyebrow: "راهنما",
       h1: "چک‌لیست **سئو Next.js**",
       definition:
         "نکست جی اس (Next.js) صفحه‌ها را روی سرور می‌سازد و همین الان متن کامل را در پاسخ اول به موتور جست‌وجو می‌رساند. بقیه‌ی سئو در نکست جی اس یک چک‌لیست است: متادیتای درست، یک آدرس canonical برای هر صفحه، نقشه‌ی سایت واقعی، فایل robots، داده‌ی ساختاریافته، تصویر و فونت سریع و ریدایرکت. این راهنما هر مورد را با کد برای App Router فهرست می‌کند.",
       answers: [
         {
-          q: "چرا نکست جی اس برای سئو خوب است؟",
+          q: "سئو Next.js از کجا شروع می‌شود؟",
           a: "نکست جی اس هر صفحه را روی سرور رندر می‌کند، پس متن کامل HTML در پاسخ اول است و موتور جست‌وجو، یا دستیار هوش مصنوعی که جاوااسکریپت اجرا نمی‌کند، بلافاصله می‌خواندش. کنترل مستقیم روی متادیتا، نقشه‌ی سایت، robots، ریدایرکت و بهینه‌سازی تصویر هم می‌دهد که اهرم‌های اصلی سئو هستند.",
           details: [
             { kind: "p", text: "صفحه‌ای که متنش را در مرورگر می‌سازد، خزنده را وادار می‌کند قبل از دیدن هر چیزی جاوااسکریپت اجرا کند. رندر سمت سرور (یا تولید ایستا) این مرحله را حذف می‌کند. به همین دلیل بیشتر سایت‌های خودمان، از جمله همین سایت، با نکست جی اس ساخته شده‌اند." },
@@ -386,14 +386,14 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
     guides: ["nextjs-seo-checklist", "bilingual-website-hreflang-rtl"],
     en: {
       metaTitle: "Be visible to AI search: ChatGPT and AI assistants",
-      metaDescription: "How to make your website readable by ChatGPT and other AI assistants: server rendering, answer-first structure, structured data, robots rules for AI crawlers and a consistent brand identity.",
+      metaDescription: "AI search visibility, making your website readable by ChatGPT and other AI assistants: server rendering, answer-first structure, structured data, robots rules for AI crawlers and a consistent brand identity.",
       eyebrow: "Guide",
       h1: "Be visible in **AI search**",
       definition:
         "AI assistants such as ChatGPT, Claude and Perplexity answer questions by reading web pages, then quoting or summarising them. Being visible to them is mostly the same work as good SEO, with extra weight on pages that state their answer plainly, are readable without JavaScript and say the same thing about you everywhere.",
       answers: [
         {
-          q: "How do AI assistants actually read a website?",
+          q: "AI search: how do AI assistants actually read a website?",
           a: "They fetch your page as HTML, often without running JavaScript, pull out the text and structure, and use the relevant parts to answer. Pages that put the complete text, headings and data in the first server response are readable; pages that build their text in the browser may look empty.",
           details: [
             { kind: "p", text: "Some tools can render JavaScript and many cannot, so do not rely on it. The safe rule is the same one search engines reward: the full content should be in the HTML that the server returns." },
@@ -498,14 +498,14 @@ Disallow: /api/`,
     },
     fa: {
       metaTitle: "دیده شدن در ChatGPT و جست‌وجوی هوش مصنوعی",
-      metaDescription: "چطور سایت‌تان را برای ChatGPT و دستیارهای هوش مصنوعی خواندنی کنید: رندر سمت سرور، ساختار پاسخ‌محور، داده‌ی ساختاریافته، قواعد robots برای خزنده‌های هوش مصنوعی و هویت برند یکدست.",
+      metaDescription: "دیده شدن در ChatGPT و دستیارهای هوش مصنوعی: رندر سمت سرور، ساختار پاسخ‌محور، داده‌ی ساختاریافته، قواعد robots برای خزنده‌های هوش مصنوعی و هویت برند یکدست.",
       eyebrow: "راهنما",
-      h1: "دیده شدن در **جست‌وجوی هوش مصنوعی**",
+      h1: "دیده شدن در **ChatGPT و جست‌وجوی هوش مصنوعی**",
       definition:
         "دستیارهای هوش مصنوعی مثل ChatGPT، Claude و Perplexity با خواندن صفحه‌های وب به سؤال‌ها جواب می‌دهند و از آن‌ها نقل یا خلاصه می‌کنند. دیده شدن برای آن‌ها بیشتر همان کار سئوی خوب است، با تأکید بیشتر روی صفحه‌هایی که جوابشان را روشن می‌گویند، بدون جاوااسکریپت خواندنی‌اند و همه‌جا درباره‌ی شما یک حرف را می‌زنند.",
       answers: [
         {
-          q: "دستیارهای هوش مصنوعی یک سایت را واقعاً چطور می‌خوانند؟",
+          q: "دیده شدن در ChatGPT: دستیارها سایت را واقعاً چطور می‌خوانند؟",
           a: "صفحه‌ی شما را به‌صورت HTML می‌گیرند، اغلب بدون اجرای جاوااسکریپت، متن و ساختار را بیرون می‌کشند و بخش‌های مرتبط را برای جواب به کار می‌برند. صفحه‌هایی که متن کامل، عنوان‌ها و داده را در پاسخ اول سرور می‌گذارند خواندنی‌اند؛ صفحه‌هایی که متنشان را در مرورگر می‌سازند ممکن است خالی دیده شوند.",
           details: [
             { kind: "p", text: "بعضی ابزارها می‌توانند جاوااسکریپت را رندر کنند و خیلی‌هایشان نه، پس به آن تکیه نکنید. قاعده‌ی ایمن همان است که موتورهای جست‌وجو هم پاداشش را می‌دهند: محتوای کامل باید در HTML‌ای باشد که سرور برمی‌گرداند." },
@@ -623,15 +623,15 @@ Disallow: /api/`,
     projects: ["ai-real-estate-os"],
     guides: ["ai-search-readiness"],
     en: {
-      metaTitle: "Automate lead follow-up with n8n: workflow guide",
-      metaDescription: "How to automate lead follow-up with n8n: the workflow architecture from form to CRM, scoring, timed messages, stop-on-reply, human handover and error handling, with a real-estate example.",
+      metaTitle: "Lead follow-up automation with n8n: a workflow guide",
+      metaDescription: "Lead follow-up automation with n8n: the workflow architecture from form to CRM, scoring, timed messages, stop-on-reply, human handover and error handling, with a real-estate example.",
       eyebrow: "Guide",
-      h1: "Automate lead follow-up **with n8n**",
+      h1: "Lead follow-up automation **with n8n**",
       definition:
         "Lead follow-up automation answers every new enquiry within seconds and keeps following up on schedule until the person replies, so no lead goes cold because someone forgot. n8n is the workflow tool that ties the form, the CRM, email and an AI model into one chain of steps.",
       answers: [
         {
-          q: "Why does automated follow-up matter?",
+          q: "Why does lead follow-up automation matter?",
           a: "Leads cool quickly, and follow-up is the first thing that slips when a team is busy. An automated chain replies in seconds, remembers every follow-up and stops the moment the person answers, so response speed no longer depends on who is at their desk.",
           details: [
             { kind: "p", text: "The usual failure is not a bad offer but a slow or forgotten reply. Automation does not replace the human conversation; it makes sure the human conversation starts with a lead who is still warm, and that nothing falls between two people." },
@@ -730,14 +730,14 @@ Disallow: /api/`,
     },
     fa: {
       metaTitle: "اتوماسیون پیگیری لید با n8n: راهنمای گردش‌کار",
-      metaDescription: "چطور پیگیری لید را با n8n خودکار کنیم: معماری گردش‌کار از فرم تا CRM، امتیازدهی، پیام زمان‌بندی‌شده، توقف با جواب، تحویل به انسان و مدیریت خطا؛ با نمونه‌ی املاک.",
+      metaDescription: "اتوماسیون پیگیری لید با n8n: معماری گردش‌کار از فرم تا CRM، امتیازدهی، پیام زمان‌بندی‌شده، توقف با جواب، تحویل به انسان و مدیریت خطا؛ با نمونه‌ی املاک.",
       eyebrow: "راهنما",
       h1: "اتوماسیون پیگیری لید **با n8n**",
       definition:
         "اتوماسیون پیگیری لید به هر درخواست تازه در چند ثانیه جواب می‌دهد و طبق برنامه پیگیری می‌کند تا طرف مقابل جواب بدهد، پس هیچ لیدی فقط به این دلیل که کسی یادش رفت سرد نمی‌شود. n8n ابزار گردش‌کاری است که فرم، CRM، ایمیل و یک مدل هوش مصنوعی را در یک زنجیره‌ی مراحل به هم وصل می‌کند.",
       answers: [
         {
-          q: "چرا پیگیری خودکار مهم است؟",
+          q: "چرا اتوماسیون پیگیری لید مهم است؟",
           a: "لیدها زود سرد می‌شوند و وقتی تیم شلوغ است اولین چیزی که عقب می‌افتد پیگیری است. زنجیره‌ی خودکار در چند ثانیه جواب می‌دهد، همه‌ی پیگیری‌ها را به یاد دارد و همین که طرف جواب داد متوقف می‌شود؛ پس سرعت پاسخ دیگر به این بستگی ندارد که چه کسی پشت میزش است.",
           details: [
             { kind: "p", text: "شکست معمول از پیشنهاد بد نیست، از جواب کند یا فراموش‌شده است. اتوماسیون جای گفت‌وگوی انسانی را نمی‌گیرد؛ مطمئن می‌شود گفت‌وگوی انسانی با لیدی شروع شود که هنوز گرم است و چیزی بین دو نفر گم نمی‌شود." },

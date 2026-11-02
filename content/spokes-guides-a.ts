@@ -29,14 +29,14 @@ export const guidesA: Spoke[] = [
     guides: ["nextjs-seo-checklist", "website-design-cost"],
     en: {
       metaTitle: "Migrate from WordPress to Next.js without losing SEO",
-      metaDescription: "A step-by-step checklist for moving a WordPress site to Next.js without losing traffic: URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
+      metaDescription: "How to migrate from WordPress to Next.js without losing traffic: a step-by-step checklist with the URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
       eyebrow: "Guide",
       h1: "Migrate from WordPress to **Next.js without losing SEO**",
       definition:
         "Moving a site from WordPress to Next.js changes how every page is built, but it should not change what Google already knows about you. The risk is losing addresses, titles and links; the work is mapping every old page to a new one before launch and proving afterwards that nothing was lost.",
       answers: [
         {
-          q: "Why move from WordPress to Next.js, and when not to?",
+          q: "Why migrate from WordPress to Next.js, and when not to?",
           a: "People move for speed, security and control: a custom Next.js site loads only what it needs, has less third-party code to patch and gives full control of structure and SEO. Do not move if your team edits layout daily without a developer and you have no budget for engineering.",
           details: [
             { kind: "p", text: "WordPress is a good choice when non-technical staff need to rebuild pages themselves, when the budget is small, or when the site is simple. The costs show up later: plugins that need constant updating, themes that limit design, and pages that are slower than they need to be." },
@@ -215,12 +215,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       metaTitle: "انتقال سایت از وردپرس به Next.js بدون افت سئو",
       metaDescription: "چک‌لیست قدم‌به‌قدم انتقال سایت از وردپرس به Next.js بدون از دست دادن ترافیک: نقشه‌ی آدرس‌ها، ریدایرکت ۳۰۱، مرتب‌سازی طبقه‌بندی، نقشه‌ی سایت و پایش؛ با مهاجرت واقعی دانه.",
       eyebrow: "راهنما",
-      h1: "انتقال از وردپرس به نکست جی اس (Next.js) **بدون افت سئو**",
+      h1: "انتقال سایت از وردپرس به نکست جی اس (Next.js) **بدون افت سئو**",
       definition:
         "انتقال سایت از وردپرس به نکست جی اس شیوه‌ی ساخت هر صفحه را عوض می‌کند، ولی نباید چیزی را که گوگل از شما می‌داند عوض کند. ریسک اصلی از دست رفتن آدرس‌ها، عنوان‌ها و لینک‌هاست؛ کار اصلی هم این است که قبل از انتشار هر صفحه‌ی قدیمی به یک صفحه‌ی جدید نگاشت شود و بعد از آن ثابت شود چیزی گم نشده است.",
       answers: [
         {
-          q: "چرا از وردپرس به Next.js برویم و چه وقت نرویم؟",
+          q: "چرا انتقال سایت از وردپرس به Next.js و چه وقت نه؟",
           a: "دلیل‌ها سرعت، امنیت و کنترل است: سایت اختصاصی Next.js فقط چیزی را بار می‌کند که لازم دارد، کد شخص ثالث کمتری برای به‌روزرسانی دارد و کنترل کامل روی ساختار و سئو می‌دهد. اگر تیم شما هر روز بدون برنامه‌نویس چیدمان را عوض می‌کند و بودجه‌ی مهندسی ندارید، نروید.",
           details: [
             { kind: "p", text: "وردپرس وقتی انتخاب خوبی است که کارمندان غیرفنی باید خودشان صفحه بسازند، بودجه کم است یا سایت ساده است. هزینه‌ها بعداً پیدا می‌شوند: افزونه‌هایی که مدام باید به‌روز شوند، قالب‌هایی که طراحی را محدود می‌کنند و صفحه‌هایی که کندتر از لازم‌اند." },
@@ -411,14 +411,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     guides: ["website-design-cost", "nextjs-seo-checklist"],
     en: {
       metaTitle: "Custom online store or store builder? A buyer's guide",
-      metaDescription: "Store builder or custom online store: a table comparing cost, speed, design, features, SEO and ownership, when each is right, and examples from four stores we built.",
+      metaDescription: "Custom online store or store builder? A table comparing cost, speed, design, features, SEO and ownership, when each is right, and examples from four stores we built.",
       eyebrow: "Guide",
       h1: "Custom **online store or store builder?**",
       definition:
         "A store builder is a ready-made platform where you rent a shop and pick a template. A custom online store is built around how you sell, with its own design, code and data. Neither is better in general: the right one depends on your products, your volume and how much your buying experience matters.",
       answers: [
         {
-          q: "What is the real difference between the two?",
+          q: "Custom online store or store builder: what is the real difference?",
           a: "With a store builder you rent a platform: it is quick to open, but you work within its templates and rules. With a custom store you own the code and design, so it can fit your buying path exactly, at the cost of a bigger start. The decision is flexibility and ownership against speed and a lower start.",
           details: [
             {
@@ -523,15 +523,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ],
     },
     fa: {
-      metaTitle: "فروشگاه‌ساز یا فروشگاه اختصاصی؟ راهنمای خرید",
-      metaDescription: "فروشگاه‌ساز آماده یا فروشگاه اینترنتی اختصاصی: جدول مقایسه‌ی هزینه، سرعت، طراحی، امکانات، سئو و مالکیت، اینکه هر کدام کی درست است و نمونه از چهار فروشگاه ساخته‌ی ما.",
+      metaTitle: "فروشگاه‌ساز یا فروشگاه اینترنتی اختصاصی؟",
+      metaDescription: "فروشگاه‌ساز یا فروشگاه اینترنتی اختصاصی: جدول مقایسه‌ی هزینه، سرعت، طراحی، امکانات، سئو و مالکیت، اینکه هر کدام کی درست است و نمونه از چهار فروشگاه ساخته‌ی ما.",
       eyebrow: "راهنما",
       h1: "فروشگاه‌ساز یا **فروشگاه اینترنتی اختصاصی؟**",
       definition:
         "فروشگاه‌ساز پلتفرم آماده‌ای است که در آن فروشگاهی اجاره می‌کنید و یک قالب برمی‌دارید. فروشگاه اینترنتی اختصاصی حول شیوه‌ی فروش شما با طراحی، کد و داده‌ی خودش ساخته می‌شود. هیچ‌کدام به‌طور کلی بهتر نیست: انتخاب درست به محصولات، حجم فروش و اهمیت تجربه‌ی خرید برای شما بستگی دارد.",
       answers: [
         {
-          q: "فرق واقعی این دو چیست؟",
+          q: "فروشگاه‌ساز یا فروشگاه اینترنتی اختصاصی: فرق واقعی چیست؟",
           a: "در فروشگاه‌ساز پلتفرمی را اجاره می‌کنید: سریع باز می‌شود ولی در چارچوب قالب‌ها و قواعد آن کار می‌کنید. در فروشگاه اختصاصی کد و طراحی مال شماست و می‌تواند دقیقاً با مسیر خرید شما بخواند، به قیمت شروع بزرگ‌تر. تصمیم میان انعطاف و مالکیت از یک طرف و سرعت و شروع ارزان‌تر از طرف دیگر است.",
           details: [
             {
@@ -651,14 +651,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     guides: ["nextjs-seo-checklist", "migrate-wordpress-to-nextjs"],
     en: {
       metaTitle: "Persian–English bilingual website: hreflang and RTL",
-      metaDescription: "How to build a bilingual Persian and English website: URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
+      metaDescription: "Persian–English bilingual website: how to build one, with URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
       eyebrow: "Guide",
-      h1: "Bilingual website: **hreflang and RTL done right**",
+      h1: "Persian–English bilingual website: **hreflang and RTL done right**",
       definition:
         "A bilingual website is two complete versions of the same site, each with its own addresses, translation and keywords. For Persian and English that also means a true right-to-left layout for Persian. Done badly it confuses visitors and search engines; done well, each language ranks on its own.",
       answers: [
         {
-          q: "How should URLs be structured for two languages?",
+          q: "How should URLs be structured on a Persian–English bilingual website?",
           a: "Give each language its own addresses: either a path prefix (/ for one language and /en for the other), a subdomain or a separate domain. A prefix on one domain is the simplest to run and keeps all links and authority in one place. Avoid one address that switches language with JavaScript, because search engines index addresses.",
           details: [
             {
@@ -788,12 +788,12 @@ export const metadata = {
       metaTitle: "سایت دوزبانه فارسی و انگلیسی: hreflang و RTL",
       metaDescription: "راهنمای ساخت سایت دوزبانه فارسی و انگلیسی: ساختار آدرس‌ها، hreflang با نمونه، چیدمان راست‌به‌چپ واقعی، اشتباه‌های رایج و نمونه‌ی ASA-Study.",
       eyebrow: "راهنما",
-      h1: "سایت دوزبانه: **hreflang و RTL درست**",
+      h1: "سایت دوزبانه فارسی و انگلیسی: **hreflang و RTL درست**",
       definition:
         "سایت دوزبانه دو نسخه‌ی کامل از یک سایت است، هر کدام با آدرس، ترجمه و کلمات کلیدی خودش. برای فارسی و انگلیسی یعنی چیدمان راست‌به‌چپ واقعی برای فارسی هم هست. اگر بد انجام شود بازدیدکننده و موتور جست‌وجو را گیج می‌کند؛ اگر درست انجام شود، هر زبان جدا رتبه می‌گیرد.",
       answers: [
         {
-          q: "ساختار آدرس برای دو زبان چطور باید باشد؟",
+          q: "ساختار آدرس در سایت دوزبانه فارسی و انگلیسی چطور باشد؟",
           a: "به هر زبان آدرس جدا بدهید: پیشوند مسیر (/ برای یک زبان و /en برای دیگری)، زیردامنه یا دامنه‌ی جدا. پیشوند روی یک دامنه ساده‌ترین راه برای اداره کردن است و همه‌ی لینک‌ها و اعتبار را یک‌جا نگه می‌دارد. از یک آدرس که با جاوااسکریپت زبان را عوض می‌کند دوری کنید، چون موتور جست‌وجو آدرس‌ها را ایندکس می‌کند.",
           details: [
             {

@@ -326,7 +326,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "How do you approach web app and digital product development?",
+        q: "How do you approach web app development and digital products?",
         a: "We build the web app end to end, from database to interface: accounts, admin panel, payments and API. Examples are Codechee (a gamified learning platform with student accounts and progress tracking) and Konjed (a play-based skills platform for teenagers).",
         details: [
           {
@@ -448,7 +448,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What do AI agents and business automation actually do?",
+        q: "What does AI automation actually do for a business?",
         a: "An AI agent is a digital assistant that handles messages, follow-ups and repetitive tasks without you; automation runs the whole work path from receiving data to the final action without manual steps. The aim is for your team to get to the work only people can do.",
         details: [
           {
@@ -521,7 +521,7 @@ export const more: More = {
   growth: {
     fa: [
       {
-        q: "مارکتینگ و رشد در بلونا شامل چه چیزهایی است؟",
+        q: "مارکتینگ، جذب لید و رشد در بلونا شامل چه چیزهایی است؟",
         a: "کمپین، سئو و محتوا، سیستم جذب لید و گزارش‌دهی. هدف این است که مخاطب درست به سایتی برسد که برای تبدیل ساخته شده و ایجنت‌ها خودکار پیگیری‌اش کنند، و شما با گزارشی ساده ببینید کدام کانال واقعاً فروش دارد.",
         details: [
           {
@@ -584,7 +584,7 @@ export const more: More = {
     ],
     en: [
       {
-        q: "What does marketing and growth at Bellona include?",
+        q: "What do marketing, lead generation and growth at Bellona include?",
         a: "Campaigns, SEO and content, a lead-generation system and reporting. The aim is that the right audience reaches a site built to convert, agents follow up automatically, and a simple report shows you which channel really sells.",
         details: [
           {
@@ -651,7 +651,7 @@ export const more: More = {
   bizdev: {
     fa: [
       {
-        q: "توسعه‌ی کسب‌وکار در بلونا یعنی چه؟",
+        q: "توسعه کسب‌وکار در بلونا یعنی چه؟",
         a: "یعنی «باید رشد کنیم» را به برنامه‌ای قابل اجرا تبدیل کنیم: تحقیق بازار و رقبا، برنامه‌ی ورود به بازار، فرایند فروش و راه‌اندازی CRM، همکاری‌های تجاری و استراتژی رشد با مسئول و عدد مشخص.",
       },
       {

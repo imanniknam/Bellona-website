@@ -35,7 +35,7 @@ export const serviceSpokes: Spoke[] = [
         "SEO (search engine optimisation) is the work that lets search engines find, understand and rank your pages for what people search. It has a technical side (can Google read the site quickly?), a content side (does each page answer a real search?) and a measurement side (is it bringing customers?).",
       answers: [
         {
-          q: "What does technical SEO include?",
+          q: "What do SEO services include, starting with technical SEO?",
           a: "Technical SEO makes sure Google can read your site quickly and correctly: fast pages, server-rendered text, a clean sitemap, one canonical address per page, hreflang for each language, structured data and no broken links. It is built into the site from the start, not bolted on later.",
           details: [
             {
@@ -134,7 +134,7 @@ export const serviceSpokes: Spoke[] = [
         "سئو (بهینه‌سازی برای موتور جست‌وجو) کاری است که باعث می‌شود موتورهای جست‌وجو صفحه‌های شما را پیدا کنند، بفهمند و برای چیزی که مردم جست‌وجو می‌کنند نشان بدهند. سه بخش دارد: تکنیکال (گوگل سایت را سریع و درست می‌خواند؟)، محتوا (هر صفحه به یک جست‌وجوی واقعی جواب می‌دهد؟) و سنجش (مشتری می‌آورد؟).",
       answers: [
         {
-          q: "سئو تکنیکال شامل چه چیزهایی است؟",
+          q: "سئو سایت و بخش تکنیکال آن شامل چه چیزهایی است؟",
           a: "سئو تکنیکال تضمین می‌کند گوگل سایت را سریع و درست بخواند: صفحه‌های سریع، متن رندرشده روی سرور، نقشه‌ی سایت تمیز، یک آدرس canonical برای هر صفحه، hreflang برای هر زبان، داده‌ی ساختاریافته و بدون لینک شکسته. این کارها از اول در ساخت سایت هست، نه بعداً اضافه شود.",
           details: [
             {
@@ -243,7 +243,7 @@ export const serviceSpokes: Spoke[] = [
         "A landing page is a single page built for one goal: turning the visitors of a campaign, an ad or a launch into enquiries or sales. Unlike a full website it has one offer, one call to action and nothing that pulls the visitor away from it.",
       answers: [
         {
-          q: "What does a high-converting landing page contain?",
+          q: "What does landing page design for conversion include?",
           a: "One clear headline that states the offer, proof that you deliver, the benefits in the visitor's words, a single call to action repeated down the page, a short form, and answers to the objections people have. Everything else is left out, so the visitor has one thing to do.",
           details: [
             {
@@ -356,9 +356,9 @@ export const serviceSpokes: Spoke[] = [
     guides: ["lead-follow-up-automation-n8n"],
     en: {
       metaTitle: "CRM automation: automatic lead follow-up and sales",
-      metaDescription: "CRM and sales automation with Baserow, HubSpot and n8n: leads logged automatically, followed up on time, scored and reported daily, like our real-estate system.",
+      metaDescription: "CRM automation and sales follow-up with Baserow, HubSpot and n8n: leads logged automatically, followed up on time, scored and reported daily, like our real-estate system.",
       eyebrow: "AI agents & automation",
-      h1: "CRM **and sales automation**",
+      h1: "CRM automation **for sales**",
       definition:
         "CRM automation means your customer records update themselves and follow-ups happen on time: a new lead is logged the moment it arrives, the next step is scheduled, reminders go out, and nobody has to remember to type anything in. The CRM stays accurate because people are not responsible for keeping it that way.",
       answers: [

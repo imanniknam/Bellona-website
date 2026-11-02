@@ -173,10 +173,10 @@ const rawSpokes: Spoke[] = [
     projects: ["ai-real-estate-os"],
     guides: ["lead-follow-up-automation-n8n"],
     en: {
-      metaTitle: "n8n implementation and workflow automation",
-      metaDescription: `We design, build and run n8n workflows that connect your CRM, email, documents and AI. Our real-estate sales system runs on ${wfEn} n8n workflows.`,
+      metaTitle: "n8n automation and workflow implementation",
+      metaDescription: `n8n automation: we design, build and run n8n workflows that connect your CRM, email, documents and AI. Our real-estate sales system runs on ${wfEn} n8n workflows.`,
       eyebrow: "AI agents & automation",
-      h1: "n8n implementation **and process automation**",
+      h1: "n8n automation **and workflow implementation**",
       definition:
         "n8n is a workflow automation tool: you connect apps and services as a chain of steps (a trigger, then actions and decisions) instead of writing a custom integration for each one. It can run on n8n's cloud or on your own server, and it includes nodes for AI models and agents.",
       answers: [
@@ -203,9 +203,9 @@ const rawSpokes: Spoke[] = [
     },
     fa: {
       metaTitle: "پیاده‌سازی و اتوماسیون n8n برای کسب‌وکار",
-      metaDescription: `گردش‌کارهای n8n را طراحی، پیاده‌سازی و راه‌اندازی می‌کنیم تا CRM، ایمیل، اسناد و هوش مصنوعی به هم وصل شوند. سیستم فروش املاک ما روی ${wfFa} گردش‌کار n8n می‌چرخد.`,
+      metaDescription: `اتوماسیون n8n: گردش‌کارهای n8n را طراحی، پیاده‌سازی و راه‌اندازی می‌کنیم تا CRM، ایمیل، اسناد و هوش مصنوعی به هم وصل شوند. سیستم فروش املاک ما روی ${wfFa} گردش‌کار n8n می‌چرخد.`,
       eyebrow: "ایجنت و اتوماسیون هوش مصنوعی",
-      h1: "پیاده‌سازی n8n **و اتوماسیون فرایند**",
+      h1: "اتوماسیون n8n **و پیاده‌سازی گردش‌کار**",
       definition:
         "n8n ابزار اتوماسیون گردش‌کار است: به‌جای نوشتن اتصال اختصاصی برای هر ابزار، اپ‌ها و سرویس‌ها را به‌شکل زنجیره‌ای از مراحل (یک محرک، بعد اقدام‌ها و تصمیم‌ها) به هم وصل می‌کنید. هم روی فضای ابری n8n اجرا می‌شود و هم روی سرور خودتان، و برای مدل‌ها و ایجنت‌های هوش مصنوعی هم ماژول دارد.",
       answers: [
@@ -247,12 +247,12 @@ const rawSpokes: Spoke[] = [
       metaTitle: "Next.js website design: fast and SEO-ready",
       metaDescription: "Next.js website design: server rendering so Google and AI assistants read every page, fast on mobile, and proper bilingual Persian and English with right-to-left layout.",
       eyebrow: "Website design",
-      h1: "Website design **with Next.js**",
+      h1: "Next.js **website design**",
       definition:
         "Next.js is a framework built on React for websites and web apps. Pages can be rendered on the server, so the full text arrives in the first response, which search engines and AI assistants can read without running JavaScript. It also handles routing, images and multiple languages.",
       answers: [
         {
-          q: "Why build a website with Next.js?",
+          q: "Why choose Next.js website design?",
           a: "Speed and visibility. Server rendering sends complete pages, so they load fast on mobile and every word is readable by search engines. One codebase can serve a marketing site and a full product, and bilingual Persian–English routing with right-to-left layout is built in rather than bolted on.",
         },
         {
@@ -291,7 +291,7 @@ const rawSpokes: Spoke[] = [
         "نکست جی اس (Next.js) فریم‌ورکی بر پایه‌ی React برای ساخت سایت و وب‌اپلیکیشن است. صفحه‌ها می‌توانند روی سرور رندر شوند، یعنی متن کامل در همان پاسخ اول می‌رسد و موتورهای جست‌وجو و دستیارهای هوش مصنوعی بدون اجرای جاوااسکریپت آن را می‌خوانند. مسیرها، تصاویر و چندزبانه بودن را هم مدیریت می‌کند.",
       answers: [
         {
-          q: "چرا سایت را با Next.js بسازیم؟",
+          q: "چرا طراحی سایت با نکست جی اس (Next.js)؟",
           a: "به خاطر سرعت و دیده شدن. رندر سمت سرور صفحه‌ی کامل می‌فرستد، پس سایت روی موبایل سریع باز می‌شود و موتور جست‌وجو همه‌ی متن را می‌خواند. با یک کد می‌شود هم سایت معرفی ساخت و هم محصول کامل، و مسیرهای دوزبانه‌ی فارسی و انگلیسی با چیدمان راست‌به‌چپ از اول در ساختار هست، نه وصله‌ی بعدی.",
         },
         {
@@ -336,14 +336,14 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "E-commerce website design: custom online stores",
       metaDescription:
-        "Custom online stores, designed and coded from scratch: product discovery, cart and checkout, online payment and an admin panel your team runs. Examples: Sabzino, Nira Perfume, Mojasame Saidi, Elm-Kala.",
+        "E-commerce website design: custom online stores with cart, checkout, online payment and an admin panel your team runs. Examples: Sabzino, Nira Perfume, Mojasame Saidi, Elm-Kala.",
       eyebrow: "Website design",
       h1: "E-commerce **website design**",
       definition:
         "An e-commerce website is a store that sells online end to end: customers find products, add them to a cart, pay online and track orders, while the team manages products, stock, prices and orders from an admin panel.",
       answers: [
         {
-          q: "What does a custom online store include?",
+          q: "What does e-commerce website design include?",
           a: "Product categories and search, product pages, a cart and checkout, customer accounts, online payment, and an admin panel for products, stock, prices and orders. It is fast on mobile, ready for search engines, and every form is validated so orders arrive complete.",
           details: [
             {
@@ -450,14 +450,14 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "Custom corporate website design: fast and SEO-ready",
       metaDescription:
-        "Company websites designed and coded from scratch: a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready. Persian, English or both.",
+        "Corporate website design: company websites coded from scratch, with a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready.",
       eyebrow: "Website design",
       h1: "Corporate **website design**",
       definition:
         "A corporate website is a company's main presence online: who you are, what you offer, proof that you deliver, and a clear way to get in touch. Its job is to turn the right visitors into enquiries.",
       answers: [
         {
-          q: "What does a corporate website include?",
+          q: "What does corporate website design include?",
           a: "A home page built around one clear offer, service pages, an about page, case studies or a portfolio, and a contact page with forms that go straight to your email, Telegram or CRM. A content system lets your team edit text without a developer, and the site is fast and ready for search engines.",
           details: [
             {
@@ -562,9 +562,9 @@ const rawSpokes: Spoke[] = [
     projects: ["asa-study"],
     guides: ["bilingual-website-hreflang-rtl","website-design-cost"],
     en: {
-      metaTitle: "Bilingual website: Persian and English, RTL and LTR",
+      metaTitle: "Bilingual website design: Persian and English, RTL",
       metaDescription:
-        "Persian–English websites with separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
+        "Bilingual website design for Persian and English: separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
       eyebrow: "Website design",
       h1: "Bilingual **website design**",
       definition:
@@ -658,14 +658,14 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "Website redesign and migration without losing SEO",
       metaDescription:
-        "Redesign your website or move it off WordPress without losing traffic: every post, tag and author migrated, old links redirected, and the site kept online throughout. Example: Dane Scientific News.",
+        "Website redesign without losing traffic: move off WordPress with every post, tag and author migrated, old links redirected and the site kept online throughout. Example: Dane Scientific News.",
       eyebrow: "Website design",
       h1: "Website **redesign**",
       definition:
         "A website redesign rebuilds an existing site's design, structure or platform while keeping what already works: its content, its search rankings and the links people already use.",
       answers: [
         {
-          q: "How do you redesign a website without losing SEO?",
+          q: "How do you handle a website redesign without losing SEO?",
           a: "We start by listing what works: pages that bring traffic, links others point to, content worth keeping. Then every old address gets a permanent redirect to its new page, content and metadata are migrated, and the new site is checked before and after launch so no link breaks.",
           details: [
             {
@@ -753,15 +753,15 @@ const rawSpokes: Spoke[] = [
     guides: ["custom-vs-store-builder"],
     en: {
       metaTitle: "Website design cost in 2026: what drives the price",
-      metaDescription: "What a website costs and why: the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
+      metaDescription: "Website design cost explained: what a website costs and why, the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
       eyebrow: "Guide",
-      h1: "How much does **a website** cost?",
+      h1: "How much does **website design cost?**",
       definition:
         "The cost of a website is mostly the time it takes to plan, design, build and test it, plus a smaller yearly cost to keep it online. Scope drives both, which is why two sites that look similar can be priced very differently.",
       answers: [
         { q: "How much does a custom website cost?", a: null, needs: [30] },
         {
-          q: "What makes a website more or less expensive?",
+          q: "What drives website design cost up or down?",
           a: "Mostly scope: how many page types, whether the design is custom or from a template, how content is edited, whether it is in one language or two, which systems it connects to (CRM, payments, automation) and who writes and prepares the content. Each adds design, build and testing time.",
           details: [
             {
@@ -791,7 +791,7 @@ const rawSpokes: Spoke[] = [
     },
     fa: {
       metaTitle: "قیمت طراحی سایت ۱۴۰۵؛ چه چیزی هزینه را تعیین می‌کند",
-      metaDescription: "طراحی سایت چقدر هزینه دارد و چرا: عواملی که قیمت را بالا و پایین می‌برند، هر سطح چه چیزی دارد، هزینه‌های بعد از راه‌اندازی و راه گرفتن قیمت قطعی.",
+      metaDescription: "قیمت طراحی سایت چقدر است و چرا: عواملی که قیمت را بالا و پایین می‌برند، هر سطح چه چیزی دارد، هزینه‌های بعد از راه‌اندازی و راه گرفتن قیمت قطعی.",
       eyebrow: "راهنما",
       h1: "قیمت طراحی سایت **چقدر است؟**",
       definition:
@@ -799,7 +799,7 @@ const rawSpokes: Spoke[] = [
       answers: [
         { q: "قیمت طراحی سایت اختصاصی در ۱۴۰۵ چقدر است؟", a: null, needs: [30] },
         {
-          q: "چه چیزی هزینه‌ی طراحی سایت را بالا یا پایین می‌برد؟",
+          q: "چه چیزی قیمت طراحی سایت را بالا یا پایین می‌برد؟",
           a: "بیشتر از همه دامنه‌ی کار: چند نوع صفحه، طراحی اختصاصی یا قالب آماده، روش ویرایش محتوا، یک‌زبانه یا دوزبانه بودن، اتصال به سیستم‌های دیگر (CRM، پرداخت، اتوماسیون) و اینکه محتوا را چه کسی می‌نویسد و آماده می‌کند. هر کدام زمان طراحی، ساخت و تست را بیشتر می‌کند.",
           details: [
             {
