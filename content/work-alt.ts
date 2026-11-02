@@ -112,6 +112,16 @@ export const workAlt: Record<string, { gallery: L[] }> = {
   },
 };
 
+/**
+ * Hand-written meta descriptions for summaries that do not fit 100–160 characters once the invitation is added
+ * (lib/metadata.ts › caseStudyDescription). Every other case study derives its description from its summary.
+ */
+export const workMeta: Record<string, Partial<Record<Locale, string>>> = {
+  "ai-real-estate-os": {
+    en: "A complete sales-automation system for real estate: investor discovery, outreach, replies, project analysis and documents. Bellona Agency case study.",
+  },
+};
+
 /** Alt text for a project's cover (card and case-study hero): the per-type pattern with the client's name. */
 export function coverAltText(p: Project, d: Dict): string {
   return d.work.coverAlt[p.type].replace("{name}", p[d.locale].client);

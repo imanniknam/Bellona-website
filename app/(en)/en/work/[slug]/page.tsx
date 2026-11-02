@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/pages/OtherPages";
 import { pageProjects } from "@/content/work";
-import { caseStudyTitle, pageMetadata } from "@/lib/metadata";
+import { caseStudyDescription, caseStudyTitle, pageMetadata } from "@/lib/metadata";
 
 const locale = "en";
 type Props = { params: Promise<{ slug: string }> };
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     locale,
     path: `/work/${slug}`,
-    title: caseStudyTitle(locale, c.title, c.sector),
-    description: c.summary,
+    title: caseStudyTitle(locale, c.title, c.sector, project.type),
+    description: caseStudyDescription(locale, slug, c.summary),
     noindex: project.status !== "published",
   });
 }

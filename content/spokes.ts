@@ -203,7 +203,7 @@ const rawSpokes: Spoke[] = [
     },
     fa: {
       metaTitle: "پیاده‌سازی و اتوماسیون n8n برای کسب‌وکار",
-      metaDescription: `اتوماسیون n8n: گردش‌کارهای n8n را طراحی، پیاده‌سازی و راه‌اندازی می‌کنیم تا CRM، ایمیل، اسناد و هوش مصنوعی به هم وصل شوند. سیستم فروش املاک ما روی ${wfFa} گردش‌کار n8n می‌چرخد.`,
+      metaDescription: `اتوماسیون n8n: گردش‌کار طراحی و راه‌اندازی می‌کنیم تا CRM، ایمیل و هوش مصنوعی به هم وصل شوند. سیستم فروش املاک ما ${wfFa} گردش‌کار n8n دارد. بررسی رایگان.`,
       eyebrow: "ایجنت و اتوماسیون هوش مصنوعی",
       h1: "اتوماسیون n8n **و پیاده‌سازی گردش‌کار**",
       definition:
@@ -245,7 +245,7 @@ const rawSpokes: Spoke[] = [
     guides: ["nextjs-seo-checklist","website-design-cost"],
     en: {
       metaTitle: "Next.js website design: fast and SEO-ready",
-      metaDescription: "Next.js website design: server rendering so Google and AI assistants read every page, fast on mobile, and proper bilingual Persian and English with right-to-left layout.",
+      metaDescription: "Next.js website design: server rendering so Google and AI assistants read every page, fast on mobile, with bilingual RTL support. Free audit.",
       eyebrow: "Website design",
       h1: "Next.js **website design**",
       definition:
@@ -336,7 +336,7 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "E-commerce website design: custom online stores",
       metaDescription:
-        "E-commerce website design: custom online stores with cart, checkout, online payment and an admin panel your team runs. Examples: Sabzino, Nira Perfume, Mojasame Saidi, Elm-Kala.",
+        "E-commerce website design: custom online stores with cart, online payment and an admin panel. Examples: Sabzino, Nira Perfume and Elm-Kala. Free audit.",
       eyebrow: "Website design",
       h1: "E-commerce **website design**",
       definition:
@@ -387,7 +387,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "طراحی سایت فروشگاهی و فروشگاه اینترنتی اختصاصی",
       metaDescription:
-        "طراحی سایت فروشگاهی اختصاصی، بدون قالب آماده: دسته‌بندی و جست‌وجوی محصول، سبد خرید، پرداخت آنلاین و پنل مدیریت سفارش. نمونه‌ها: سبزینو، عطر نیرا، مجسمه سعیدی و علم‌کالا.",
+        "طراحی سایت فروشگاهی اختصاصی بدون قالب آماده: جست‌وجوی محصول، سبد خرید، پرداخت آنلاین و پنل سفارش. نمونه‌ها: سبزینو و عطر نیرا. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **فروشگاهی**",
       definition:
@@ -450,7 +450,7 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "Corporate website design: fast and SEO-ready",
       metaDescription:
-        "Corporate website design: company websites coded from scratch, with a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready.",
+        "Corporate website design: company sites coded from scratch, with clear service and about pages, forms into your CRM, fast and SEO-ready. Free audit.",
       eyebrow: "Website design",
       h1: "Corporate **website design**",
       definition:
@@ -501,7 +501,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "طراحی سایت شرکتی اختصاصی؛ سریع و آماده‌ی سئو",
       metaDescription:
-        "طراحی سایت شرکتی و سازمانی اختصاصی و کدنویسی‌شده: پیشنهاد روشن، صفحه‌های خدمات و درباره ما، فرم‌هایی که مستقیم به ایمیل یا CRM می‌رسند، سریع روی موبایل و آماده‌ی سئو. فارسی، انگلیسی یا دوزبانه.",
+        "طراحی سایت شرکتی اختصاصی و کدنویسی‌شده: پیشنهاد روشن، صفحه‌های خدمات و درباره ما، فرم متصل به ایمیل یا CRM، سریع و آماده‌ی سئو. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **شرکتی**",
       definition:
@@ -564,7 +564,7 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "Bilingual website design: Persian, English, RTL",
       metaDescription:
-        "Bilingual website design for Persian and English: separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
+        "Bilingual website design in Persian and English: separate URLs per language, full right-to-left layout, correct hreflang. Example: ASA-Study. Free audit.",
       eyebrow: "Website design",
       h1: "Bilingual **website design**",
       definition:
@@ -605,7 +605,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "طراحی سایت دوزبانه فارسی و انگلیسی (RTL و LTR)",
       metaDescription:
-        "طراحی سایت دوزبانه و چندزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌به‌چپ واقعی، برچسب‌های زبان درست برای گوگل و ویرایش محتوا در هر دو زبان. نمونه‌ها: ASA-Study و همین سایت.",
+        "طراحی سایت دوزبانه فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌به‌چپ واقعی و برچسب زبان درست برای گوگل. نمونه: ASA-Study. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **دوزبانه**",
       definition:
@@ -658,7 +658,7 @@ const rawSpokes: Spoke[] = [
     en: {
       metaTitle: "Website redesign and migration, no SEO loss",
       metaDescription:
-        "Website redesign without losing traffic: move off WordPress with every post, tag and author migrated, old links redirected and the site kept online throughout. Example: Dane Scientific News.",
+        "Website redesign without losing traffic: migrate off WordPress with every post and tag, redirect old links, stay online. Example: Dane. Free audit.",
       eyebrow: "Website design",
       h1: "Website **redesign**",
       definition:
@@ -699,7 +699,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "بازطراحی سایت و انتقال از وردپرس بدون افت سئو",
       metaDescription:
-        "بازطراحی سایت یا انتقال از وردپرس بدون از دست دادن ترافیک: انتقال همه‌ی مطالب، برچسب‌ها و نویسنده‌ها، ریدایرکت لینک‌های قدیمی و آنلاین ماندن سایت در تمام مدت. نمونه: پایگاه علمی خبری دانه.",
+        "بازطراحی سایت یا انتقال از وردپرس بدون از دست دادن ترافیک: انتقال مطالب و برچسب‌ها، ریدایرکت لینک‌های قدیمی و آنلاین ماندن سایت. نمونه: دانه. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "بازطراحی **سایت**",
       definition:
@@ -753,7 +753,7 @@ const rawSpokes: Spoke[] = [
     guides: ["custom-vs-store-builder"],
     en: {
       metaTitle: "Website design cost in 2026: what sets the price",
-      metaDescription: "Website design cost explained: what a website costs and why, the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
+      metaDescription: "Website design cost explained: what a website costs and why, the factors that move the price, running costs after launch, and how to get a fixed quote.",
       eyebrow: "Guide",
       h1: "How much does **website design cost?**",
       definition:

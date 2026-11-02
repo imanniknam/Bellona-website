@@ -29,7 +29,7 @@ export const guidesA: Spoke[] = [
     guides: ["nextjs-seo-checklist", "website-design-cost"],
     en: {
       metaTitle: "Migrate WordPress to Next.js without losing SEO",
-      metaDescription: "How to migrate from WordPress to Next.js without losing traffic: a step-by-step checklist with the URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
+      metaDescription: "Migrate from WordPress to Next.js without losing traffic: URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
       eyebrow: "Guide",
       h1: "Migrate from WordPress to **Next.js without losing SEO**",
       definition:
@@ -213,7 +213,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     fa: {
       metaTitle: "انتقال سایت از وردپرس به Next.js بدون افت سئو",
-      metaDescription: "چک‌لیست قدم‌به‌قدم انتقال سایت از وردپرس به Next.js بدون از دست دادن ترافیک: نقشه‌ی آدرس‌ها، ریدایرکت ۳۰۱، مرتب‌سازی طبقه‌بندی، نقشه‌ی سایت و پایش؛ با مهاجرت واقعی دانه.",
+      metaDescription: "انتقال سایت از وردپرس به Next.js بدون از دست دادن ترافیک: نقشه‌ی آدرس‌ها، ریدایرکت ۳۰۱، طبقه‌بندی، نقشه‌ی سایت و پایش؛ با مهاجرت واقعی دانه.",
       eyebrow: "راهنما",
       h1: "انتقال سایت از وردپرس به نکست جی اس (Next.js) **بدون افت سئو**",
       definition:
@@ -411,7 +411,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     guides: ["website-design-cost", "nextjs-seo-checklist"],
     en: {
       metaTitle: "Custom store or store builder? A buyer's guide",
-      metaDescription: "Custom online store or store builder? A table comparing cost, speed, design, features, SEO and ownership, when each is right, and examples from four stores we built.",
+      metaDescription: "Custom online store or store builder? Compare cost, speed, design, SEO and ownership, when each is right, with examples from four stores we built.",
       eyebrow: "Guide",
       h1: "Custom **online store or store builder?**",
       definition:
@@ -651,7 +651,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     guides: ["nextjs-seo-checklist", "migrate-wordpress-to-nextjs"],
     en: {
       metaTitle: "Bilingual Persian-English website: hreflang, RTL",
-      metaDescription: "Persian–English bilingual website: how to build one, with URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
+      metaDescription: "Persian–English bilingual website: URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
       eyebrow: "Guide",
       h1: "Persian–English bilingual website: **hreflang and RTL done right**",
       definition:

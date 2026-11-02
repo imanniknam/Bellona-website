@@ -21,7 +21,7 @@ export const en: Dict = {
     home: {
       title: "Bellona Agency | Custom Website Design & AI Automation",
       description:
-        "Bellona Agency designs and hand-codes custom websites and platforms without templates, connects them to AI automation and grows the traffic behind them. Free growth audit.",
+        "Bellona Agency designs custom websites and platforms without templates, connects them to AI automation and grows their traffic. Free growth audit.",
     },
     services: {
       title: "Services",
@@ -52,7 +52,7 @@ export const en: Dict = {
     },
     contact: {
       title: "Contact",
-      description: "Tell us what you need. Book a 30-minute free call or send a request.",
+      description: "Contact Bellona Agency: tell us what you need, book a free 30-minute call or send a request, and get a fixed quote after the audit.",
     },
     privacy: { title: "Privacy policy", description: "How Bellona handles your data." },
     terms: { title: "Terms of use", description: "Terms for using bellonaagency.com." },
@@ -113,11 +113,11 @@ export const en: Dict = {
     },
     "/industries/education": {
       title: "Education website design: learning platforms",
-      description: "Education website design: learning platforms, gamified courses and enrollment sites, designed and built by Bellona. Work includes Konjed, Codechee, Yasin and Microshamim.",
+      description: "Education website design: learning platforms, gamified courses and enrollment sites. Work includes Konjed, Codechee and Yasin. Free growth audit.",
     },
     "/industries/real-estate": {
       title: "Real estate website design and AI automation",
-      description: "Real estate website design: listing websites, automatic buyer follow-up and CRM automation for real-estate businesses, like the AI sales system we built for kharazie.at.",
+      description: "Real estate website design: listing websites, automatic buyer follow-up and CRM automation, like the AI sales system we built for kharazie.at. Free audit.",
     },
     "/industries/ecommerce": {
       title: "Online store design and sales automation",
@@ -125,7 +125,7 @@ export const en: Dict = {
     },
     "/industries/media": {
       title: "Media website design and publishing platforms",
-      description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps every old link working, like Dane Scientific News.",
+      description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps old links working, like Dane. Free audit.",
     },
     "/work": {
       title: "Portfolio: website, product and AI projects",
@@ -333,7 +333,7 @@ export const en: Dict = {
         page: {
           metaTitle: "Custom website design: corporate and e-commerce",
           metaDescription:
-            "Bellona website design agency: corporate sites, online stores and landing pages, hand-coded without templates, fast on mobile and SEO-ready. Fixed quote after a free audit.",
+            "Website design agency: corporate sites, online stores and landing pages, hand-coded without templates, fast and SEO-ready. Free audit, fixed quote.",
           h1: "Custom, **bilingual** website design",
           tagline: "Websites that **turn visitors into leads.**",
           sub: "Fast, clear, on-brand sites designed around one job: getting the right people to take the next step.",
@@ -1024,8 +1024,8 @@ export const en: Dict = {
     },
     contact: {
       eyebrow: "CONTACT",
-      h1: "Tell us **where it hurts.**",
-      sub: "Send a request or book a 30-minute free call. No full plan needed; that's what the call is for.",
+      h1: "Contact **Bellona Agency** and book a free audit",
+      sub: "Tell us where it hurts. Send a request or book a 30-minute free call. No full plan needed; that's what the call is for.",
       nextTitle: "What happens next",
     },
     legal: {

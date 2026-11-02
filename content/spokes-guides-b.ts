@@ -98,7 +98,7 @@ export const guidesB: Spoke[] = [
     guides: ["bilingual-website-hreflang-rtl", "ai-search-readiness"],
     en: {
       metaTitle: "Next.js SEO checklist: metadata and JSON-LD",
-      metaDescription: "A practical Next.js SEO checklist with code: the metadata API, canonical and hreflang, sitemap.ts, robots.ts, JSON-LD, images, fonts and redirects, plus how to test each item.",
+      metaDescription: "A practical Next.js SEO checklist with code: metadata API, canonical and hreflang, sitemap.ts, robots.ts, JSON-LD, images, fonts and redirects.",
       eyebrow: "Guide",
       h1: "Next.js **SEO checklist**",
       definition:
@@ -386,7 +386,7 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
     guides: ["nextjs-seo-checklist", "bilingual-website-hreflang-rtl"],
     en: {
       metaTitle: "Be visible in AI search: ChatGPT and assistants",
-      metaDescription: "AI search visibility, making your website readable by ChatGPT and other AI assistants: server rendering, answer-first structure, structured data, robots rules for AI crawlers and a consistent brand identity.",
+      metaDescription: "AI search visibility: make your website readable by ChatGPT and other AI assistants with server rendering, answer-first structure, schema and robots rules.",
       eyebrow: "Guide",
       h1: "Be visible in **AI search**",
       definition:
@@ -624,7 +624,7 @@ Disallow: /api/`,
     guides: ["ai-search-readiness"],
     en: {
       metaTitle: "Lead follow-up automation with n8n: a guide",
-      metaDescription: "Lead follow-up automation with n8n: the workflow architecture from form to CRM, scoring, timed messages, stop-on-reply, human handover and error handling, with a real-estate example.",
+      metaDescription: "Lead follow-up automation with n8n: workflow architecture from form to CRM, scoring, timed messages, stop-on-reply, human handover and error handling.",
       eyebrow: "Guide",
       h1: "Lead follow-up automation **with n8n**",
       definition:

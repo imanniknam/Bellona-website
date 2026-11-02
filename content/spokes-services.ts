@@ -28,7 +28,7 @@ export const serviceSpokes: Spoke[] = [
     guides: ["nextjs-seo-checklist", "ai-search-readiness", "migrate-wordpress-to-nextjs"],
     en: {
       metaTitle: "SEO services: technical, content and Next.js SEO",
-      metaDescription: "Website SEO services: technical SEO (speed, rendering, sitemap, hreflang, structured data), content SEO, store SEO and bilingual SEO, with measurement in Search Console.",
+      metaDescription: "Website SEO services: technical SEO (speed, rendering, sitemap, hreflang, schema), content SEO and bilingual SEO, measured in Search Console. Free audit.",
       eyebrow: "Marketing & growth",
       h1: "Website **SEO services**",
       definition:
@@ -236,7 +236,7 @@ export const serviceSpokes: Spoke[] = [
     guides: ["website-design-cost"],
     en: {
       metaTitle: "Landing page design: fast pages that convert",
-      metaDescription: "Landing page design for campaigns and launches: one clear offer, fast on mobile, forms connected to your CRM, and testing. Hand-coded, with a fixed quote after a free audit.",
+      metaDescription: "Landing page design for campaigns and launches: one clear offer, fast on mobile, forms connected to your CRM. Hand-coded; fixed quote after a free audit.",
       eyebrow: "Website design",
       h1: "Landing page **design**",
       definition:
@@ -356,7 +356,7 @@ export const serviceSpokes: Spoke[] = [
     guides: ["lead-follow-up-automation-n8n"],
     en: {
       metaTitle: "CRM automation: automatic lead follow-up",
-      metaDescription: "CRM automation and sales follow-up with Baserow, HubSpot and n8n: leads logged automatically, followed up on time, scored and reported daily, like our real-estate system.",
+      metaDescription: "CRM automation and sales follow-up with Baserow, HubSpot and n8n: leads logged, followed up on time, scored and reported daily. Free audit.",
       eyebrow: "AI agents & automation",
       h1: "CRM automation **for sales**",
       definition:

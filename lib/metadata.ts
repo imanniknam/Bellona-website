@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale, ProjectType } from "@/content/types";
+import { workMeta } from "@/content/work-alt";
 import { getDict, localePath } from "./i18n";
 import { siteUrl } from "./site";
 
@@ -73,26 +74,53 @@ export function pageMetadata({
 }
 
 /**
- * Case-study <title>: "Konjed: Education, Gamified learning" / «کنجد؛ آموزش، یادگیری گیمیفای‌شده».
- * Long ones keep only the most specific sector part, so the full title stays around 60 characters.
+ * Case-study <title> by project kind (SEO-GUIDELINE 4-2), without the brand suffix. The suffix is added later
+ * (" · آژانس بلونا" / " · Bellona Agency") and the whole title stays within 65 characters, so the domain part is
+ * the first thing dropped when the name is long.
+ *   website     «طراحی سایت <نام>؛ <حوزه>»              <Name> website design: <domain>
+ *   product     «طراحی و توسعه‌ی پلتفرم <نام>؛ <حوزه>»    <Name> platform design & development
+ *   automation  «<نام>؛ اتوماسیون هوش مصنوعی و n8n»       <Name>: AI & n8n automation case study
+ *   mobile-app  «توسعه‌ی اپلیکیشن <نام>؛ <حوزه>»          <Name> mobile app development
  */
-export function caseStudyTitle(locale: Locale, title: string, sector: string, type: ProjectType = "website"): string {
+export function caseStudyTitle(locale: Locale, name: string, sector: string, type: ProjectType = "website"): string {
+  const limit = 65 - (locale === "fa" ? 14 : 16);
   const parts = sector.split(" · ");
-  // Persian titles lead with the project's kind (SEO-GUIDELINE B6): websites with «طراحی سایت» (the main search
-  // term), platforms with «پلتفرم»; automation systems and apps keep their own name.
-  const name =
-    locale !== "fa"
-      ? title
+  const full = parts.join(locale === "fa" ? "، " : ", ");
+  const last = parts[parts.length - 1];
+  const platform = /^(پلتفرم|سامانه|پایگاه)/.test(name) ? name : `پلتفرم ${name}`;
+  const candidates: string[] =
+    locale === "fa"
+      ? type === "website"
+        ? [`طراحی سایت ${name}؛ ${full}`, `طراحی سایت ${name}؛ ${last}`, `طراحی سایت ${name}`]
+        : type === "product"
+          ? [`طراحی و توسعه‌ی ${platform}؛ ${full}`, `طراحی و توسعه‌ی ${platform}؛ ${last}`, `طراحی و توسعه‌ی ${platform}`]
+          : type === "automation"
+            ? [`${name}؛ اتوماسیون هوش مصنوعی و n8n`, `${name}؛ اتوماسیون هوش مصنوعی`, name]
+            : [`توسعه‌ی اپلیکیشن ${name}؛ ${full}`, `توسعه‌ی اپلیکیشن ${name}؛ ${last}`, `توسعه‌ی اپلیکیشن ${name}`]
       : type === "website"
-        ? `طراحی سایت ${title}`
-        : type === "product" && !/^(پلتفرم|سامانه|پایگاه)/.test(title)
-          ? `پلتفرم ${title}`
-          : title;
-  const join = (s: string) => (locale === "fa" ? `${name}؛ ${s}` : `${name}: ${s}`);
-  const full = join(parts.join(locale === "fa" ? "، " : ", "));
-  if (full.length <= 50) return full;
-  const short = join(parts[parts.length - 1]);
-  return short.length <= 56 ? short : name;
+        ? [`${name} website design: ${full}`, `${name} website design: ${last}`, `${name} website design`]
+        : type === "product"
+          ? [`${name} platform design & development`, `${name} platform development`, name]
+          : type === "automation"
+            ? [`${name}: AI & n8n automation case study`, `${name}: AI automation case study`, `${name}: AI automation`, name]
+            : [`${name} mobile app development`, `${name} mobile app`, name];
+  return candidates.find((c) => c.length <= limit) ?? candidates[candidates.length - 1];
+}
+
+/**
+ * Case-study meta description (4-1): the project summary plus an invitation, 100–160 characters.
+ * A hand-written `workMeta` override (content/work-alt.ts) wins for summaries that do not fit.
+ */
+export function caseStudyDescription(locale: Locale, slug: string, summary: string): string {
+  const override = workMeta[slug]?.[locale];
+  if (override) return override;
+  const base = summary.replace(/[.؛۔\s]+$/, "");
+  const tails =
+    locale === "fa"
+      ? ["؛ نمونه‌کار آژانس بلونا. پروژه‌ی مشابه دارید؟ بررسی رایگان.", "؛ نمونه‌کار آژانس بلونا. بررسی رایگان.", "."]
+      : [". A Bellona Agency case study. Want something similar? Free audit.", ". A Bellona Agency case study. Free audit.", "."];
+  const options = tails.map((t) => base + t);
+  return options.find((o) => o.length >= 120 && o.length <= 160) ?? options.find((o) => o.length >= 100 && o.length <= 160) ?? summary;
 }
 
 export const baseMetadata = (locale: Locale): Metadata => {
