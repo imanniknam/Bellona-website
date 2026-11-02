@@ -641,7 +641,9 @@ export const projects: Project[] = [
     model: "robot",
     cover: "/work/elm-kala/cover-art.jpg",
     gallery: [desktop("/work/elm-kala/cover.jpg")],
-    stack: ["Production web app", "Railway"],
+    // TODO(owner): the real technology stack of Elm-Kala. "Production web app" and "Railway" were placeholders, so the
+    // technology section is not rendered until a stack is listed here.
+    // stack: [],
     en: {
       title: "Elm-Kala",
       client: "Elm-Kala",

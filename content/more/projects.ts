@@ -1,6 +1,8 @@
 import { facts, fmt } from "../facts";
 import type { Answer } from "../spokes";
 import type { Locale } from "../types";
+import { care } from "./projects-care";
+import { extra } from "./projects-extra";
 
 /**
  * Extra case-study sections (SEO-GUIDELINE D10), keyed by project slug: how it was built, what each technology is
@@ -616,7 +618,8 @@ export const more: More = Object.fromEntries(
     Object.fromEntries(
       (Object.keys(byLocale) as Locale[]).map((locale) => [
         locale,
-        byLocale[locale].map((x) =>
+        // Longer case-study sections (projects-extra.ts) go in before the closing "where do we start" question.
+        [...byLocale[locale].slice(0, -1), ...(extra[slug]?.[locale] ?? []), ...(care[slug]?.[locale] ?? []), ...byLocale[locale].slice(-1)].map((x) =>
           x.a && words(x.a) < 25 && x.details?.some((d) => d.kind === "links" && d.items.some((i) => i.href === "/contact")) ? { ...x, a: x.a + CTA[locale] } : x,
         ),
       ]),
