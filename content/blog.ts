@@ -49,7 +49,7 @@ export type Post = {
 };
 
 const re = facts.projects.realEstate;
-const BAZDAR = "Amirhossein Bazdar|امیرحسین بازدار";
+const NIKNAM = "Iman Niknam|ایمان نیک‌نام";
 
 export const posts: Post[] = [
   {
@@ -57,7 +57,7 @@ export const posts: Post[] = [
     status: "published",
     published: "2026-11-02",
     updated: "2026-11-02",
-    author: BAZDAR,
+    author: NIKNAM,
     category: "ai",
     minutes: 8,
     keyword: "اتوماسیون کسب و کار",

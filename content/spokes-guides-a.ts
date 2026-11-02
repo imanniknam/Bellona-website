@@ -13,6 +13,7 @@ const nEn = (v: number) => fmt.n(v, "en");
 const nFa = (v: number) => fmt.n(v, "fa");
 const UPDATED = "2026-11-02";
 const BAZDAR = "Amirhossein Bazdar|امیرحسین بازدار";
+const RAZI = "Sina Razi|سینا راضی";
 
 export const guidesA: Spoke[] = [
   // ======================================================================================= migrate WordPress to Next.js
@@ -23,7 +24,7 @@ export const guidesA: Spoke[] = [
     need: "web",
     status: "published",
     updated: UPDATED,
-    author: BAZDAR,
+    author: RAZI,
     needs: [],
     projects: ["dane-news"],
     guides: ["nextjs-seo-checklist", "website-design-cost"],
