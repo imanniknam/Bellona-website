@@ -4,6 +4,7 @@ import { en } from "@/content/en";
 import type { Locale } from "@/content/types";
 import { projects } from "@/content/work";
 import { publishedSpokes, spokePath } from "@/lib/drafts";
+import { spokes } from "@/content/spokes";
 import { localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 
@@ -51,16 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.flatMap((path) =>
     (["en", "fa"] as const).map((locale) => {
-      const lastModified = lastCommit(sources(path, locale));
+      // A guide's own "last updated" date wins; everything else uses the last commit touching its sources.
+      const own = spokes.find((s) => s.kind === "guide" && path === `/guides/${s.slug}`)?.updated;
+      const lastModified = own ? new Date(own) : lastCommit(sources(path, locale));
       return {
         url: `${siteUrl}${localePath(locale, path)}`,
         ...(lastModified ? { lastModified } : {}),
-        changeFrequency: path === "/" ? ("weekly" as const) : ("monthly" as const),
-        priority: path === "/" ? 1 : path.split("/").length > 2 ? 0.7 : 0.8,
         alternates: {
           languages: {
-            en: `${siteUrl}${localePath("en", path)}`,
             fa: `${siteUrl}${localePath("fa", path)}`,
+            en: `${siteUrl}${localePath("en", path)}`,
+            "x-default": `${siteUrl}${localePath("fa", path)}`,
           },
         },
       };

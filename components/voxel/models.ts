@@ -161,10 +161,7 @@ export const PILLAR_MODEL = { web: "monitor", product: "code", ai: "robot", grow
 
 export const INDUSTRY_MODEL: Record<string, ModelName> = {
   "real-estate": "house",
-  finance: "bank",
-  healthcare: "health",
   ecommerce: "shop",
-  consulting: "briefcase",
   education: "cap",
   media: "monitor",
 };

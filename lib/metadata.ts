@@ -77,6 +77,9 @@ export const baseMetadata = (locale: Locale): Metadata => {
     title: { default: d.meta.home.title, template: `%s · ${d.meta.siteName}` },
     description: d.meta.home.description,
     applicationName: d.meta.siteName,
+    // Google Search Console ownership (SEO-GUIDELINE A1). Also verify by DNS TXT so this doesn't depend on code:
+    // TODO(owner): add the Search Console DNS TXT record for bellonaagency.com.
+    verification: { google: "kzZWDDXuIy9VRDZVRxQt3uwsfuN4KH1LfQrhsADUo2M" },
     formatDetection: { telephone: false, email: false, address: false },
   };
 };

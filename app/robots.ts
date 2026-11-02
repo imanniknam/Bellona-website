@@ -11,8 +11,8 @@ const AI_SEARCH_CRAWLERS = ["OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot",
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/api/"] },
-      { userAgent: AI_SEARCH_CRAWLERS, allow: "/", disallow: ["/api/"] },
+      { userAgent: "*", allow: ["/", "/api/og"], disallow: ["/api/"] },
+      { userAgent: AI_SEARCH_CRAWLERS, allow: ["/", "/api/og"], disallow: ["/api/"] },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
   };

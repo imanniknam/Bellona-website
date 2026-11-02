@@ -35,6 +35,27 @@ export default function GlobalNotFound() {
               {fa.pages.notFound.cta}
             </Link>
           </div>
+          {/* Useful ways out of a dead end (SEO-GUIDELINE A6): home, services and work, in both languages. */}
+          <nav aria-label="Popular pages" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[15px]">
+            <Link href="/en" className="underline underline-offset-4 hover:text-orange-text">
+              {en.common.wordmark}
+            </Link>
+            <Link href="/en/services" className="underline underline-offset-4 hover:text-orange-text">
+              {en.meta.services.title}
+            </Link>
+            <Link href="/en/work" className="underline underline-offset-4 hover:text-orange-text">
+              {en.meta.work.title}
+            </Link>
+            <Link href="/" lang="fa" className="font-fa-body underline underline-offset-4 hover:text-orange-text">
+              {fa.meta.siteName}
+            </Link>
+            <Link href="/services" lang="fa" className="font-fa-body underline underline-offset-4 hover:text-orange-text">
+              {fa.meta.services.title}
+            </Link>
+            <Link href="/work" lang="fa" className="font-fa-body underline underline-offset-4 hover:text-orange-text">
+              {fa.meta.work.title}
+            </Link>
+          </nav>
           <p lang="fa" dir="rtl" className="font-fa-body text-lg text-muted">
             {fa.meta.notFound.title}. {fa.pages.notFound.text}
           </p>
