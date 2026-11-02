@@ -33,43 +33,17 @@ export const jetbrains = localFont({
 // next/font emits a metric-matched fallback face for each (size-adjust etc.), so the swap doesn't shift layout.
 
 // Lahzeh (owner-supplied, FontIran licence): every Persian text, display and body. Subset to Arabic/Persian
-// + basic Latin, WOFF2. Weights in use: headings 900, UI 700, lead 500, body 400 (800 kept for a few emphasised labels).
+// + basic Latin, WOFF2. Only the weights the design uses are shipped (SEO-GUIDELINE G): 400 body, 700 UI, 900
+// headings. A request for 500 resolves to 400, 600 to 700 and 800 to 900.
+// The earlier Persian faces (Rooyin, Lalezar, Estedad) stay in app/fonts/ for an easy switch back, but are not
+// imported here: every localFont() call in a module is bundled, loaded and preloaded whether or not it is used.
 export const lahzeh = localFont({
   src: [
     { path: "./fonts/lahzeh/Lahzeh-400.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/lahzeh/Lahzeh-500.woff2", weight: "500", style: "normal" },
     { path: "./fonts/lahzeh/Lahzeh-700.woff2", weight: "700", style: "normal" },
-    { path: "./fonts/lahzeh/Lahzeh-800.woff2", weight: "800", style: "normal" },
     { path: "./fonts/lahzeh/Lahzeh-900.woff2", weight: "900", style: "normal" },
   ],
   variable: "--font-lahzeh",
   display: "swap",
   preload: true,
-});
-
-// Previous Persian faces, kept for an easy switch back (no longer loaded by the Persian layout).
-// Lalezar: display only (headlines, big numbers). The owner's file (v1.003), subset to Arabic/Persian
-// + basic Latin and converted to WOFF2. A single weight: never bold it. (Rooyin stays in app/fonts/rooyin.)
-export const lalezar = localFont({
-  src: [{ path: "./fonts/lalezar/Lalezar-Regular.woff2", weight: "400", style: "normal" }],
-  variable: "--font-lalezar",
-  display: "swap",
-  preload: true,
-});
-
-// Estedad: everything else. Body 700, UI 800, captions 500–600, small emphasis 900.
-// next/font preloads per family, not per weight, so this family is not preloaded (six files);
-// it is requested as soon as the stylesheet is parsed.
-export const estedad = localFont({
-  src: [
-    { path: "./fonts/estedad/Estedad-400.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/estedad/Estedad-500.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/estedad/Estedad-600.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/estedad/Estedad-700.woff2", weight: "700", style: "normal" },
-    { path: "./fonts/estedad/Estedad-800.woff2", weight: "800", style: "normal" },
-    { path: "./fonts/estedad/Estedad-900.woff2", weight: "900", style: "normal" },
-  ],
-  variable: "--font-estedad",
-  display: "swap",
-  preload: false,
 });

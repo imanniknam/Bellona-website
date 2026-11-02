@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "seo:check": "node scripts/seo-check.mjs",
     "seo:schema": "node scripts/schema-check.mjs",
-    "seo:keywords": "node scripts/keyword-check.mjs"
+    "seo:keywords": "node scripts/keyword-check.mjs",
+    "seo:links": "node scripts/link-check.mjs"
   },
   "dependencies": {
     "lenis": "1.3.27",

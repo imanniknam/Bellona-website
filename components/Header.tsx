@@ -80,7 +80,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
   return (
     <header className="relative z-20">
       <div className="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6 lg:h-24">
-        <Link href={localePath(locale, "/")} aria-label={common.homeLabel} className="hx group flex items-center gap-2.5 rounded-full lg:gap-3">
+        <Link prefetch={false} href={localePath(locale, "/")} aria-label={common.homeLabel} className="hx group flex items-center gap-2.5 rounded-full lg:gap-3">
           <span className="flex size-11 items-center justify-center rounded-full bg-ink transition-transform duration-300 group-hover:scale-105 lg:size-14">
             <LogoMark variant="dark" size={28} className="lg:size-[36px]" />
           </span>
@@ -93,6 +93,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
             {common.nav.filter((item) => item.key !== "contact").map((item) => (
               <li key={item.key}>
                 <Link
+                  prefetch={false}
                   href={localePath(locale, item.href)}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className="block whitespace-nowrap rounded-full px-4 py-2.5 text-base font-medium 2xl:px-5 2xl:text-[17px] transition-colors hover:bg-paper aria-[current=page]:bg-ink aria-[current=page]:text-paper"
@@ -103,6 +104,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
             ))}
             <li>
               <Link
+                prefetch={false}
                 href={langHref}
                 hrefLang={otherLocale}
                 lang={otherLocale}
@@ -119,6 +121,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
 
         <div className="flex items-center gap-2">
           <Link
+            prefetch={false}
             href={langHref}
             hrefLang={otherLocale}
             lang={otherLocale}
@@ -189,6 +192,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
                 {common.nav.map((item) => (
                   <li key={item.key} className="border-b border-line-dark">
                     <Link
+                      prefetch={false}
                       href={localePath(locale, item.href)}
                       onClick={() => setOpen(false)}
                       aria-current={isActive(item.href) ? "page" : undefined}
@@ -205,6 +209,7 @@ export function Header({ locale, common, pillars, servicesLabel, book }: HeaderP
                   {pillars.map((p) => (
                     <li key={p.slug}>
                       <Link
+                        prefetch={false}
                         href={localePath(locale, `/services/${p.slug}`)}
                         onClick={() => setOpen(false)}
                         className="flex items-baseline gap-3 py-1.5 text-[15px] font-medium transition-colors hover:text-orange"

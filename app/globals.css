@@ -211,7 +211,7 @@
   }
   :lang(fa) .t-lead {
     line-height: 1.9;
-    font-weight: 500;
+    font-weight: 400;
   }
   :lang(fa) .t-eyebrow {
     font-family: var(--font-fa-body);
@@ -672,6 +672,10 @@ html.lenis {
   font-weight: 400;
 }
 :lang(fa) :is(strong, b):not(.fa-display *) {
+  font-weight: 700;
+}
+/* Highlighted words in running text: 700 (Lahzeh ships 400, 700 and 900 only). */
+:lang(fa) :is(.accent, .accent-ink) {
   font-weight: 700;
 }
 

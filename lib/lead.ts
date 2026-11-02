@@ -1,9 +1,9 @@
 import { z } from "zod";
+import { MODEL_IDS, NEED_IDS, OFFER_IDS } from "./lead-shared";
 
-export const NEED_IDS = ["system", "web", "product", "ai", "growth", "bizdev", "unsure"] as const;
-export const MODEL_IDS = ["project", "partnership", "team"] as const;
-/** content/{en,fa}.ts offers.packages ids; an offer button opens the form with ?offer=<id>. */
-export const OFFER_IDS = ["audit", "launch", "automate", "system"] as const;
+// Re-exported so server code keeps importing everything lead-related from one place.
+export { initialLeadState, MODEL_IDS, NEED_IDS, OFFER_IDS } from "./lead-shared";
+export type { LeadField, LeadState } from "./lead-shared";
 
 export const leadSchema = z.object({
   name: z.string().trim().min(1).max(120),
@@ -19,16 +19,3 @@ export const leadSchema = z.object({
 });
 
 export type Lead = z.infer<typeof leadSchema>;
-
-export type LeadField = "name" | "email" | "needs" | "message";
-
-export interface LeadState {
-  /** "stored": every external delivery route failed, but the lead is saved on our own server (LEAD_STORE_DIR). */
-  status: "idle" | "success" | "stored" | "invalid" | "error";
-  /** Increments on every server response so the form can re-mount with the returned values. */
-  attempt: number;
-  errors?: Partial<Record<LeadField, true>>;
-  values?: Partial<Record<"name" | "email" | "company" | "message", string>> & { needs?: string[] };
-}
-
-export const initialLeadState: LeadState = { status: "idle", attempt: 0 };

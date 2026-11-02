@@ -4,7 +4,7 @@ import { LogoMark } from "@/components/LogoMark";
 import { Rich } from "@/components/Rich";
 import { en } from "@/content/en";
 import { fa } from "@/content/fa";
-import { estedad, jakarta, jetbrains } from "./fonts";
+import { jakarta, jetbrains, lahzeh } from "./fonts";
 import "./globals.css";
 
 // Unmatched URLs (both languages share one 404 because EN and FA are separate root layouts).
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function GlobalNotFound() {
   return (
-    <html lang="en" className={`${jakarta.variable} ${jetbrains.variable} ${estedad.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${jetbrains.variable} ${lahzeh.variable}`}>
       <body>
         <main className="wrap flex min-h-dvh flex-col items-center justify-center gap-8 py-20 text-center">
           <Link href="/en" className="hx rounded-3xl" aria-label={en.common.homeLabel}>

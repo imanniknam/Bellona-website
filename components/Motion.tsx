@@ -1,6 +1,5 @@
 "use client";
 
-import Lenis from "lenis";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -32,14 +31,23 @@ export function Motion() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!window.matchMedia("(pointer: fine)").matches) return;
-    const lenis = new Lenis({ lerp: 0.11, wheelMultiplier: 0.95, anchors: true });
-    let frame = requestAnimationFrame(function loop(t) {
-      lenis.raf(t);
-      frame = requestAnimationFrame(loop);
+    // Loaded on demand: phones and reduced-motion users never download it (SEO-GUIDELINE G).
+    let frame = 0;
+    let destroy = () => {};
+    let cancelled = false;
+    import("lenis").then(({ default: Lenis }) => {
+      if (cancelled) return;
+      const lenis = new Lenis({ lerp: 0.11, wheelMultiplier: 0.95, anchors: true });
+      frame = requestAnimationFrame(function loop(t) {
+        lenis.raf(t);
+        frame = requestAnimationFrame(loop);
+      });
+      destroy = () => lenis.destroy();
     });
     return () => {
+      cancelled = true;
       cancelAnimationFrame(frame);
-      lenis.destroy();
+      destroy();
     };
   }, []);
 

@@ -7,7 +7,7 @@ import { submitLead } from "@/app/actions/contact";
 import type { Dict, Locale } from "@/content/types";
 import { localePath } from "@/lib/i18n";
 import { legalPagesPublished } from "@/lib/site";
-import { initialLeadState, MODEL_IDS, NEED_IDS, OFFER_IDS } from "@/lib/lead";
+import { initialLeadState, MODEL_IDS, NEED_IDS, OFFER_IDS } from "@/lib/lead-shared";
 import { track } from "./Analytics";
 import { RollText } from "./RollText";
 
