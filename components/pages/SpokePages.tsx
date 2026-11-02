@@ -1,13 +1,16 @@
 import { notFound } from "next/navigation";
 import { guidesHub, type Spoke, spokes } from "@/content/spokes";
 import type { Locale } from "@/content/types";
-import { visibleSpokes, spokePath } from "@/lib/drafts";
+import { publishedSpokes, visibleSpokes, spokePath } from "@/lib/drafts";
 import { digits } from "@/lib/format";
 import { getDict, localePath } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
-import { BreadcrumbLd, ORG_ID } from "../JsonLd";
+import { ORG_ID } from "../JsonLd";
+import { Breadcrumbs } from "../Breadcrumbs";
 import { Answers } from "../sections/Answers";
 import { Contact } from "../sections/Contact";
+import { projects as allProjects } from "@/content/work";
+import { ProjectCard } from "../sections/Work";
 import { ArrowIcon, LLink, PageHero } from "../ui";
 import { RollText } from "../RollText";
 
@@ -27,6 +30,57 @@ function DraftBanner({ s, locale }: { s: Spoke; locale: Locale }) {
   );
 }
 
+/**
+ * Related pages and case studies (SEO-GUIDELINE B8): the parent service, sibling sub-pages, guides that
+ * cover the same topic (descriptive link text), and the projects that prove it.
+ */
+function Related({ s, locale, pillarSlug }: { s: Spoke; locale: Locale; pillarSlug?: string }) {
+  const d = getDict(locale);
+  const h = guidesHub[locale];
+  const pages: { href: string; label: string }[] = [];
+  const pillar = pillarSlug ? d.pillars.items.find((p) => p.slug === pillarSlug) : undefined;
+  if (pillar) pages.push({ href: `/services/${pillar.slug}`, label: pillar.title });
+  for (const x of publishedSpokes("service")) if (x.slug !== s.slug && x.parent === s.parent) pages.push({ href: spokePath(x), label: x[locale].h1.replace(/\*\*/g, "") });
+  for (const slug of s.guides ?? []) {
+    const g = publishedSpokes("guide").find((x) => x.slug === slug);
+    if (g) pages.push({ href: spokePath(g), label: g[locale].h1.replace(/\*\*/g, "") });
+  }
+  const work = (s.projects ?? []).flatMap((slug) => allProjects.filter((p) => p.slug === slug && p.status === "published"));
+  if (!pages.length && !work.length) return null;
+  return (
+    <section aria-labelledby="related-title" className="wrap flex flex-col gap-10 pb-24">
+      {pages.length > 0 && (
+        <nav aria-labelledby="related-title" className="flex flex-col gap-4">
+          <h2 id="related-title" className="t-h3">
+            {h.relatedPages}
+          </h2>
+          <ul className="flex flex-wrap gap-2">
+            {pages.map((p) => (
+              <li key={p.href}>
+                <LLink locale={locale} href={p.href} className="btn btn-sm btn-outline">
+                  {p.label}
+                </LLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+      {work.length > 0 && (
+        <div className="flex flex-col gap-6">
+          <h2 className="t-h3">{h.relatedWork}</h2>
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {work.map((p) => (
+              <li key={p.slug}>
+                <ProjectCard project={p} d={d} variant="compact" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+}
+
 /** /services/<pillar>/<spoke> */
 export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; parent: string; slug: string }) {
   const s = findSpoke("service", slug, parent);
@@ -38,6 +92,13 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
   const draft = s.status !== "published";
   return (
     <>
+      <Breadcrumbs
+        d={d}
+        trail={[
+          { name: d.meta.services.title, path: "/services" },
+          { name: pillar.title, path: `/services/${pillar.slug}` },
+          { name: c.h1.replace(/\*\*/g, ""), path: spokePath(s) },
+        ]} />
       {draft && <DraftBanner s={s} locale={locale} />}
       <PageHero eyebrow={c.eyebrow} title={c.h1} sub={c.definition}>
         <div className="flex flex-wrap gap-3 pt-2">
@@ -51,15 +112,8 @@ export function ServiceSpokePage({ locale, parent, slug }: { locale: Locale; par
         </div>
       </PageHero>
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={guidesHub[locale].needsAnswer} />
+      <Related s={s} locale={locale} pillarSlug={parent} />
       <Contact d={d} defaultNeed={s.need} />
-      <BreadcrumbLd
-        d={d}
-        trail={[
-          { name: d.meta.services.title, path: "/services" },
-          { name: pillar.title, path: `/services/${pillar.slug}` },
-          { name: c.h1.replace(/\*\*/g, ""), path: spokePath(s) },
-        ]}
-      />
     </>
   );
 }
@@ -72,6 +126,7 @@ export function GuidesHubPage({ locale }: { locale: Locale }) {
   const h = guidesHub[locale];
   return (
     <>
+      <Breadcrumbs d={d} trail={[{ name: h.eyebrow, path: "/guides" }]} />
       <PageHero eyebrow={h.eyebrow} title={h.h1} sub={h.sub} />
       <section aria-label={h.eyebrow} className="wrap pb-24">
         <ul className="grid gap-4 md:grid-cols-2">
@@ -90,7 +145,6 @@ export function GuidesHubPage({ locale }: { locale: Locale }) {
         </ul>
       </section>
       <Contact d={d} />
-      <BreadcrumbLd d={d} trail={[{ name: h.eyebrow, path: "/guides" }]} />
     </>
   );
 }
@@ -111,6 +165,12 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
   const url = `${siteUrl}${localePath(locale, spokePath(s))}`;
   return (
     <>
+      <Breadcrumbs
+        d={d}
+        trail={[
+          { name: h.eyebrow, path: "/guides" },
+          { name: c.h1.replace(/\*\*/g, ""), path: spokePath(s) },
+        ]} />
       {draft && <DraftBanner s={s} locale={locale} />}
       <PageHero eyebrow={c.eyebrow} title={c.h1} sub={c.definition}>
         {(author || dateText) && (
@@ -129,14 +189,8 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
         )}
       </PageHero>
       <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={h.needsAnswer} />
+      <Related s={s} locale={locale} pillarSlug={s.need === "ai" ? "ai-automation" : s.need === "growth" ? "marketing-growth" : "website-design"} />
       <Contact d={d} defaultNeed={s.need} />
-      <BreadcrumbLd
-        d={d}
-        trail={[
-          { name: h.eyebrow, path: "/guides" },
-          { name: c.h1.replace(/\*\*/g, ""), path: spokePath(s) },
-        ]}
-      />
       {!draft && author && updated && (
         <script
           type="application/ld+json"

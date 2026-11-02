@@ -14,7 +14,9 @@ export function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const locale = searchParams.get("locale") === "fa" ? "fa" : "en";
   const raw = (searchParams.get("title") ?? "").slice(0, 90);
-  const title = locale === "en" && raw ? raw : "";
+  // Latin titles only: the renderer cannot shape Persian script, so a Persian title falls back to the brand lockup.
+  const title = /[\u0600-\u06FF]/.test(raw) ? "" : raw;
+  const isBrand = title === "Bellona Agency";
 
   return new ImageResponse(
     (
@@ -29,7 +31,7 @@ export function GET(req: Request) {
               {title || "bellona"}
             </div>
             <div style={{ fontSize: 34, color: C.muted }}>
-              {title ? "bellona agency" : "Websites · Products · AI automation · Growth"}
+              {title && !isBrand ? "bellona agency" : "Websites · Products · AI automation · Growth"}
             </div>
           </div>
           <div style={{ display: "flex", fontSize: 26, color: C.ink }}>bellonaagency.com{locale === "en" ? "/en" : ""}</div>

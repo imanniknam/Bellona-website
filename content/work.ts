@@ -1,6 +1,6 @@
 import type { ModelName } from "@/components/voxel/models";
 import { facts, fmt } from "./facts";
-import type { PillarId } from "./types";
+import type { PillarId, ProjectType } from "./types";
 
 // Project figures live in content/facts.ts (docs/seo G-06).
 const re = facts.projects.realEstate;
@@ -46,6 +46,8 @@ export interface ProjectImage {
 export interface Project {
   slug: string;
   status: ProjectStatus;
+  /** What it is: drives the card label, cover alt text and the Persian case-study title. */
+  type: ProjectType;
   featured?: boolean;
   pillars: PillarId[];
   /** Industry ids (content › industries.items) this project is listed under on /industries. */
@@ -77,6 +79,7 @@ export const projects: Project[] = [
   {
     slug: "ai-real-estate-os",
     status: "published",
+    type: "automation",
     featured: true,
     pillars: ["ai", "growth"],
     industries: ["real-estate"],
@@ -127,6 +130,7 @@ export const projects: Project[] = [
   {
     slug: "codechee",
     status: "published",
+    type: "product",
     featured: true,
     pillars: ["product", "web"],
     industries: ["education"],
@@ -168,6 +172,7 @@ export const projects: Project[] = [
   {
     slug: "yasin",
     status: "published",
+    type: "website",
     featured: true,
     pillars: ["web"],
     industries: ["education"],
@@ -211,6 +216,7 @@ export const projects: Project[] = [
   {
     slug: "konjed",
     status: "published",
+    type: "product",
     pillars: ["product", "web"],
     industries: ["education"],
     tone: "ink",
@@ -251,6 +257,7 @@ export const projects: Project[] = [
   {
     slug: "microshamim",
     status: "published",
+    type: "website",
     pillars: ["web"],
     industries: ["education"],
     tone: "orange",
@@ -285,6 +292,7 @@ export const projects: Project[] = [
   {
     slug: "sabzino",
     status: "published",
+    type: "website",
     pillars: ["product", "web"],
     industries: ["ecommerce"],
     tone: "paper",
@@ -326,6 +334,7 @@ export const projects: Project[] = [
   {
     slug: "dane-news",
     status: "published",
+    type: "product",
     pillars: ["web", "product"],
     industries: ["media"],
     tone: "paper",
@@ -374,6 +383,7 @@ export const projects: Project[] = [
   {
     slug: "nira-perfume",
     status: "published",
+    type: "website",
     pillars: ["web", "product"],
     industries: ["ecommerce"],
     tone: "paper",
@@ -413,6 +423,7 @@ export const projects: Project[] = [
   {
     slug: "contemo",
     status: "published",
+    type: "product",
     pillars: ["web", "product"],
     tone: "orange",
     url: "https://contemo.ir",
@@ -453,6 +464,7 @@ export const projects: Project[] = [
   {
     slug: "shamim-house",
     status: "published",
+    type: "website",
     pillars: ["web"],
     tone: "graphite",
     url: "https://shamimhouse.ir",
@@ -493,6 +505,7 @@ export const projects: Project[] = [
   {
     slug: "asa-study",
     status: "published",
+    type: "website",
     pillars: ["web"],
     industries: ["education"],
     tone: "paper",
@@ -534,6 +547,7 @@ export const projects: Project[] = [
   {
     slug: "prowem",
     status: "published",
+    type: "mobile-app",
     pillars: ["product"],
     tone: "orange",
     // prowem.com only shows "Coming soon"; a cube illustration until app screenshots arrive (TODO-OWNER).
@@ -575,6 +589,7 @@ export const projects: Project[] = [
   {
     slug: "mojasame-saidi",
     status: "published",
+    type: "website",
     pillars: ["web", "product"],
     industries: ["ecommerce"],
     tone: "ink",
@@ -616,6 +631,7 @@ export const projects: Project[] = [
   {
     slug: "elm-kala",
     status: "published",
+    type: "website",
     pillars: ["web"],
     industries: ["ecommerce", "education"],
     tone: "graphite",
@@ -648,6 +664,7 @@ export const projects: Project[] = [
   {
     slug: "school-builders",
     status: "published",
+    type: "website",
     pillars: ["web"],
     tone: "orange",
     // The Railway address from the portfolio returns 404; no link or screenshot until a live address arrives (TODO-OWNER).
@@ -680,6 +697,7 @@ export const projects: Project[] = [
     // Template preview at /work/example (noindex). Copy this entry to add a case study.
     slug: "example",
     status: "preview",
+    type: "website",
     pillars: ["web", "ai"],
     tone: "ink",
     year: "[YEAR]",

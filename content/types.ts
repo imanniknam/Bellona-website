@@ -10,6 +10,9 @@
 
 export type Locale = "en" | "fa";
 
+/** What a case study is, for its card label, alt text and title (SEO-GUIDELINE B6). */
+export type ProjectType = "website" | "product" | "automation" | "mobile-app";
+
 export type PillarId = "web" | "product" | "ai" | "growth" | "bizdev";
 
 export type IconName =
@@ -151,11 +154,14 @@ export interface Dict {
     agency: string;
     tagline: string;
     homeLabel: string;
+    /** Breadcrumb: first crumb and the nav's accessible name. */
+    home: string;
+    breadcrumb: string;
     menuOpen: string;
     menuClose: string;
     menuTitle: string;
     primaryNav: string;
-    nav: { key: "work" | "offers" | "services" | "partner" | "industries" | "about" | "contact"; label: string; href: string }[];
+    nav: { key: "work" | "offers" | "services" | "partner" | "industries" | "guides" | "about" | "contact"; label: string; href: string }[];
     langSwitch: { label: string; hrefLang: Locale; ariaLabel: string };
     bookCall: string;
     bookInitial: string;
@@ -238,7 +244,7 @@ export interface Dict {
     byIndustry: string;
     placeholderImage: string;
     /** Alt text for a project cover; {title} is replaced with the project name. */
-    coverAlt: string;
+    coverAlt: Record<ProjectType, string>;
     placeholderNote: string;
     view: string;
     caseStudy: {

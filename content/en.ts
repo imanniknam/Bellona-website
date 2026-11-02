@@ -19,9 +19,9 @@ export const en: Dict = {
   meta: {
     siteName: "Bellona",
     home: {
-      title: "Bellona Agency (بلونا): website design, AI agents and automation",
+      title: "Bellona Agency | Custom Website Design & AI Automation",
       description:
-        "Bellona designs and codes custom websites and web platforms, connects them to AI automation that answers and follows up every lead, and grows the traffic behind them. English and Persian. Book a free growth audit.",
+        "Bellona Agency designs and hand-codes custom websites and platforms without templates, connects them to AI automation and grows the traffic behind them. Free growth audit.",
     },
     services: {
       title: "Services",
@@ -65,6 +65,8 @@ export const en: Dict = {
     agency: "agency",
     tagline: "BUILD · AUTOMATE · GROW",
     homeLabel: "Bellona home",
+    home: "Home",
+    breadcrumb: "Breadcrumb",
     menuOpen: "Open menu",
     menuClose: "Close menu",
     menuTitle: "Menu",
@@ -73,6 +75,7 @@ export const en: Dict = {
       { key: "work", label: "Work", href: "/work" },
       { key: "offers", label: "Offers", href: "/offers" },
       { key: "services", label: "Services", href: "/services" },
+      { key: "guides", label: "Guides", href: "/guides" },
       { key: "about", label: "About", href: "/about" },
       { key: "contact", label: "Contact", href: "/contact" },
     ],
@@ -88,6 +91,7 @@ export const en: Dict = {
       rights: "© 2026 Bellona. All rights reserved.",
       legal: { privacy: "Privacy", terms: "Terms" },
       emailLabel: "Email",
+      // TODO(owner): add a quick chat channel (Telegram or WhatsApp), and a phone number and address if you want them public (SEO-GUIDELINE B9).
       social: [{ label: "Instagram", href: "https://www.instagram.com/bellona.ai" }],
     },
     email: "bellona.ai.team@gmail.com",
@@ -124,7 +128,8 @@ export const en: Dict = {
       description: "Publishing platforms with a headless CMS, editorial rules and content migration that keeps every old link working, like Dane Scientific News.",
     },
     "/work": {
-      title: "Website, product and automation case studies",
+      title: "Portfolio: website, product and automation projects",
+      description: `${shipped} websites, products and automation systems Bellona built and delivered, from online stores and education to real estate and media.`,
     },
     "/about": {
       title: "About us: an engineering team from Sharif University",
@@ -136,8 +141,9 @@ export const en: Dict = {
   },
   hero: {
     tagline: "BUILD · AUTOMATE · GROW",
-    title: "Websites that sell. **AI that follows up.**",
-    sub: "We hand-code your website or platform, connect it to AI that answers every lead in seconds, then grow the traffic that feeds it.",
+    // TODO(owner): confirm this H1 (SEO-GUIDELINE B2); it is the English equivalent of the Persian one.
+    title: "Custom website design that brings customers. **A system that keeps them.**",
+    sub: "Bellona is a website design agency and AI automation studio. We design and hand-code your custom website or platform, connect it to AI so no message goes unanswered, and grow the traffic behind it.",
     primary: "Get a free growth audit",
     secondary: "See our work",
     projectsLabel: "projects shipped",
@@ -325,9 +331,9 @@ export const en: Dict = {
         line: "Sites that look sharp, load fast and turn visitors into leads.",
         chips: ["UI/UX", "Landing pages", "CMS", "Conversion design"],
         page: {
-          metaTitle: "Custom, fast, bilingual website design",
+          metaTitle: "Custom website design: corporate, e-commerce, bilingual",
           metaDescription:
-            "Fast, on-brand websites and landing pages designed to turn visitors into leads: UI/UX, CMS sites and conversion-focused design, in English and Persian.",
+            "Bellona website design agency: corporate sites, online stores and landing pages, hand-coded without templates, fast on mobile and SEO-ready. Fixed quote after a free audit.",
           h1: "Custom, **bilingual** website design",
           tagline: "Websites that **turn visitors into leads.**",
           sub: "Fast, clear, on-brand sites designed around one job: getting the right people to take the next step.",
@@ -402,9 +408,9 @@ export const en: Dict = {
         line: "Agents, workflows and integrations that qualify leads, sync your CRM and run operations 24/7.",
         chips: ["AI agents", "Workflow automation", "Integrations", "CRM automation"],
         page: {
-          metaTitle: "AI agents and business process automation",
+          metaTitle: "Business AI automation, agents and n8n",
           metaDescription:
-            "AI agents, workflow automation, lead generation systems, AI customer support, CRM automation and custom integrations that run 24/7.",
+            "AI agents, process and CRM automation, automatic lead follow-up and smart customer support with n8n, running around the clock.",
           h1: "Business automation **with AI agents**",
           tagline: "AI systems that work **while you sleep.**",
           sub: "Agents and workflows that qualify leads, sync your CRM, answer customers and run operations around the clock.",
@@ -475,9 +481,9 @@ export const en: Dict = {
         line: "Campaigns, SEO and content, and lead-generation systems that bring the right clients in.",
         chips: ["Campaigns", "SEO & content", "Lead generation"],
         page: {
-          metaTitle: "Lead generation systems and growth marketing",
+          metaTitle: "SEO, content and lead generation: a growth system",
           metaDescription:
-            "Campaigns, SEO and content, and automated lead-generation systems that fill your pipeline and hand leads straight to sales.",
+            "Website SEO, content production, campaigns and a lead-generation system that brings the right customers and hands them to sales.",
           h1: "Lead generation **and growth** systems",
           tagline: "A pipeline that **doesn't depend on luck.**",
           sub: "Campaigns, SEO and content, and lead-generation systems that bring the right clients in, and hand them straight to your sales process.",
@@ -599,7 +605,12 @@ export const en: Dict = {
     filterAll: "All",
     byIndustry: "By industry",
     placeholderImage: "[PROJECT IMAGE]",
-    coverAlt: "{title}: website designed and built by Bellona",
+    coverAlt: {
+      website: "Website design for {name} by Bellona Agency",
+      product: "{name} platform built by Bellona Agency",
+      automation: "{name} automation system built by Bellona Agency",
+      "mobile-app": "{name} mobile app built by Bellona Agency",
+    },
     placeholderNote: "Case study coming soon",
     view: "View case study",
     caseStudy: {
@@ -809,6 +820,7 @@ export const en: Dict = {
     ],
   },
 
+  // TODO(owner): real client quotes (with permission) and a clients/logos block; nothing is invented here (SEO-GUIDELINE B9).
   testimonials: { eyebrow: "WHAT CLIENTS SAY", title: "Straight from **the inbox.**" },
 
   faq: {

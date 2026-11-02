@@ -55,6 +55,10 @@ export interface Spoke {
   author?: string | null;
   /** Page-level questions that block publishing, beyond those on individual answers. */
   needs: number[];
+  /** Case studies this page links to (project slugs): proof, and a link back from the case study. */
+  projects?: string[];
+  /** Guides this page links to (guide slugs). */
+  guides?: string[];
   en: SpokeCopy;
   fa: SpokeCopy;
 }
@@ -92,6 +96,8 @@ export const spokes: Spoke[] = [
     need: "ai",
     status: "draft",
     needs: [19, 20, 30, 31],
+    projects: ["ai-real-estate-os"],
+    guides: ["ai-agent-cost"],
     en: {
       metaTitle: "AI agent development for businesses",
       metaDescription: `Custom AI agents that qualify leads, follow up, answer customers and keep your CRM current. Built and connected by Bellona; most go live in ${sprintEn}.`,
@@ -156,6 +162,8 @@ export const spokes: Spoke[] = [
     need: "ai",
     status: "draft",
     needs: [30, 32],
+    projects: ["ai-real-estate-os"],
+    guides: ["ai-agent-cost"],
     en: {
       metaTitle: "n8n implementation and workflow automation",
       metaDescription: `We design, build and run n8n workflows that connect your CRM, email, documents and AI. Our real-estate sales system runs on ${wfEn} n8n workflows.`,
@@ -225,9 +233,11 @@ export const spokes: Spoke[] = [
     // Published 2026-10-27 (owner: push SEO). Questions still waiting on facts stay hidden until answered.
     status: "published",
     needs: [3, 4, 30],
+    projects: ["yasin","dane-news","asa-study","mojasame-saidi","contemo","shamim-house"],
+    guides: ["website-design-cost"],
     en: {
-      metaTitle: "Next.js website design: fast, bilingual, SEO-ready",
-      metaDescription: "Websites built with Next.js: rendered on the server so search engines and AI assistants read every word, fast on mobile, and properly bilingual in Persian and English.",
+      metaTitle: "Next.js website design: fast and SEO-ready",
+      metaDescription: "Next.js website design: server rendering so Google and AI assistants read every page, fast on mobile, and proper bilingual Persian and English with right-to-left layout.",
       eyebrow: "Website design",
       h1: "Website design **with Next.js**",
       definition:
@@ -265,8 +275,8 @@ export const spokes: Spoke[] = [
       ],
     },
     fa: {
-      metaTitle: "طراحی سایت با Next.js؛ سریع، دوزبانه، سئومحور",
-      metaDescription: "سایتی که با Next.js ساخته می‌شود: روی سرور رندر می‌شود تا موتورهای جست‌وجو و دستیارهای هوش مصنوعی همه‌ی متن را بخوانند، روی موبایل سریع است و فارسی و انگلیسی‌اش اصولی است.",
+      metaTitle: "طراحی سایت با نکست جی اس (Next.js)؛ سریع و سئومحور",
+      metaDescription: "طراحی سایت با نکست جی اس (Next.js): رندر سمت سرور برای دیده شدن در گوگل، سرعت بالا روی موبایل و پشتیبانی فارسی و انگلیسی با راست‌به‌چپ اصولی.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **با Next.js**",
       definition:
@@ -313,6 +323,8 @@ export const spokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
+    projects: ["sabzino","nira-perfume","mojasame-saidi","elm-kala"],
+    guides: ["website-design-cost"],
     en: {
       metaTitle: "E-commerce website design: custom online stores",
       metaDescription:
@@ -425,8 +437,10 @@ export const spokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
+    projects: ["shamim-house","contemo","school-builders"],
+    guides: ["website-design-cost"],
     en: {
-      metaTitle: "Corporate website design: custom company websites",
+      metaTitle: "Custom corporate website design: fast and SEO-ready",
       metaDescription:
         "Company websites designed and coded from scratch: a clear offer, service and about pages, forms that reach your inbox or CRM, fast on mobile and SEO-ready. Persian, English or both.",
       eyebrow: "Website design",
@@ -477,9 +491,9 @@ export const spokes: Spoke[] = [
       ],
     },
     fa: {
-      metaTitle: "طراحی سایت شرکتی حرفه‌ای و اختصاصی",
+      metaTitle: "طراحی سایت شرکتی اختصاصی؛ سریع و آماده‌ی سئو",
       metaDescription:
-        "طراحی سایت شرکتی اختصاصی و کدنویسی‌شده: پیشنهاد روشن، صفحه‌های خدمات و درباره ما، فرم‌هایی که مستقیم به ایمیل یا CRM می‌رسند، سریع روی موبایل و آماده‌ی سئو. فارسی، انگلیسی یا دوزبانه.",
+        "طراحی سایت شرکتی و سازمانی اختصاصی و کدنویسی‌شده: پیشنهاد روشن، صفحه‌های خدمات و درباره ما، فرم‌هایی که مستقیم به ایمیل یا CRM می‌رسند، سریع روی موبایل و آماده‌ی سئو. فارسی، انگلیسی یا دوزبانه.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **شرکتی**",
       definition:
@@ -537,8 +551,10 @@ export const spokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
+    projects: ["asa-study"],
+    guides: ["website-design-cost"],
     en: {
-      metaTitle: "Bilingual website design: Persian and English",
+      metaTitle: "Bilingual website: Persian and English, RTL and LTR",
       metaDescription:
         "Persian–English websites with separate URLs per language, full right-to-left layout, correct hreflang for search engines and content your team edits in both languages. Examples: ASA-Study and this site.",
       eyebrow: "Website design",
@@ -579,9 +595,9 @@ export const spokes: Spoke[] = [
       ],
     },
     fa: {
-      metaTitle: "طراحی سایت دوزبانه فارسی و انگلیسی",
+      metaTitle: "طراحی سایت دوزبانه فارسی و انگلیسی (RTL و LTR)",
       metaDescription:
-        "طراحی سایت دوزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌به‌چپ واقعی، برچسب‌های زبان درست برای گوگل و ویرایش محتوا در هر دو زبان. نمونه‌ها: ASA-Study و همین سایت.",
+        "طراحی سایت دوزبانه و چندزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌به‌چپ واقعی، برچسب‌های زبان درست برای گوگل و ویرایش محتوا در هر دو زبان. نمونه‌ها: ASA-Study و همین سایت.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **دوزبانه**",
       definition:
@@ -629,6 +645,8 @@ export const spokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
+    projects: ["dane-news"],
+    guides: ["website-design-cost"],
     en: {
       metaTitle: "Website redesign and migration without losing SEO",
       metaDescription:
@@ -723,6 +741,8 @@ export const spokes: Spoke[] = [
     updated: "2026-10-27",
     author: "Amirhossein Bazdar|امیرحسین بازدار",
     needs: [30, 33],
+    projects: ["mojasame-saidi","school-builders"],
+    guides: [],
     en: {
       metaTitle: "Website design cost in 2026: what drives the price",
       metaDescription: "What a website costs and why: the factors that move the price, what each level includes, running costs after launch, and how to get a fixed quote.",
@@ -810,6 +830,8 @@ export const spokes: Spoke[] = [
     updated: null,
     author: null,
     needs: [19, 30, 31, 33],
+    projects: ["ai-real-estate-os"],
+    guides: [],
     en: {
       metaTitle: "AI agent development cost: build fee and running costs",
       metaDescription: "What an AI agent costs: the one-time build, the monthly running costs for models and hosting, what changes the price, and how to get a fixed quote.",
@@ -875,6 +897,9 @@ export const guidesHub = {
     sub: "Straight answers to the questions we hear most before a project starts.",
     read: "Read the guide",
     deeper: "Go deeper",
+    relatedWork: "Related work",
+    relatedPages: "Related pages",
+    all: "Guides",
     lastUpdated: "Last updated",
     by: "By",
     draftBanner: "Draft: not published, not indexed, linked from nowhere. Questions still open:",
@@ -888,6 +913,9 @@ export const guidesHub = {
     sub: "جواب روشن به سؤال‌هایی که قبل از شروع پروژه بیشتر از همه می‌شنویم.",
     read: "خواندن راهنما",
     deeper: "بیشتر بدانید",
+    relatedWork: "نمونه‌کارهای مرتبط",
+    relatedPages: "صفحه‌های مرتبط",
+    all: "راهنماها",
     lastUpdated: "آخرین به‌روزرسانی",
     by: "نویسنده",
     draftBanner: "پیش‌نویس: منتشر نشده، ایندکس نمی‌شود و از هیچ جا لینک ندارد. پرسش‌های باز:",

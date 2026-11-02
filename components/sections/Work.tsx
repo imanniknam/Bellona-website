@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { coverAltText } from "@/content/work-alt";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { MiniCube, VoxelArt } from "../voxel/Voxel";
@@ -35,11 +36,14 @@ export function ProjectCard({
   d,
   headingLevel = "h3",
   variant = "full",
+  priority = false,
 }: {
   project: Project;
   d: Dict;
   headingLevel?: "h2" | "h3";
   variant?: "compact" | "full";
+  /** The first card of a page is likely the LCP image. */
+  priority?: boolean;
 }) {
   const copy = project[d.locale];
   const tone = toneCls[project.tone];
@@ -54,8 +58,9 @@ export function ProjectCard({
       {project.cover ? (
         <Image
           src={project.cover}
-          alt={d.work.coverAlt.replace("{title}", copy.title)}
+          alt={coverAltText(project, d)}
           fill
+          priority={priority}
           sizes={compact ? "(min-width: 1024px) 400px, (min-width: 768px) 33vw, 100vw" : "(min-width: 1024px) 620px, 100vw"}
           className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
         />

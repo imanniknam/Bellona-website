@@ -18,10 +18,9 @@ function InstagramIcon() {
 
 export function Footer({ d }: { d: Dict }) {
   const { common, locale } = d;
-  const spokeLinks = [...publishedSpokes("service"), ...publishedSpokes("guide")].map((s) => ({
-    href: spokePath(s),
-    label: s[locale].h1.replace(/\*\*/g, ""),
-  }));
+  const toLink = (s: ReturnType<typeof publishedSpokes>[number]) => ({ href: spokePath(s), label: s[locale].h1.replace(/\*\*/g, "") });
+  const spokeLinks = publishedSpokes("service").map(toLink);
+  const guideLinks = publishedSpokes("guide").map(toLink);
   return (
     <footer className="on-dark bg-ink text-paper">
       <div className="wrap flex flex-col gap-10 pb-6 pt-10">
@@ -72,6 +71,23 @@ export function Footer({ d }: { d: Dict }) {
             </p>
             <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
               {spokeLinks.map((s) => (
+                <li key={s.href}>
+                  <Link href={localePath(locale, s.href)} className="text-soft-dark hover:text-orange">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        {/* Every guide, with its title as the link text (SEO-GUIDELINE B8). */}
+        {guideLinks.length > 0 && (
+          <nav aria-labelledby="footer-guides" className="flex flex-wrap items-baseline gap-x-7 gap-y-3">
+            <p id="footer-guides" className="t-eyebrow text-orange-on-dark">
+              {guidesHub[locale].all}
+            </p>
+            <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
+              {guideLinks.map((s) => (
                 <li key={s.href}>
                   <Link href={localePath(locale, s.href)} className="text-soft-dark hover:text-orange">
                     {s.label}

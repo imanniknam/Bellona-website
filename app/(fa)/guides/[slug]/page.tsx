@@ -19,7 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = findSpoke("guide", slug);
   if (!s) return {};
   const c = s[locale];
-  return pageMetadata({ locale, path: spokePath(s), title: c.metaTitle, description: c.metaDescription, noindex: s.status !== "published" });
+  return pageMetadata({
+    locale,
+    path: spokePath(s),
+    title: c.metaTitle,
+    description: c.metaDescription,
+    noindex: s.status !== "published",
+    article: { publishedTime: s.updated ?? undefined, modifiedTime: s.updated ?? undefined, author: s.author?.split("|").at(-1) ?? undefined },
+  });
 }
 
 export default async function Page({ params }: Props) {

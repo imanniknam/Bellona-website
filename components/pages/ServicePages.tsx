@@ -4,7 +4,7 @@ import type { Dict, Locale, Pillar, PillarId } from "@/content/types";
 import { projectsForPillar } from "@/content/work";
 import { stepNum } from "@/lib/format";
 import { getDict } from "@/lib/i18n";
-import { BreadcrumbLd } from "../JsonLd";
+import { Breadcrumbs } from "../Breadcrumbs";
 import { Rich } from "../Rich";
 import { Contact } from "../sections/Contact";
 import { FaqList } from "../sections/Faq";
@@ -23,6 +23,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
   const s = d.pages.services;
   return (
     <>
+      <Breadcrumbs d={d} trail={[{ name: d.meta.services.title, path: "/services" }]} />
       <PageHero eyebrow={s.eyebrow} title={s.h1} sub={s.sub} />
       <section aria-label={d.meta.services.title} className="wrap pb-24">
         <ul className="flex flex-col gap-4">
@@ -64,7 +65,6 @@ export function ServicesPage({ locale }: { locale: Locale }) {
       </section>
       <Flow d={d} />
       <Contact d={d} />
-      <BreadcrumbLd d={d} trail={[{ name: d.meta.services.title, path: "/services" }]} />
     </>
   );
 }
@@ -83,6 +83,12 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
 
   return (
     <>
+      <Breadcrumbs
+        d={d}
+        trail={[
+          { name: d.meta.services.title, path: "/services" },
+          { name: p.title, path: `/services/${p.slug}` },
+        ]} />
       <PageHero eyebrow={`${p.num} · ${p.stage} · ${p.title}`} title={p.page.h1} tagline={p.page.tagline} sub={p.page.sub}>
         <div className="flex flex-wrap gap-3 pt-2">
           <LLink locale={locale} href={`/contact?need=${p.id}`} className="btn btn-primary" track={`pillar_${p.id}_start`}>
@@ -218,13 +224,6 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
 
       <Contact d={d} defaultNeed={p.id} title={labels.ctaTitle} sub={labels.ctaSub} />
       <ServiceLd d={d} p={p} />
-      <BreadcrumbLd
-        d={d}
-        trail={[
-          { name: d.meta.services.title, path: "/services" },
-          { name: p.title, path: `/services/${p.slug}` },
-        ]}
-      />
     </>
   );
 }

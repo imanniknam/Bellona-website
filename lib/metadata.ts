@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/content/types";
+import type { Locale, ProjectType } from "@/content/types";
 import { getDict, localePath } from "./i18n";
 import { siteUrl } from "./site";
 
@@ -15,6 +15,7 @@ export function pageMetadata({
   description,
   noindex = false,
   absoluteTitle = false,
+  article,
 }: {
   locale: Locale;
   path: string;
@@ -22,13 +23,16 @@ export function pageMetadata({
   description: string;
   noindex?: boolean;
   absoluteTitle?: boolean;
+  /** Guides are articles: og:type "article" with published/modified time and author (SEO-GUIDELINE B4). */
+  article?: { publishedTime?: string; modifiedTime?: string; author?: string };
 }): Metadata {
   const d = getDict(locale);
   title = d.seo[path]?.title ?? title;
   description = d.seo[path]?.description ?? description;
   const url = localePath(locale, path);
   const ogTitle = absoluteTitle ? title : `${title} · ${d.meta.siteName}`;
-  const og = `/api/og?locale=${locale}&title=${encodeURIComponent(absoluteTitle ? "" : title)}`;
+  // The home page (absolute title) gets the brand as its default OG title, never an empty one.
+  const og = `/api/og?locale=${locale}&title=${encodeURIComponent(absoluteTitle ? "Bellona Agency" : title)}`;
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -41,7 +45,14 @@ export function pageMetadata({
       },
     },
     openGraph: {
-      type: "website",
+      ...(article
+        ? {
+            type: "article" as const,
+            ...(article.publishedTime ? { publishedTime: article.publishedTime } : {}),
+            ...(article.modifiedTime ? { modifiedTime: article.modifiedTime } : {}),
+            ...(article.author ? { authors: [article.author] } : {}),
+          }
+        : { type: "website" as const }),
       url,
       siteName: d.meta.siteName,
       title: ogTitle,
@@ -59,10 +70,18 @@ export function pageMetadata({
  * Case-study <title>: "Konjed: Education, Gamified learning" / «کنجد؛ آموزش، یادگیری گیمیفای‌شده».
  * Long ones keep only the most specific sector part, so the full title stays around 60 characters.
  */
-export function caseStudyTitle(locale: Locale, title: string, sector: string, website = false): string {
+export function caseStudyTitle(locale: Locale, title: string, sector: string, type: ProjectType = "website"): string {
   const parts = sector.split(" · ");
-  // Persian website projects lead with «طراحی سایت» (the main search term, docs/seo keyword C1).
-  const name = locale === "fa" && website ? `طراحی سایت ${title}` : title;
+  // Persian titles lead with the project's kind (SEO-GUIDELINE B6): websites with «طراحی سایت» (the main search
+  // term), platforms with «پلتفرم»; automation systems and apps keep their own name.
+  const name =
+    locale !== "fa"
+      ? title
+      : type === "website"
+        ? `طراحی سایت ${title}`
+        : type === "product" && !/^(پلتفرم|سامانه|پایگاه)/.test(title)
+          ? `پلتفرم ${title}`
+          : title;
   const join = (s: string) => (locale === "fa" ? `${name}؛ ${s}` : `${name}: ${s}`);
   const full = join(parts.join(locale === "fa" ? "، " : ", "));
   if (full.length <= 50) return full;
