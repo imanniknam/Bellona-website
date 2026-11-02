@@ -5,7 +5,6 @@ import { projects } from "./work";
 // Figures come from content/facts.ts (project count from content/work.ts): docs/seo G-06.
 const n = (v: number) => fmt.n(v, "en");
 const sprint = fmt.span(facts.timelines.automationSprintWeeks, "en");
-const complexAgents = fmt.span(facts.timelines.complexAgentWeeks, "en");
 const shipped = n(projects.filter((p) => p.status === "published").length);
 const workflows = n(facts.projects.realEstate.n8nWorkflows);
 
