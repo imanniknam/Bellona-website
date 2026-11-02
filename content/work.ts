@@ -157,7 +157,7 @@ export const projects: Project[] = [
         "Programmes for schools and events such as Sharif Cup",
         "Student accounts with progress tracking",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "کدچی",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
       summary: "پلتفرمی که برنامه‌نویسی و هوش مصنوعی را با بازی به دانش‌آموزان یاد می‌دهد؛ با مسیرهای آموزشی، گیم‌پلی، کوییز و اتاق فرار.",
       challenge: "کدچی پایتون، داده، هوش مصنوعی و امنیت سایبری را به دانش‌آموزان آموزش می‌دهد. یادگیری باید حس بازی می‌داد، با سطح‌های روشن و پیشرفتی که دیده شود.",
       built: ["مسیرهای یادگیری گیمیفای‌شده (استارکمپ) با دوره‌های سطح‌بندی‌شده", "بخش‌های گیم‌پلی، کوییز و اتاق فرار", "برنامه‌هایی برای مدارس و رویدادهایی مثل شریف کاپ", "حساب کاربری دانش‌آموز با پیگیری پیشرفت"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -194,7 +194,7 @@ export const projects: Project[] = [
         "Centralised copy and separately optimised desktop and mobile media",
         "Device-aware effects and self-hosted fonts for reliable performance in Iran",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -209,7 +209,7 @@ export const projects: Project[] = [
         "محتوای متمرکز و تصاویر بهینه‌ی جدا برای دسکتاپ و موبایل",
         "افکت‌های سازگار با توان دستگاه و فونت‌های self-host برای پایداری در ایران",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -236,7 +236,7 @@ export const projects: Project[] = [
         "Missions, points and achievements that reward progress",
         "A skill school and a showcase of learners' projects",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "کنجد",
@@ -251,7 +251,7 @@ export const projects: Project[] = [
         "مأموریت، امتیاز و دستاورد برای پاداش دادن به پیشرفت",
         "مدرسه‌ی مهارت و ویترین پروژه‌های مهارت‌آموزها",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -277,7 +277,7 @@ export const projects: Project[] = [
         "A request-to-use-the-space call to action throughout",
         "A magazine section",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "میکروشمیم",
@@ -286,7 +286,7 @@ export const projects: Project[] = [
       summary: "سایت میکروکارخانه نوآوری شمیم: فضایی برای دختران و زنان جوان با مدرسه‌ی مهارت، فضای کار اشتراکی، استودیو تولید محتوا و رویدادها.",
       challenge: "میکروشمیم یادگیری، کار اشتراکی و تولید محتوا را زیر یک سقف آورده است. سایت باید همه‌ی فضاها را روشن توضیح می‌داد و همچنان جسور و جوان می‌ماند.",
       built: ["طراحی هنری بازیگوش با حال‌وهوای کلاژ", "صفحه‌های مدرسه‌ی مهارت، فضای کار اشتراکی، استودیو محتوا و رویدادها", "دعوت به درخواست استفاده از فضا در سراسر سایت", "بخش مجله"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -312,7 +312,7 @@ export const projects: Project[] = [
         "An independent admin for products, inventory, pricing and orders",
         "A Cloudflare D1 data layer with Drizzle ORM and secure deployment tooling",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -327,7 +327,7 @@ export const projects: Project[] = [
         "پنل مستقل مدیریت محصول، موجودی، قیمت و سفارش‌ها",
         "لایه‌ی داده‌ی Cloudflare D1 با Drizzle ORM و ابزار استقرار امن",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -408,7 +408,7 @@ export const projects: Project[] = [
         "Gallery and archive pages",
         "Product search and shopping cart",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "عطر نیرا",
@@ -417,7 +417,7 @@ export const projects: Project[] = [
       summary: "خانه‌ی آنلاین رایحه‌های نیرا: عطرهای اورجینال، مجموعه‌ی منتخب و عطرهای اختصاصی که برای شرکت‌ها طراحی می‌شود.",
       challenge: "نیرا عطر اورجینال می‌فروشد و برای برندها عطر اختصاصی می‌سازد. سایت باید هر دو را با حس آرام و لوکس یک خانه‌ی عطر، به فارسی، نشان می‌داد.",
       built: ["ویترین فروشگاهی با محوریت برند و مجموعه‌ی نیرا", "بخش اختصاصی ساخت عطر سازمانی", "صفحه‌های گالری و آرشیو", "جست‌وجوی محصول و سبد خرید"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -442,7 +442,7 @@ export const projects: Project[] = [
         "Centralised content so non-technical staff can update copy",
         "Accessible motion, careful RTL details and responsive menus",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -457,7 +457,7 @@ export const projects: Project[] = [
         "محتوای متمرکز تا تیم غیرفنی متن‌ها را خودش ویرایش کند",
         "انیمیشن دسترس‌پذیر، جزئیات دقیق RTL و منوی واکنش‌گرا",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -483,7 +483,7 @@ export const projects: Project[] = [
         "A scalable design system shared by the venture brands",
         "Responsive layouts across every section",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -498,7 +498,7 @@ export const projects: Project[] = [
         "سیستم طراحی مقیاس‌پذیر برای چند برند زیرمجموعه",
         "چیدمان واکنش‌گرا در همه‌ی بخش‌ها",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -525,7 +525,7 @@ export const projects: Project[] = [
         "Data-driven university profiles",
         "A CMS-ready structure: each university is its own localised document",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -540,7 +540,7 @@ export const projects: Project[] = [
         "پروفایل داده‌محور برای هر دانشگاه",
         "ساختار آماده‌ی CMS؛ هر دانشگاه یک سند مستقل و دوزبانه",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -569,7 +569,7 @@ export const projects: Project[] = [
         "REST API sync between the mobile apps and the event platform",
         "One codebase for iOS and Android",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "پلتفرم ورزشی Prowem",
@@ -583,7 +583,7 @@ export const projects: Project[] = [
         "همگام‌سازی داده با REST API میان اپ موبایل و پلتفرم رویداد",
         "یک کد برای iOS و اندروید",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -611,7 +611,7 @@ export const projects: Project[] = [
         "Validated forms through checkout",
         "A production-ready data layer with Prisma and PostgreSQL",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
     fa: {
       title: "فروشگاه مجسمه سعیدی",
@@ -625,7 +625,7 @@ export const projects: Project[] = [
         "فرم‌های اعتبارسنجی‌شده در مسیر خرید",
         "لایه‌ی داده‌ی آماده‌ی تولید با Prisma و PostgreSQL",
       ],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
     },
   },
   {
@@ -647,7 +647,7 @@ export const projects: Project[] = [
       summary: "A guided marketplace for scientific, laboratory, robotics and educational equipment.",
       challenge: "People buying lab, robotics or classroom equipment often don't know which product fits their use. The store had to guide them, not just list items.",
       built: ["Category-led discovery with featured products", "Use-case guidance for each category", "A consultation-first path for buyers who need help choosing"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -657,7 +657,7 @@ export const projects: Project[] = [
       summary: "فروشگاه هدایت‌شده برای تجهیزات علمی، آزمایشگاهی، رباتیک و آموزشی.",
       challenge: "خریدار تجهیزات آزمایشگاه، رباتیک یا کلاس معمولاً نمی‌داند کدام محصول به کارش می‌آید. فروشگاه باید راهنمایی‌اش می‌کرد، نه فقط فهرست نشان بدهد.",
       built: ["کشف محصول بر پایه‌ی دسته‌بندی و محصولات منتخب", "راهنمای کاربرد برای هر دسته", "مسیر مشاوره‌محور برای خریدارانی که در انتخاب کمک می‌خواهند"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },
@@ -679,7 +679,7 @@ export const projects: Project[] = [
       summary: "A national portal for school-building philanthropy: recent projects, provincial news and ways for donors to take part.",
       challenge: "A national charity needed one public place for its recent projects, news from every province and clear ways for donors to get involved.",
       built: ["Information architecture around news, projects and provinces", "Clear participation paths for donors", "Responsive Persian design"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.en,
     },
     fa: {
@@ -689,7 +689,7 @@ export const projects: Project[] = [
       summary: "پرتال ملی برای معرفی فعالیت‌های مدرسه‌سازی خیرین، پروژه‌های اخیر، اخبار استان‌ها و مشارکت خیرین.",
       challenge: "یک خیریه‌ی ملی جایی عمومی می‌خواست برای پروژه‌های اخیر، خبرهای همه‌ی استان‌ها و راه‌های روشن مشارکت خیرین.",
       built: ["معماری اطلاعات بر پایه‌ی خبر، پروژه و استان", "مسیرهای روشن مشارکت برای خیرین", "طراحی فارسی واکنش‌گرا"],
-      results: [],
+      results: [], // TODO(owner): a measurable result and a client quote for this project (SEO-GUIDELINE D10)
       partner: SHAMIM.fa,
     },
   },

@@ -8,7 +8,11 @@ import { Breadcrumbs } from "../Breadcrumbs";
 import { Rich } from "../Rich";
 import { Contact } from "../sections/Contact";
 import { FaqList } from "../sections/Faq";
+import { more as pillarMore } from "@/content/more/pillars";
+import { more as pageMore } from "@/content/more/pages";
 import { FaqLd, ServiceLd } from "../JsonLd";
+import { Answers } from "../sections/Answers";
+import { faqOf } from "@/lib/faq";
 import { Flow } from "../sections/Flow";
 import { Monday } from "../sections/Monday";
 import { PillarCard, Stats } from "../sections/Pillars";
@@ -63,6 +67,12 @@ export function ServicesPage({ locale }: { locale: Locale }) {
           ))}
         </ul>
       </section>
+      {(pageMore["/services"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/services"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/services"][locale])} />
+        </div>
+      )}
       <Flow d={d} />
       <Contact d={d} />
     </>
@@ -190,6 +200,14 @@ export function PillarPage({ locale, slug }: { locale: Locale; slug: string }) {
       </section>
 
       {isAi && <Flow d={d} />}
+
+      {/* The in-depth questions for this service (content/more/pillars.ts), answer-first. */}
+      {(pillarMore[p.id]?.[locale] ?? []).length > 0 && (
+        <>
+          <Answers answers={pillarMore[p.id][locale]} locale={locale} />
+          <FaqLd items={faqOf(pillarMore[p.id][locale])} />
+        </>
+      )}
 
       {/* Only questions with real answers are listed; a pillar with none shows no FAQ block. */}
       {p.page.faq.length > 0 && (

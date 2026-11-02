@@ -11,14 +11,41 @@ import { LLink } from "../ui";
  * Answers without a confirmed fact (`a: null`) are left out of published pages. In draft previews they
  * show as a note naming the open question instead, never as a placeholder.
  */
-export function Answers({ answers, locale, draft, needsLabel }: { answers: Answer[]; locale: Locale; draft: boolean; needsLabel: string }) {
+export function Answers({
+  answers,
+  locale,
+  draft = false,
+  needsLabel = "",
+  tocLabel,
+}: {
+  answers: Answer[];
+  locale: Locale;
+  draft?: boolean;
+  needsLabel?: string;
+  /** When set, a table of contents with anchor links to every question is shown first (long guides). */
+  tocLabel?: string;
+}) {
   const shown = answers.filter((x) => x.a !== null || draft);
   return (
     <div className="wrap flex max-w-4xl flex-col pb-24">
+      {tocLabel && shown.length > 3 && (
+        <nav aria-label={tocLabel} className="mb-6 rounded-2xl bg-surface p-6">
+          <p className="t-eyebrow pb-3 text-orange-text">{tocLabel}</p>
+          <ol className="flex list-decimal flex-col gap-1.5 ps-6 marker:text-orange-text rtl:list-[persian]">
+            {shown.map((x, i) => (
+              <li key={x.q}>
+                <a href={`#q-${i + 1}`} className="underline decoration-line underline-offset-4 hover:text-orange-text hover:decoration-orange">
+                  {x.q}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
       {shown.map((x, i) => {
         const id = `q-${i + 1}`;
         return (
-          <section key={x.q} aria-labelledby={id} className="flex flex-col gap-5 border-t border-line py-10">
+          <section key={x.q} aria-labelledby={id} className="flex scroll-mt-24 flex-col gap-5 border-t border-line py-10">
             <h2 id={id} className="t-h3">
               {x.q}
             </h2>

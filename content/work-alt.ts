@@ -45,7 +45,7 @@ export const workAlt: Record<string, { gallery: L[] }> = {
   },
   microshamim: {
     gallery: [
-      l("3D floor plan of the Microshamim space, shown before visiting", "ماکت سه‌بعدی پلان فضای میکروشمیم برای دیدن محل پیش از مراجعه"),
+      l("Floor-plan model of the Microshamim space, shown before visiting", "ماکت پلان فضای میکروشمیم برای دیدن محل پیش از مراجعه"),
       l("Skills you can learn at Microshamim, shown as coloured tags", "مهارت‌هایی که در میکروشمیم یاد می‌گیرید، به‌شکل برچسب‌های رنگی"),
       l("Microshamim home page on a phone", "صفحه‌ی اصلی میکروشمیم روی موبایل"),
     ],

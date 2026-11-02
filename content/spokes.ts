@@ -1,4 +1,5 @@
 import { facts, fmt } from "./facts";
+import { more as spokeExtra } from "./more/spokes";
 import type { PillarId } from "./types";
 
 /**
@@ -87,7 +88,7 @@ const processFa = [
   "بهبود مستمر: عملکرد را پایش، اصلاح و با رشد کسب‌وکار گسترش می‌دهیم.",
 ];
 
-export const spokes: Spoke[] = [
+const rawSpokes: Spoke[] = [
   // --------------------------------------------------------------------------------------- AI agents (C6)
   {
     kind: "service",
@@ -278,9 +279,9 @@ export const spokes: Spoke[] = [
       metaTitle: "طراحی سایت با نکست جی اس (Next.js)؛ سریع و سئومحور",
       metaDescription: "طراحی سایت با نکست جی اس (Next.js): رندر سمت سرور برای دیده شدن در گوگل، سرعت بالا روی موبایل و پشتیبانی فارسی و انگلیسی با راست‌به‌چپ اصولی.",
       eyebrow: "طراحی سایت",
-      h1: "طراحی سایت **با Next.js**",
+      h1: "طراحی سایت با **نکست جی اس (Next.js)**",
       definition:
-        "Next.js فریم‌ورکی بر پایه‌ی React برای ساخت سایت و وب‌اپلیکیشن است. صفحه‌ها می‌توانند روی سرور رندر شوند، یعنی متن کامل در همان پاسخ اول می‌رسد و موتورهای جست‌وجو و دستیارهای هوش مصنوعی بدون اجرای جاوااسکریپت آن را می‌خوانند. مسیرها، تصاویر و چندزبانه بودن را هم مدیریت می‌کند.",
+        "نکست جی اس (Next.js) فریم‌ورکی بر پایه‌ی React برای ساخت سایت و وب‌اپلیکیشن است. صفحه‌ها می‌توانند روی سرور رندر شوند، یعنی متن کامل در همان پاسخ اول می‌رسد و موتورهای جست‌وجو و دستیارهای هوش مصنوعی بدون اجرای جاوااسکریپت آن را می‌خوانند. مسیرها، تصاویر و چندزبانه بودن را هم مدیریت می‌کند.",
       answers: [
         {
           q: "چرا سایت را با Next.js بسازیم؟",
@@ -887,6 +888,17 @@ export const spokes: Spoke[] = [
   },
 ];
 
+/**
+ * The published list. Extra questions (content/more/spokes.ts, keyed by slug) are inserted before each page's last
+ * answer, which is always the "how do I get a price" call to action, so that stays at the end.
+ */
+export const spokes: Spoke[] = rawSpokes.map((s) => {
+  const extra = spokeExtra[s.slug];
+  if (!extra) return s;
+  const merge = (c: SpokeCopy, add: Answer[]): SpokeCopy => ({ ...c, answers: [...c.answers.slice(0, -1), ...add, ...c.answers.slice(-1)] });
+  return { ...s, en: merge(s.en, extra.en), fa: merge(s.fa, extra.fa) };
+});
+
 /** Copy for the guides hub (/guides). The hub only exists while at least one guide is visible. */
 export const guidesHub = {
   en: {
@@ -899,6 +911,7 @@ export const guidesHub = {
     deeper: "Go deeper",
     relatedWork: "Related work",
     relatedPages: "Related pages",
+    toc: "In this guide",
     all: "Guides",
     lastUpdated: "Last updated",
     by: "By",
@@ -915,6 +928,7 @@ export const guidesHub = {
     deeper: "بیشتر بدانید",
     relatedWork: "نمونه‌کارهای مرتبط",
     relatedPages: "صفحه‌های مرتبط",
+    toc: "در این راهنما",
     all: "راهنماها",
     lastUpdated: "آخرین به‌روزرسانی",
     by: "نویسنده",

@@ -193,7 +193,7 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
           </p>
         )}
       </PageHero>
-      <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={h.needsAnswer} />
+      <Answers answers={c.answers} locale={locale} draft={draft} needsLabel={h.needsAnswer} tocLabel={h.toc} />
       <Related s={s} locale={locale} pillarSlug={s.need === "ai" ? "ai-automation" : s.need === "growth" ? "marketing-growth" : "website-design"} />
       <Contact d={d} defaultNeed={s.need} />
       <FaqLd items={answerFaq(c.answers)} />

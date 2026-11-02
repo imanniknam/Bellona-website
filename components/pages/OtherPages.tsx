@@ -8,7 +8,12 @@ import { publishedSpokes, spokePath } from "@/lib/drafts";
 import { digits, stepNum } from "@/lib/format";
 import { getDict } from "@/lib/i18n";
 import { Breadcrumbs } from "../Breadcrumbs";
-import { AboutPageLd, CaseStudyLd, ContactPageLd } from "../JsonLd";
+import { AboutPageLd, CaseStudyLd, ContactPageLd, FaqLd } from "../JsonLd";
+import { Answers } from "../sections/Answers";
+import { faqOf } from "@/lib/faq";
+import { more as projectMore } from "@/content/more/projects";
+import { more as industryMore } from "@/content/more/industries";
+import { more as pageMore } from "@/content/more/pages";
 import { Rich } from "../Rich";
 import { Contact } from "../sections/Contact";
 import { Faq } from "../sections/Faq";
@@ -71,6 +76,12 @@ export function OffersPage({ locale }: { locale: Locale }) {
       <Offers d={d} headless />
       <Promises d={d} />
       <Start d={d} />
+      {(pageMore["/offers"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/offers"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/offers"][locale])} />
+        </div>
+      )}
       <Faq d={d} />
       <Contact d={d} />
     </>
@@ -85,6 +96,12 @@ export function IndustriesPage({ locale }: { locale: Locale }) {
       <Breadcrumbs d={d} trail={[{ name: d.meta.industries.title, path: "/industries" }]} />
       <PageHero eyebrow={p.eyebrow} title={p.h1} sub={p.sub} />
       <Industries d={d} full />
+      {(pageMore["/industries"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/industries"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/industries"][locale])} />
+        </div>
+      )}
       <Contact d={d} />
     </>
   );
@@ -156,6 +173,13 @@ export function IndustryPage({ locale, id }: { locale: Locale; id: string }) {
         </div>
       </section>
 
+      {(industryMore[id]?.[locale] ?? []).length > 0 && (
+        <div className="pt-16">
+          <Answers answers={industryMore[id][locale]} locale={locale} />
+          <FaqLd items={faqOf(industryMore[id][locale])} />
+        </div>
+      )}
+
       <nav aria-labelledby="other-industries" className="wrap flex flex-col gap-6 py-16">
         <h2 id="other-industries" className="t-eyebrow text-orange-text">
           {industries.others}
@@ -217,6 +241,12 @@ export function WorkPage({ locale }: { locale: Locale }) {
         </WorkFilter>
         <p className="text-lg text-muted">{p.emptyNote}</p>
       </section>
+      {(pageMore["/work"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/work"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/work"][locale])} />
+        </div>
+      )}
       <Contact d={d} />
     </>
   );
@@ -337,6 +367,11 @@ export function CaseStudyPage({ locale, slug }: { locale: Locale; slug: string }
           )}
         </div>
       </section>
+      {(projectMore[project.slug]?.[locale] ?? []).length > 0 && (
+        <section className="section pt-0">
+          <Answers answers={projectMore[project.slug][locale]} locale={locale} />
+        </section>
+      )}
       {project.gallery && project.gallery.length > 0 && (
         <section aria-labelledby="gallery-title" className="section bg-surface">
           <div className="wrap flex flex-col gap-10">
@@ -437,6 +472,12 @@ export function AboutPage({ locale }: { locale: Locale }) {
       </section>
       <Team d={d} />
       <Why d={d} withCompare={false} />
+      {(pageMore["/about"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/about"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/about"][locale])} />
+        </div>
+      )}
       <Contact d={d} />
       <AboutPageLd d={d} />
     </>
@@ -459,6 +500,12 @@ export function ContactPage({ locale }: { locale: Locale }) {
         </div>
         <Start d={d} headingLevel="h3" />
       </section>
+      {(pageMore["/contact"]?.[locale] ?? []).length > 0 && (
+        <div className="pt-8">
+          <Answers answers={pageMore["/contact"][locale]} locale={locale} />
+          <FaqLd items={faqOf(pageMore["/contact"][locale])} />
+        </div>
+      )}
     </>
   );
 }
