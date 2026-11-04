@@ -24,7 +24,7 @@
     { "path": "/guides/lead-follow-up-automation-n8n", "cluster": "CRM", "fa": "اتوماسیون پیگیری لید", "en": "lead follow-up automation", "related": ["CRM املاک"] },
     { "path": "/services/ai-automation/chatbot", "cluster": "Chatbot", "fa": "چت‌بات هوش مصنوعی", "en": "AI chatbot", "related": ["پاسخ خودکار مشتری"] },
     { "path": "/services/seo", "cluster": "SEO", "fa": "سئو سایت", "en": "SEO services", "related": ["سئو تکنیکال", "سئوی سایت Next.js", "خدمات سئو", "سئوی سایت فروشگاهی"] },
-    { "path": "/guides/nextjs-seo-checklist", "cluster": "SEO", "fa": "سئو Next.js", "en": "Next.js SEO", "related": ["رندر سمت سرور و سئو"] },
+    { "path": "/guides/nextjs-seo-checklist", "cluster": "SEO", "fa": "سئوی Next.js", "en": "Next.js SEO", "related": ["رندر سمت سرور و سئو"] },
     { "path": "/guides/ai-search-readiness", "cluster": "AI search", "fa": "دیده شدن در ChatGPT", "en": "AI search", "related": ["سئو برای هوش مصنوعی"] },
     { "path": "/services/marketing-growth", "cluster": "Growth", "fa": "جذب لید", "en": "lead generation", "related": ["تولید محتوا", "بازاریابی دیجیتال", "کمپین"] },
     { "path": "/services/full-stack-development", "cluster": "Product and apps", "fa": "طراحی وب‌اپ", "en": "web app development", "related": ["ساخت MVP", "طراحی داشبورد", "اپلیکیشن موبایل Flutter"] },

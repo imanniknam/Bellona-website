@@ -22,6 +22,7 @@ const strip = (s) => decode(s.replace(/<script[\s\S]*?<\/script>/g, " ").replace
 const norm = (s) =>
   s
     .toLowerCase()
+    .replace(/\u200cی(?=\s)/g, "") // ezafe written with a ZWNJ is the same word
     .replace(/[‌‏‎]/g, " ")
     .replace(/ي/g, "ی")
     .replace(/ك/g, "ک")
