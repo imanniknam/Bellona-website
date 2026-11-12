@@ -2,6 +2,7 @@
 
 import { appendFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import nodemailer from "nodemailer";
 import { type Lead, type LeadField, type LeadState, leadSchema } from "@/lib/lead";
 
 const MIN_FILL_MS = 2500;
@@ -13,7 +14,7 @@ const TIMEOUT_MS = 6000;
  * 1. Bots: a filled honeypot or a sub-2.5 s submit gets a fake success and is dropped.
  * 2. Validates with zod.
  * 3. POSTs JSON to LEAD_WEBHOOK_URL (our n8n / Make automation).
- * 4. Falls back to a Resend email if the webhook is missing or fails.
+ * 4. Falls back to an email (Gmail SMTP, then Resend) if the webhook is missing or fails.
  * 5. If every external route fails (e.g. international internet is cut), saves the lead on this server
  *    when LEAD_STORE_DIR is set, and tells the visitor it was saved but the reply may be slower.
  *    Without a store the visitor gets an error: we never report success for a lead we did not keep.
@@ -90,6 +91,51 @@ async function deliver(lead: Lead) {
     }
   }
 
+  const subject = `New lead: ${lead.name}${lead.company ? ` (${lead.company})` : ""} · ${lead.needs.join(", ")}`;
+  const text = () =>
+    [
+      `Name: ${lead.name}`,
+      `Email: ${lead.email}`,
+      `Company: ${lead.company || "-"}`,
+      `Needs: ${lead.needs.join(", ")}`,
+      `Offer: ${lead.offer || "-"}`,
+      `Engagement model: ${lead.model || "-"}`,
+      `Industry: ${lead.industry || "-"}`,
+      `Language: ${lead.locale}`,
+      `Page: ${lead.page || "-"}`,
+      "",
+      lead.message || "(no message)",
+      "",
+      problems.length ? `Note: sent by email fallback (${problems.join("; ")})` : "",
+    ].join("\n");
+
+  // Gmail SMTP with an app password. Sends from that account to LEAD_TO_EMAIL (default: the same account).
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+  if (gmailUser && gmailPass) {
+    try {
+      const transport = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: { user: gmailUser, pass: gmailPass.replace(/\s+/g, "") },
+        connectionTimeout: TIMEOUT_MS,
+        greetingTimeout: TIMEOUT_MS,
+        socketTimeout: TIMEOUT_MS,
+      });
+      await transport.sendMail({
+        from: `Bellona website <${gmailUser}>`,
+        to: (process.env.LEAD_TO_EMAIL || gmailUser).split(",").map((s) => s.trim()),
+        replyTo: lead.email,
+        subject,
+        text: text(),
+      });
+      return "gmail";
+    } catch (e) {
+      problems.push(`gmail error: ${(e as Error).message}`);
+    }
+  }
+
   const key = process.env.RESEND_API_KEY;
   const from = process.env.LEAD_FROM_EMAIL;
   const to = process.env.LEAD_TO_EMAIL;
@@ -102,22 +148,8 @@ async function deliver(lead: Lead) {
           from,
           to: to.split(",").map((s) => s.trim()),
           reply_to: lead.email,
-          subject: `New lead: ${lead.name}${lead.company ? ` (${lead.company})` : ""} · ${lead.needs.join(", ")}`,
-          text: [
-            `Name: ${lead.name}`,
-            `Email: ${lead.email}`,
-            `Company: ${lead.company || "-"}`,
-            `Needs: ${lead.needs.join(", ")}`,
-            `Offer: ${lead.offer || "-"}`,
-            `Engagement model: ${lead.model || "-"}`,
-            `Industry: ${lead.industry || "-"}`,
-            `Language: ${lead.locale}`,
-            `Page: ${lead.page || "-"}`,
-            "",
-            lead.message || "(no message)",
-            "",
-            problems.length ? `Note: sent by email fallback (${problems.join("; ")})` : "",
-          ].join("\n"),
+          subject,
+          text: text(),
         }),
         signal: AbortSignal.timeout(TIMEOUT_MS),
       });
@@ -128,13 +160,15 @@ async function deliver(lead: Lead) {
     }
   }
 
-  if (process.env.NODE_ENV !== "production" && !webhook && !key) {
+  if (process.env.NODE_ENV !== "production" && !webhook && !key && !gmailUser) {
     // Local development without credentials: log instead of failing.
     console.info("[lead] (dev, no transport configured)", payload);
     return "dev-log";
   }
 
-  throw new Error(problems.length ? problems.join("; ") : "No lead transport configured (LEAD_WEBHOOK_URL / RESEND_API_KEY)");
+  throw new Error(
+    problems.length ? problems.join("; ") : "No lead transport configured (LEAD_WEBHOOK_URL / GMAIL_USER / RESEND_API_KEY)",
+  );
 }
 
 /**
