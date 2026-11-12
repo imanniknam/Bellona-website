@@ -2,7 +2,9 @@
 
 import { appendFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { after } from "next/server";
 import nodemailer from "nodemailer";
+import { getDict } from "@/lib/i18n";
 import { type Lead, type LeadField, type LeadState, leadSchema } from "@/lib/lead";
 
 const MIN_FILL_MS = 2500;
@@ -18,6 +20,7 @@ const TIMEOUT_MS = 6000;
  * 5. If every external route fails (e.g. international internet is cut), saves the lead on this server
  *    when LEAD_STORE_DIR is set, and tells the visitor it was saved but the reply may be slower.
  *    Without a store the visitor gets an error: we never report success for a lead we did not keep.
+ * 6. After a delivered lead, emails the visitor a confirmation in their language (Gmail only, best effort).
  */
 export async function submitLead(prev: LeadState, form: FormData): Promise<LeadState> {
   const attempt = prev.attempt + 1;
@@ -60,6 +63,8 @@ export async function submitLead(prev: LeadState, form: FormData): Promise<LeadS
 
   try {
     await deliver(parsed.data);
+    // Runs after the response, so the visitor never waits on (or sees a failure of) the confirmation.
+    after(() => sendConfirmation(parsed.data).catch((e) => console.error("[lead] confirmation failed", e)));
     return { status: "success", attempt };
   } catch (err) {
     console.error("[lead] delivery failed", err);
@@ -110,22 +115,12 @@ async function deliver(lead: Lead) {
     ].join("\n");
 
   // Gmail SMTP with an app password. Sends from that account to LEAD_TO_EMAIL (default: the same account).
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
-  if (gmailUser && gmailPass) {
+  const gmail = gmailTransport();
+  if (gmail) {
     try {
-      const transport = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-        auth: { user: gmailUser, pass: gmailPass.replace(/\s+/g, "") },
-        connectionTimeout: TIMEOUT_MS,
-        greetingTimeout: TIMEOUT_MS,
-        socketTimeout: TIMEOUT_MS,
-      });
-      await transport.sendMail({
-        from: `Bellona website <${gmailUser}>`,
-        to: (process.env.LEAD_TO_EMAIL || gmailUser).split(",").map((s) => s.trim()),
+      await gmail.transport.sendMail({
+        from: `Bellona website <${gmail.user}>`,
+        to: (process.env.LEAD_TO_EMAIL || gmail.user).split(",").map((s) => s.trim()),
         replyTo: lead.email,
         subject,
         text: text(),
@@ -160,7 +155,7 @@ async function deliver(lead: Lead) {
     }
   }
 
-  if (process.env.NODE_ENV !== "production" && !webhook && !key && !gmailUser) {
+  if (process.env.NODE_ENV !== "production" && !webhook && !key && !gmail) {
     // Local development without credentials: log instead of failing.
     console.info("[lead] (dev, no transport configured)", payload);
     return "dev-log";
@@ -169,6 +164,71 @@ async function deliver(lead: Lead) {
   throw new Error(
     problems.length ? problems.join("; ") : "No lead transport configured (LEAD_WEBHOOK_URL / GMAIL_USER / RESEND_API_KEY)",
   );
+}
+
+function gmailTransport() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!user || !pass) return null;
+  const transport = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: { user, pass: pass.replace(/\s+/g, "") },
+    connectionTimeout: TIMEOUT_MS,
+    greetingTimeout: TIMEOUT_MS,
+    socketTimeout: TIMEOUT_MS,
+  });
+  return { user, transport };
+}
+
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/** "We got your request" email to the visitor, in their language. Replies go to the team inbox. */
+async function sendConfirmation(lead: Lead) {
+  const gmail = gmailTransport();
+  if (!gmail) return;
+  const form = getDict(lead.locale).contact.form;
+  const copy = form.confirmEmail;
+  const rtl = lead.locale === "fa";
+  const needsText = lead.needs.map((id) => form.needs.find((n) => n.id === id)?.label ?? id).join(rtl ? "، " : ", ");
+  const greeting = copy.greeting.replace("{name}", lead.name);
+
+  const text = [
+    greeting,
+    "",
+    copy.body,
+    "",
+    `${copy.summary}:`,
+    `${copy.needs}: ${needsText}`,
+    ...(lead.message ? [`${copy.message}: ${lead.message}`] : []),
+    "",
+    copy.reply,
+    "",
+    copy.signoff,
+    "bellonaagency.com",
+  ].join("\n");
+
+  const p = (s: string, extra = "") => `<p style="margin:0 0 16px;${extra}">${s}</p>`;
+  const html = `<div dir="${rtl ? "rtl" : "ltr"}" style="font-family:Tahoma,Arial,sans-serif;font-size:15px;line-height:1.8;text-align:${rtl ? "right" : "left"}">
+${p(escapeHtml(greeting))}
+${p(escapeHtml(copy.body))}
+${p(`<strong>${escapeHtml(copy.summary)}</strong><br>${escapeHtml(copy.needs)}: ${escapeHtml(needsText)}${
+    lead.message ? `<br>${escapeHtml(copy.message)}: ${escapeHtml(lead.message).replace(/\n/g, "<br>")}` : ""
+  }`)}
+${p(escapeHtml(copy.reply))}
+${p(`${escapeHtml(copy.signoff)}<br><a href="https://bellonaagency.com">bellonaagency.com</a>`)}
+</div>`;
+
+  await gmail.transport.sendMail({
+    from: `${rtl ? "بلونا" : "Bellona"} <${gmail.user}>`,
+    to: lead.email,
+    replyTo: process.env.LEAD_TO_EMAIL?.split(",")[0]?.trim() || gmail.user,
+    subject: copy.subject,
+    text,
+    html,
+  });
 }
 
 /**
