@@ -879,6 +879,16 @@ export const en: Dict = {
       privacy: "We only use this to reply to you.",
       privacyLink: "Privacy policy",
       honeypot: "Leave this field empty",
+      confirmEmail: {
+        subject: "We've received your request | Bellona",
+        greeting: "Hi {name},",
+        body: "Thanks for getting in touch with Bellona. Your form has been received and we'll be in touch soon.",
+        summary: "Your request",
+        needs: "Needs",
+        message: "Message",
+        reply: "Want to add something? Just reply to this email.",
+        signoff: "The Bellona team",
+      },
     },
   },
 

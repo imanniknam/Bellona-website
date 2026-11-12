@@ -84,10 +84,10 @@ npm run lint && npm run build
 
 - The form posts to a server action (`app/actions/contact.ts`). It validates with zod, drops bots (honeypot field + minimum fill time), then:
   1. POSTs JSON to `LEAD_WEBHOOK_URL` (your n8n / Make flow), with the optional `x-bellona-secret` header.
-  2. Falls back to an email via Resend (`RESEND_API_KEY`, `LEAD_FROM_EMAIL`, `LEAD_TO_EMAIL`) if the webhook is missing or fails.
+  2. Falls back to an email if the webhook is missing or fails: first Gmail SMTP (`GMAIL_USER`, `GMAIL_APP_PASSWORD`, sent to `LEAD_TO_EMAIL` or the same account), then Resend (`RESEND_API_KEY`, `LEAD_FROM_EMAIL`, `LEAD_TO_EMAIL`).
   3. If both fail (e.g. international internet is cut) and `LEAD_STORE_DIR` is set, it appends the lead to `<dir>/leads-YYYY-MM.jsonl` on this server and tells the visitor it was saved but the reply may be slower. Without a store the visitor sees an error: the form never reports success for a lead it did not keep. The directory must be persistent disk, and `/data/` is git-ignored.
   4. In development without any transport, it logs the lead to the server console instead.
-- Each external call times out after 6 s, so a hanging international route delays the visitor by at most ~12 s.
+- Each external call times out after 6 s, so a hanging international route delays the visitor by at most ~18 s.
 - **Webhook payload:**
   ```json
   {

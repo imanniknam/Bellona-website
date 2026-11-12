@@ -365,6 +365,17 @@ export interface Dict {
       privacy: string;
       privacyLink: string;
       honeypot: string;
+      /** Confirmation emailed to the visitor after their lead is delivered. `{name}` is replaced. */
+      confirmEmail: {
+        subject: string;
+        greeting: string;
+        body: string;
+        summary: string;
+        needs: string;
+        message: string;
+        reply: string;
+        signoff: string;
+      };
     };
   };
   pages: {
