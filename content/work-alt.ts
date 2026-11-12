@@ -28,42 +28,11 @@ export const workAlt: Record<string, { gallery: L[] }> = {
       l("Codechee home page on a phone", "صفحه‌ی اصلی کدچی روی موبایل"),
     ],
   },
-  yasin: {
-    gallery: [
-      l("Illustrated adventure map on the Yasin Skill School home page", "نقشه‌ی تصویرسازی‌شده‌ی ماجراجویی در صفحه‌ی اصلی مدرسه مهارت یاسین"),
-      l("Life-skills and future-skills cards on the Yasin Skill School website", "کارت‌های مهارت‌های زندگی و مهارت‌های آینده در سایت مدرسه مهارت یاسین"),
-      l("Specialized courses at Yasin Skill School: ICDL, graphic design, digital marketing, accounting and more", "دوره‌های تخصصی مدرسه مهارت یاسین: ICDL، طراحی گرافیک، دیجیتال مارکتینگ، حسابداری و بیشتر"),
-      l("Yasin Skill School home page on a phone", "صفحه‌ی اصلی مدرسه مهارت یاسین روی موبایل"),
-    ],
-  },
   konjed: {
     gallery: [
       l("Konjed Arcade: game cards for money management, problem solving and idea-to-execution", "کنجد آرکید: کارت‌های بازی مدیریت پول، حل مسئله و ایده تا اجرا"),
       l("The Konjed journey in three steps: play, complete a mission, earn points and achievements", "ماجراجویی در کنجد در سه قدم: بازی کن، مأموریت انجام بده، امتیاز و دستاورد بگیر"),
       l("Konjed home page on a phone", "صفحه‌ی اصلی کنجد روی موبایل"),
-    ],
-  },
-  microshamim: {
-    gallery: [
-      l("Floor-plan model of the Microshamim space, shown before visiting", "ماکت پلان فضای میکروشمیم برای دیدن محل پیش از مراجعه"),
-      l("Skills you can learn at Microshamim, shown as colored tags", "مهارت‌هایی که در میکروشمیم یاد می‌گیرید، به‌شکل برچسب‌های رنگی"),
-      l("Microshamim home page on a phone", "صفحه‌ی اصلی میکروشمیم روی موبایل"),
-    ],
-  },
-  sabzino: {
-    gallery: [
-      l("Sabzino product categories: natural drinks, international spices and vegetable-based products", "دسته‌بندی محصولات سبزینو: نوشیدنی‌های طبیعی، ادویه‌های بین‌المللی و محصولات بر پایه‌ی سبزی"),
-      l("Sabzino product catalog with natural verjuice and prepared aubergine products", "فهرست محصولات سبزینو با آبغوره‌ی طبیعی و محصولات بادمجان آماده"),
-      l("Brand story section of the Sabzino online store", "بخش داستان برند در فروشگاه اینترنتی سبزینو"),
-      l("Sabzino store home page on a phone", "صفحه‌ی اصلی فروشگاه سبزینو روی موبایل"),
-    ],
-  },
-  "dane-news": {
-    gallery: [
-      l("Dane Scientific News home page: breaking-news list and category sidebar", "صفحه‌ی اصلی پایگاه علمی خبری دانه: فهرست اخبار تازه و دسته‌بندی‌ها"),
-      l("Space and astronomy section on the Dane Scientific News home page", "بخش فضا و نجوم در صفحه‌ی اصلی پایگاه علمی خبری دانه"),
-      l("Technology news section of Dane Scientific News", "بخش اخبار فناوری در پایگاه علمی خبری دانه"),
-      l("Dane Scientific News on a phone", "پایگاه علمی خبری دانه روی موبایل"),
     ],
   },
   "nira-perfume": {
@@ -74,41 +43,11 @@ export const workAlt: Record<string, { gallery: L[] }> = {
       l("Nira Perfume home page on a phone", "صفحه‌ی اصلی عطر نیرا روی موبایل"),
     ],
   },
-  contemo: {
-    gallery: [
-      l("Your story on Contemo: from submitting a project to delivery, four steps", "داستان شما در کانتمو: از ثبت پروژه تا اجرا در چهار مرحله"),
-      l("Contemo content services: video, audio, text and image content production", "خدمات کانتمو: تولید محتوای ویدیویی، صوتی، متنی و تصویری"),
-      l("Contemo freelancers section: video editing, graphic design and copywriting", "بخش کارپذیرهای کانتمو: تدوین ویدیو، طراحی گرافیک و محتوانویسی"),
-      l("Contemo home page on a phone", "صفحه‌ی اصلی کانتمو روی موبایل"),
-    ],
-  },
-  "shamim-house": {
-    gallery: [
-      l("Shamim House ecosystem: a list of areas, from technology to education and venture building", "اکوسیستم خانه شمیم: فهرست حوزه‌ها از فناوری و آموزش تا سرمایه‌گذاری"),
-      l("Things built together in the Shamim House ecosystem", "چیزهایی که در اکوسیستم خانه شمیم با هم ساخته شده"),
-      l("Where do you fit in the Shamim House ecosystem? Paths for collaboration", "جای شما در اکوسیستم شمیم کجاست؟ مسیرهای همکاری"),
-      l("Shamim House home page on a phone", "صفحه‌ی اصلی خانه شمیم روی موبایل"),
-    ],
-  },
-  "asa-study": {
-    gallery: [
-      l("ASA-Study: a trusted partner for studying in Iran, with its services overview", "ASA-Study: همراه مطمئن برای تحصیل در ایران و مرور خدمات"),
-      l("ASA-Study admission journey: submit an application, evaluation, university selection, documents, admission", "مسیر پذیرش در ASA-Study: ارسال درخواست، ارزیابی پرونده، انتخاب دانشگاه، آماده‌سازی مدارک و دریافت پذیرش"),
-      l("ASA-Study university directory with medical universities and city filters", "فهرست دانشگاه‌های ASA-Study با دانشگاه‌های علوم پزشکی و فیلتر شهر"),
-      l("ASA-Study home page on a phone", "صفحه‌ی اصلی ASA-Study روی موبایل"),
-    ],
-  },
   prowem: {
     gallery: [l("Illustration of the Prowem sports app: live match scores and standings on two phone screens", "تصویرسازی اپلیکیشن ورزشی Prowem: نتیجه‌ی زنده‌ی بازی‌ها و جدول رده‌بندی روی دو صفحه‌ی موبایل")],
   },
   "mojasame-saidi": {
     gallery: [l("Illustration of the Mojasame Saidi store: handmade sculpture and decor with the phone storefront", "تصویرسازی فروشگاه مجسمه سعیدی: مجسمه و دکور دست‌ساز در کنار ویترین موبایل")],
-  },
-  "elm-kala": {
-    gallery: [l("Illustration of the Elm-Kala store: laboratory, robotics and education categories with a help-me-choose box", "تصویرسازی فروشگاه علم‌کالا: دسته‌های آزمایشگاهی، رباتیک و آموزشی با بخش کمک برای انتخاب")],
-  },
-  "school-builders": {
-    gallery: [l("Illustration of the Iran School-Builders Charity portal: a school under construction with project and province news cards", "تصویرسازی پرتال جامعه خیرین مدرسه‌ساز کشور: مدرسه‌ی در حال ساخت با کارت‌های پروژه و اخبار استان‌ها")],
   },
 };
 

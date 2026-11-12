@@ -67,7 +67,7 @@ export function Pillars({ d, stats = true }: { d: Dict; stats?: boolean }) {
 
 export function Stats({ d, light = false }: { d: Dict; light?: boolean }) {
   return (
-    <dl className={`grid grid-cols-2 border-t lg:grid-cols-4 ${light ? "border-line" : "border-line-dark"}`}>
+    <dl className={`grid grid-cols-2 border-t ${d.stats.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"} ${light ? "border-line" : "border-line-dark"}`}>
       {d.stats.map((s, i) => (
         <div key={s.label} className="flex flex-col-reverse gap-2 px-2 pt-9">
           <dt className={`text-[15px] ${light ? "text-muted" : "text-muted-dark"}`}>{s.label}</dt>

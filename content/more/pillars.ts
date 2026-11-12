@@ -76,13 +76,13 @@ export const more: More = {
       },
       {
         q: "طراحی سایت با چه فناوری‌هایی انجام می‌شود؟",
-        a: "بیشتر پروژه‌هایمان با Next.js ساخته شده‌اند: مدرسه مهارت یاسین با Next.js 15 و GSAP و Three.js، پایگاه علمی‌خبری دانه با Next.js 16 و Payload CMS و PostgreSQL، و فروشگاه مجسمه سعیدی با Next.js 15 و Prisma. فناوری هر پروژه را نیاز همان پروژه تعیین می‌کند.",
+        a: "بیشتر پروژه‌هایمان با Next.js ساخته شده‌اند؛ مثلاً فروشگاه مجسمه سعیدی با Next.js 15 و Prisma. فناوری هر پروژه را نیاز همان پروژه تعیین می‌کند.",
         details: [
           {
             kind: "links",
             items: [
-              { label: "مدرسه مهارت یاسین", href: "/work/yasin" },
-              { label: "پایگاه علمی‌خبری دانه", href: "/work/dane-news" },
+              
+              
               { label: "فروشگاه مجسمه سعیدی", href: "/work/mojasame-saidi" },
             ],
           },
@@ -111,15 +111,15 @@ export const more: More = {
       },
       {
         q: "نمونه‌ی سایت‌هایی که طراحی کرده‌اید کدام‌اند؟",
-        a: `${nFa(shipped)} پروژه‌ی منتشرشده داریم؛ از جمله فروشگاه سبزینو و عطر نیرا، مدرسه مهارت یاسین و کنجد، پایگاه علمی‌خبری دانه که از وردپرس منتقل شد و سایت دوزبانه‌ی ASA-Study. شرح چالش و راه‌حل همه‌شان در صفحه‌ی نمونه‌کارها آمده است.`,
+        a: `${nFa(shipped)} پروژه‌ی منتشرشده داریم؛ از جمله عطر نیرا، فروشگاه مجسمه سعیدی، کنجد و کدچی. شرح چالش و راه‌حل همه‌شان در صفحه‌ی نمونه‌کارها آمده است.`,
         details: [
           {
             kind: "links",
             items: [
               { label: "همه‌ی نمونه‌کارها", href: "/work" },
-              { label: "فروشگاه اجتماعی سبزینو", href: "/work/sabzino" },
-              { label: "پایگاه علمی‌خبری دانه", href: "/work/dane-news" },
-              { label: "سامانه‌ی پذیرش ASA-Study", href: "/work/asa-study" },
+              
+              
+              
             ],
           },
         ],
@@ -143,7 +143,7 @@ export const more: More = {
       },
       {
         q: "سایت دوزبانه یا چندزبانه هم می‌سازید؟",
-        a: "بله. فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌چین واقعی و برچسب‌های زبان درست برای گوگل. همین سایت و سامانه‌ی ASA-Study به همین شکل ساخته شده‌اند.",
+        a: "بله. فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌چین واقعی و برچسب‌های زبان درست برای گوگل. همین سایت به همین شکل ساخته شده است.",
         details: [{ kind: "links", items: [{ label: "طراحی سایت دوزبانه", href: "/services/website-design/bilingual" }] }],
       },
     ],
@@ -200,13 +200,13 @@ export const more: More = {
       },
       {
         q: "Which technologies do you build websites with?",
-        a: "Most of our projects run on Next.js: Yasin Skill School on Next.js 15 with GSAP and Three.js, Dane Scientific News on Next.js 16 with Payload CMS and PostgreSQL, and the Mojasame Saidi store on Next.js 15 with Prisma. The technology follows each project's needs.",
+        a: "Most of our projects run on Next.js; for example the Mojasame Saidi store runs on Next.js 15 with Prisma. The technology follows each project's needs.",
         details: [
           {
             kind: "links",
             items: [
-              { label: "Yasin Skill School", href: "/work/yasin" },
-              { label: "Dane Scientific News", href: "/work/dane-news" },
+              
+              
               { label: "Mojasame Saidi store", href: "/work/mojasame-saidi" },
             ],
           },
@@ -235,15 +235,15 @@ export const more: More = {
       },
       {
         q: "Which websites have you designed?",
-        a: `We have ${nEn(shipped)} published projects, including the Sabzino and Nira Perfume stores, Yasin Skill School and Konjed, Dane Scientific News (migrated from WordPress) and the bilingual ASA-Study site. Each case study explains the challenge and what we built.`,
+        a: `We have ${nEn(shipped)} published projects, including Nira Perfume, the Mojasame Saidi store, Konjed and Codechee. Each case study explains the challenge and what we built.`,
         details: [
           {
             kind: "links",
             items: [
               { label: "All case studies", href: "/work" },
-              { label: "Sabzino online store", href: "/work/sabzino" },
-              { label: "Dane Scientific News", href: "/work/dane-news" },
-              { label: "ASA-Study admissions platform", href: "/work/asa-study" },
+              
+              
+              
             ],
           },
         ],
@@ -267,7 +267,7 @@ export const more: More = {
       },
       {
         q: "Do you build bilingual or multilingual websites?",
-        a: "Yes: Persian and English with separate URLs per language, a true right-to-left layout and correct language tags for Google. This site and the ASA-Study platform are built this way.",
+        a: "Yes: Persian and English with separate URLs per language, a true right-to-left layout and correct language tags for Google. This site is built this way.",
         details: [{ kind: "links", items: [{ label: "Bilingual website design", href: "/services/website-design/bilingual" }] }],
       },
     ],
@@ -285,7 +285,7 @@ export const more: More = {
             items: [
               { label: "کدچی", href: "/work/codechee" },
               { label: "کنجد", href: "/work/konjed" },
-              { label: "پلتفرم محتوایی کانتمو", href: "/work/contemo" },
+              
             ],
           },
         ],
@@ -307,8 +307,8 @@ export const more: More = {
       },
       {
         q: "داشبورد و ابزار داخلی به چه کاری می‌آید؟",
-        a: "داشبورد عددهای لازم را زنده و یک‌جا نشان می‌دهد و ابزار داخلی جای همان فایل اکسلی را می‌گیرد که کسب‌وکار با آن می‌چرخد. پنل مدیریت فروشگاه سبزینو برای محصولات، موجودی، قیمت و سفارش‌ها نمونه‌ای از ابزاری است که تیم خودش می‌گرداند.",
-        details: [{ kind: "links", items: [{ label: "فروشگاه اجتماعی سبزینو", href: "/work/sabzino" }] }],
+        a: "داشبورد عددهای لازم را زنده و یک‌جا نشان می‌دهد و ابزار داخلی جای همان فایل اکسلی را می‌گیرد که کسب‌وکار با آن می‌چرخد. پنل مدیریت فروشگاه برای محصولات، موجودی، قیمت و سفارش‌ها نمونه‌ای از ابزاری است که تیم خودش می‌گرداند.",
+        details: [],
       },
       {
         q: "اتصال به ابزارهای دیگر با API چطور انجام می‌شود؟",
@@ -334,7 +334,7 @@ export const more: More = {
             items: [
               { label: "Codechee", href: "/work/codechee" },
               { label: "Konjed", href: "/work/konjed" },
-              { label: "Contemo content platform", href: "/work/contemo" },
+              
             ],
           },
         ],
@@ -356,8 +356,8 @@ export const more: More = {
       },
       {
         q: "What are dashboards and internal tools for?",
-        a: "A dashboard shows the numbers you need, live and in one place, and an internal tool replaces the spreadsheet that quietly runs the business. The Sabzino admin panel, for products, stock, prices and orders, is an example of a tool the team runs itself.",
-        details: [{ kind: "links", items: [{ label: "Sabzino online store", href: "/work/sabzino" }] }],
+        a: "A dashboard shows the numbers you need, live and in one place, and an internal tool replaces the spreadsheet that quietly runs the business. A store admin panel, for products, stock, prices and orders, is an example of a tool the team runs itself.",
+        details: [],
       },
       {
         q: "How do APIs and integrations with other tools work?",

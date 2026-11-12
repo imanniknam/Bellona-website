@@ -1,4 +1,3 @@
-import { facts, fmt } from "./facts";
 import type { Spoke } from "./spokes";
 
 /**
@@ -6,11 +5,7 @@ import type { Spoke } from "./spokes";
  * Each is 1,000+ words per language in answer-first sections with a table of contents; all claims about Bellona come
  * from content/work.ts and content/facts.ts, the rest is general technical advice.
  * TODO(owner): confirm the byline of each guide with the named team member before relying on it (SEO-GUIDELINE E2);
- * add a measurable result from the client for the Dane migration (e.g. traffic before/after) if they agree to publish it.
  */
-const dane = facts.projects.dane;
-const nEn = (v: number) => fmt.n(v, "en");
-const nFa = (v: number) => fmt.n(v, "fa");
 const UPDATED = "2026-11-02";
 const BAZDAR = "Amirhossein Bazdar|امیرحسین بازدار";
 const RAZI = "Sina Razi|سینا راضی";
@@ -26,11 +21,11 @@ export const guidesA: Spoke[] = [
     updated: UPDATED,
     author: RAZI,
     needs: [],
-    projects: ["dane-news"],
+    projects: [],
     guides: ["nextjs-seo-checklist", "website-design-cost"],
     en: {
       metaTitle: "Migrate from WordPress to Next.js, keep your SEO",
-      metaDescription: "Migrate from WordPress to Next.js without losing traffic: URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, with the real Dane migration.",
+      metaDescription: "Migrate from WordPress to Next.js without losing traffic: URL map, 301 redirects, taxonomy clean-up, sitemap and monitoring, step by step.",
       eyebrow: "Guide",
       h1: "Migrate from WordPress to **Next.js without losing SEO**",
       definition:
@@ -41,7 +36,7 @@ export const guidesA: Spoke[] = [
           a: "People move for speed, security and control: a custom Next.js site loads only what it needs, has less third-party code to patch and gives full control of structure and SEO. Do not move if your team edits layout daily without a developer and you have no budget for engineering.",
           details: [
             { kind: "p", text: "WordPress is a good choice when non-technical staff need to rebuild pages themselves, when the budget is small, or when the site is simple. The costs show up later: plugins that need constant updating, themes that limit design, and pages that are slower than they need to be." },
-            { kind: "p", text: "Next.js builds pages on the server, so the complete text arrives in the first response, which search engines and AI assistants read easily. Content editing does not have to disappear: a headless CMS such as Payload sits behind Next.js and gives the newsroom or marketing team an editor, as on Dane Scientific News." },
+            { kind: "p", text: "Next.js builds pages on the server, so the complete text arrives in the first response, which search engines and AI assistants read easily. Content editing does not have to disappear: a headless CMS such as Payload sits behind Next.js and gives the newsroom or marketing team an editor." },
           ],
         },
         {
@@ -117,15 +112,14 @@ export default config;`,
         },
         {
           q: "How do you migrate posts, tags, authors and media?",
-          a: `Export from WordPress, transform to the new content model and import in one repeatable script, so the migration can be re-run until it is right. On Dane Scientific News this moved ${nEn(dane.migratedPosts)} posts, ${nEn(dane.tags)} tags and ${nEn(dane.authors)} authors into Payload CMS with their relationships intact.`,
+          a: "Export from WordPress, transform to the new content model and import in one repeatable script, so the migration can be re-run until it is right.",
           details: [
             { kind: "p", text: "A repeatable script matters more than the first run. Content is never clean: posts have missing images, broken internal links and inconsistent categories. Running the migration repeatedly against a staging database lets you fix those in the script instead of by hand." },
-            { kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }] },
           ],
         },
         {
           q: "Why clean up the taxonomy before migrating?",
-          a: `A sprawling taxonomy carried over unchanged becomes a sprawling taxonomy in the new site. At Dane, ${nEn(dane.categoriesBefore)} categories and ${nEn(dane.tags)} tags were consolidated into ${nEn(dane.categoriesAfter)} categories and ${nEn(dane.topics)} topics before the move, which is easier for readers and for search engines to understand.`,
+          a: "A sprawling taxonomy carried over unchanged becomes a sprawling taxonomy in the new site. Consolidating categories and tags before the move is easier for readers and for search engines to understand.",
           details: [
             { kind: "p", text: "When categories and tags are merged, their old archive pages need redirects too. Decide for every old category and tag where it goes (a new category, a topic, or the most relevant article list) as part of the URL map, not after launch." },
           ],
@@ -201,11 +195,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           ],
         },
         {
-          q: "What did the Dane migration look like in numbers?",
-          a: `Dane Scientific News moved from WordPress to a custom Next.js and Payload CMS platform: ${nEn(dane.migratedPosts)} posts, ${nEn(dane.categoriesBefore)} categories, ${nEn(dane.tags)} tags and ${nEn(dane.authors)} authors migrated, a taxonomy redesigned into ${nEn(dane.categoriesAfter)} categories and ${nEn(dane.topics)} topics, and ${nEn(dane.redirects)} permanent redirects so no old link broke.`,
-          details: [{ kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }] }],
-        },
-        {
           q: "How can Bellona help with a migration?",
           a: "We start with the free growth audit: we read your current site, URLs and risks, and give you a fixed quote in writing for the migration. The site stays online throughout, and monitoring after launch is part of the work.",
           details: [{ kind: "links", items: [{ label: "Website redesign and migration", href: "/services/website-design/redesign" }, { label: "Book the free growth audit", href: "/contact?need=web" }] }],
@@ -214,7 +203,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     fa: {
       metaTitle: "انتقال سایت از وردپرس به Next.js بدون افت سئو",
-      metaDescription: "انتقال سایت از وردپرس به Next.js بی‌آنکه بازدید از دست برود: نقشه‌ی آدرس‌ها، ریدایرکت ۳۰۱، دسته‌بندی، نقشه‌ی سایت و پایش؛ با تجربه‌ی انتقال واقعی دانه.",
+      metaDescription: "انتقال سایت از وردپرس به Next.js بی‌آنکه بازدید از دست برود: نقشه‌ی آدرس‌ها، ریدایرکت ۳۰۱، دسته‌بندی، نقشه‌ی سایت و پایش؛ قدم‌به‌قدم.",
       eyebrow: "راهنما",
       h1: "انتقال سایت از وردپرس به نکست جی اس (Next.js) **بدون افت سئو**",
       definition:
@@ -225,7 +214,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           a: "دلیل‌ها سرعت، امنیت و کنترل است: سایت اختصاصی Next.js فقط چیزی را بار می‌کند که لازم دارد، کد شخص ثالث کمتری برای به‌روزرسانی دارد و ساختار و سئو کاملاً دست خودتان است. اگر تیمتان هر روز بی‌برنامه‌نویس چیدمان صفحه‌ها را عوض می‌کند و بودجه‌ی فنی ندارید، این انتقال به کارتان نمی‌آید.",
           details: [
             { kind: "p", text: "وردپرس وقتی انتخاب خوبی است که کارمندان غیرفنی باید خودشان صفحه بسازند، بودجه کم است یا سایت ساده است. هزینه‌ها بعدها خودشان را نشان می‌دهند: افزونه‌هایی که مدام به‌روزرسانی می‌خواهند، قالب‌هایی که دست طراحی را می‌بندند و صفحه‌هایی که بی‌دلیل کندند." },
-            { kind: "p", text: "نکست جی اس صفحه‌ها را روی سرور می‌سازد، پس متن کامل در همان پاسخ اول می‌رسد و موتورهای جست‌وجو و دستیارهای هوش مصنوعی راحت آن را می‌خوانند. امکان ویرایش محتوا هم از دست نمی‌رود: یک CMS هدلس مثل Payload پشت نکست جی اس قرار می‌گیرد و، مثل پایگاه علمی‌خبری دانه، ابزار ویرایش را در اختیار تحریریه یا تیم بازاریابی می‌گذارد." },
+            { kind: "p", text: "نکست جی اس صفحه‌ها را روی سرور می‌سازد، پس متن کامل در همان پاسخ اول می‌رسد و موتورهای جست‌وجو و دستیارهای هوش مصنوعی راحت آن را می‌خوانند. امکان ویرایش محتوا هم از دست نمی‌رود: یک CMS هدلس مثل Payload پشت نکست جی اس قرار می‌گیرد و ابزار ویرایش را در اختیار تحریریه یا تیم بازاریابی می‌گذارد." },
           ],
         },
         {
@@ -301,15 +290,14 @@ export default config;`,
         },
         {
           q: "مطلب‌ها، برچسب‌ها، نویسنده‌ها و رسانه‌ها را چطور منتقل کنیم؟",
-          a: `از وردپرس خروجی بگیرید، آن را به مدل محتوای تازه تبدیل کنید و با اسکریپتی که بارها قابل اجراست وارد کنید تا انتقال را تا درست شدن کامل تکرار کنید. در پایگاه علمی‌خبری دانه ${nFa(dane.migratedPosts)} مطلب، ${nFa(dane.tags)} برچسب و ${nFa(dane.authors)} نویسنده با همه‌ی ارتباط‌هایشان به Payload CMS منتقل شدند.`,
+          a: "از وردپرس خروجی بگیرید، آن را به مدل محتوای تازه تبدیل کنید و با اسکریپتی که بارها قابل اجراست وارد کنید تا انتقال را تا درست شدن کامل تکرار کنید.",
           details: [
             { kind: "p", text: "اسکریپتی که بشود دوباره اجرایش کرد از اجرای اول مهم‌تر است. محتوا هیچ‌وقت تمیز نیست: تصویر گم‌شده، لینک داخلی شکسته و دسته‌بندی ناهماهنگ همیشه پیدا می‌شود. اجرای مکرر انتقال روی پایگاه داده‌ی آزمایشی کمک می‌کند این‌ها را در خود اسکریپت درست کنید، نه دستی." },
-            { kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی‌خبری دانه", href: "/work/dane-news" }] },
           ],
         },
         {
           q: "چرا دسته‌بندی را پیش از انتقال مرتب کنیم؟",
-          a: `دسته‌بندی شلوغی که دست‌نخورده منتقل شود، در سایت تازه هم شلوغ می‌ماند. در دانه ${nFa(dane.categoriesBefore)} دسته و ${nFa(dane.tags)} برچسب پیش از انتقال به ${nFa(dane.categoriesAfter)} دسته و ${nFa(dane.topics)} موضوع رسید که هم برای خواننده ساده‌تر است و هم برای موتور جست‌وجو.`,
+          a: "دسته‌بندی شلوغی که دست‌نخورده منتقل شود، در سایت تازه هم شلوغ می‌ماند. ساده کردن دسته‌ها و برچسب‌ها پیش از انتقال هم برای خواننده ساده‌تر است و هم برای موتور جست‌وجو.",
           details: [
             { kind: "p", text: "وقتی دسته‌ها و برچسب‌ها با هم ادغام می‌شوند، صفحه‌ی بایگانی قدیمی‌شان هم ریدایرکت لازم دارد. برای هر دسته و برچسب قدیمی از همان اول، در نقشه‌ی آدرس‌ها، مشخص کنید به کجا برود (دسته‌ی تازه، موضوع یا نزدیک‌ترین فهرست مطلب)، نه پس از انتشار." },
           ],
@@ -385,11 +373,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           ],
         },
         {
-          q: "انتقال دانه به زبان عدد",
-          a: `پایگاه علمی‌خبری دانه از وردپرس به پلتفرم اختصاصی Next.js و Payload CMS منتقل شد: ${nFa(dane.migratedPosts)} مطلب، ${nFa(dane.categoriesBefore)} دسته، ${nFa(dane.tags)} برچسب و ${nFa(dane.authors)} نویسنده جابه‌جا شدند، دسته‌بندی به ${nFa(dane.categoriesAfter)} دسته و ${nFa(dane.topics)} موضوع بازطراحی شد و ${nFa(dane.redirects)} ریدایرکت دائمی گذاشتیم تا هیچ لینک قدیمی‌ای نشکند.`,
-          details: [{ kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی‌خبری دانه", href: "/work/dane-news" }] }],
-        },
-        {
           q: "بلونا در انتقال سایت چه کمکی می‌کند؟",
           a: "کار را با بررسی رایگان رشد شروع می‌کنیم: سایت فعلی، آدرس‌ها و خطرها را بررسی می‌کنیم و برای انتقال قیمت قطعی و مکتوب می‌دهیم. سایت در تمام این مدت در دسترس می‌ماند و پایش پس از انتشار هم بخشی از کار است.",
           details: [{ kind: "links", items: [{ label: "بازطراحی سایت و انتقال از وردپرس", href: "/services/website-design/redesign" }, { label: "رزرو بررسی رایگان رشد", href: "/contact?need=web" }] }],
@@ -408,7 +391,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     updated: UPDATED,
     author: BAZDAR,
     needs: [],
-    projects: ["sabzino", "mojasame-saidi", "nira-perfume", "elm-kala"],
+    projects: ["mojasame-saidi", "nira-perfume"],
     guides: ["website-design-cost", "nextjs-seo-checklist"],
     en: {
       metaTitle: "Custom online store or store builder? A guide",
@@ -486,14 +469,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           details: [{ kind: "links", items: [{ label: "SEO services", href: "/services/seo" }, { label: "Guide: Next.js SEO checklist", href: "/guides/nextjs-seo-checklist" }] }],
         },
         {
-          q: "What did we build for Sabzino and Mojasame Saidi?",
-          a: "Sabzino, a social enterprise, wanted a real store: we built a responsive cart, accounts, checkout, Zarinpal payments and an independent admin panel. Mojasame Saidi needed a premium, mobile-first, SEO-focused store for handmade sculpture, with a persistent cart, validated checkout forms and a Prisma and PostgreSQL data layer.",
-          details: [{ kind: "links", items: [{ label: "Sabzino", href: "/work/sabzino" }, { label: "Mojasame Saidi", href: "/work/mojasame-saidi" }] }],
+          q: "What did we build for Mojasame Saidi?",
+          a: "Mojasame Saidi needed a premium, mobile-first, SEO-focused store for handmade sculpture, with a persistent cart, validated checkout forms and a Prisma and PostgreSQL data layer.",
+          details: [{ kind: "links", items: [{ label: "Mojasame Saidi", href: "/work/mojasame-saidi" }] }],
         },
         {
-          q: "What did we build for Nira Perfume and Elm-Kala?",
-          a: "Nira sells original perfume and makes custom perfume for companies, so we built a brand-led storefront with a corporate perfume section, gallery pages, search and a cart. Elm-Kala sells lab, robotics and classroom equipment to people who often do not know what fits, so it is a guided store with use-case guidance and a consultation path.",
-          details: [{ kind: "links", items: [{ label: "Nira Perfume", href: "/work/nira-perfume" }, { label: "Elm-Kala", href: "/work/elm-kala" }] }],
+          q: "What did we build for Nira Perfume?",
+          a: "Nira sells original perfume and makes custom perfume for companies, so we built a brand-led storefront with a corporate perfume section, gallery pages, search and a cart.",
+          details: [{ kind: "links", items: [{ label: "Nira Perfume", href: "/work/nira-perfume" } ] }],
         },
         {
           q: "How do you decide? A short checklist",
@@ -599,14 +582,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           details: [{ kind: "links", items: [{ label: "خدمات سئوی سایت", href: "/services/seo" }, { label: "راهنما: چک‌لیست سئوی Next.js", href: "/guides/nextjs-seo-checklist" }] }],
         },
         {
-          q: "برای سبزینو و مجسمه سعیدی چه ساختیم؟",
-          a: "سبزینو، که یک کسب‌وکار اجتماعی است، فروشگاه واقعی می‌خواست: سبد خرید واکنش‌گرا، حساب کاربری مشتری، تسویه‌حساب، درگاه زرین‌پال و پنل مدیریت مستقل برایش ساختیم. مجسمه سعیدی فروشگاهی لوکس، موبایل‌محور و سئومحور برای مجسمه‌های دست‌ساز می‌خواست، با سبد خرید پایدار، فرم‌های خرید با اعتبارسنجی و لایه‌ی داده‌ی Prisma و PostgreSQL.",
-          details: [{ kind: "links", items: [{ label: "سبزینو", href: "/work/sabzino" }, { label: "مجسمه سعیدی", href: "/work/mojasame-saidi" }] }],
+          q: "برای مجسمه سعیدی چه ساختیم؟",
+          a: "مجسمه سعیدی فروشگاهی لوکس، موبایل‌محور و سئومحور برای مجسمه‌های دست‌ساز می‌خواست، با سبد خرید پایدار، فرم‌های خرید با اعتبارسنجی و لایه‌ی داده‌ی Prisma و PostgreSQL.",
+          details: [{ kind: "links", items: [{ label: "مجسمه سعیدی", href: "/work/mojasame-saidi" }] }],
         },
         {
-          q: "برای عطر نیرا و علم‌کالا چه ساختیم؟",
-          a: "نیرا عطر اصل می‌فروشد و برای شرکت‌ها عطر اختصاصی می‌سازد؛ پس فروشگاهی برندمحور با بخش عطر سازمانی، صفحه‌های گالری، جست‌وجو و سبد خرید ساختیم. علم‌کالا تجهیزات آزمایشگاه، رباتیک و کلاس را به کسانی می‌فروشد که اغلب نمی‌دانند چه چیزی به کارشان می‌آید؛ فروشگاهش خریدار را با راهنمای کاربرد و مسیر مشاوره همراهی می‌کند.",
-          details: [{ kind: "links", items: [{ label: "عطر نیرا", href: "/work/nira-perfume" }, { label: "علم‌کالا", href: "/work/elm-kala" }] }],
+          q: "برای عطر نیرا چه ساختیم؟",
+          a: "نیرا عطر اصل می‌فروشد و برای شرکت‌ها عطر اختصاصی می‌سازد؛ پس فروشگاهی برندمحور با بخش عطر سازمانی، صفحه‌های گالری، جست‌وجو و سبد خرید ساختیم.",
+          details: [{ kind: "links", items: [{ label: "عطر نیرا", href: "/work/nira-perfume" } ] }],
         },
         {
           q: "چطور تصمیم بگیریم؟ یک چک‌لیست کوتاه",
@@ -648,11 +631,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     updated: UPDATED,
     author: BAZDAR,
     needs: [],
-    projects: ["asa-study"],
+    projects: [],
     guides: ["nextjs-seo-checklist", "migrate-wordpress-to-nextjs"],
     en: {
       metaTitle: "Persian–English bilingual website: hreflang, RTL",
-      metaDescription: "Persian–English bilingual website: URL structure, hreflang with examples, true right-to-left layout, common mistakes, and the ASA-Study example.",
+      metaDescription: "Persian–English bilingual website: URL structure, hreflang with examples, true right-to-left layout, common mistakes and common mistakes.",
       eyebrow: "Guide",
       h1: "Persian–English bilingual website: **hreflang and RTL done right**",
       definition:
@@ -750,17 +733,11 @@ export const metadata = {
         {
           q: "How should content be managed in both languages?",
           a: "From one place with one structure, so no page exists in only one language and nothing is forgotten. Give each page a translation status, review translations rather than publishing machine output, and keep a shared list of terms so the same thing is always called the same thing.",
-          details: [{ kind: "p", text: "In ASA-Study each university is an independent, localized document, so the English and Persian versions of one university are kept together and edited as a pair." }],
         },
         {
           q: "Does each language need its own SEO?",
           a: "Yes. People do not search in two languages the same way, so each version needs its own keyword research, titles, descriptions and headings, not a literal translation. Both versions are indexed separately, and hreflang connects them.",
           details: [{ kind: "links", items: [{ label: "SEO services", href: "/services/seo" }] }],
-        },
-        {
-          q: "How did ASA-Study handle two languages?",
-          a: "International students choosing a university in Iran have to compare cities, universities and programs in their own language. We built English and Persian routing with complete RTL behavior, a searchable university directory with a city filter, data-driven profiles and a CMS-ready structure where each university is a localized document.",
-          details: [{ kind: "links", items: [{ label: "Case study: ASA-Study", href: "/work/asa-study" }] }],
         },
         {
           q: "How do you test that a bilingual site is correct?",
@@ -780,14 +757,14 @@ export const metadata = {
         },
         {
           q: "How can Bellona help with a bilingual site?",
-          a: "We design and build Persian–English sites with separate URLs, true RTL and correct hreflang, as on this site and on ASA-Study. Start with the free growth audit and you get a fixed quote in writing.",
+          a: "We design and build Persian–English sites with separate URLs, true RTL and correct hreflang, as on this site. Start with the free growth audit and you get a fixed quote in writing.",
           details: [{ kind: "links", items: [{ label: "Bilingual website design", href: "/services/website-design/bilingual" }, { label: "Book the free growth audit", href: "/contact?need=web" }] }],
         },
       ],
     },
     fa: {
       metaTitle: "سایت دوزبانه فارسی و انگلیسی: hreflang و RTL",
-      metaDescription: "راهنمای ساخت سایت دوزبانه‌ی فارسی و انگلیسی: ساختار آدرس‌ها، hreflang با مثال، چیدمان راست‌چین درست، اشتباه‌های رایج و نمونه‌ی ASA-Study.",
+      metaDescription: "راهنمای ساخت سایت دوزبانه‌ی فارسی و انگلیسی: ساختار آدرس‌ها، hreflang با مثال، چیدمان راست‌چین درست، و اشتباه‌های رایج.",
       eyebrow: "راهنما",
       h1: "سایت دوزبانه‌ی فارسی و انگلیسی: **hreflang و RTL درست**",
       definition:
@@ -885,17 +862,11 @@ export const metadata = {
         {
           q: "محتوای دو زبان را چطور مدیریت کنیم؟",
           a: "از یک جا و با یک ساختار، تا هیچ صفحه‌ای فقط به یک زبان نماند و چیزی از قلم نیفتد. برای هر صفحه وضعیت ترجمه تعیین کنید، ترجمه‌ها را بازبینی کنید و خروجی ماشینی را بی‌بازبینی منتشر نکنید؛ و یک واژه‌نامه‌ی مشترک داشته باشید تا هر چیز همیشه یک نام داشته باشد.",
-          details: [{ kind: "p", text: "در ASA-Study هر دانشگاه یک سند مستقل و بومی‌شده است، پس نسخه‌ی فارسی و انگلیسی هر دانشگاه کنار هم نگه داشته و با هم ویرایش می‌شود." }],
         },
         {
           q: "هر زبان سئوی جداگانه لازم دارد؟",
           a: "بله. مردم در دو زبان یک‌جور جست‌وجو نمی‌کنند؛ پس هر نسخه تحقیق کلمه‌ی کلیدی، عنوان، توضیح و تیترهای خودش را می‌خواهد، نه ترجمه‌ی کلمه‌به‌کلمه. هر دو نسخه جدا نمایه می‌شوند و hreflang آن‌ها را به هم وصل می‌کند.",
           details: [{ kind: "links", items: [{ label: "خدمات سئوی سایت", href: "/services/seo" }] }],
-        },
-        {
-          q: "ASA-Study دو زبان را چطور مدیریت کرد؟",
-          a: "دانشجویان بین‌المللی که برای تحصیل در ایران دانشگاه انتخاب می‌کنند، باید شهرها، دانشگاه‌ها و رشته‌ها را به زبان خودشان مقایسه کنند. برایشان ناوبری فارسی و انگلیسی با رفتار کامل راست‌چین، فهرست جست‌وجوپذیر دانشگاه‌ها با فیلتر شهر، صفحه‌ی داده‌محور هر دانشگاه و ساختاری آماده‌ی CMS ساختیم که در آن هر دانشگاه یک سند بومی‌شده است.",
-          details: [{ kind: "links", items: [{ label: "نمونه‌کار: ASA-Study", href: "/work/asa-study" }] }],
         },
         {
           q: "درستی سایت دوزبانه را چطور بیازماییم؟",
@@ -915,7 +886,7 @@ export const metadata = {
         },
         {
           q: "بلونا در ساخت سایت دوزبانه چه کمکی می‌کند؟",
-          a: "سایت فارسی و انگلیسی را با آدرس جدا، راست‌چین واقعی و hreflang درست طراحی می‌کنیم و می‌سازیم؛ مثل همین سایت و ASA-Study. با بررسی رایگان رشد شروع کنید تا قیمت قطعی و مکتوب بگیرید.",
+          a: "سایت فارسی و انگلیسی را با آدرس جدا، راست‌چین واقعی و hreflang درست طراحی می‌کنیم و می‌سازیم؛ مثل همین سایت. با بررسی رایگان رشد شروع کنید تا قیمت قطعی و مکتوب بگیرید.",
           details: [{ kind: "links", items: [{ label: "طراحی سایت دوزبانه", href: "/services/website-design/bilingual" }, { label: "رزرو بررسی رایگان رشد", href: "/contact?need=web" }] }],
         },
       ],

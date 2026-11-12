@@ -14,7 +14,6 @@ import { extra } from "./projects-extra";
 type More = Record<string, Record<Locale, Answer[]>>;
 
 const re = facts.projects.realEstate;
-const dane = facts.projects.dane;
 const sprintFa = fmt.weeks(facts.timelines.automationSprintWeeks, "fa");
 const sprintEn = fmt.weeks(facts.timelines.automationSprintWeeks, "en");
 const en = (v: number) => fmt.n(v, "en");
@@ -24,74 +23,6 @@ const askFa = (href: string, label: string): Answer["details"] => [{ kind: "link
 const askEn = (href: string, label: string): Answer["details"] => [{ kind: "links", items: [{ label, href }, { label: "Book the free audit", href: "/contact" }] }];
 
 const raw: More = {
-  // ============================================================================================ priority 1
-  "dane-news": {
-    fa: [
-      {
-        q: "انتقال از وردپرس به پلتفرم اختصاصی چطور انجام شد؟",
-        a: `اول همه‌ی محتوا فهرست شد: ${fa(dane.migratedPosts)} مطلب، ${fa(dane.categoriesBefore)} دسته، ${fa(dane.tags)} برچسب و ${fa(dane.authors)} نویسنده. بعد دسته‌بندی از نو طراحی شد، مطلب‌ها همراه برچسب‌ها و نویسنده‌هایشان منتقل شدند و برای هر مطلب ریدایرکت دائمی تعریف شد.`,
-        details: [
-          {
-            kind: "steps",
-            items: [
-              `فهرست‌برداری: ${fa(dane.migratedPosts)} مطلب، ${fa(dane.tags)} برچسب و ${fa(dane.authors)} نویسنده`,
-              `بازطراحی طبقه‌بندی: از ${fa(dane.categoriesBefore)} دسته به ${fa(dane.categoriesAfter)} دسته و ${fa(dane.topics)} موضوع`,
-              "انتقال مطلب‌ها همراه برچسب‌ها و نویسنده‌ها",
-              `${fa(dane.redirects)} ریدایرکت دائمی (۳۰۱) تا هیچ لینک قدیمی‌ای نشکند`,
-              "بررسی خودکار منبع، لید خبر، زیرنویس و اعتبار تصویر پیش از انتشار، همراه با ساختار مطالب بلند",
-            ],
-          },
-        ],
-      },
-      {
-        q: "چرا Next.js و Payload CMS؟",
-        a: "دانه پلتفرمی اختصاصی برای انتشار علمی می‌خواست که قواعد تحریریه را بشناسد. Payload CMS (یک CMS هدلس) مدیریت مطلب‌ها، برچسب‌ها و نویسنده‌ها را به دست تحریریه می‌دهد و نکست جی اس (Next.js) صفحه‌ها را روی سرور می‌سازد تا سریع باشند و گوگل راحت بخواندشان. پایگاه داده PostgreSQL است و فایل‌ها در S3 ذخیره می‌شوند.",
-      },
-      {
-        q: "نتیجه‌ی این پروژه به زبان عدد چیست؟",
-        a: `${fa(dane.migratedPosts)} مطلب منتقل شد و هر کدام ریدایرکت دائمی دارد؛ دسته‌بندی هم از ${fa(dane.categoriesBefore)} دسته به ${fa(dane.categoriesAfter)} دسته با ${fa(dane.topics)} موضوع رسید. عدد دیگری، مثل بازدید پس از انتقال، را بی‌سند نمی‌آوریم.`,
-        // TODO(owner): organic traffic before/after the migration, if the client agrees to publish it.
-      },
-      {
-        q: "پروژه‌ای مثل دانه دارید؟ از کجا شروع کنیم؟",
-        a: "اگر سایتتان روی وردپرس است و می‌خواهید بی‌افت سئو به پلتفرم اختصاصی بروید، با بررسی رایگان شروع می‌کنیم: وضعیت فعلی، آدرس‌ها و خطرها را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/redesign", "بازطراحی سایت و انتقال از وردپرس"),
-      },
-    ],
-    en: [
-      {
-        q: "How was the migration from WordPress to a custom platform done?",
-        a: `First all content was inventoried: ${en(dane.migratedPosts)} posts, ${en(dane.categoriesBefore)} categories, ${en(dane.tags)} tags and ${en(dane.authors)} authors. Then the taxonomy was redesigned, posts moved with their tags and authors, and a permanent redirect was defined for each one.`,
-        details: [
-          {
-            kind: "steps",
-            items: [
-              `Inventory: ${en(dane.migratedPosts)} posts, ${en(dane.tags)} tags and ${en(dane.authors)} authors`,
-              `Taxonomy redesign: from ${en(dane.categoriesBefore)} categories to ${en(dane.categoriesAfter)} categories and ${en(dane.topics)} topics`,
-              "Moving the posts together with their tags and authors",
-              `${en(dane.redirects)} permanent (301) redirects so no old link breaks`,
-              "Editorial validation for sources, leads, captions, image credits and long-form structure",
-            ],
-          },
-        ],
-      },
-      {
-        q: "Why Next.js and Payload CMS?",
-        a: "Dane wanted a purpose-built science publishing platform that understands editorial rules. Payload CMS, a headless CMS, gives the newsroom control of posts, tags and authors, and Next.js builds pages on the server so they are fast and readable to Google. The database is PostgreSQL and file storage is S3.",
-      },
-      {
-        q: "What is the measurable result of this project?",
-        a: `${en(dane.migratedPosts)} posts moved and each one has a permanent redirect; the taxonomy shrank from ${en(dane.categoriesBefore)} categories to ${en(dane.categoriesAfter)} categories with ${en(dane.topics)} topics. No other number, such as traffic after the migration, is stated without a source.`,
-        // TODO(owner): organic traffic before/after the migration, if the client agrees to publish it.
-      },
-      {
-        q: "Do you do projects like Dane? Where do we start?",
-        a: "If your site is on WordPress and you want to move to a custom platform without losing SEO, we start with the free audit: we read the current state, the URLs and the risks, and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/redesign", "Website redesign and WordPress migration"),
-      },
-    ],
-  },
-
   "ai-real-estate-os": {
     fa: [
       {
@@ -155,49 +86,6 @@ const raw: More = {
     ],
   },
 
-  sabzino: {
-    fa: [
-      {
-        q: "چرا سبزینو «فروشگاه واقعی» می‌خواست و چه ساختیم؟",
-        a: "سبزینو، کسب‌وکاری اجتماعی با محصولات بر پایه‌ی سبزی، ادویه‌های بین‌المللی و نوشیدنی‌های طبیعی، کاتالوگ نمی‌خواست. فروشگاه واقعی ساختیم: سبد خرید واکنش‌گرا، حساب کاربری مشتری، تسویه‌حساب، پرداخت آنلاین با زرین‌پال و پنل مدیریت مستقل برای محصولات، موجودی، قیمت و سفارش‌ها.",
-      },
-      {
-        q: "پرداخت و پنل مدیریت چطور کار می‌کنند؟",
-        a: "مشتری هنگام تسویه‌حساب از درگاه زرین‌پال پرداخت می‌کند و سفارش در پنل مدیریت ثبت می‌شود. پنل مستقل است و تیم سبزینو بی‌برنامه‌نویس محصولات، موجودی، قیمت و سفارش‌ها را مدیریت می‌کند.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "React 19 و TypeScript رابط کاربری را می‌سازند، Cloudflare D1 پایگاه داده‌ی SQL روی زیرساخت Cloudflare است و Drizzle ORM دسترسی به آن را با نوع‌داده‌های مشخص فراهم می‌کند. زرین‌پال درگاه پرداخت ایرانی است و ابزار انتشار امن، بیرون دادن نسخه‌ها را کنترل می‌کند.",
-      },
-      {
-        q: "فروشگاه اینترنتی اختصاصی می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید. محصولات و شیوه‌ی فروشتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/ecommerce", "طراحی سایت فروشگاهی"),
-        // TODO(owner): a measurable result (orders, conversion) and a client quote for this store.
-      },
-    ],
-    en: [
-      {
-        q: "Why did Sabzino need a real store and what did we build?",
-        a: "Sabzino, a social enterprise with vegetable-based products, international spices and natural drinks, did not want a catalog. We built a real store: a responsive cart, customer accounts, checkout, online payment through Zarinpal and an independent admin for products, stock, prices and orders.",
-      },
-      {
-        q: "How do payments and the admin panel work?",
-        a: "The customer pays at checkout through the Zarinpal gateway and the order is recorded in the admin panel. The panel is independent, so the Sabzino team manages products, stock, prices and orders without a developer.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "React 19 and TypeScript build the interface, Cloudflare D1 is the SQL database on Cloudflare's infrastructure and Drizzle ORM accesses it with defined types. Zarinpal is the Iranian payment gateway and secure deployment tooling controls how releases ship.",
-      },
-      {
-        q: "I want a custom online store; what do I do?",
-        a: "Book the free audit. We read your products and how you sell, and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/ecommerce", "E-commerce website design"),
-        // TODO(owner): a measurable result (orders, conversion) and a client quote for this store.
-      },
-    ],
-  },
-
   // ============================================================================================ education
   codechee: {
     fa: [
@@ -222,49 +110,6 @@ const raw: More = {
         a: "With the free audit: we read your learning needs and audience and give you a fixed quote in writing for building the platform.",
         details: askEn("/industries/education", "Education websites and platforms"),
         // TODO(owner): a measurable result (students, courses) and a client quote.
-      },
-    ],
-  },
-
-  yasin: {
-    fa: [
-      {
-        q: "چطور سایتی ماجراجویانه ساختیم که روی موبایل کند نباشد؟",
-        a: "یاسین می‌خواست یادگیری مهارت حس ماجراجویی بدهد، نه حس بروشور. روایت بازی‌گونه را با GSAP، Three.js و Lenis طوری ساختیم که روان بماند، تصویرها و رسانه‌ها را جداگانه برای دسکتاپ و موبایل بهینه کردیم و جلوه‌ها با توان دستگاه هماهنگ می‌شوند.",
-      },
-      {
-        q: "برای اینترنت ایران چه کردید؟",
-        a: "فونت‌ها روی خود سایت میزبانی می‌شوند تا به سرویس خارجی وابسته نباشند و رسانه‌ها برای هر دستگاه جدا بهینه شدند. این کار هم سرعت را بالا می‌برد و هم سایت را با اینترنت ضعیف پایدار نگه می‌دارد.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "نکست جی اس 15 صفحه‌ها را سمت سرور می‌سازد، GSAP کتابخانه‌ی انیمیشن است، Three.js گرافیک سه‌بعدی را در مرورگر می‌سازد، Lenis اسکرول را نرم می‌کند و TypeScript نوع‌داده‌ها را کنترل می‌کند.",
-      },
-      {
-        q: "سایت آموزشی با تجربه‌ی تعاملی می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ نیاز و مخاطبتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/industries/education", "طراحی سایت آموزشی"),
-        // TODO(owner): a measurable result (registrations) and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How did we build an adventurous site that does not slow down on phones?",
-        a: "Yasin wanted learning a skill to feel like an adventure, not a brochure. We built the game-like narrative with GSAP, Three.js and Lenis so it stays responsive, optimized desktop and mobile media separately and made the effects adapt to device capability.",
-      },
-      {
-        q: "What was done for Iranian internet conditions?",
-        a: "Fonts are self-hosted so the site does not depend on an external service, and media is optimized separately per device. This both speeds the site up and keeps it dependable on weak connections.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "Next.js 15 builds pages on the server, GSAP is the animation library, Three.js handles 3D graphics in the browser, Lenis provides smooth scrolling and TypeScript checks types.",
-      },
-      {
-        q: "I want an education site with an interactive experience; what do I do?",
-        a: "Book the free audit; we read your needs and audience and give you a fixed quote in writing.",
-        details: askEn("/industries/education", "Education websites"),
-        // TODO(owner): a measurable result (registrations) and a client quote.
       },
     ],
   },
@@ -299,76 +144,6 @@ const raw: More = {
         q: "I want a play-based learning platform for teenagers; where do I start?",
         a: "Book the free audit; we read your audience and target skills and give you a fixed quote in writing.",
         details: askEn("/industries/education", "Education platforms"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  microshamim: {
-    fa: [
-      {
-        q: "میکروشمیم چه سایتی لازم داشت؟",
-        a: "میکروشمیم یادگیری، کار اشتراکی و تولید محتوا را زیر یک سقف جمع کرده است و سایت باید همه‌ی فضاها را روشن معرفی کند و در عین حال جسور و جوان بماند. طراحی هنری بازیگوش با حال‌وهوای کلاژ، صفحه‌هایی برای مدرسه‌ی مهارت، فضای کار اشتراکی، استودیوی محتوا و رویدادها، دعوت به درخواست استفاده از فضا در سرتاسر سایت و بخش مجله ساختیم.",
-      },
-      {
-        q: "بازدیدکننده‌ها پیش از آمدن، فضا را چطور می‌بینند؟",
-        a: "سایت ماکت پلان میکروشمیم را نشان می‌دهد تا بازدیدکننده پیش از آمدن ببیند اتاق‌ها و بخش‌ها کجا هستند، و همان‌جا درخواست بازدید حضوری بدهد.",
-      },
-      {
-        q: "سایت برای مرکز نوآوری یا فضای کار اشتراکی می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ فضاها و مخاطبانتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/corporate", "طراحی سایت شرکتی و سازمانی"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "What site did Microshamim need?",
-        a: "Microshamim brings learning, co-working and content production under one roof, and the site had to explain every space clearly and still feel bold and youthful. We built a playful collage-style art direction, pages for the skill school, co-working space, content studio and events, a request-to-use-the-space call to action throughout and a magazine section.",
-      },
-      {
-        q: "How do visitors see the space before coming?",
-        a: "The site shows a floor-plan model of the Microshamim space so a visitor can see where rooms and areas are before visiting, and request an in-person visit right there.",
-      },
-      {
-        q: "I want a site for an innovation hub or coworking space; what do I do?",
-        a: "Book the free audit; we read your spaces and audience and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/corporate", "Corporate website design"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  "asa-study": {
-    fa: [
-      {
-        q: "ASA-Study چطور ساخته شد؟",
-        a: "دانشجوی بین‌المللی برای انتخاب دانشگاه در ایران باید شهرها، دانشگاه‌ها و رشته‌ها را به زبان خودش مقایسه کند. ناوبری فارسی و انگلیسی با رفتار کامل راست‌چین، فهرست جست‌وجوپذیر دانشگاه‌ها با فیلتر شهر، صفحه‌ی داده‌محور برای هر دانشگاه و ساختاری آماده‌ی CMS ساختیم که در آن هر دانشگاه یک سند مستقل و دوزبانه است.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "نکست جی اس 15 صفحه‌ها را سمت سرور می‌سازد و next-intl مسیرها و ترجمه‌ی دو زبان را مدیریت می‌کند. Radix UI اجزای دسترس‌پذیر رابط را فراهم می‌کند، Framer Motion انیمیشن‌ها را می‌سازد و TypeScript نوع‌داده‌ها را کنترل می‌کند.",
-      },
-      {
-        q: "سایت دوزبانه می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ مخاطبان هر دو زبان و محتوای فعلی‌تان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/bilingual", "طراحی سایت دوزبانه"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How was ASA-Study built?",
-        a: "An international student choosing a university in Iran must compare cities, universities and programs in their own language. We built English/Persian routing with complete RTL behavior, a searchable university directory with a city filter, data-driven university profiles and a CMS-ready structure where each university is its own localized document.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "Next.js 15 builds pages on the server and next-intl manages routing and translation for the two languages. Radix UI provides accessible interface components, Framer Motion the animations and TypeScript checks types.",
-      },
-      {
-        q: "I want a bilingual site; what do I do?",
-        a: "Book the free audit; we read both audiences and your existing content and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/bilingual", "Bilingual website design"),
         // TODO(owner): a measurable result and a client quote.
       },
     ],
@@ -433,139 +208,6 @@ const raw: More = {
         a: "Book the free audit; we read your products and give you a fixed quote in writing.",
         details: askEn("/services/website-design/ecommerce", "E-commerce website design"),
         // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  "elm-kala": {
-    fa: [
-      {
-        q: "علم‌کالا چطور ساخته شد؟",
-        a: "خریدار تجهیزات آزمایشگاه، رباتیک یا کلاس معمولاً نمی‌داند کدام محصول به کارش می‌آید و فروشگاه باید راهنمایی‌اش کند، نه اینکه فقط فهرست نشان دهد. گشتن میان محصولات بر پایه‌ی دسته‌بندی و محصولات برگزیده، راهنمای کاربرد برای هر دسته و مسیر مشاوره برای خریدارهایی که در انتخاب کمک می‌خواهند ساختیم.",
-      },
-      {
-        q: "فروشگاه راهنما به کار کسب‌وکار من هم می‌آید؟",
-        a: "اگر مشتری‌هایتان معمولاً نمی‌دانند کدام محصول به کارشان می‌آید، بله. در بررسی رایگان رک می‌گوییم کدام مدل برایتان بهتر است، چون هر کسب‌وکاری به فروشگاهی با راهنمای خرید نیاز ندارد.",
-        details: askFa("/services/website-design/ecommerce", "طراحی سایت فروشگاهی"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How was Elm-Kala built?",
-        a: "People buying lab, robotics or classroom equipment often do not know which product fits, and the store had to guide them, not just list items. We built category-led discovery with featured products, use-case guidance for each category and a consultation-first path for buyers who need help choosing.",
-      },
-      {
-        q: "Is a guided store right for my business too?",
-        a: "If your customers usually do not know which product fits, yes. In the free audit we tell you honestly which model suits you better, because not every business needs a guided store.",
-        details: askEn("/services/website-design/ecommerce", "E-commerce website design"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  // ============================================================================================ platforms and portals
-  contemo: {
-    fa: [
-      {
-        q: "کانتمو چطور ساخته شد؟",
-        a: "کانتمو خدمات محتوا می‌فروشد و تولیدکننده‌ی محتوا جذب می‌کند؛ قیمت باید بی‌معطلی جلوی چشم بازدیدکننده باشد و ویرایش متن‌ها نباید به برنامه‌نویس گره بخورد. یک سیستم قیمت‌گذاری مشترک برای برآورد هزینه و ثبت پروژه، جذب همکار و منابع تحریریه، محتوای یک‌جا که تیم غیرفنی خودش ویرایشش کند و انیمیشن دسترس‌پذیر با ریزه‌کاری‌های دقیق راست‌چین ساختیم.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "نکست جی اس (Next.js) 16 صفحه‌ها را سمت سرور می‌سازد و TypeScript نوع‌داده‌ها را کنترل می‌کند. Tailwind CSS ظاهر صفحه‌ها را مدیریت می‌کند، Motion انیمیشن‌های دسترس‌پذیر را می‌سازد و Canvas برای جلوه‌های گرافیکی در مرورگر به کار رفته است.",
-      },
-      {
-        q: "پلتفرم خدمات با قیمت‌گذاری زنده می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ مدل قیمت‌گذاری و روند پروژه‌هایتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/full-stack-development", "نرم‌افزار و محصول"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How was Contemo built?",
-        a: "Contemo sells content services and recruits creators; visitors needed a price on the spot and the team needed to change copy without a developer. We built one pricing engine behind both the estimate and project intake, creator recruitment and editorial resources, centralised content for non-technical staff and accessible motion with careful RTL details.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "Next.js 16 builds the pages on the server and TypeScript checks the types. Tailwind CSS manages styling, Motion builds the accessible animation and Canvas is used for graphic effects in the browser.",
-      },
-      {
-        q: "I want a services platform with live pricing; what do I do?",
-        a: "Book the free audit; we read your pricing model and project flow and give you a fixed quote in writing.",
-        details: askEn("/services/full-stack-development", "Full-stack and product development"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  "shamim-house": {
-    fa: [
-      {
-        q: "سایت خانه شمیم چطور ساخته شد؟",
-        a: "خانه شمیم اکوسیستمی از کسب‌وکارهای به‌هم‌پیوسته است و سایت باید نشان دهد این‌ها چطور کنار هم قرار می‌گیرند و راه ورود شریک‌ها را روشن کند. لندینگ داستان‌محور با انیمیشن پیشرفته، فرم‌های منظم همکاری، سیستم طراحی گسترش‌پذیر و مشترک میان برندهای زیرمجموعه و چیدمان واکنش‌گرا ساختیم.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "نکست جی اس 16 و React 19 پایه‌ی کارند؛ Framer Motion و GSAP انیمیشن‌ها را می‌سازند و React Hook Form و Zod فرم‌های همکاری را مدیریت و بررسی می‌کنند.",
-      },
-      {
-        q: "سایتی برای یک اکوسیستم یا چند برند می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ ساختار برندها و مخاطبانتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/corporate", "طراحی سایت شرکتی و سازمانی"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How was the Shamim House site built?",
-        a: "Shamim House is an ecosystem of connected ventures, and the site had to show how they fit together and give partners a clear way in. We built a story-led landing experience with advanced motion, structured partnership forms, a scalable design system shared by the venture brands and responsive layouts.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "Next.js 16 and React 19 are the base; Framer Motion and GSAP build the animation, and React Hook Form with Zod manages and validates the partnership forms.",
-      },
-      {
-        q: "I want a site for an ecosystem or several brands; what do I do?",
-        a: "Book the free audit; we read the brand structure and audiences and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/corporate", "Corporate website design"),
-        // TODO(owner): a measurable result and a client quote.
-      },
-    ],
-  },
-
-  "school-builders": {
-    fa: [
-      {
-        q: "پرتال جامعه خیرین مدرسه‌ساز چطور ساخته شد؟",
-        a: "یک خیریه‌ی سراسری می‌خواست پروژه‌های تازه، خبر استان‌ها و راه‌های مشارکت را یک‌جا و برای همه نشان دهد. ساختار اطلاعات را بر پایه‌ی خبر، پروژه و استان چیدیم، مسیرهای روشن مشارکت برای خیرین گذاشتیم و سایت را با طراحی واکنش‌گرای فارسی ساختیم.",
-      },
-      {
-        q: "هر فناوری چه نقشی دارد؟",
-        a: "نکست جی اس (Next.js) 16 صفحه‌ها را سمت سرور می‌سازد، TypeScript نوع‌داده‌ها را کنترل می‌کند و Motion انیمیشن‌های سایت را می‌سازد. ساختار اطلاعات پرتال، یعنی خبر و پروژه و استان، روی همین پایه بنا شده است.",
-      },
-      {
-        q: "پرتال برای یک سازمان غیرانتفاعی می‌خواهم؛ چه کنم؟",
-        a: "بررسی رایگان را رزرو کنید؛ نیازها و مخاطبانتان را بررسی می‌کنیم و قیمت قطعی و مکتوب می‌دهیم.",
-        details: askFa("/services/website-design/corporate", "طراحی سایت شرکتی و سازمانی"),
-        // TODO(owner): a measurable result, a live address for the portal and a client quote.
-      },
-    ],
-    en: [
-      {
-        q: "How was the Iran School-Builders Charity portal built?",
-        a: "A national charity wanted one public place for its recent projects, news from every province and clear ways for donors to get involved. We built the information architecture around news, projects and provinces, put clear participation paths for donors in place and did responsive Persian design.",
-      },
-      {
-        q: "What do the technologies do?",
-        a: "Next.js 16 builds the pages on the server, TypeScript checks the types and Motion builds the site's animation. The portal's information architecture, meaning news, projects and provinces, is built on this base.",
-      },
-      {
-        q: "I want a portal for a non-profit; what do I do?",
-        a: "Book the free audit; we read your needs and audiences and give you a fixed quote in writing.",
-        details: askEn("/services/website-design/corporate", "Corporate website design"),
-        // TODO(owner): a measurable result, a live address for the portal and a client quote.
       },
     ],
   },

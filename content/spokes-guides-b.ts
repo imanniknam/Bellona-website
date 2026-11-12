@@ -95,7 +95,7 @@ export const guidesB: Spoke[] = [
     updated: UPDATED,
     author: BAZDAR,
     needs: [],
-    projects: ["dane-news", "yasin"],
+    projects: [],
     guides: ["bilingual-website-hreflang-rtl", "ai-search-readiness"],
     en: {
       metaTitle: "Next.js SEO checklist: metadata and JSON-LD",
@@ -383,7 +383,7 @@ export function generateStaticParams() { return getAllServices().map((s) => ({ s
     updated: UPDATED,
     author: RAZI,
     needs: [],
-    projects: ["dane-news"],
+    projects: [],
     guides: ["nextjs-seo-checklist", "bilingual-website-hreflang-rtl"],
     en: {
       metaTitle: "Be visible in AI search: ChatGPT and assistants",
@@ -462,7 +462,6 @@ Disallow: /api/`,
         {
           q: "Why do dates, sources and real numbers help?",
           a: "Assistants prefer pages they can trust and check. A visible update date, a named author, and specific, sourced facts (a real count, a real project) are easier to quote than vague claims. Never invent a statistic; a made-up number is worse than none.",
-          details: [{ kind: "p", text: "For example, we state the figures from the Dane migration (278 posts, 278 redirects, 8 categories, 105 topics) because they are the real ones, and we leave a result out when we have no verified number." }],
         },
         {
           q: "Can you guarantee that ChatGPT will mention us?",
@@ -574,7 +573,6 @@ Disallow: /api/`,
         {
           q: "چرا تاریخ، منبع و عدد واقعی کمک می‌کند؟",
           a: "دستیارها صفحه‌هایی را ترجیح می‌دهند که بشود به آن‌ها اعتماد کرد و درستی‌شان را سنجید. تاریخ به‌روزرسانی پیدا، نویسنده‌ی مشخص و واقعیت‌های دقیق و مستند (یک عدد واقعی، یک پروژه‌ی واقعی) راحت‌تر از ادعای کلی نقل می‌شوند. هیچ‌وقت آمار نسازید؛ عدد ساختگی از نبودن عدد بدتر است.",
-          details: [{ kind: "p", text: "مثلاً عددهای انتقال دانه (۲۷۸ مطلب، ۲۷۸ ریدایرکت، ۸ دسته، ۱۰۵ موضوع) را می‌نویسیم چون واقعی‌اند، و هر جا عدد تأییدشده‌ای نداریم، از نتیجه حرفی نمی‌زنیم." }],
         },
         {
           q: "می‌توانید تضمین کنید ChatGPT از ما نام ببرد؟",

@@ -44,7 +44,6 @@ export const facts = {
   /** Project-sourced figures (from the PDF portfolio the owner supplied; shown on the case studies). */
   projects: {
     realEstate: { n8nWorkflows: 12, crmTables: 7 },
-    dane: { migratedPosts: 278, categoriesBefore: 15, tags: 1057, authors: 6, categoriesAfter: 8, topics: 105, redirects: 278 },
   },
 } as const;
 

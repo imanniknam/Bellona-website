@@ -9,7 +9,6 @@ import type { Spoke } from "./spokes";
  * TODO(owner): published price ranges (docs/seo/QUESTIONS_FOR_TEAM.md #30-#32) and a chatbot case study if one exists.
  */
 const re = facts.projects.realEstate;
-const dane = facts.projects.dane;
 const sprintEn = fmt.weeks(facts.timelines.automationSprintWeeks, "en");
 const sprintFa = fmt.weeks(facts.timelines.automationSprintWeeks, "fa");
 const nEn = (v: number) => fmt.n(v, "en");
@@ -24,7 +23,7 @@ export const serviceSpokes: Spoke[] = [
     need: "growth",
     status: "published",
     needs: [],
-    projects: ["dane-news", "sabzino", "asa-study"],
+    projects: [],
     guides: ["nextjs-seo-checklist", "ai-search-readiness", "migrate-wordpress-to-nextjs"],
     en: {
       metaTitle: "SEO services: technical, content and Next.js SEO",
@@ -83,11 +82,6 @@ export const serviceSpokes: Spoke[] = [
           q: "Why does Next.js help SEO?",
           a: "Next.js builds each page on the server, so the complete text is in the first response and Google does not need to run JavaScript to read it. It also gives direct control over metadata, sitemaps, canonical tags and structured data, which is why most of our sites use it.",
           details: [{ kind: "links", items: [{ label: "Next.js website design", href: "/services/website-design/nextjs" }, { label: "Guide: Next.js SEO checklist", href: "/guides/nextjs-seo-checklist" }] }],
-        },
-        {
-          q: "Have you handled an SEO migration?",
-          a: `Yes. Dane Scientific News moved from WordPress to a custom Next.js and Payload CMS platform: ${nEn(dane.migratedPosts)} posts with ${nEn(dane.tags)} tags and ${nEn(dane.authors)} authors were migrated, the taxonomy was redesigned into ${nEn(dane.categoriesAfter)} categories and ${nEn(dane.topics)} topics, and ${nEn(dane.redirects)} permanent redirects kept every old link working.`,
-          details: [{ kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }, { label: "Guide: migrate from WordPress to Next.js", href: "/guides/migrate-wordpress-to-nextjs" }] }],
         },
         {
           q: "How does an SEO engagement run?",
@@ -182,11 +176,6 @@ export const serviceSpokes: Spoke[] = [
           details: [{ kind: "links", items: [{ label: "طراحی سایت با نکست جی اس", href: "/services/website-design/nextjs" }, { label: "راهنما: چک‌لیست سئوی Next.js", href: "/guides/nextjs-seo-checklist" }] }],
         },
         {
-          q: "تجربه‌ی انتقال سایت بدون افت سئو را دارید؟",
-          a: `بله. پایگاه علمی‌خبری دانه از وردپرس به پلتفرم اختصاصی Next.js و Payload CMS منتقل شد: ${nFa(dane.migratedPosts)} مطلب با ${nFa(dane.tags)} برچسب و ${nFa(dane.authors)} نویسنده جابه‌جا شد، دسته‌بندی به ${nFa(dane.categoriesAfter)} دسته و ${nFa(dane.topics)} موضوع بازطراحی شد و ${nFa(dane.redirects)} ریدایرکت دائمی گذاشتیم تا هیچ لینک قدیمی‌ای نشکند.`,
-          details: [{ kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی‌خبری دانه", href: "/work/dane-news" }, { label: "راهنما: انتقال از وردپرس به Next.js", href: "/guides/migrate-wordpress-to-nextjs" }] }],
-        },
-        {
           q: "همکاری سئو چطور پیش می‌رود؟",
           a: "پنج مرحله: بررسی، برنامه، اجرا، سنجش و بهبود. اول سایت فعلی و داده‌های Search Console را بررسی می‌کنیم، برنامه‌ای اولویت‌بندی‌شده می‌نویسیم، کارهای فنی و محتوایی را انجام می‌دهیم، هر ماه گزارش می‌دهیم چه تغییر کرده و برنامه را بر اساس عددها اصلاح می‌کنیم.",
           details: [
@@ -232,7 +221,7 @@ export const serviceSpokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
-    projects: ["shamim-house", "konjed"],
+    projects: ["konjed"],
     guides: ["website-design-cost"],
     en: {
       metaTitle: "Landing page design: fast pages that convert",
@@ -273,8 +262,8 @@ export const serviceSpokes: Spoke[] = [
         },
         {
           q: "Which landing pages have you built?",
-          a: "Shamim House has a story-led landing experience with advanced motion and structured partnership forms, and Konjed opens with a cinematic landing experience set in an illustrated game world. Both are built to turn a first visit into the next step.",
-          details: [{ kind: "links", items: [{ label: "Shamim House", href: "/work/shamim-house" }, { label: "Konjed", href: "/work/konjed" }] }],
+          a: "Konjed opens with a cinematic landing experience set in an illustrated game world, built to turn a first visit into the next step.",
+          details: [{ kind: "links", items: [{ label: "Konjed", href: "/work/konjed" }] }],
         },
         {
           q: "Landing page or full website?",
@@ -327,8 +316,8 @@ export const serviceSpokes: Spoke[] = [
         },
         {
           q: "چه لندینگ‌هایی ساخته‌اید؟",
-          a: "خانه شمیم لندینگی داستان‌محور با انیمیشن پیشرفته و فرم‌های منظم همکاری دارد، و کنجد با ورودی سینمایی در دنیایی بازی‌گونه و تصویرسازی‌شده شروع می‌شود. هر دو ساخته شده‌اند تا اولین بازدید را به قدم بعدی برسانند.",
-          details: [{ kind: "links", items: [{ label: "اکوسیستم خانه شمیم", href: "/work/shamim-house" }, { label: "کنجد", href: "/work/konjed" }] }],
+          a: "کنجد با ورودی سینمایی در دنیایی بازی‌گونه و تصویرسازی‌شده شروع می‌شود و ساخته شده تا اولین بازدید را به قدم بعدی برساند.",
+          details: [{ kind: "links", items: [{ label: "کنجد", href: "/work/konjed" }] }],
         },
         {
           q: "لندینگ پیج یا سایت کامل؟",

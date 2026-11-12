@@ -1,4 +1,3 @@
-import { facts, fmt } from "../facts";
 import type { Answer } from "../spokes";
 import type { Locale } from "../types";
 
@@ -11,9 +10,6 @@ import type { Locale } from "../types";
  */
 type More = Record<string, Record<Locale, Answer[]>>;
 
-const dane = facts.projects.dane;
-const en = (v: number) => fmt.n(v, "en");
-const fa = (v: number) => fmt.n(v, "fa");
 
 export const more: More = {
   // ======================================================================================= Next.js (D2)
@@ -47,26 +43,26 @@ export const more: More = {
       },
       {
         q: "سایت دوزبانه با next-intl چطور ساخته می‌شود؟",
-        a: "next-intl کتابخانه‌ای برای مسیرها و ترجمه در نکست جی اس است. هر زبان آدرس و ترجمه‌ی کامل خودش را می‌گیرد و فارسی چیدمان راست‌چین دارد. سامانه‌ی ASA-Study را با Next.js 15 و next-intl ساخته‌ایم و صفحه‌های فارسی و انگلیسی‌اش با رفتار کامل راست‌چین و چپ‌چین کار می‌کنند.",
-        details: [{ kind: "links", items: [{ label: "سامانه‌ی پذیرش ASA-Study", href: "/work/asa-study" }] }],
+        a: "next-intl کتابخانه‌ای برای مسیرها و ترجمه در نکست جی اس است. هر زبان آدرس و ترجمه‌ی کامل خودش را می‌گیرد و فارسی چیدمان راست‌چین دارد. صفحه‌های فارسی و انگلیسی با رفتار کامل راست‌چین و چپ‌چین کار می‌کنند.",
+        details: [],
       },
       {
         q: "ویرایش محتوا بی‌برنامه‌نویس چطور ممکن است؟",
-        a: "با یک CMS هدلس که پشت نکست جی اس قرار می‌گیرد. در پایگاه علمی‌خبری دانه از Payload CMS استفاده کرده‌ایم تا تحریریه خودش مطلب‌ها، برچسب‌ها و نویسنده‌ها را مدیریت کند و قواعد تحریریه (منبع، لید خبر، زیرنویس، اعتبار تصویر) پیش از انتشار بررسی شود.",
-        details: [{ kind: "links", items: [{ label: "پایگاه علمی‌خبری دانه", href: "/work/dane-news" }] }],
+        a: "با یک CMS هدلس که پشت نکست جی اس قرار می‌گیرد. Payload CMS یکی از گزینه‌هاست تا تحریریه خودش مطلب‌ها، برچسب‌ها و نویسنده‌ها را مدیریت کند و قواعد تحریریه (منبع، لید خبر، زیرنویس، اعتبار تصویر) پیش از انتشار بررسی شود.",
+        details: [],
       },
       {
         q: "با نکست جی اس چه پروژه‌هایی ساخته‌اید؟",
-        a: "مدرسه مهارت یاسین (Next.js 15)، پایگاه علمی‌خبری دانه (Next.js 16)، ASA-Study (Next.js 15 و next-intl)، فروشگاه مجسمه سعیدی (Next.js 15)، پلتفرم محتوایی کانتمو و اکوسیستم خانه شمیم (هر دو Next.js 16)، و همین سایت.",
+        a: "فروشگاه مجسمه سعیدی (Next.js 15) و همین سایت.",
         details: [
           {
             kind: "links",
             items: [
-              { label: "مدرسه مهارت یاسین", href: "/work/yasin" },
-              { label: "پایگاه علمی‌خبری دانه", href: "/work/dane-news" },
+              
+              
               { label: "فروشگاه مجسمه سعیدی", href: "/work/mojasame-saidi" },
-              { label: "پلتفرم محتوایی کانتمو", href: "/work/contemo" },
-              { label: "اکوسیستم خانه شمیم", href: "/work/shamim-house" },
+              
+              
             ],
           },
         ],
@@ -105,26 +101,26 @@ export const more: More = {
       },
       {
         q: "How is a bilingual site built with next-intl?",
-        a: "next-intl is a library for routing and translation in Next.js. Each language gets its own URLs and full translation, with right-to-left layout for Persian. We built the ASA-Study platform on Next.js 15 with next-intl, with separate Persian and English pages and full RTL behavior.",
-        details: [{ kind: "links", items: [{ label: "ASA-Study admissions platform", href: "/work/asa-study" }] }],
+        a: "next-intl is a library for routing and translation in Next.js. Each language gets its own URLs and full translation, with right-to-left layout for Persian. Persian and English pages work separately, with full right-to-left and left-to-right behavior.",
+        details: [],
       },
       {
         q: "How can content be edited without a developer?",
-        a: "With a headless CMS behind Next.js. On Dane Scientific News we used Payload CMS so the newsroom manages posts, tags and authors itself, with editorial rules (source, lead, caption, image credit) validated.",
-        details: [{ kind: "links", items: [{ label: "Dane Scientific News", href: "/work/dane-news" }] }],
+        a: "With a headless CMS behind Next.js. Payload CMS is one option, so the newsroom manages posts, tags and authors itself, with editorial rules (source, lead, caption, image credit) validated.",
+        details: [],
       },
       {
         q: "Which projects have you built with Next.js?",
-        a: "Yasin Skill School (Next.js 15), Dane Scientific News (Next.js 16), ASA-Study (Next.js 15 with next-intl), the Mojasame Saidi store (Next.js 15), the Contemo content platform and Shamim House (both Next.js 16), and this site.",
+        a: "The Mojasame Saidi store (Next.js 15) and this site.",
         details: [
           {
             kind: "links",
             items: [
-              { label: "Yasin Skill School", href: "/work/yasin" },
-              { label: "Dane Scientific News", href: "/work/dane-news" },
+              
+              
               { label: "Mojasame Saidi store", href: "/work/mojasame-saidi" },
-              { label: "Contemo content platform", href: "/work/contemo" },
-              { label: "Shamim House", href: "/work/shamim-house" },
+              
+              
             ],
           },
         ],
@@ -175,11 +171,6 @@ export const more: More = {
         ],
       },
       {
-        q: "فروشگاه سبزینو چه چالشی داشت و چطور ساخته شد؟",
-        a: "سبزینو، کسب‌وکاری اجتماعی با محصولات بر پایه‌ی سبزی، ادویه‌های بین‌المللی و نوشیدنی‌های طبیعی، فروشگاه واقعی می‌خواست نه کاتالوگ. سبد خرید واکنش‌گرا، حساب کاربری مشتری، پرداخت آنلاین با زرین‌پال و پنل مدیریتی مستقل ساختیم که تیم خودش محصولات، موجودی، قیمت و سفارش‌ها را در آن می‌گرداند.",
-        details: [{ kind: "links", items: [{ label: "فروشگاه اجتماعی سبزینو", href: "/work/sabzino" }] }],
-      },
-      {
         q: "عطر نیرا چه؟",
         a: "نیرا عطر اصل می‌فروشد و برای شرکت‌ها عطر اختصاصی می‌سازد. فروشگاه باید هر دو را با حس آرام و لوکس یک عطرسرا و به زبان فارسی نشان دهد. ویترین برندمحور، بخش ساخت عطر سازمانی، گالری و آرشیو، و جست‌وجوی محصول و سبد خرید را ساختیم.",
         details: [{ kind: "links", items: [{ label: "عطر نیرا", href: "/work/nira-perfume" }] }],
@@ -190,13 +181,8 @@ export const more: More = {
         details: [{ kind: "links", items: [{ label: "فروشگاه مجسمه سعیدی", href: "/work/mojasame-saidi" }] }],
       },
       {
-        q: "فروشگاه تخصصی علم‌کالا چه می‌کند؟",
-        a: "علم‌کالا فروشگاهی برای کسی است که نمی‌داند کدام تجهیزات آزمایشگاه، رباتیک یا کلاس به کارش می‌آید و قدم‌به‌قدم راهنمایی‌اش می‌کند: گشتن میان محصولات بر پایه‌ی دسته‌بندی و محصولات برگزیده، راهنمای کاربرد برای هر دسته و مسیر مشاوره برای خریدارهایی که در انتخاب کمک می‌خواهند.",
-        details: [{ kind: "links", items: [{ label: "فروشگاه تخصصی علم‌کالا", href: "/work/elm-kala" }] }],
-      },
-      {
         q: "پرداخت آنلاین و پنل مدیریت چطور کار می‌کند؟",
-        a: "مشتری هنگام تسویه‌حساب از درگاهی ایرانی (مثل زرین‌پال که در سبزینو وصل کرده‌ایم) پرداخت می‌کند و سفارش در پنل مدیریت ثبت می‌شود. تیمتان از همان پنل، بی‌برنامه‌نویس، محصولات، موجودی، قیمت و سفارش‌ها را مدیریت می‌کند.",
+        a: "مشتری هنگام تسویه‌حساب از درگاهی ایرانی (مثل زرین‌پال) پرداخت می‌کند و سفارش در پنل مدیریت ثبت می‌شود. تیمتان از همان پنل، بی‌برنامه‌نویس، محصولات، موجودی، قیمت و سفارش‌ها را مدیریت می‌کند.",
       },
     ],
     en: [
@@ -235,11 +221,6 @@ export const more: More = {
         ],
       },
       {
-        q: "What was the challenge with Sabzino and how was it built?",
-        a: "Sabzino, a social enterprise selling vegetable-based products, international spices and natural drinks, wanted a real store, not a catalog. We built a responsive cart, customer accounts, online payment through Zarinpal and an independent admin panel where the team manages products, stock, prices and orders.",
-        details: [{ kind: "links", items: [{ label: "Sabzino online store", href: "/work/sabzino" }] }],
-      },
-      {
         q: "What about Nira Perfume?",
         a: "Nira sells original perfume and creates custom perfume for companies. The store had to present both with the calm, luxurious feel of a perfume house, in Persian. We built a brand-led storefront, a corporate perfume-creation section, gallery and archive pages, product search and a cart.",
         details: [{ kind: "links", items: [{ label: "Nira Perfume", href: "/work/nira-perfume" }] }],
@@ -250,13 +231,8 @@ export const more: More = {
         details: [{ kind: "links", items: [{ label: "Mojasame Saidi store", href: "/work/mojasame-saidi" }] }],
       },
       {
-        q: "What does the Elm-Kala store do?",
-        a: "A buyer of laboratory, robotics or classroom equipment often does not know which product fits. Elm-Kala is a guided store: category-led discovery with featured products, a use-case guide for each category and a consultation-first path for buyers who need help choosing.",
-        details: [{ kind: "links", items: [{ label: "Elm-Kala store", href: "/work/elm-kala" }] }],
-      },
-      {
         q: "How do online payment and the admin panel work?",
-        a: "The customer pays at checkout through an Iranian gateway (such as Zarinpal, which we connected for Sabzino) and the order is recorded in the admin panel. Your team manages products, stock, prices and orders from there without a developer.",
+        a: "The customer pays at checkout through an Iranian gateway (such as Zarinpal) and the order is recorded in the admin panel. Your team manages products, stock, prices and orders from there without a developer.",
       },
     ],
   },
@@ -289,21 +265,6 @@ export const more: More = {
         a: "با چیزهای واقعی: نمونه‌کار تحویل‌شده، معرفی شفاف تیم، توضیح روشن شیوه‌ی کار و قیمت‌گذاری، و راه‌های تماسی که واقعاً کار می‌کنند. ادعای بی‌پشتوانه اعتماد نمی‌سازد؛ فقط چیزهایی را در سایت می‌گذاریم که بشود ثابتشان کرد.",
       },
       {
-        q: "جامعه خیرین مدرسه‌ساز کشور چه نیازی داشت؟",
-        a: "برای جامعه خیرین مدرسه‌ساز کشور پرتالی ساختیم که پروژه‌های تازه، خبرهای استان‌ها و راه‌های مشارکت خیرین را کنار هم می‌گذارد؛ با ساختار اطلاعاتی بر پایه‌ی خبر، پروژه و استان، مسیرهای روشن مشارکت و طراحی واکنش‌گرای فارسی.",
-        details: [{ kind: "links", items: [{ label: "جامعه خیرین مدرسه‌ساز کشور", href: "/work/school-builders" }] }],
-      },
-      {
-        q: "اکوسیستم خانه شمیم چه؟",
-        a: "خانه شمیم مجموعه‌ای از کسب‌وکارهای به‌هم‌پیوسته است و سایت باید نشان دهد این‌ها چطور کنار هم قرار می‌گیرند و راه ورود شریک‌ها را روشن کند. لندینگی داستان‌محور، فرم‌های منظم همکاری و یک سیستم طراحی گسترش‌پذیر برای چند برند زیرمجموعه ساختیم.",
-        details: [{ kind: "links", items: [{ label: "اکوسیستم خانه شمیم", href: "/work/shamim-house" }] }],
-      },
-      {
-        q: "میکروشمیم، مرکز نوآوری، چه سایتی گرفت؟",
-        a: "میکروشمیم یادگیری، کار اشتراکی و تولید محتوا را زیر یک سقف جمع کرده است و سایت باید همه‌ی فضاها را روشن معرفی کند. طراحی هنری بازیگوش با حال‌وهوای کلاژ و صفحه‌هایی برای مدرسه‌ی مهارت، فضای کار اشتراکی، استودیوی محتوا و رویدادها ساختیم.",
-        details: [{ kind: "links", items: [{ label: "میکروشمیم", href: "/work/microshamim" }] }],
-      },
-      {
         q: "چرا سایت شرکتی را بی‌قالب بسازیم؟",
         a: "سایت شرکتی اولین تصویری است که مشتری از شما می‌بیند. طراحی اختصاصی یعنی ساختار بر پایه‌ی پیشنهاد شما نوشته می‌شود، سرعت و سئو از اول برنامه‌ریزی می‌شود و تیم خودتان محتوا را با CMS ویرایش می‌کند، بی‌آنکه به قالب یا افزونه‌ی دیگران وابسته باشید.",
       },
@@ -332,21 +293,6 @@ export const more: More = {
       {
         q: "How does a corporate site build trust?",
         a: "With real things: delivered case studies, a transparent introduction of the team, a clear account of how you work and price, and contact channels that work. Unsupported claims do not build trust; we only put things on a site that you can prove.",
-      },
-      {
-        q: "What did the Iran School-Builders Charity need?",
-        a: "A national charity wanted a public place for recent projects, news from every province and clear ways for donors to take part. We built the portal with information architecture based on news, projects and provinces, clear participation paths and responsive Persian design.",
-        details: [{ kind: "links", items: [{ label: "Iran School-Builders Charity", href: "/work/school-builders" }] }],
-      },
-      {
-        q: "What about the Shamim House ecosystem?",
-        a: "Shamim House is a set of connected ventures, and the site had to show how they fit together and make the way in for partners clear. We built a story-led landing page, structured partnership forms and a scalable design system for several sub-brands.",
-        details: [{ kind: "links", items: [{ label: "Shamim House", href: "/work/shamim-house" }] }],
-      },
-      {
-        q: "What site did the Microshamim innovation hub get?",
-        a: "Microshamim brings learning, coworking and content production under one roof, and the site had to explain every space clearly. We built a playful, art-directed collage design with pages for the skills school, coworking, content studio and events.",
-        details: [{ kind: "links", items: [{ label: "Microshamim", href: "/work/microshamim" }] }],
       },
       {
         q: "Why build a corporate site without a template?",
@@ -387,12 +333,8 @@ export const more: More = {
       },
       {
         q: "محتوای دو زبان چطور مدیریت می‌شود؟",
-        a: "محتوای هر دو زبان از یک جا و با یک ساختار مدیریت می‌شود تا هیچ صفحه‌ای فقط به یک زبان نماند و هیچ بخشی از قلم نیفتد. در ASA-Study هر دانشگاه یک سند مستقل و دوزبانه است که آماده‌ی اتصال به CMS ساخته شد.",
-        details: [{ kind: "links", items: [{ label: "سامانه‌ی پذیرش ASA-Study", href: "/work/asa-study" }] }],
-      },
-      {
-        q: "ASA-Study چطور یک سایت دوزبانه شد؟",
-        a: "برای دانشجوی بین‌المللی که در ایران دانشگاه انتخاب می‌کند، شهرها، دانشگاه‌ها و رشته‌ها باید به زبان خودش مقایسه‌شدنی باشند. ناوبری فارسی و انگلیسی با رفتار کامل راست‌چین، فهرست جست‌وجوپذیر دانشگاه‌ها با فیلتر شهر و صفحه‌ای داده‌محور برای هر دانشگاه ساختیم.",
+        a: "محتوای هر دو زبان از یک جا و با یک ساختار مدیریت می‌شود تا هیچ صفحه‌ای فقط به یک زبان نماند و هیچ بخشی از قلم نیفتد.",
+        details: [],
       },
       {
         q: "اشتباه‌های رایج در طراحی سایت دوزبانه چیست؟",
@@ -441,12 +383,8 @@ export const more: More = {
       },
       {
         q: "How is content edited in two languages?",
-        a: "Content for both languages is managed from one place with one structure, so no page exists in only one language and nothing is forgotten. In ASA-Study each university is an independent bilingual document, built to be CMS-ready.",
-        details: [{ kind: "links", items: [{ label: "ASA-Study admissions platform", href: "/work/asa-study" }] }],
-      },
-      {
-        q: "How did ASA-Study become a bilingual site?",
-        a: "For an international student choosing a university in Iran, cities, universities and programs have to be comparable in their own language. We built Persian and English routing with full right-to-left behavior, a searchable university list with a city filter and a data-driven profile for each university.",
+        a: "Content for both languages is managed from one place with one structure, so no page exists in only one language and nothing is forgotten.",
+        details: [],
       },
       {
         q: "What are common mistakes in bilingual website design?",
@@ -487,13 +425,8 @@ export const more: More = {
         ],
       },
       {
-        q: `پایگاه علمی‌خبری دانه چطور از وردپرس منتقل شد؟`,
-        a: `دانه روی وردپرس بود. ${fa(dane.migratedPosts)} مطلب با ${fa(dane.categoriesBefore)} دسته، ${fa(dane.tags)} برچسب و ${fa(dane.authors)} نویسنده به پلتفرم اختصاصی Next.js و Payload CMS منتقل شد، دسته‌بندی به ${fa(dane.categoriesAfter)} دسته و ${fa(dane.topics)} موضوع بازطراحی شد و ${fa(dane.redirects)} ریدایرکت دائمی گذاشتیم تا هیچ لینک قدیمی‌ای نشکند.`,
-        details: [{ kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی‌خبری دانه", href: "/work/dane-news" }] }],
-      },
-      {
         q: "دسته‌بندی شلوغ چطور سامان می‌گیرد؟",
-        a: `پیش از انتقال، دسته‌ها و برچسب‌ها را بازبینی می‌کنیم: در دانه ${fa(dane.categoriesBefore)} دسته و ${fa(dane.tags)} برچسب به ${fa(dane.categoriesAfter)} دسته و ${fa(dane.topics)} موضوع رسید. دسته‌بندی ساده‌تر هم برای مخاطب بهتر است و هم برای گوگل.`,
+        a: "پیش از انتقال، دسته‌ها و برچسب‌ها را بازبینی می‌کنیم و دسته‌بندی شلوغ را ساده می‌کنیم. دسته‌بندی ساده‌تر هم برای مخاطب بهتر است و هم برای گوگل.",
       },
       {
         q: "ریدایرکت ۳۰۱ چیست و چرا مهم است؟",
@@ -526,13 +459,8 @@ export const more: More = {
         ],
       },
       {
-        q: "How was Dane Scientific News moved off WordPress?",
-        a: `Dane ran on WordPress. ${en(dane.migratedPosts)} posts with ${en(dane.categoriesBefore)} categories, ${en(dane.tags)} tags and ${en(dane.authors)} authors moved to a custom Next.js and Payload CMS platform, the taxonomy was redesigned into ${en(dane.categoriesAfter)} categories and ${en(dane.topics)} topics, and ${en(dane.redirects)} permanent redirects kept every old link working.`,
-        details: [{ kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }] }],
-      },
-      {
         q: "How is a sprawling taxonomy tidied?",
-        a: `Before the move we review categories and tags: at Dane ${en(dane.categoriesBefore)} categories and ${en(dane.tags)} tags became ${en(dane.categoriesAfter)} categories and ${en(dane.topics)} topics. A simpler taxonomy is better for readers and for Google.`,
+        a: "Before the move we review categories and tags and simplify a crowded taxonomy. A simpler taxonomy is better for readers and for Google.",
       },
       {
         q: "What is a 301 redirect and why does it matter?",

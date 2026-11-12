@@ -20,13 +20,13 @@ export const pageExtra: Extra = {
     fa: [
       {
         q: "طراحی سایت آموزشی: چه ساخته‌ایم؟",
-        a: "شش پروژه در حوزه‌ی آموزش داریم: کدچی، کنجد، یاسین، میکروشمیم، ASA-Study و علم‌کالا. چالش همیشگی این حوزه این است که یادگیری جذاب باشد و ثبت‌نام و پیگیری هم ساده بماند.",
-        details: [p("برای همین بعضی پروژه‌ها بازی‌وارند، مثل کدچی و کنجد، و بعضی دوزبانه و داده‌محور، مثل ASA-Study. جزئیات هر کدام را در صفحه‌ی صنعت آموزش ببینید."), links(["طراحی سایت آموزشی", "/industries/education"])],
+        a: "دو پروژه در حوزه‌ی آموزش داریم: کدچی و کنجد. چالش همیشگی این حوزه این است که یادگیری جذاب باشد و ثبت‌نام و پیگیری هم ساده بماند.",
+        details: [p("برای همین هر دو پروژه بازی‌وارند. جزئیات هر کدام را در صفحه‌ی صنعت آموزش ببینید."), links(["طراحی سایت آموزشی", "/industries/education"])],
       },
       {
         q: "طراحی سایت فروشگاهی: چه ساخته‌ایم؟",
-        a: "چهار فروشگاه ساخته‌ایم: سبزینو، عطر نیرا، مجسمه سعیدی و علم‌کالا. فروشگاه اینترنتی فقط ویترین نیست؛ پرداخت، سبد خرید، حساب کاربری مشتری و پنل مدیریت هم باید درست کار کنند.",
-        details: [p("هر فروشگاه مسئله‌ی خودش را داشت: سبزینو پرداخت و مدیریت موجودی، نیرا حس لوکس، سعیدی محصول دست‌ساز و علم‌کالا راهنمایی خریدار."), links(["طراحی سایت فروشگاهی", "/industries/ecommerce"])],
+        a: "دو فروشگاه ساخته‌ایم: عطر نیرا و مجسمه سعیدی. فروشگاه اینترنتی فقط ویترین نیست؛ پرداخت، سبد خرید، حساب کاربری مشتری و پنل مدیریت هم باید درست کار کنند.",
+        details: [p("هر فروشگاه مسئله‌ی خودش را داشت: نیرا حس لوکس و سعیدی محصول دست‌ساز."), links(["طراحی سایت فروشگاهی", "/industries/ecommerce"])],
       },
       {
         q: "طراحی سایت و اتوماسیون املاک: چه ساخته‌ایم؟",
@@ -35,20 +35,20 @@ export const pageExtra: Extra = {
       },
       {
         q: "طراحی سایت خبری و رسانه: چه ساخته‌ایم؟",
-        a: "یک پروژه در حوزه‌ی رسانه داریم: پایگاه علمی‌خبری دانه. دردسر رایج رسانه‌ها سایت کند یا قدیمی است و ترس از شکستن لینک‌ها هنگام عوض کردن پلتفرم.",
-        details: [p("دانه از وردپرس به Next.js و Payload CMS رفت و هر یک از ۲۷۸ مطلبش ریدایرکت دائمی گرفت."), links(["سایت خبری و رسانه", "/industries/media"])],
+        a: "در حوزه‌ی رسانه هنوز نمونه‌کار منتشرشده‌ای نداریم. دردسر رایج رسانه‌ها سایت کند یا قدیمی است و ترس از شکستن لینک‌ها هنگام عوض کردن پلتفرم.",
+        details: [p("با فهرست‌کردن آدرس‌ها پیش از انتقال و ریدایرکت دائمی برای هر مطلب، می‌شود پلتفرم را بی‌خطر عوض کرد."), links(["سایت خبری و رسانه", "/industries/media"])],
       },
     ],
     en: [
       {
         q: "Education website design: what have we built?",
-        a: "We have six education projects: Codechee, Konjed, Yasin, Microshamim, ASA-Study and Elm-Kala. The problem in this field is usually that learning has to feel engaging while enrollment and follow-up stay simple.",
-        details: [p("So some projects are game-like, such as Codechee and Konjed, and some are bilingual and data-driven, such as ASA-Study. See each one on the education industry page."), links(["Education website design", "/industries/education"])],
+        a: "We have two education projects: Codechee and Konjed. The problem in this field is usually that learning has to feel engaging while enrollment and follow-up stay simple.",
+        details: [p("So both projects are game-like. See each one on the education industry page."), links(["Education website design", "/industries/education"])],
       },
       {
         q: "Online store design: what have we built?",
-        a: "We have four stores: Sabzino, Nira Perfume, Mojasame Saidi and Elm-Kala. An online store is more than a shop window; payment, the cart, customer accounts and the admin all have to work.",
-        details: [p("Each store had its own problem: Sabzino payment and inventory, Nira a luxury feel, Saidi a handmade product and Elm-Kala guiding the buyer."), links(["Online store design", "/industries/ecommerce"])],
+        a: "We have two stores: Nira Perfume and Mojasame Saidi. An online store is more than a shop window; payment, the cart, customer accounts and the admin all have to work.",
+        details: [p("Each store had its own problem: Nira a luxury feel and Saidi a handmade product."), links(["Online store design", "/industries/ecommerce"])],
       },
       {
         q: "Real estate websites and automation: what have we built?",
@@ -57,8 +57,8 @@ export const pageExtra: Extra = {
       },
       {
         q: "News and media website design: what have we built?",
-        a: "We have one media project: Dane Scientific News. The usual problems for media are a slow or dated site and the fear of broken links when changing platform.",
-        details: [p("Dane moved from WordPress to Next.js and Payload CMS and got a permanent redirect for each of its 278 posts."), links(["News and media websites", "/industries/media"])],
+        a: "We do not have a published media project yet. The usual problems for media are a slow or dated site and the fear of broken links when changing platform.",
+        details: [p("By listing every URL before the move and giving each post a permanent redirect, the platform can be changed safely."), links(["News and media websites", "/industries/media"])],
       },
     ],
   },
@@ -129,7 +129,7 @@ export const pageExtra: Extra = {
       {
         q: "طراحی سایت در بلونا چه چیزهایی را در بر می‌گیرد؟",
         a: "سایت اختصاصی و کدنویسی‌شده، بی‌قالب آماده: شرکتی، فروشگاهی، دوزبانه یا لندینگ. هر سایت سریع روی موبایل و آماده‌ی سئو تحویل داده می‌شود و فرم‌هایش به ایمیل، تلگرام یا CRM وصل است.",
-        details: [p("زیرشاخه‌های این خدمت را جدا ببینید: Next.js، فروشگاهی، شرکتی، دوزبانه، بازطراحی و لندینگ پیج. نمونه‌ی فروشگاهی‌مان سبزینو است و نمونه‌ی انتقال از وردپرس، دانه."), links(["طراحی سایت", "/services/website-design"], ["طراحی سایت Next.js", "/services/website-design/nextjs"], ["طراحی سایت فروشگاهی", "/services/website-design/ecommerce"], ["طراحی سایت شرکتی", "/services/website-design/corporate"], ["سایت دوزبانه", "/services/website-design/bilingual"], ["بازطراحی سایت", "/services/website-design/redesign"], ["لندینگ‌پیج", "/services/website-design/landing-page"], ["نمونه: سبزینو", "/work/sabzino"])],
+        details: [p("زیرشاخه‌های این خدمت را جدا ببینید: Next.js، فروشگاهی، شرکتی، دوزبانه، بازطراحی و لندینگ پیج."), links(["طراحی سایت", "/services/website-design"], ["طراحی سایت Next.js", "/services/website-design/nextjs"], ["طراحی سایت فروشگاهی", "/services/website-design/ecommerce"], ["طراحی سایت شرکتی", "/services/website-design/corporate"], ["سایت دوزبانه", "/services/website-design/bilingual"], ["بازطراحی سایت", "/services/website-design/redesign"], ["لندینگ‌پیج", "/services/website-design/landing-page"])],
       },
       {
         q: "ساخت نرم‌افزار و محصول در بلونا چه چیزهایی را در بر می‌گیرد؟",
@@ -156,7 +156,7 @@ export const pageExtra: Extra = {
       {
         q: "What does website design at Bellona include?",
         a: "A custom, hand-coded website with no off-the-shelf template: corporate, e-commerce, bilingual or a landing page. Every site is fast on mobile and SEO-ready, and its forms connect to email, Telegram or a CRM.",
-        details: [p("See the sub-pages of this service: Next.js, e-commerce, corporate, bilingual, redesign and landing pages. Our store example is Sabzino and our WordPress migration example is Dane."), links(["Website design", "/services/website-design"], ["Next.js website design", "/services/website-design/nextjs"], ["E-commerce website design", "/services/website-design/ecommerce"], ["Corporate website design", "/services/website-design/corporate"], ["Bilingual websites", "/services/website-design/bilingual"], ["Website redesign", "/services/website-design/redesign"], ["Landing pages", "/services/website-design/landing-page"], ["Example: Sabzino", "/work/sabzino"])],
+        details: [p("See the sub-pages of this service: Next.js, e-commerce, corporate, bilingual, redesign and landing pages."), links(["Website design", "/services/website-design"], ["Next.js website design", "/services/website-design/nextjs"], ["E-commerce website design", "/services/website-design/ecommerce"], ["Corporate website design", "/services/website-design/corporate"], ["Bilingual websites", "/services/website-design/bilingual"], ["Website redesign", "/services/website-design/redesign"], ["Landing pages", "/services/website-design/landing-page"])],
       },
       {
         q: "What does full-stack and product development at Bellona include?",
@@ -234,44 +234,44 @@ export const industryExtra: Extra = {
     fa: [
       {
         q: "انتقال از وردپرس چطور بی‌شکستن لینک‌ها انجام می‌شود؟",
-        a: "با فهرست کردن همه‌ی آدرس‌ها پیش از انتقال و تعریف یک ریدایرکت دائمی ۳۰۱ برای هر کدام. در دانه یعنی ۲۷۸ ریدایرکت برای ۲۷۸ مطلب، تا هیچ لینک قدیمی‌ای نشکند.",
+        a: "با فهرست کردن همه‌ی آدرس‌ها پیش از انتقال و تعریف یک ریدایرکت دائمی ۳۰۱ برای هر کدام، تا هیچ لینک قدیمی‌ای نشکند.",
         details: [p("با ریدایرکت دائمی برای هر مطلب، اعتباری که آدرس‌های قدیمی در گوگل و لینک‌های بیرونی جمع کرده‌اند به آدرس تازه منتقل می‌شود."), links(["راهنمای انتقال از وردپرس به Next.js", "/guides/migrate-wordpress-to-nextjs"])],
       },
       {
         q: "تحریریه‌ی یک سایت خبری علمی چه ابزاری لازم دارد؟",
-        a: "ابزاری که قواعد تحریریه را بشناسد. در دانه، Payload CMS مدیریت مطلب، برچسب و نویسنده را به دست تحریریه می‌دهد و منبع، لید خبر، زیرنویس، اعتبار تصویر و ساختار مطالب بلند را بررسی می‌کند.",
+        a: "ابزاری که قواعد تحریریه را بشناسد. یک CMS هدلس مثل Payload مدیریت مطلب، برچسب و نویسنده را به دست تحریریه می‌دهد و منبع، لید خبر، زیرنویس، اعتبار تصویر و ساختار مطالب بلند را بررسی می‌کند.",
         details: [p("این قواعد در خود سیستم است، نه در حافظه‌ی آدم‌ها؛ پس خطاهای رایج، مثل مطلب بی‌منبع یا تصویر بی‌اعتبار، به چشم می‌آیند.")],
       },
       {
         q: "دسته‌بندی سایت خبری چطور باید باشد؟",
-        a: "ساده و قابل دنبال کردن. دانه با ۱۵ دسته و ۱٬۰۵۷ برچسب شلوغ شده بود؛ دسته‌بندی به ۸ دسته و ۱۰۵ موضوع رسید تا هم خواننده مسیرش را پیدا کند و هم موتور جست‌وجو.",
+        a: "ساده و قابل دنبال کردن. دسته‌بندی شلوغ با ده‌ها دسته و هزاران برچسب به ۸ دسته و چند ده موضوع می‌رسد تا هم خواننده مسیرش را پیدا کند و هم موتور جست‌وجو.",
         details: [p("انتقال سایت فرصت خوبی برای سامان دادن به دسته‌بندی است: چیزی که سال‌ها در وردپرس بی‌حساب بزرگ شده، در پلتفرم تازه از اول با ساختاری سنجیده شروع می‌شود.")],
       },
       {
         q: "کدام سایت‌های خبری باید انتقال از وردپرس را جدی بگیرند؟",
-        a: "سایتی که سال‌ها مطلب منتشر کرده و صدها مطلب، برچسب‌های زیاد و لینک‌های بیرونی دارد. برای چنین سایتی جابه‌جایی بی‌برنامه یعنی خطر شکستن لینک‌ها؛ دانه با ۲۷۸ مطلب و ۱٬۰۵۷ برچسب دقیقاً همین وضع را داشت.",
+        a: "سایتی که سال‌ها مطلب منتشر کرده و صدها مطلب، برچسب‌های زیاد و لینک‌های بیرونی دارد. برای چنین سایتی جابه‌جایی بی‌برنامه یعنی خطر شکستن لینک‌ها.",
         details: [p("اگر سایتتان کوچک است و مطلب زیادی ندارد، انتقال ساده‌تر است. در هر دو حالت، بررسی رایگان ما فهرست آدرس‌ها و خطرهای واقعی را پیش از هر تصمیمی روشن می‌کند.")],
       },
     ],
     en: [
       {
         q: "How is a WordPress migration done without breaking links?",
-        a: "By listing every URL before the move and defining a permanent 301 redirect for each one. For Dane that meant 278 redirects for 278 posts, so no old link breaks.",
+        a: "By listing every URL before the move and defining a permanent 301 redirect for each one, so no old link breaks.",
         details: [p("With a permanent redirect for each post, the standing that the old addresses built in Google and in outside links passes to the new address."), links(["Guide: migrating from WordPress to Next.js", "/guides/migrate-wordpress-to-nextjs"])],
       },
       {
         q: "What tools does the newsroom of a science news site need?",
-        a: "A tool that knows the editorial rules. On Dane, Payload CMS gives the newsroom control of posts, tags and authors and validates sources, leads, captions, image credits and the structure of long-form pieces.",
+        a: "A tool that knows the editorial rules. A headless CMS such as Payload gives the newsroom control of posts, tags and authors and validates sources, leads, captions, image credits and the structure of long-form pieces.",
         details: [p("These rules sit in the system rather than in people's memory, so common mistakes such as a piece without a source or an image without a credit are caught.")],
       },
       {
         q: "How should a news site's taxonomy look?",
-        a: "Simple and easy to follow. Dane had become crowded with 15 categories and 1,057 tags; the taxonomy became 8 categories and 105 topics so that readers and search engines can both follow the path.",
+        a: "Simple and easy to follow. A crowded taxonomy of dozens of categories and thousands of tags becomes 8 categories and a few dozen topics, so that readers and search engines can both follow the path.",
         details: [p("A migration is a good moment to tidy it: what grew for years in WordPress starts in the new platform with a structure chosen on purpose.")],
       },
       {
         q: "Which news sites should take a WordPress migration seriously?",
-        a: "A site that has published for years and has hundreds of posts, many tags and outside links. For such a site, moving without a plan means a risk of broken links; Dane, with 278 posts and 1,057 tags, was in exactly this position.",
+        a: "A site that has published for years and has hundreds of posts, many tags and outside links. For such a site, moving without a plan means a risk of broken links.",
         details: [p("If your site is small and has few posts, the migration is simpler. In both cases our free audit lays out the real list of URLs and risks before any decision is made.")],
       },
     ],
@@ -280,7 +280,7 @@ export const industryExtra: Extra = {
     fa: [
       {
         q: "پرداخت و پنل مدیریت فروشگاه چه چیزهایی باید داشته باشد؟",
-        a: "پرداخت آنلاین، حساب کاربری مشتری و پنلی که تیم فروشگاه خودش بگرداند. در سبزینو پرداخت با زرین‌پال انجام می‌شود و یک پنل مستقل، محصولات، موجودی، قیمت و سفارش‌ها را مدیریت می‌کند.",
+        a: "پرداخت آنلاین، حساب کاربری مشتری و پنلی که تیم فروشگاه خودش بگرداند.",
         details: [p("بدون این‌ها فروشگاه فقط یک کاتالوگ است. مهم این است که تیم برای هر تغییر قیمت یا موجودی منتظر برنامه‌نویس نماند.")],
       },
       {
@@ -292,7 +292,7 @@ export const industryExtra: Extra = {
     en: [
       {
         q: "What should a store's payment and admin offer?",
-        a: "Online payment, customer accounts and an admin the store's own team can run. At Sabzino payment is through Zarinpal and an independent admin manages products, inventory, pricing and orders.",
+        a: "Online payment, customer accounts and an admin the store's own team can run.",
         details: [p("Without these a store is just a catalog. What matters is that the team does not wait for a developer for each price or stock change.")],
       },
       {

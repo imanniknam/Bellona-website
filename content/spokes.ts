@@ -241,7 +241,7 @@ const rawSpokes: Spoke[] = [
     // Published 2026-10-27 (owner: push SEO). Questions still waiting on facts stay hidden until answered.
     status: "published",
     needs: [3, 4, 30],
-    projects: ["yasin","dane-news","asa-study","mojasame-saidi","contemo","shamim-house"],
+    projects: ["mojasame-saidi"],
     guides: ["nextjs-seo-checklist","website-design-cost"],
     en: {
       metaTitle: "Next.js website design: fast and SEO-ready",
@@ -257,25 +257,25 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "Which Next.js projects have you built?",
-          a: "This site is one. Others include Yasin Skill School (Next.js 15 with GSAP and Three.js), Dane Scientific News (Next.js 16 with Payload CMS), ASA-Study (bilingual English/Persian with next-intl), Mojasame Saidi's store (Next.js 15 with Prisma), and Contemo and Shamim House (Next.js 16).",
+          a: "This site is one. Another is the Mojasame Saidi store (Next.js 15 with Prisma).",
           details: [
             {
               kind: "links",
               items: [
-                { label: "Yasin Skill School", href: "/work/yasin" },
-                { label: "Dane Scientific News", href: "/work/dane-news" },
-                { label: "ASA-Study", href: "/work/asa-study" },
+                
+                
+                
               ],
             },
           ],
         },
         {
           q: "Next.js or WordPress?",
-          a: "WordPress is quick to start with templates and plugins; Next.js is custom-built, so it is faster, leaner and easier to keep secure, but needs developers for structural changes. For editing content without a developer, a headless CMS can sit behind Next.js, as Payload CMS does on Dane Scientific News.",
+          a: "WordPress is quick to start with templates and plugins; Next.js is custom-built, so it is faster, leaner and easier to keep secure, but needs developers for structural changes. For editing content without a developer, a headless CMS can sit behind Next.js,; Payload CMS is one such option.",
         },
         {
           q: "Can a Next.js site be bilingual, Persian and English?",
-          a: "Yes. Each language gets its own URLs and full translation, with right-to-left layout for Persian and the right language tags for search engines. This site and ASA-Study both work this way, with separate Persian and English pages linked to each other.",
+          a: "Yes. Each language gets its own URLs and full translation, with right-to-left layout for Persian and the right language tags for search engines. This site works this way, with separate Persian and English pages linked to each other.",
         },
         { q: "Which CMS do you use with Next.js?", a: null, needs: [3] },
         { q: "How long does a Next.js website take?", a: null, needs: [4] },
@@ -296,25 +296,25 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "چه پروژه‌هایی را با Next.js ساخته‌اید؟",
-          a: "همین سایت یکی از آن‌هاست. بقیه: مدرسه مهارت یاسین (Next.js 15 با GSAP و Three.js)، پایگاه علمی‌خبری دانه (Next.js 16 با Payload CMS)، سامانه‌ی پذیرش ASA-Study (دوزبانه با next-intl)، فروشگاه مجسمه سعیدی (Next.js 15 با Prisma)، و کانتمو و خانه شمیم (Next.js 16).",
+          a: "همین سایت یکی از آن‌هاست. نمونه‌ی دیگر فروشگاه مجسمه سعیدی (Next.js 15 با Prisma) است.",
           details: [
             {
               kind: "links",
               items: [
-                { label: "مدرسه مهارت یاسین", href: "/work/yasin" },
-                { label: "پایگاه علمی‌خبری دانه", href: "/work/dane-news" },
-                { label: "سامانه‌ی پذیرش ASA-Study", href: "/work/asa-study" },
+                
+                
+                
               ],
             },
           ],
         },
         {
           q: "Next.js یا وردپرس؟",
-          a: "وردپرس با قالب و افزونه زود راه می‌افتد؛ Next.js اختصاصی ساخته می‌شود، پس سریع‌تر، سبک‌تر و امن‌تر می‌ماند، ولی تغییرات ساختاری به برنامه‌نویس نیاز دارد. برای ویرایش محتوا بی‌برنامه‌نویس، می‌شود یک CMS هدلس پشت Next.js گذاشت؛ همان کاری که Payload CMS در پایگاه علمی‌خبری دانه می‌کند.",
+          a: "وردپرس با قالب و افزونه زود راه می‌افتد؛ Next.js اختصاصی ساخته می‌شود، پس سریع‌تر، سبک‌تر و امن‌تر می‌ماند، ولی تغییرات ساختاری به برنامه‌نویس نیاز دارد. برای ویرایش محتوا بی‌برنامه‌نویس، می‌شود یک CMS هدلس پشت Next.js گذاشت؛ Payload CMS یکی از این گزینه‌هاست.",
         },
         {
           q: "سایت Next.js می‌تواند دوزبانه‌ی فارسی و انگلیسی باشد؟",
-          a: "بله. هر زبان آدرس و ترجمه‌ی کامل خودش را دارد، فارسی با چیدمان راست‌چین، و برچسب زبانِ درست برای موتورهای جست‌وجو. همین سایت و ASA-Study هر دو همین‌طورند: صفحه‌های جداگانه‌ی فارسی و انگلیسی که به هم لینک شده‌اند.",
+          a: "بله. هر زبان آدرس و ترجمه‌ی کامل خودش را دارد، فارسی با چیدمان راست‌چین، و برچسب زبانِ درست برای موتورهای جست‌وجو. همین سایت همین‌طور است: صفحه‌های جداگانه‌ی فارسی و انگلیسی که به هم لینک شده‌اند.",
         },
         { q: "با Next.js از کدام CMS استفاده می‌کنید؟", a: null, needs: [3] },
         { q: "طراحی سایت با Next.js چقدر طول می‌کشد؟", a: null, needs: [4] },
@@ -331,12 +331,12 @@ const rawSpokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
-    projects: ["sabzino","nira-perfume","mojasame-saidi","elm-kala"],
+    projects: ["nira-perfume", "mojasame-saidi"],
     guides: ["custom-vs-store-builder","website-design-cost"],
     en: {
       metaTitle: "E-commerce website design: custom online stores",
       metaDescription:
-        "E-commerce website design: custom online stores with cart, online payment and an admin panel. Examples: Sabzino, Nira Perfume and Elm-Kala. Free audit.",
+        "E-commerce website design: custom online stores with cart, online payment and an admin panel. Examples: Nira Perfume and Mojasame Saidi. Free audit.",
       eyebrow: "Website design",
       h1: "E-commerce **website design**",
       definition:
@@ -360,15 +360,15 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "Which online stores have you built?",
-          a: "Sabzino (cart, accounts, Zarinpal payment and an independent admin panel), Nira Perfume (a brand-led storefront with search and cart), Mojasame Saidi (a premium, mobile-first store on Next.js with Prisma and PostgreSQL) and Elm-Kala (a guided store for scientific and educational equipment).",
+          a: "Nira Perfume (a brand-led storefront with search and cart) and Mojasame Saidi (a premium, mobile-first store on Next.js with Prisma and PostgreSQL).",
           details: [
             {
               kind: "links",
               items: [
-                { label: "Sabzino", href: "/work/sabzino" },
+                
                 { label: "Nira Perfume", href: "/work/nira-perfume" },
                 { label: "Mojasame Saidi", href: "/work/mojasame-saidi" },
-                { label: "Elm-Kala", href: "/work/elm-kala" },
+                
               ],
             },
           ],
@@ -387,7 +387,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "طراحی سایت فروشگاهی و فروشگاه اینترنتی اختصاصی",
       metaDescription:
-        "طراحی سایت فروشگاهی اختصاصی بدون قالب آماده: جست‌وجوی محصول، سبد خرید، پرداخت آنلاین و پنل سفارش‌ها. از جمله سبزینو و عطر نیرا. بررسی رایگان.",
+        "طراحی سایت فروشگاهی اختصاصی بدون قالب آماده: جست‌وجوی محصول، سبد خرید، پرداخت آنلاین و پنل سفارش‌ها. از جمله عطر نیرا و مجسمه سعیدی. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **فروشگاهی**",
       definition:
@@ -411,15 +411,15 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "چه فروشگاه‌های اینترنتی‌ای طراحی کرده‌اید؟",
-          a: "فروشگاه اجتماعی سبزینو (سبد خرید، حساب مشتری، پرداخت زرین‌پال و پنل مدیریت مستقل)، عطر نیرا (فروشگاه برندمحور با جست‌وجو و سبد خرید)، فروشگاه مجسمه سعیدی (فروشگاه لوکس و موبایل‌محور با Next.js، Prisma و PostgreSQL) و فروشگاه تخصصی علم‌کالا (فروشگاهی که خریدار تجهیزات علمی و آموزشی را راهنمایی می‌کند).",
+          a: "عطر نیرا (فروشگاه برندمحور با جست‌وجو و سبد خرید) و فروشگاه مجسمه سعیدی (فروشگاه لوکس و موبایل‌محور با Next.js، Prisma و PostgreSQL).",
           details: [
             {
               kind: "links",
               items: [
-                { label: "فروشگاه اجتماعی سبزینو", href: "/work/sabzino" },
+                
                 { label: "عطر نیرا", href: "/work/nira-perfume" },
                 { label: "فروشگاه مجسمه سعیدی", href: "/work/mojasame-saidi" },
-                { label: "فروشگاه تخصصی علم‌کالا", href: "/work/elm-kala" },
+                
               ],
             },
           ],
@@ -445,7 +445,7 @@ const rawSpokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
-    projects: ["shamim-house","contemo","school-builders"],
+    projects: [],
     guides: ["website-design-cost"],
     en: {
       metaTitle: "Corporate website design: fast and SEO-ready",
@@ -468,21 +468,6 @@ const rawSpokes: Spoke[] = [
                 "Service, about, portfolio and contact pages",
                 "Forms connected to email, Telegram or a CRM",
                 "Fast on mobile, SEO-ready, with analytics",
-              ],
-            },
-          ],
-        },
-        {
-          q: "Which company websites have you built?",
-          a: "Shamim House (a brand platform for a group of startups, with structured partnership forms), Contemo (a content-services platform with a live pricing engine), Microshamim (an innovation hub with several spaces explained clearly) and the national Iran School-Builders Charity portal.",
-          details: [
-            {
-              kind: "links",
-              items: [
-                { label: "Shamim House", href: "/work/shamim-house" },
-                { label: "Contemo", href: "/work/contemo" },
-                { label: "Microshamim", href: "/work/microshamim" },
-                { label: "Iran School-Builders Charity", href: "/work/school-builders" },
               ],
             },
           ],
@@ -524,21 +509,6 @@ const rawSpokes: Spoke[] = [
           ],
         },
         {
-          q: "چه سایت‌های شرکتی‌ای طراحی کرده‌اید؟",
-          a: "اکوسیستم خانه شمیم (پلتفرم برند برای مجموعه‌ای از استارتاپ‌ها با فرم‌های همکاری)، پلتفرم محتوایی کانتمو (با سیستم قیمت‌گذاری زنده)، میکروشمیم (مرکز نوآوری با چند فضای متفاوت) و پرتال ملی جامعه خیرین مدرسه‌ساز کشور.",
-          details: [
-            {
-              kind: "links",
-              items: [
-                { label: "اکوسیستم خانه شمیم", href: "/work/shamim-house" },
-                { label: "پلتفرم محتوایی کانتمو", href: "/work/contemo" },
-                { label: "میکروشمیم", href: "/work/microshamim" },
-                { label: "جامعه خیرین مدرسه‌ساز کشور", href: "/work/school-builders" },
-              ],
-            },
-          ],
-        },
-        {
           q: "سایت شرکتی برایمان مشتری هم می‌آورد یا فقط ظاهرش خوب است؟",
           a: "اصلاً برای همین طراحی می‌شود: یک پیشنهاد روشن، دعوت به اقدامِ واضح در هر صفحه و فرم‌هایی که راحت پر می‌شوند. فرم‌ها می‌توانند به اتوماسیون هوش مصنوعی وصل شوند تا هر درخواست در چند ثانیه جواب بگیرد و پیگیری شود، به‌جای آنکه در صندوق ایمیل بماند.",
         },
@@ -559,12 +529,12 @@ const rawSpokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
-    projects: ["asa-study"],
+    projects: [],
     guides: ["bilingual-website-hreflang-rtl","website-design-cost"],
     en: {
       metaTitle: "Bilingual website design: Persian, English, RTL",
       metaDescription:
-        "Bilingual website design in Persian and English: separate URLs per language, full right-to-left layout, correct hreflang. Example: ASA-Study. Free audit.",
+        "Bilingual website design in Persian and English: separate URLs per language, full right-to-left layout, correct hreflang. Free audit.",
       eyebrow: "Website design",
       h1: "Bilingual **website design**",
       definition:
@@ -588,8 +558,8 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "Which bilingual websites have you built?",
-          a: "ASA-Study, an admissions platform for international students with full Persian and English routing and right-to-left behavior; and this site, which serves Persian and English as two linked versions of every page.",
-          details: [{ kind: "links", items: [{ label: "ASA-Study", href: "/work/asa-study" }] }],
+          a: "This site, which serves Persian and English as two linked versions of every page.",
+          details: [],
         },
         {
           q: "Does a bilingual website help SEO?",
@@ -605,7 +575,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "طراحی سایت دوزبانه فارسی و انگلیسی (RTL و LTR)",
       metaDescription:
-        "طراحی سایت دوزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌چین واقعی و برچسب زبان درست برای گوگل. نمونه: ASA-Study. بررسی رایگان.",
+        "طراحی سایت دوزبانه‌ی فارسی و انگلیسی با آدرس جدا برای هر زبان، چیدمان راست‌چین واقعی و برچسب زبان درست برای گوگل. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "طراحی سایت **دوزبانه**",
       definition:
@@ -629,8 +599,8 @@ const rawSpokes: Spoke[] = [
         },
         {
           q: "چه سایت‌های دوزبانه‌ای طراحی کرده‌اید؟",
-          a: "سامانه‌ی پذیرش ASA-Study، پلتفرمی برای دانشجویان بین‌المللی با مسیرهای کامل فارسی و انگلیسی و رفتار راست‌چین؛ و همین سایت، که هر صفحه‌اش دو نسخه‌ی فارسی و انگلیسیِ به‌هم‌پیوسته دارد.",
-          details: [{ kind: "links", items: [{ label: "سامانه‌ی پذیرش ASA-Study", href: "/work/asa-study" }] }],
+          a: "همین سایت، که هر صفحه‌اش دو نسخه‌ی فارسی و انگلیسیِ به‌هم‌پیوسته دارد.",
+          details: [],
         },
         {
           q: "سایت دوزبانه به سئو کمک می‌کند؟",
@@ -653,12 +623,12 @@ const rawSpokes: Spoke[] = [
     need: "web",
     status: "published",
     needs: [],
-    projects: ["dane-news"],
+    projects: [],
     guides: ["migrate-wordpress-to-nextjs","website-design-cost"],
     en: {
       metaTitle: "Website redesign and migration, no SEO loss",
       metaDescription:
-        "Website redesign without losing traffic: migrate off WordPress with every post and tag, redirect old links, stay online. Example: Dane. Free audit.",
+        "Website redesign without losing traffic: migrate off WordPress with every post and tag, redirect old links, stay online. Free audit.",
       eyebrow: "Website design",
       h1: "Website **redesign**",
       definition:
@@ -681,11 +651,6 @@ const rawSpokes: Spoke[] = [
           ],
         },
         {
-          q: "Have you migrated a site off WordPress?",
-          a: `Yes. Dane Scientific News moved from WordPress to a custom Next.js and Payload CMS platform: ${fmt.n(facts.projects.dane.migratedPosts, "en")} posts with their tags and authors migrated, a messy taxonomy tidied, and every old link kept working.`,
-          details: [{ kind: "links", items: [{ label: "Case study: Dane Scientific News", href: "/work/dane-news" }] }],
-        },
-        {
           q: "Does our site go offline during the redesign?",
           a: "No. The new site is built and tested separately and replaces the old one only when it is ready. We can also improve the current site step by step, for example by connecting automation first.",
         },
@@ -699,7 +664,7 @@ const rawSpokes: Spoke[] = [
     fa: {
       metaTitle: "بازطراحی سایت و انتقال از وردپرس بدون افت سئو",
       metaDescription:
-        "بازطراحی سایت یا انتقال از وردپرس بی‌افت بازدید: انتقال مطلب‌ها و برچسب‌ها، ریدایرکت لینک‌های قدیمی و در دسترس ماندن سایت. نمونه: دانه. بررسی رایگان.",
+        "بازطراحی سایت یا انتقال از وردپرس بی‌افت بازدید: انتقال مطلب‌ها و برچسب‌ها، ریدایرکت لینک‌های قدیمی و در دسترس ماندن سایت. بررسی رایگان.",
       eyebrow: "طراحی سایت",
       h1: "بازطراحی **سایت**",
       definition:
@@ -720,11 +685,6 @@ const rawSpokes: Spoke[] = [
               ],
             },
           ],
-        },
-        {
-          q: "سایتی را از وردپرس منتقل کرده‌اید؟",
-          a: `بله. پایگاه علمی‌خبری دانه از وردپرس به پلتفرم اختصاصی Next.js و Payload CMS منتقل شد: ${fmt.n(facts.projects.dane.migratedPosts, "fa")} مطلب همراه با برچسب‌ها و نویسنده‌هایشان جابه‌جا شد، دسته‌بندی شلوغ سامان گرفت و همه‌ی لینک‌های قدیمی سالم ماندند.`,
-          details: [{ kind: "links", items: [{ label: "نمونه‌کار: پایگاه علمی‌خبری دانه", href: "/work/dane-news" }] }],
         },
         {
           q: "سایت ما هنگام بازطراحی از دسترس خارج می‌شود؟",
@@ -749,7 +709,7 @@ const rawSpokes: Spoke[] = [
     updated: "2026-10-27",
     author: "Amirhossein Bazdar|امیرحسین بازدار",
     needs: [30, 33],
-    projects: ["mojasame-saidi","school-builders"],
+    projects: ["mojasame-saidi"],
     guides: ["custom-vs-store-builder"],
     en: {
       metaTitle: "Website design cost in 2026: what sets the price",

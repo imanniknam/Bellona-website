@@ -117,7 +117,7 @@ export const en: Dict = {
     },
     "/industries/education": {
       title: "Education website design: learning platforms",
-      description: "Education website design: learning platforms, gamified courses and enrollment sites. Work includes Konjed, Codechee and Yasin. Free growth audit.",
+      description: "Education website design: learning platforms, gamified courses and enrollment sites. Work includes Konjed and Codechee. Free growth audit.",
     },
     "/industries/real-estate": {
       title: "Real estate website design and AI automation",
@@ -125,11 +125,11 @@ export const en: Dict = {
     },
     "/industries/ecommerce": {
       title: "Online store design and sales automation",
-      description: "Online store design: custom online stores with payments, admin panels and AI support. Work includes Sabzino, Nira Perfume, Mojasame Saidi and Elm-Kala.",
+      description: "Online store design: custom online stores with payments, admin panels and AI support. Work includes Nira Perfume and Mojasame Saidi.",
     },
     "/industries/media": {
       title: "Media website design and publishing platforms",
-      description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps old links working, like Dane. Free audit.",
+      description: "Media website design: publishing platforms with a headless CMS, editorial rules and content migration that keeps old links working. Free audit.",
     },
     "/work": {
       title: "Portfolio: website, product and AI projects",
@@ -168,7 +168,7 @@ export const en: Dict = {
         stage: "BUILD",
         title: "A website that sells",
         text: "Custom-designed and hand-coded, not a template. Fast on any phone, clear about what you offer, and built around one action: getting in touch.",
-        proof: "Codechee, Yasin, Nira, Sabzino",
+        proof: "Codechee, Konjed, Nira",
       },
       {
         pillar: "ai",
@@ -530,7 +530,6 @@ export const en: Dict = {
   stats: [
     { value: `${shipped}`, label: "Projects shipped" },
     { value: `${workflows}`, label: "n8n workflows in one sales system" },
-    { value: `${n(facts.projects.dane.migratedPosts)}`, label: "Posts migrated, zero broken links" },
     { value: `${n(facts.counts.languages)}`, label: "Languages, RTL-native" },
   ],
 

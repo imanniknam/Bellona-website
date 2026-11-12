@@ -11,7 +11,6 @@ import { industryExtra, mergeMore } from "./hubs-extra";
 type More = Record<string, Record<Locale, Answer[]>>;
 
 const re = facts.projects.realEstate;
-const dane = facts.projects.dane;
 const nEn = (v: number) => fmt.n(v, "en");
 const nFa = (v: number) => fmt.n(v, "fa");
 const count = (id: string) => projectsForIndustry(id).length;
@@ -34,7 +33,7 @@ const base: More = {
       },
       {
         q: "در حوزه‌ی آموزش چه پروژه‌هایی داریم؟",
-        a: `${nFa(count("education"))} پروژه در این حوزه داریم: کدچی (پلتفرم یادگیری برنامه‌نویسی و هوش مصنوعی با استارکمپ‌ها)، مدرسه مهارت یاسین (ماجراجویی برای یادگیری مهارت)، کنجد (مهارت‌های زندگی با بازی)، میکروشمیم (مرکز نوآوری)، ASA-Study (پذیرش دانشجوی بین‌المللی) و علم‌کالا (فروشگاه تجهیزات علمی و آموزشی).`,
+        a: `${nFa(count("education"))} پروژه در این حوزه داریم: کدچی (پلتفرم یادگیری برنامه‌نویسی و هوش مصنوعی با استارکمپ‌ها) و کنجد (مهارت‌های زندگی با بازی).`,
         details: [links("education", "fa")],
       },
       {
@@ -58,7 +57,7 @@ const base: More = {
       },
       {
         q: "Which education projects have we done?",
-        a: `We have ${nEn(count("education"))} projects in this field: Codechee (a programming and AI learning platform with Starcamps), Yasin Skill School (an adventure-style experience for learning skills), Konjed (life skills through play), Microshamim (an innovation hub), ASA-Study (international student admissions) and Elm-Kala (a store for scientific and educational equipment).`,
+        a: `We have ${nEn(count("education"))} projects in this field: Codechee (a programming and AI learning platform with Starcamps) and Konjed (life skills through play).`,
         details: [links("education", "en")],
       },
       {
@@ -86,7 +85,7 @@ const base: More = {
       },
       {
         q: "در حوزه‌ی فروش آنلاین چه پروژه‌هایی داریم؟",
-        a: `${nFa(count("ecommerce"))} فروشگاه: سبزینو (فروشگاه یک کسب‌وکار اجتماعی با درگاه زرین‌پال)، عطر نیرا (عطرسرایی با بخش ساخت عطر سازمانی)، فروشگاه مجسمه سعیدی (فروشگاه لوکس آثار دست‌ساز) و علم‌کالا (فروشگاهی که خریدار تجهیزات علمی را راهنمایی می‌کند).`,
+        a: `${nFa(count("ecommerce"))} فروشگاه: عطر نیرا (عطرسرایی با بخش ساخت عطر سازمانی) و فروشگاه مجسمه سعیدی (فروشگاه لوکس آثار دست‌ساز).`,
         details: [links("ecommerce", "fa")],
       },
       {
@@ -106,7 +105,7 @@ const base: More = {
       },
       {
         q: "Which online-sales projects have we done?",
-        a: `${nEn(count("ecommerce"))} stores: Sabzino (a social-enterprise store with Zarinpal payments), Nira Perfume (a perfume house with a corporate custom-perfume section), the Mojasame Saidi store (a premium handmade store) and Elm-Kala (a guided scientific-equipment store).`,
+        a: `${nEn(count("ecommerce"))} stores: Nira Perfume (a perfume house with a corporate custom-perfume section) and the Mojasame Saidi store (a premium handmade store).`,
         details: [links("ecommerce", "en")],
       },
       {
@@ -170,12 +169,7 @@ const base: More = {
       },
       {
         q: "برای رسانه و انتشار چه می‌سازیم؟",
-        a: "پلتفرم انتشار با CMS هدلس، قواعد تحریریه‌ی داخلی (منبع، لید خبر، زیرنویس، اعتبار تصویر)، انتقال محتوا و ریدایرکت‌های سئو تا هیچ لینک قدیمی‌ای نشکند. نمونه‌ی ما، پایگاه علمی‌خبری دانه، همین‌طور ساخته شده است.",
-      },
-      {
-        q: "نمونه‌ی ما در حوزه‌ی رسانه چیست؟",
-        a: `پایگاه علمی خبری دانه: ${nFa(dane.migratedPosts)} مطلب با ${nFa(dane.tags)} برچسب و ${nFa(dane.authors)} نویسنده از وردپرس به Next.js و Payload CMS منتقل شد، طبقه‌بندی به ${nFa(dane.categoriesAfter)} دسته و ${nFa(dane.topics)} موضوع بازطراحی شد و ${nFa(dane.redirects)} ریدایرکت دائمی گذاشتیم.`,
-        details: [links("media", "fa")],
+        a: "پلتفرم انتشار با CMS هدلس، قواعد تحریریه‌ی داخلی (منبع، لید خبر، زیرنویس، اعتبار تصویر)، انتقال محتوا و ریدایرکت‌های سئو تا هیچ لینک قدیمی‌ای نشکند.",
       },
       {
         q: "می‌خواهم سایت خبری‌ام را منتقل کنم؛ چه کنم؟",
@@ -190,12 +184,7 @@ const base: More = {
       },
       {
         q: "What do we build for media and publishing?",
-        a: "Publishing platforms with a headless CMS, in-house editorial rules (source, lead, caption, image credit), content migration and SEO redirects so no old link breaks. Our example, Dane Scientific News, takes this approach.",
-      },
-      {
-        q: "What is our media example?",
-        a: `Dane Scientific News: ${nEn(dane.migratedPosts)} posts with ${nEn(dane.tags)} tags and ${nEn(dane.authors)} authors moved from WordPress to Next.js and Payload CMS, the taxonomy was redesigned into ${nEn(dane.categoriesAfter)} categories and ${nEn(dane.topics)} topics, and ${nEn(dane.redirects)} permanent redirects were put in place.`,
-        details: [links("media", "en")],
+        a: "Publishing platforms with a headless CMS, in-house editorial rules (source, lead, caption, image credit), content migration and SEO redirects so no old link breaks.",
       },
       {
         q: "I want to migrate my news site; what do I do?",
